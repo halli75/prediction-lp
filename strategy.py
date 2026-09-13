@@ -12,15 +12,15 @@ class Strategy:
     def __init__(self, config: dict | None = None):
         cfg = config or {}
         # Half-spread as fraction of rewards_max_spread (in price units, not cents)
-        self.spread_frac = float(cfg.get("spread_frac", 0.45))
+        self.spread_frac = float(cfg.get("spread_frac", 0.34805716705032813))
         # Inventory skew strength (price shift per share of net YES exposure)
-        self.skew_bps_per_share = float(cfg.get("skew_bps_per_share", 0.15))
+        self.skew_bps_per_share = float(cfg.get("skew_bps_per_share", 0.047099548063714775))
         # Target quote size as multiple of min_size
-        self.size_mult = float(cfg.get("size_mult", 1.5))
+        self.size_mult = float(cfg.get("size_mult", 2.439807611661864))
         # Hard inventory cap (shares of YES-equivalent net)
         self.max_abs_inv = float(cfg.get("max_abs_inv", 800.0))
         # Stop quoting a side if inventory exceeds this
-        self.inv_soft_cap = float(cfg.get("inv_soft_cap", 500.0))
+        self.inv_soft_cap = float(cfg.get("inv_soft_cap", 349.1499659566903))
         # Minimum half-spread in price
         self.min_half_spread = float(cfg.get("min_half_spread", 0.01))
 
