@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-09-13T03:53:13.353407+00:00",
+  "mode": "sparse_day_l2",
+  "hf_repo": "Joseph3222/polymarket-orderbook",
+  "hf_config": "orderbook_1min",
+  "days": [
+    "2026-05-14",
+    "2026-06-01",
+    "2026-06-25",
+    "2026-07-20",
+    "2026-08-06"
+  ],
+  "start_ts": 1778716800,
+  "end_ts": 1786060740,
+  "start_iso": "2026-05-14T00:00:00+00:00",
+  "end_iso": "2026-08-06T23:59:00+00:00",
+  "n_markets": 7,
+  "n_price_rows": 46783,
+  "n_trade_rows": 0,
+  "markets": [
+    {
+      "market_id": "0x5e464d85eb49f22d876f3ed6168a7db5e2288e9ae1eb91effd2758e994676f86",
+      "slug_key": "fed_m50",
+      "question": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
+      "yes_token": "97186030785608128217926542396950266594898339988989015155120280107165449433603",
+      "daily_reward_pool": 50.0,
+      "rewards_min_size": 50.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0xac02cbb049e46d6a3627c0fdf52fa554982a9025d45968207b362acb6ca4b830",
+      "slug_key": "fed_m25",
+      "question": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
+      "yes_token": "57748138085022719760345772310040703848567377822400132842014290209986511882046",
+      "daily_reward_pool": 100.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a",
+      "slug_key": "fed_0",
+      "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+      "yes_token": "5615282760875985231868508008056959876238536896643315063916840237042205273721",
+      "daily_reward_pool": 1000.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d",
+      "slug_key": "fed_p25",
+      "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+      "yes_token": "63842529068710005716169325380315470359047749786610778647370693404952498013178",
+      "daily_reward_pool": 1000.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0x2e4b58fc18dbffd74d5275d89fb076943f21992763c45dcadd81391b83bde13c",
+      "slug_key": "fed_p50",
+      "question": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
+      "yes_token": "88912926533493988427719291698947688154042720958310632316541141466409683822293",
+      "daily_reward_pool": 50.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
+      "slug_key": "iran",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "yes_token": "55115078421062885512539156303747803058407616201213034911037320915726138659123",
+      "daily_reward_pool": 400.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 3.5
+    },
+    {
+      "market_id": "0x48b0b0bca515f68fccf95af4793dbd0edbfec1f8ec6e8df2c0f69ba74f8c4722",
+      "slug_key": "trump_out",
+      "question": "Trump out as President before 2027?",
+      "yes_token": "59252515735652674747158950210016502214756531287333895140318848923768750410355",
+      "daily_reward_pool": 1.0,
+      "rewards_min_size": 20.0,
+      "rewards_max_spread": 4.5
+    }
+  ],
+  "data_sources": [
+    "hf://datasets/Joseph3222/polymarket-orderbook/orderbook_1min/date=YYYY-MM-DD/data_0.parquet",
+    "https://gamma-api.polymarket.com (reward params, metadata)"
+  ],
+  "notes": "SPARSE-DAY sampling (not continuous 90-day L2). Full HF day files filtered to curated YES tokens then discarded. Reward rates from current Gamma fields held constant over the window. CLOB prices-history was NOT used for May\u2013Jul (insufficient lookback overlap)."
+}

@@ -1,0 +1,112 @@
+{
+  "train_net_pnl": 1751.4992,
+  "train_end_equity": 11751.4992,
+  "train_start_equity": 10000.0,
+  "train_max_drawdown_usd": 105.0,
+  "train_max_drawdown_pct": 1.05,
+  "train_max_drawdown_pct_of_peak": 1.05,
+  "train_reward_pnl": 1467.9617,
+  "train_fees": 0.0,
+  "train_rebates": 0.0,
+  "train_trading_pnl": 283.5375,
+  "train_n_fills": 121,
+  "train_n_equity_points": 73,
+  "train_start_ts": 1778716800,
+  "train_end_ts": 1782431940,
+  "train_n_markets": 7,
+  "train_final_cash": 9676.2117,
+  "train_inventory": {
+    "0x48b0b0bca515f68fccf95af4793dbd0edbfec1f8ec6e8df2c0f69ba74f8c4722": {
+      "yes": 0.0,
+      "no": 0.0
+    },
+    "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846": {
+      "yes": 300.0,
+      "no": 0.0
+    },
+    "0x5e464d85eb49f22d876f3ed6168a7db5e2288e9ae1eb91effd2758e994676f86": {
+      "yes": 0.0,
+      "no": 75.0
+    },
+    "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d": {
+      "yes": 0.0,
+      "no": 600.0
+    },
+    "0xac02cbb049e46d6a3627c0fdf52fa554982a9025d45968207b362acb6ca4b830": {
+      "yes": 900.0,
+      "no": 750.0
+    },
+    "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a": {
+      "yes": 825.0,
+      "no": 600.0
+    },
+    "0x2e4b58fc18dbffd74d5275d89fb076943f21992763c45dcadd81391b83bde13c": {
+      "yes": 525.0,
+      "no": 75.0
+    }
+  },
+  "holdout_net_pnl": 223.1549,
+  "holdout_end_equity": 10223.1549,
+  "holdout_start_equity": 10000.0,
+  "holdout_max_drawdown_usd": 19.65,
+  "holdout_max_drawdown_pct": 0.1965,
+  "holdout_max_drawdown_pct_of_peak": 0.1919,
+  "holdout_reward_pnl": 34.8674,
+  "holdout_fees": 0.0,
+  "holdout_rebates": 0.0,
+  "holdout_trading_pnl": 188.2875,
+  "holdout_n_fills": 6,
+  "holdout_n_equity_points": 49,
+  "holdout_start_ts": 1784505600,
+  "holdout_end_ts": 1786060740,
+  "holdout_n_markets": 7,
+  "holdout_final_cash": 9614.1174,
+  "holdout_inventory": {
+    "0x2e4b58fc18dbffd74d5275d89fb076943f21992763c45dcadd81391b83bde13c": {
+      "yes": 0.0,
+      "no": 0.0
+    },
+    "0x48b0b0bca515f68fccf95af4793dbd0edbfec1f8ec6e8df2c0f69ba74f8c4722": {
+      "yes": 0.0,
+      "no": 0.0
+    },
+    "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846": {
+      "yes": 300.0,
+      "no": 300.0
+    },
+    "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d": {
+      "yes": 0.0,
+      "no": 300.0
+    },
+    "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a": {
+      "yes": 300.0,
+      "no": 0.0
+    },
+    "0x5e464d85eb49f22d876f3ed6168a7db5e2288e9ae1eb91effd2758e994676f86": {
+      "yes": 75.0,
+      "no": 0.0
+    },
+    "0xac02cbb049e46d6a3627c0fdf52fa554982a9025d45968207b362acb6ca4b830": {
+      "yes": 300.0,
+      "no": 0.0
+    }
+  },
+  "soft_reject": false,
+  "dd_limit_pct": 25.0,
+  "capital0": 10000.0,
+  "holdout_frac": 0.25,
+  "n_train_rows": 27024,
+  "n_holdout_rows": 19759,
+  "n_markets": 7,
+  "data_mode": "sparse_day_l2",
+  "data_days": [
+    "2026-05-14",
+    "2026-06-01",
+    "2026-06-25",
+    "2026-07-20",
+    "2026-08-06"
+  ],
+  "data_start_iso": "2026-05-14T00:00:00+00:00",
+  "data_end_iso": "2026-08-06T23:59:00+00:00",
+  "primary_metric": "holdout_net_pnl"
+}

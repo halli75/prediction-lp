@@ -1,0 +1,26 @@
+[
+  {
+    "market_id": "m1",
+    "condition_id": "m1",
+    "question": "Fixture market 1",
+    "yes_token": "t1",
+    "no_token": "t1n",
+    "slug_key": "fx1",
+    "rewards_min_size": 10.0,
+    "rewards_max_spread": 5.0,
+    "daily_reward_pool": 100.0,
+    "competition_q": 200.0
+  },
+  {
+    "market_id": "m2",
+    "condition_id": "m2",
+    "question": "Fixture market 2",
+    "yes_token": "t2",
+    "no_token": "t2n",
+    "slug_key": "fx2",
+    "rewards_min_size": 10.0,
+    "rewards_max_spread": 4.0,
+    "daily_reward_pool": 50.0,
+    "competition_q": 150.0
+  }
+]
