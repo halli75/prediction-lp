@@ -1,6 +1,6 @@
 # Phase 2 report — market/day expansion + more autoresearch
 
-**Status:** cache built and phase-2 baseline evaluated. 30-iter autoresearch numbers follow in the next commit on this branch.
+**Status:** superseded for the main result by the **continuous May–Aug** run in `results/phase3_continuous_report.md`. Sparse 11-day search on this branch reached holdout **$871.97** (not comparable to the continuous 79-market / 96-day cache).
 
 This is still **sparse-day sampling**, not continuous L2, and **not live-trading ready**.
 

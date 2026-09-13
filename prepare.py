@@ -679,13 +679,17 @@ def assemble_prices(
     ba = ba.astype(float).where(ba.notna(), mid + 0.01)
 
     v = raw["asset_id"].map(lambda a: float(token_to_m[a]["rewards_max_spread"]))
+    floor = raw["asset_id"].map(lambda a: float(token_to_m[a].get("competition_q") or 800.0))
     spr_c = (ba - bb) * 100.0
     half_c = spr_c * 0.5
     tight = ((v - half_c).clip(lower=0.0) / v.clip(lower=1e-6)) ** 2 * 200.0
     # 1–2¢ BBO ⇒ more resting competition
     bump = 1.0 + 0.25 * ((2.0 - spr_c.clip(lower=0.0, upper=2.0)) / 2.0)
     bump = bump.where((spr_c > 0) & (spr_c <= 2.0), 1.0)
+    # Floor at Gamma-derived exogenous Q so dropping L2 JSON does not
+    # invent 50–80% reward shares against a ~200-share dummy book.
     comp = (tight * bump).clip(lower=50.0)
+    comp = pd.concat([comp, floor], axis=1).max(axis=1)
 
     out = pd.DataFrame(
         {
