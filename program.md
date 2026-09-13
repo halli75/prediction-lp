@@ -57,7 +57,7 @@ class Strategy:
 
 
 ## Data regime
-Sparse-day HuggingFace `orderbook_1min` L2 (Fed Sep + geopolitics + phase-2
-high-reward Gamma names; ~11 UTC days from 2026-02-22 to 2026-08-10). See README.
-Do not switch prepare.py to multi-GB continuous downloads during search.
-Sparse ≠ continuous — do not claim live-trading readiness.
+Continuous-within-archive HuggingFace `orderbook_1min` L2, May 1 → Aug 10 2026
+(skip Jun 12–17). Reward-token allowlist from Gamma `rewardsDailyRate` (~40–80 YES
+tokens). See README. prepare.py downloads **one raw day at a time** and deletes it.
+Do not download the TB raw stream. Continuous-within-archive ≠ live-trading ready.

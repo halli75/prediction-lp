@@ -56,6 +56,12 @@ class BacktestEngine:
         prices = prices.sort_values(["ts", "market_id"]).reset_index(drop=True)
         if prices.empty:
             return summarize([], capital0, 0, 0, 0, 0, {"error": "empty_prices"})
+        # Infer reward sample count from the bar (1-min → 1440; 5-min → 288)
+        uniq_ts = prices["ts"].drop_duplicates().sort_values()
+        if len(uniq_ts) >= 2:
+            med_dt = float(uniq_ts.diff().median())
+            if med_dt > 0:
+                cfg["samples_per_day"] = max(1, int(round(86400.0 / med_dt)))
 
         # Index trades by (market_id, minute_ts)
         trades_by_key: dict[tuple[str, int], list[dict]] = {}

@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT))
 from sim.fills import OpenQuote, fills_from_mid_path
 from sim.rewards import QuoteScoreInput, order_score, q_min_for_quotes
 from strategy import Strategy
-from prepare import DEFAULT_DAYS, YES_TOKENS, _sanitize_days
+from prepare import DEFAULT_DAYS, SPARSE_DAYS, YES_TOKENS, _sanitize_days, continuous_days
 
 
 def test_order_score_quadratic():
@@ -79,18 +79,22 @@ def test_mid_path_no_cross():
     assert fills_from_mid_path(q, 0.50, 0.50) == []
 
 
-def test_sparse_days_respect_archive_window():
-    assert min(DEFAULT_DAYS) >= "2026-02-22"
-    assert max(DEFAULT_DAYS) <= "2026-08-10"
+def test_continuous_days_may_aug():
+    days = continuous_days("2026-05-01", "2026-08-10")
+    assert days[0] == "2026-05-01"
+    assert days[-1] == "2026-08-10"
     gap = {f"2026-06-{d:02d}" for d in range(12, 18)}
-    assert not (set(DEFAULT_DAYS) & gap)
-    assert 8 <= len(DEFAULT_DAYS) <= 16
-    # sanitizer drops the known gap and out-of-range dates
+    assert not (set(days) & gap)
+    assert len(days) >= 90
+    # default prepare window is this continuous set
+    assert DEFAULT_DAYS[0] == "2026-05-01"
+    assert len(DEFAULT_DAYS) == len(days)
     cleaned = _sanitize_days(["2026-02-01", "2026-06-14", "2026-05-14", "2026-09-01"])
     assert cleaned == ["2026-05-14"]
+    assert 8 <= len(SPARSE_DAYS) <= 16
 
 
-def test_token_universe_phase2_size():
+def test_token_universe_seed_size():
     assert 15 <= len(YES_TOKENS) <= 25
     # phase-1 seeds still present
     assert "iran" in {v["slug_key"] for v in YES_TOKENS.values()}

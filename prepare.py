@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-Fixed data preparation — sparse-day L2 from HuggingFace Joseph3222/polymarket-orderbook
+Fixed data preparation — day-by-day L2 from HuggingFace Joseph3222/polymarket-orderbook
 (orderbook_1min only). Does NOT download the raw TB-scale orderbook stream.
 
-Downloads selected UTC day files (~0.5–2.5GB each), DuckDB-filters to a curated
-YES-token universe (~15–25 outcomes), writes slim caches under data/, then deletes
-full day files AND the HuggingFace hub cache so peak disk stays well under 10GB.
+Default mode is CONTINUOUS calendar days from 2026-05-01 through 2026-08-10
+(archive start 2026-02-22, skip Jun 12–17, archive end 2026-08-10). Each UTC
+day file (~0.5–2.5GB) is downloaded alone, DuckDB-filtered to the reward-token
+allowlist, written to data/slim_days/, then the raw file AND the HuggingFace
+hub cache are deleted. Never keep more than ~1–2 raw days on disk.
 
-This is sparse-day sampling across Feb–Aug 2026 — NOT continuous L2.
-Archive starts 2026-02-22, skips Jun 12–17, ends 2026-08-10.
+This is continuous-within-archive, not live trading, and not the TB raw stream.
 """
 
 from __future__ import annotations
@@ -18,7 +19,7 @@ import hashlib
 import json
 import os
 import shutil
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -32,6 +33,7 @@ DATA = ROOT / "data"
 RAW = DATA / "raw_hf"
 SLIM = DATA / "slim_days"
 UNIVERSE_PATH = SLIM / "universe.json"
+REWARD_UNIVERSE = DATA / "reward_universe.json"
 GAMMA = "https://gamma-api.polymarket.com"
 
 HF_REPO = "Joseph3222/polymarket-orderbook"
@@ -41,10 +43,33 @@ HF_CONFIG_PREFIX = "orderbook_1min"
 os.environ.setdefault("HF_HOME", str(RAW / "hf_home"))
 os.environ.setdefault("HF_HUB_CACHE", str(RAW / "hub_cache"))
 
-# Prefer more days over denser hours. Sizes chosen so the sum of raw day files
-# is ~9.8GB (under the 10GB download+cache budget). Skip Jun 12–17 (missing).
-# Replaced huge 2026-08-06 (~2.5GB) with archive-end 2026-08-10 (~0.12GB).
-DEFAULT_DAYS = [
+ARCHIVE_START = "2026-02-22"
+ARCHIVE_END = "2026-08-10"
+CONTINUOUS_START = "2026-05-01"
+CONTINUOUS_END = ARCHIVE_END
+GAP_DAYS = {f"2026-06-{d:02d}" for d in range(12, 18)}
+
+# Hard cap on RAW day files only (slim caches may grow). Abort if more than
+# ~2 raw ~2.5GB days are sitting on disk — hygiene bug, not a slim-size issue.
+MAX_RAW_GB = 6.0
+
+
+def continuous_days(start: str = CONTINUOUS_START, end: str = CONTINUOUS_END) -> list[str]:
+    """Every UTC archive day in [start, end], skipping the known Jun 12–17 gap."""
+    cur = datetime.strptime(start, "%Y-%m-%d")
+    last = datetime.strptime(end, "%Y-%m-%d")
+    out: list[str] = []
+    while cur <= last:
+        s = cur.strftime("%Y-%m-%d")
+        if s not in GAP_DAYS and ARCHIVE_START <= s <= ARCHIVE_END:
+            out.append(s)
+        cur += timedelta(days=1)
+    return out
+
+
+# Default = continuous May→Aug window (not sparse). --sparse keeps the old 11-day set.
+DEFAULT_DAYS = continuous_days()
+SPARSE_DAYS = [
     "2026-02-22",
     "2026-03-08",
     "2026-03-29",
@@ -57,9 +82,6 @@ DEFAULT_DAYS = [
     "2026-07-20",
     "2026-08-10",
 ]
-
-# Hard cap on raw+cache footprint while a day is on disk.
-MAX_DATA_GB = 10.0
 
 # YES token asset_ids. Phase-1 seed (Fed Sep + Iran + Trump) plus phase-2
 # Gamma-discovered high rewardsDailyRate / liquid names that were listed
@@ -359,6 +381,26 @@ def discover_extra_tokens(seed: dict[str, dict], max_tokens: int = 25) -> dict[s
     return out
 
 
+def load_reward_universe(path: Path | None = None) -> dict[str, dict]:
+    path = path or REWARD_UNIVERSE
+    if not path.exists():
+        return {}
+    blob = json.loads(path.read_text())
+    spec = blob.get("yes_tokens") or blob
+    if not isinstance(spec, dict):
+        return {}
+    print(f"[prepare] loaded {len(spec)} tokens from {path.name}")
+    return spec
+
+
+def merge_token_specs(*specs: dict[str, dict]) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for spec in specs:
+        for yes, meta in spec.items():
+            out[str(yes)] = dict(meta)
+    return out
+
+
 def universe_hash(yes_tokens: list[str]) -> str:
     blob = ",".join(sorted(yes_tokens)).encode()
     return hashlib.sha256(blob).hexdigest()[:16]
@@ -398,6 +440,19 @@ def data_dir_gb() -> float:
     return total / 1e9
 
 
+def raw_dir_gb() -> float:
+    total = 0
+    if not RAW.exists():
+        return 0.0
+    for p in RAW.rglob("*"):
+        if p.is_file():
+            try:
+                total += p.stat().st_size
+            except OSError:
+                pass
+    return total / 1e9
+
+
 def cleanup_raw() -> None:
     if RAW.exists():
         shutil.rmtree(RAW, ignore_errors=True)
@@ -405,10 +460,16 @@ def cleanup_raw() -> None:
 
 def download_day(day: str) -> Path:
     RAW.mkdir(parents=True, exist_ok=True)
-    used = data_dir_gb()
-    if used > MAX_DATA_GB:
-        raise SystemExit(f"[prepare] data/ already {used:.2f} GB > {MAX_DATA_GB} GB budget")
-    print(f"[prepare] downloading HF orderbook_1min date={day} (data/ {used:.2f} GB) ...")
+    raw_used = raw_dir_gb()
+    if raw_used > MAX_RAW_GB:
+        raise SystemExit(
+            f"[prepare] raw_hf already {raw_used:.2f} GB > {MAX_RAW_GB} GB "
+            "(hygiene bug: delete raw before the next day)"
+        )
+    print(
+        f"[prepare] downloading HF orderbook_1min date={day} "
+        f"(raw={raw_used:.2f} GB slim+data={data_dir_gb():.2f} GB) ..."
+    )
     kwargs: dict[str, Any] = {
         "repo_id": HF_REPO,
         "repo_type": "dataset",
@@ -478,14 +539,13 @@ def filter_day(day_path: Path, day: str, yes_tokens: list[str], token_to_market:
         extra_select.append("spread AS spread")
     else:
         extra_select.append("NULL::DOUBLE AS spread")
-    if bids_col:
-        extra_select.append(f"{bids_col} AS bids_raw")
-    else:
-        extra_select.append("NULL AS bids_raw")
-    if asks_col:
-        extra_select.append(f"{asks_col} AS asks_raw")
-    else:
-        extra_select.append("NULL AS asks_raw")
+    # Skip full L2 JSON in slim (huge). Competition uses BBO tightness.
+    extra_select.append("NULL AS bids_raw")
+    extra_select.append("NULL AS asks_raw")
+    if "n_bid_levels" in cols:
+        extra_select.append("n_bid_levels AS n_bid_levels")
+    if "n_ask_levels" in cols:
+        extra_select.append("n_ask_levels AS n_ask_levels")
 
     sql = f"""
     COPY (
@@ -584,7 +644,12 @@ def competition_from_book(row: Any, max_spread_cents: float) -> float:
     return float(max(q, 50.0))
 
 
-def assemble_prices(slim_paths: list[Path], markets: list[dict]) -> pd.DataFrame:
+def assemble_prices(
+    slim_paths: list[Path],
+    markets: list[dict],
+    bar_minutes: int = 1,
+) -> pd.DataFrame:
+    """Vectorized assemble. Competition from BBO tightness (no per-row JSON parse)."""
     token_to_m = {m["yes_token"]: m for m in markets}
     frames = []
     for p in slim_paths:
@@ -598,53 +663,58 @@ def assemble_prices(slim_paths: list[Path], markets: list[dict]) -> pd.DataFrame
     if pd.api.types.is_datetime64_any_dtype(raw["ts"]):
         raw["ts"] = (raw["ts"].astype("int64") // 10**9).astype("int64")
     else:
-        # may be ms
         ts = raw["ts"].astype("int64")
         raw["ts"] = ts.where(ts < 10_000_000_000, ts // 1000)
 
-    rows = []
-    cols = list(raw.columns)
-    for r in raw.itertuples(index=False, name="Slim"):
-        rec = {c: getattr(r, c) for c in cols}
-        asset = str(rec["asset_id"])
-        m = token_to_m.get(asset)
-        if not m:
-            continue
-        mid = float(rec["mid"])
-        if not (0.0 < mid < 1.0):
-            continue
-        comp = competition_from_book(rec, float(m["rewards_max_spread"]))
-        bb = rec.get("best_bid")
-        ba = rec.get("best_ask")
-        rows.append(
-            {
-                "ts": int(rec["ts"]),
-                "market_id": m["market_id"],
-                "asset_id": asset,
-                "mid": mid,
-                "yes_mid": mid,
-                "no_mid": 1.0 - mid,
-                "best_bid": float(bb) if bb is not None and pd.notna(bb) else mid - 0.01,
-                "best_ask": float(ba) if ba is not None and pd.notna(ba) else mid + 0.01,
-                "competition_q": comp,
-            }
-        )
-    out = pd.DataFrame(rows)
-    if out.empty:
-        return out
+    raw["asset_id"] = raw["asset_id"].astype(str)
+    raw = raw[raw["asset_id"].isin(token_to_m)]
+    raw = raw[raw["mid"].astype(float).between(1e-6, 1.0 - 1e-6, inclusive="neither")]
+    if raw.empty:
+        return pd.DataFrame()
+
+    mid = raw["mid"].astype(float)
+    bb = raw["best_bid"] if "best_bid" in raw.columns else pd.Series(mid - 0.01, index=raw.index)
+    ba = raw["best_ask"] if "best_ask" in raw.columns else pd.Series(mid + 0.01, index=raw.index)
+    bb = bb.astype(float).where(bb.notna(), mid - 0.01)
+    ba = ba.astype(float).where(ba.notna(), mid + 0.01)
+
+    v = raw["asset_id"].map(lambda a: float(token_to_m[a]["rewards_max_spread"]))
+    spr_c = (ba - bb) * 100.0
+    half_c = spr_c * 0.5
+    tight = ((v - half_c).clip(lower=0.0) / v.clip(lower=1e-6)) ** 2 * 200.0
+    # 1–2¢ BBO ⇒ more resting competition
+    bump = 1.0 + 0.25 * ((2.0 - spr_c.clip(lower=0.0, upper=2.0)) / 2.0)
+    bump = bump.where((spr_c > 0) & (spr_c <= 2.0), 1.0)
+    comp = (tight * bump).clip(lower=50.0)
+
+    out = pd.DataFrame(
+        {
+            "ts": raw["ts"].astype("int64"),
+            "market_id": raw["asset_id"].map(lambda a: token_to_m[a]["market_id"]),
+            "asset_id": raw["asset_id"],
+            "mid": mid,
+            "yes_mid": mid,
+            "no_mid": 1.0 - mid,
+            "best_bid": bb,
+            "best_ask": ba,
+            "competition_q": comp,
+        }
+    )
+    bar = max(int(bar_minutes), 1)
+    if bar > 1:
+        out["ts"] = (out["ts"] // (bar * 60)) * (bar * 60)
     out = out.sort_values(["ts", "market_id"]).drop_duplicates(["ts", "market_id"], keep="last")
     return out.reset_index(drop=True)
 
 
 def _sanitize_days(days: list[str]) -> list[str]:
-    skip = {f"2026-06-{d:02d}" for d in range(12, 18)}
     out: list[str] = []
     for d in days:
-        if d in skip:
+        if d in GAP_DAYS:
             print(f"[prepare] skipping {d} (archive gap Jun 12–17)")
             continue
-        if d < "2026-02-22" or d > "2026-08-10":
-            print(f"[prepare] skipping {d} (outside archive 2026-02-22…2026-08-10)")
+        if d < ARCHIVE_START or d > ARCHIVE_END:
+            print(f"[prepare] skipping {d} (outside archive {ARCHIVE_START}…{ARCHIVE_END})")
             continue
         out.append(d)
     return out
@@ -656,12 +726,19 @@ def main() -> None:
         "--days",
         type=str,
         default="",
-        help="Comma-separated UTC days YYYY-MM-DD (default: curated sparse set)",
+        help="Comma-separated UTC days YYYY-MM-DD (default: continuous May–Aug)",
     )
+    ap.add_argument("--start", type=str, default="", help="Continuous window start YYYY-MM-DD")
+    ap.add_argument("--end", type=str, default="", help="Continuous window end YYYY-MM-DD")
     ap.add_argument(
         "--quick",
         action="store_true",
         help="Only two days (2026-05-14, 2026-07-20) for a fast first baseline",
+    )
+    ap.add_argument(
+        "--sparse",
+        action="store_true",
+        help="Use the old 11-day sparse set instead of continuous May–Aug",
     )
     ap.add_argument("--keep-raw", action="store_true", help="Keep full HF day files")
     ap.add_argument(
@@ -669,8 +746,19 @@ def main() -> None:
         action="store_true",
         help="Sweep Gamma for extra high-reward tokens (capped by --max-tokens)",
     )
-    ap.add_argument("--max-tokens", type=int, default=25)
+    ap.add_argument("--max-tokens", type=int, default=80)
     ap.add_argument("--force-refresh", action="store_true", help="Ignore slim caches")
+    ap.add_argument(
+        "--bar-minutes",
+        type=int,
+        default=1,
+        help="Downsample assembled prices to N-minute bars (slim stays 1-min)",
+    )
+    ap.add_argument(
+        "--no-universe-file",
+        action="store_true",
+        help="Ignore data/reward_universe.json and use only the seed YES_TOKENS",
+    )
     args = ap.parse_args()
 
     DATA.mkdir(parents=True, exist_ok=True)
@@ -679,14 +767,34 @@ def main() -> None:
         days = [d.strip() for d in args.days.split(",") if d.strip()]
     elif args.quick:
         days = ["2026-05-14", "2026-07-20"]
+    elif args.sparse:
+        days = list(SPARSE_DAYS)
+    elif args.start or args.end:
+        days = continuous_days(args.start or CONTINUOUS_START, args.end or CONTINUOUS_END)
     else:
         days = list(DEFAULT_DAYS)
     days = _sanitize_days(days)
 
-    print(f"[prepare] sparse days: {days}")
+    mode = "sparse_day_l2" if args.sparse or args.quick else "continuous_day_l2"
+    print(f"[prepare] mode={mode} days={len(days)} {days[0] if days else '?'} → {days[-1] if days else '?'}")
     spec = dict(YES_TOKENS)
+    if not args.no_universe_file:
+        spec = merge_token_specs(spec, load_reward_universe())
     if args.discover:
         spec = discover_extra_tokens(spec, max_tokens=int(args.max_tokens))
+    # Cap after merge so --max-tokens is respected
+    if len(spec) > int(args.max_tokens):
+        # keep seed first, then remaining by default_pool
+        seed_keys = set(YES_TOKENS)
+        extra = [(float(v.get("default_pool") or 0), k) for k, v in spec.items() if k not in seed_keys]
+        extra.sort(reverse=True)
+        keep = {k: spec[k] for k in YES_TOKENS if k in spec}
+        for _p, k in extra:
+            if len(keep) >= int(args.max_tokens):
+                break
+            keep[k] = spec[k]
+        spec = keep
+        print(f"[prepare] capped universe at {len(spec)} tokens")
     markets = fetch_market_meta(spec)
     print(f"[prepare] resolved {len(markets)} markets:")
     for m in markets:
@@ -720,7 +828,7 @@ def main() -> None:
                 print("[prepare]   deleting raw day + HF cache to free disk")
                 cleanup_raw()
 
-    prices = assemble_prices(slim_paths, markets)
+    prices = assemble_prices(slim_paths, markets, bar_minutes=int(args.bar_minutes))
     if prices.empty:
         raise SystemExit("No rows after filter — check tokens/days presence in archive")
 
@@ -741,10 +849,13 @@ def main() -> None:
 
     manifest = {
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "mode": "sparse_day_l2",
+        "mode": mode,
         "hf_repo": HF_REPO,
         "hf_config": HF_CONFIG_PREFIX,
         "days": days,
+        "bar_minutes": int(args.bar_minutes),
+        "window_start": days[0] if days else None,
+        "window_end": days[-1] if days else None,
         "start_ts": int(prices["ts"].min()),
         "end_ts": int(prices["ts"].max()),
         "start_iso": datetime.fromtimestamp(int(prices["ts"].min()), timezone.utc).isoformat(),
@@ -769,13 +880,14 @@ def main() -> None:
             "https://gamma-api.polymarket.com (reward params, metadata)",
         ],
         "notes": (
-            "SPARSE-DAY sampling (not continuous L2). "
-            f"{len(days)} UTC days from 2026-02-22 to 2026-08-10; Jun 12–17 missing in archive. "
-            "Full HF day files filtered to curated YES tokens then discarded with the HF cache. "
-            "Reward rates from current Gamma fields held constant over the window. "
-            "CLOB prices-history was NOT used (insufficient lookback overlap with archives)."
+            f"{mode}: {len(days)} UTC days {days[0] if days else ''}→{days[-1] if days else ''}; "
+            "Jun 12–17 missing in archive. One raw HF day at a time, DuckDB-filtered to the "
+            "reward-token allowlist, then raw+HF cache deleted. "
+            "Reward rates from current Gamma fields held constant; historical rates may differ. "
+            "Continuous-within-archive ≠ live trading. "
+            "CLOB prices-history was NOT used."
         ),
-        "phase": 2,
+        "phase": 3,
         "n_tokens_requested": len(yes_tokens),
         "dropped_no_l2": missing,
         "data_dir_gb": round(data_dir_gb(), 3),
