@@ -42,7 +42,7 @@ class Strategy:
 
 ## Search instructions (for the autoresearch agent)
 1. Read `strategy.py` and recent `results/experiments.jsonl`.
-2. Propose a small, focused change (spread, skew, size, reward targeting, inventory caps).
+2. Propose a small, focused change (spread, skew, size, reward targeting, inventory caps, `reward_spread_boost`).
 3. Edit only `strategy.py`.
 4. Run `python evaluate.py` and parse JSON metrics.
 5. If holdout_net_pnl improves AND max DD ≤ 25%: `git add strategy.py && git commit -m "..."`.
@@ -57,5 +57,7 @@ class Strategy:
 
 
 ## Data regime
-Sparse-day HuggingFace `orderbook_1min` L2 (Fed Sep + geopolitics). See README.
+Sparse-day HuggingFace `orderbook_1min` L2 (Fed Sep + geopolitics + phase-2
+high-reward Gamma names; ~11 UTC days from 2026-02-22 to 2026-08-10). See README.
 Do not switch prepare.py to multi-GB continuous downloads during search.
+Sparse ≠ continuous — do not claim live-trading readiness.

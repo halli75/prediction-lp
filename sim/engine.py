@@ -7,7 +7,14 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from sim.fills import OpenQuote, fills_from_mid_path, fills_from_trade
+from sim.fills import (
+    MAKER_FEE_BPS,
+    MAKER_REBATE_BPS,
+    OpenQuote,
+    fee_on_notional,
+    fills_from_mid_path,
+    fills_from_trade,
+)
 from sim.metrics import summarize
 from sim.portfolio import Portfolio
 from sim.rewards import QuoteScoreInput, q_min_for_quotes, sample_reward_usd
@@ -103,7 +110,18 @@ class BacktestEngine:
                 # 1) Fills against previous quotes using mid path
                 oq = open_quotes.get(market_id)
                 if oq is not None and market_id in prev_mid:
+                    # Aggressor on a bid hit is a SELL; on an ask lift a BUY.
+                    # Look-ahead mid move scales fill size (adverse selection).
+                    series = mid_series.get(market_id)
+                    adv_bid = self._adverse_boost(series, ts_i, "SELL", mid)
+                    adv_ask = self._adverse_boost(series, ts_i, "BUY", mid)
                     for fill in fills_from_mid_path(oq, prev_mid[market_id], mid):
+                        boost = adv_bid if fill.side == "buy_yes" else adv_ask
+                        cap = oq.bid_size if fill.side == "buy_yes" else oq.ask_size
+                        fill.size = min(cap, fill.size * float(boost))
+                        notional = fill.size * fill.price
+                        fill.fee = fee_on_notional(notional, MAKER_FEE_BPS)
+                        fill.rebate = fee_on_notional(notional, MAKER_REBATE_BPS)
                         self._apply_fill(port, market_id, fill)
                         n_fills += 1
 
@@ -126,6 +144,13 @@ class BacktestEngine:
                 row_comp = getattr(row, "competition_q", None)
                 if row_comp is not None and not (row_comp != row_comp):  # not NaN
                     competition_q = float(row_comp)
+                    # If we quote behind a tight BBO, treat the touch as extra Q
+                    bb = getattr(row, "best_bid", None)
+                    ba = getattr(row, "best_ask", None)
+                    if bb == bb and ba == ba and bb is not None and ba is not None:
+                        spr = float(ba) - float(bb)
+                        if 0 < spr <= 0.02:
+                            competition_q *= 1.15
                 else:
                     competition_q = float(
                         meta.get(

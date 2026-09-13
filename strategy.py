@@ -23,6 +23,8 @@ class Strategy:
         self.inv_soft_cap = float(cfg.get("inv_soft_cap", 349.1499659566903))
         # Minimum half-spread in price
         self.min_half_spread = float(cfg.get("min_half_spread", 0.01))
+        # When daily_reward_pool is large, tighten half-spread by this fraction
+        self.reward_spread_boost = float(cfg.get("reward_spread_boost", 0.0))
 
     def quote(self, state: dict) -> dict:
         mid = float(state["mid"])
@@ -38,6 +40,10 @@ class Strategy:
         # Half-spread inside the reward-eligible band
         max_half = (max_spread_cents / 100.0) * 0.95  # stay inside v
         half = max(self.min_half_spread, max_half * self.spread_frac)
+        pool = float(state.get("daily_reward_pool") or 0.0)
+        if self.reward_spread_boost > 0 and pool >= 150.0:
+            # Chase richer reward pools with a tighter (still eligible) quote
+            half *= max(0.55, 1.0 - self.reward_spread_boost)
 
         # Inventory skew: long YES -> lower quotes (encourage selling)
         skew = (self.skew_bps_per_share * net) / 10_000.0
