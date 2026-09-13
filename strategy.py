@@ -12,19 +12,19 @@ class Strategy:
     def __init__(self, config: dict | None = None):
         cfg = config or {}
         # Half-spread as fraction of rewards_max_spread (in price units, not cents)
-        self.spread_frac = float(cfg.get("spread_frac", 0.41112018249852267))
+        self.spread_frac = float(cfg.get("spread_frac", 0.39866877452602234))
         # Inventory skew strength (price shift per share of net YES exposure)
-        self.skew_bps_per_share = float(cfg.get("skew_bps_per_share", 0.028229670700551976))
+        self.skew_bps_per_share = float(cfg.get("skew_bps_per_share", 0.12663234560517625))
         # Target quote size as multiple of min_size
-        self.size_mult = float(cfg.get("size_mult", 2.7830035640301776))
+        self.size_mult = float(cfg.get("size_mult", 2.879938423192046))
         # Hard inventory cap (shares of YES-equivalent net)
         self.max_abs_inv = float(cfg.get("max_abs_inv", 800.0))
         # Stop quoting a side if inventory exceeds this
-        self.inv_soft_cap = float(cfg.get("inv_soft_cap", 414.1155121066232))
+        self.inv_soft_cap = float(cfg.get("inv_soft_cap", 501.5793883813594))
         # Minimum half-spread in price
         self.min_half_spread = float(cfg.get("min_half_spread", 0.01))
         # When daily_reward_pool is large, tighten half-spread by this fraction
-        self.reward_spread_boost = float(cfg.get("reward_spread_boost", 0.1319184422951412))
+        self.reward_spread_boost = float(cfg.get("reward_spread_boost", 0.2713209888825565))
 
     def quote(self, state: dict) -> dict:
         mid = float(state["mid"])
