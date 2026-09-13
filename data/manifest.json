@@ -1,21 +1,27 @@
 {
-  "created_at": "2026-09-13T03:53:13.353407+00:00",
+  "created_at": "2026-09-13T04:05:39.088978+00:00",
   "mode": "sparse_day_l2",
   "hf_repo": "Joseph3222/polymarket-orderbook",
   "hf_config": "orderbook_1min",
   "days": [
+    "2026-02-22",
+    "2026-03-08",
+    "2026-03-29",
+    "2026-04-05",
+    "2026-04-12",
     "2026-05-14",
     "2026-06-01",
+    "2026-06-18",
     "2026-06-25",
     "2026-07-20",
-    "2026-08-06"
+    "2026-08-10"
   ],
-  "start_ts": 1778716800,
-  "end_ts": 1786060740,
-  "start_iso": "2026-05-14T00:00:00+00:00",
-  "end_iso": "2026-08-06T23:59:00+00:00",
-  "n_markets": 7,
-  "n_price_rows": 46783,
+  "start_ts": 1771718400,
+  "end_ts": 1786322460,
+  "start_iso": "2026-02-22T00:00:00+00:00",
+  "end_iso": "2026-08-10T00:41:00+00:00",
+  "n_markets": 22,
+  "n_price_rows": 266936,
   "n_trade_rows": 0,
   "markets": [
     {
@@ -80,11 +86,150 @@
       "daily_reward_pool": 1.0,
       "rewards_min_size": 20.0,
       "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0xdbe93b5a701f36076a560fa4b9ba59e365a6e8e2ea6a83764640010657277ca4",
+      "slug_key": "eizenkot_pm",
+      "question": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
+      "yes_token": "52487256270918227930942830546248720603566203568229607048093730748840489555808",
+      "daily_reward_pool": 298.0,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 5.5
+    },
+    {
+      "market_id": "0x1a01bf78f56a507fcb666d564d8c8b91b0750679163ed6e96746102c9b7d285d",
+      "slug_key": "flavio_br",
+      "question": "Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
+      "yes_token": "109876868437950584369987384406356259939519193117253465815665152916226511121427",
+      "daily_reward_pool": 253.0,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 5.5
+    },
+    {
+      "market_id": "0xdf8e2dc5860027decbe6164555c3c1c9645c3bd33e16b9dc57ca87125047d4a8",
+      "slug_key": "lula_br",
+      "question": "Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
+      "yes_token": "30630994248667897740988010928640156931882346081873066002335460180076741328029",
+      "daily_reward_pool": 247.0,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 5.5
+    },
+    {
+      "market_id": "0x8126317d621047fb13d508a2651eecc8d38305904671822a62309c5aabd353aa",
+      "slug_key": "lepen_fr",
+      "question": "Will Marine Le Pen win the 2027 French presidential election?",
+      "yes_token": "55764212211467781322980371912612507865974994976253196346176314491480419639168",
+      "daily_reward_pool": 242.0,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 5.5
+    },
+    {
+      "market_id": "0xcd2640464754b9a894ffec98ac11554fdd507ea89ca01237eabb3a6de4a606e6",
+      "slug_key": "antonelli_f1",
+      "question": "Will Kimi Antonelli be the 2026 F1 Drivers' Champion?",
+      "yes_token": "32950178421556833525068948927823594772134813180063196823389171317494746105102",
+      "daily_reward_pool": 200.0,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0x46f2f457e14ee9021ebd0ef4c27eacd98fdceaf7f2938b484e2551e9e3275ae8",
+      "slug_key": "philippe_fr",
+      "question": "Will \u00c9douard Philippe win the 2027 French presidential election?",
+      "yes_token": "84846382165343032223975853870946110241285484772019446686866815597350660955868",
+      "daily_reward_pool": 186.0,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 5.5
+    },
+    {
+      "market_id": "0x7586a96520578acaaaa4ea84a2582f197f84255da1f3392a7aa300386c187b37",
+      "slug_key": "netanyahu_pm",
+      "question": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
+      "yes_token": "20006732765674855733524007935991362439352594042415161039767275461950712817548",
+      "daily_reward_pool": 172.0,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 5.5
+    },
+    {
+      "market_id": "0x12dc2b61723b2a54fc1947a307389b5f32038e7a29a0e936ad1fe410b969d06a",
+      "slug_key": "kane_ballon",
+      "question": "Will Harry Kane win the 2026 Ballon d'Or?",
+      "yes_token": "72710166409980712002774407052535905861151156175854323762835102340552522606004",
+      "daily_reward_pool": 131.0,
+      "rewards_min_size": 50.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0xd4e77ba6f29fc093509d24f508631abd445ecf506bbdc9c4c80e60256a318527",
+      "slug_key": "no_fed_cuts",
+      "question": "Will no Fed rate cuts happen in 2026?",
+      "yes_token": "12403602920039269077597917340921667997547115084613238528792639013246536343316",
+      "daily_reward_pool": 116.0,
+      "rewards_min_size": 50.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0x747dc809fb79e1b05be09c42d6179459a58de2ef3e40f02484a4e1260f741f75",
+      "slug_key": "aliens",
+      "question": "Will the US confirm that aliens exist before 2027?",
+      "yes_token": "107505882767731489358349912513945399560393482969656700824895970500493757150417",
+      "daily_reward_pool": 100.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 3.5
+    },
+    {
+      "market_id": "0x18b1c135d0a40c5894da9412e77311827d9caf16cf4cd6591b247a34730af919",
+      "slug_key": "vance_gop",
+      "question": "Will J.D. Vance win the 2028 Republican presidential nomination?",
+      "yes_token": "40081275558852222228080198821361202017557872256707631666334039001378518619916",
+      "daily_reward_pool": 79.0,
+      "rewards_min_size": 20.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0x6bd56627aa21311850825edb27e53434a0e17a4f782be0086bc07f71eee00d0d",
+      "slug_key": "putin_out",
+      "question": "Putin out as President of Russia by December 31, 2026?",
+      "yes_token": "350977769852917329387037893294763093471844346281449484439085576212613048126",
+      "daily_reward_pool": 70.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 3.5
+    },
+    {
+      "market_id": "0xbb4d51e6364066d92eb6f9b8413dd7193de70966736044463b205834805a1f3b",
+      "slug_key": "iran_regime",
+      "question": "Will the Iranian regime fall before 2027?",
+      "yes_token": "10991849228756847439673778874175365458450913336396982752046655649803657501964",
+      "daily_reward_pool": 70.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 3.5
+    },
+    {
+      "market_id": "0x5e082f0b57f47a29044aa35b4c5658393122e659d5feae521c06b57cdd7f905c",
+      "slug_key": "one_fed_cut",
+      "question": "Will 1 Fed rate cut happen in 2026?",
+      "yes_token": "113379839734351069617987084078322474966003108854908079701423911002443710490196",
+      "daily_reward_pool": 66.0,
+      "rewards_min_size": 50.0,
+      "rewards_max_spread": 4.5
+    },
+    {
+      "market_id": "0xd9fb1184af0064e5e34b129f5b79afa5a17b7e32f2953ab05efed82315fee6d4",
+      "slug_key": "china_taiwan",
+      "question": "Will China invade Taiwan by end of 2026?",
+      "yes_token": "94559586571241563470235664821564670251180951772614764383113614156422396181162",
+      "daily_reward_pool": 50.0,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 3.5
     }
   ],
   "data_sources": [
     "hf://datasets/Joseph3222/polymarket-orderbook/orderbook_1min/date=YYYY-MM-DD/data_0.parquet",
     "https://gamma-api.polymarket.com (reward params, metadata)"
   ],
-  "notes": "SPARSE-DAY sampling (not continuous 90-day L2). Full HF day files filtered to curated YES tokens then discarded. Reward rates from current Gamma fields held constant over the window. CLOB prices-history was NOT used for May\u2013Jul (insufficient lookback overlap)."
+  "notes": "SPARSE-DAY sampling (not continuous L2). 11 UTC days from 2026-02-22 to 2026-08-10; Jun 12\u201317 missing in archive. Full HF day files filtered to curated YES tokens then discarded with the HF cache. Reward rates from current Gamma fields held constant over the window. CLOB prices-history was NOT used (insufficient lookback overlap with archives).",
+  "phase": 2,
+  "n_tokens_requested": 22,
+  "dropped_no_l2": [],
+  "data_dir_gb": 0.039
 }

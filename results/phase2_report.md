@@ -1,6 +1,6 @@
 # Phase 2 report — market/day expansion + more autoresearch
 
-**Status:** harness expanded; full sparse-day cache + 30-iter search numbers are filled in after `prepare.py` / `evaluate.py` / `run_autoresearch.py` complete on this branch.
+**Status:** cache built and phase-2 baseline evaluated. 30-iter autoresearch numbers follow in the next commit on this branch.
 
 This is still **sparse-day sampling**, not continuous L2, and **not live-trading ready**.
 
@@ -27,17 +27,20 @@ Phase-2 additions (Gamma, high daily reward + volume/liquidity, listed before th
 
 Tokens with **zero** rows in the sampled days are dropped from `data/markets.json` (no free reward ticks).
 
-## Results (to be filled)
+## Results
 
-| Metric | Phase-1 best | Phase-2 new baseline | Phase-2 best keep |
-|--------|-------------:|---------------------:|------------------:|
-| holdout_net_pnl | $243.94 | TBD | TBD |
-| holdout max DD % of capital | 0.77% | TBD | TBD |
-| soft_reject | false | TBD | TBD |
-| n_markets / n_days / n_price_rows | 7 / 5 / 46,783 | TBD | — |
-| kept / discarded iters | 1 / 2 | — | TBD |
+| Metric | Phase-1 best (old cache) | Phase-2 new baseline | Phase-2 best keep |
+|--------|-------------------------:|---------------------:|------------------:|
+| holdout_net_pnl | $243.94 | **$424.34** | pending 30-iter search |
+| holdout max DD % of capital | 0.77% | **0.13%** | pending |
+| soft_reject | false | **false** | pending |
+| train_net_pnl | $2,099.47 | $1,429.66 | pending |
+| n_markets / n_days / n_price_rows | 7 / 5 / 46,783 | **22 / 11 / 266,936** | — |
+| held / discarded iters | 1 / 2 | — | pending |
 
-See `results/baseline_metrics.json` and `results/experiments.jsonl` after the run.
+Phase-1 and phase-2 PnL are **not** apples-to-apples (more days/tokens + harsher fills + 1 bp fee).
+
+See `results/baseline_metrics.json` and `results/experiments.jsonl`.
 
 ## Honest limitations
 
