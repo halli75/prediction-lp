@@ -42,9 +42,12 @@ class Strategy:
 
 ## Search instructions (for the autoresearch agent)
 1. Read `strategy.py` and recent `results/experiments.jsonl`.
-2. Propose a small, focused change (spread, skew, size, reward targeting, inventory caps).
+2. Propose a small, focused change (spread, skew, size, reward targeting, inventory caps,
+   `reward_spread_boost`, or the continuous defenses: `cancel_move`, `pause_secs`,
+   `near_mid_size_frac`, `portfolio_inv_cap`).
 3. Edit only `strategy.py`.
-4. Run `python evaluate.py` and parse JSON metrics.
+4. Prefer `python scripts/eval_sample.py --last-days 12` for fast iteration (cached
+   slice only; no download). Confirm keepers with one full `python evaluate.py`.
 5. If holdout_net_pnl improves AND max DD ≤ 25%: `git add strategy.py && git commit -m "..."`.
    Else: `git checkout -- strategy.py`.
 6. Append one JSON line to `results/experiments.jsonl`.
@@ -57,5 +60,7 @@ class Strategy:
 
 
 ## Data regime
-Sparse-day HuggingFace `orderbook_1min` L2 (Fed Sep + geopolitics). See README.
-Do not switch prepare.py to multi-GB continuous downloads during search.
+Continuous-within-archive HuggingFace `orderbook_1min` L2, May 1 → Aug 10 2026
+(skip Jun 12–17). Reward-token allowlist from Gamma `rewardsDailyRate` (~40–80 YES
+tokens). See README. prepare.py downloads **one raw day at a time** and deletes it.
+Do not download the TB raw stream. Continuous-within-archive ≠ live-trading ready.

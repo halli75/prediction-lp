@@ -3,5 +3,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/raw_hf/
+data/slim_days/universe.json
 *.egg-info/
 .DS_Store
+.hf_cache/

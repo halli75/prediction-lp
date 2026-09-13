@@ -1,0 +1,39 @@
+{
+  "sample_last_days": 12,
+  "days": ["2026-07-30", "2026-08-10"],
+  "note": "Fixed 12-day cached slice. No HF download. Used to iterate defenses; full evaluate.py is the keep metric.",
+  "iter38_keep": {
+    "holdout_net_pnl": 835.1133,
+    "holdout_max_drawdown_pct": 3.3281,
+    "holdout_trading_pnl": -292.6558,
+    "holdout_reward_pnl": 1129.3944,
+    "holdout_n_fills": 392,
+    "train_net_pnl": 1013.0949
+  },
+  "hardened_first_defaults": {
+    "holdout_net_pnl": 1100.7714,
+    "holdout_max_drawdown_pct": 0.613,
+    "holdout_trading_pnl": 462.2275,
+    "holdout_reward_pnl": 639.2508,
+    "note": "cancel_move=0.025, near_mid_size_frac=0.55, portfolio_inv_cap=4500"
+  },
+  "hardened_tuned": {
+    "holdout_net_pnl": 1600.8021,
+    "holdout_max_drawdown_pct": 1.5918,
+    "holdout_trading_pnl": 579.6083,
+    "holdout_reward_pnl": 1022.2903,
+    "train_net_pnl": 3717.1829,
+    "params": {
+      "cancel_move": 0.015,
+      "pause_secs": 900.0,
+      "near_mid_size_frac": 0.90,
+      "portfolio_inv_cap": 8000.0
+    }
+  },
+  "sweep_highlights": {
+    "no_cancel_holdout_net_pnl": 757.8069,
+    "hard_shrink_0.35_holdout_net_pnl": 753.6817,
+    "tight_port_2500_holdout_net_pnl": 976.4244,
+    "note": "cancel-on-move is load-bearing; aggressive shrink and a 2500 portfolio cap both hurt this sample."
+  }
+}

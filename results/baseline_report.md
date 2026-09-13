@@ -1,72 +1,60 @@
-# Baseline report — Polymarket LP autoresearch
+# Baseline report — continuous May–Aug 2026 (phase 3)
 
-Generated from a real `evaluate.py` run on the prepared sparse-day L2 cache.
+Generated from a real `evaluate.py` run on the **continuous-within-archive**
+`orderbook_1min` cache. **Not comparable** to the phase-1 $244 / phase-2 sparse
+$424 figures (different days, tokens, bars, and competition floor).
+
+**Not live-trading ready.**
 
 ## Data
 
 | Field | Value |
 |-------|--------|
-| Mode | `sparse_day_l2` (NOT continuous 90-day L2) |
+| Mode | `continuous_day_l2` |
 | Source | HuggingFace `Joseph3222/polymarket-orderbook` / `orderbook_1min` |
-| Sparse days | **2026-05-14, 2026-06-01, 2026-06-25, 2026-07-20, 2026-08-06** |
-| Calendar span | 2026-05-14 → 2026-08-06 (~3 months of calendar coverage, 5 sampled days) |
-| Price rows | 46,783 (1-min YES mids + BBO + L2-derived competition) |
-| Markets | 7 (see below) |
-| Cache size | slim days ≈ 4.2 MB (full day files deleted after DuckDB filter) |
-
-### Markets
-
-| Key | Question | Daily pool (Gamma current) | min size | max spread ¢ |
-|-----|----------|----------------------------|----------|--------------|
-| fed_m50 | Fed decrease 50+ bps Sep 2026 | $50 | 50 | 4.5 |
-| fed_m25 | Fed decrease 25 bps Sep 2026 | $100 | 200 | 4.5 |
-| fed_0 | Fed no change Sep 2026 | $1000 | 200 | 4.5 |
-| fed_p25 | Fed increase 25 bps Sep 2026 | $1000 | 200 | 4.5 |
-| fed_p50 | Fed increase 50+ bps Sep 2026 | $50 | 200 | 4.5 |
-| iran | US invade Iran before 2027 | $400 | 200 | 3.5 |
-| trump_out | Trump out as President before 2027 | $1 | 20 | 4.5 |
-
-Reward params are **current Gamma fields held constant**; historical daily rates may have differed.
-
-Event: `fed-decision-in-september-762`.
+| Window | **2026-05-01 → 2026-08-10** (96 UTC days) |
+| Gap | Jun 12–17 missing |
+| Price rows | 2,014,670 (5-min last-print; slim is 1-min) |
+| Markets | **79** YES tokens (Gamma top-reward allowlist; 1 requested name had no L2) |
+| Cache | slim ≈ 24.7 MB; raw day + HF cache deleted after each filter |
+| Train / holdout | 1,450,564 / 564,106 rows |
 
 ## Capital & split
 
 - Start capital: **$10,000**
-- Split: time-based **75% train / 25% holdout** on concatenated sparse timestamps
-- Soft-reject threshold: holdout max DD **> 25%** of capital
+- Time-based 75/25 on concatenated timestamps
+- Soft-reject: holdout max DD **> 25%** of capital
 
-## Baseline metrics (`strategy.py` defaults)
+## Baseline metrics
 
 | Metric | Train | Holdout |
 |--------|------:|--------:|
-| **Net PnL** | **+$1,751.50** | **+$223.15** |
-| End equity | $11,751.50 | $10,223.15 |
-| Max DD ($ / % of capital) | $105 / 1.05% | $19.65 / 0.20% |
-| Reward PnL | $1,467.96 | $34.87 |
-| Trading PnL | $283.54 | $188.29 |
-| Fees | $0 | $0 |
-| Fills | 121 | 6 |
+| **Net PnL** | **−$96.68** | **+$1,178.51** |
+| % of $10k | −0.97% | **+11.79%** |
+| End equity | $9,903.32 | $11,178.51 |
+| Max DD (% of capital) | 16.29% | 10.27% |
+| Reward PnL | — | $2,171.75 |
+| Trading PnL | — | −$982.76 |
+| Fees | — | $10.48 |
+| Fills | 2,807 | 2,412 |
 | Soft reject | — | **false** |
 
-Primary metric for autoresearch: **`holdout_net_pnl = 223.1549`**.
+Primary (pre-search): **`holdout_net_pnl = 1178.5084`**. Raw JSON: `results/baseline_metrics.json`.
 
-Raw JSON: `results/baseline_metrics.json`.
+After 40 keep/discard iters the kept `strategy.py` printed **holdout +$2,699.73 (+27.00% on $10k, DD 7.83%)**. Overnight adverse-selection defenses (cancel-on-move, pause-after-fill, mild near-mid size cut, portfolio cap) then printed **holdout +$4,674.63 (+46.75%, DD 7.00%)** on the same 96×79 cache. See `results/phase3_continuous_report.md`.
 
 ## How to reproduce
 
 ```bash
-source .venv/bin/activate
-python prepare.py          # or --quick for 2 days only
+python scripts/discover_reward_markets.py --max-tokens 80
+python prepare.py --bar-minutes 5
 python evaluate.py
-python scripts/run_autoresearch.py -n 5
+python scripts/run_autoresearch.py -n 40
 ```
 
-## Limitations (read this)
+## Limitations
 
-1. **Sparse days ≠ continuous replay.** Gaps between sample days (weeks) are not modeled as continuous inventory risk; timestamps are concatenated chronologically.
-2. **No claim of full 90-day L2.** Archives end 2026-08-10; Jun 12–17 missing; we sampled 5 days only.
-3. **Reward schedule is approximate** (current Gamma constants).
-4. **Fills** use mid-path crossing of resting quotes (+ adverse bias when trade tape present; tape empty on this HF path).
-5. **Competition** from observed L2 depth within max spread; simplified vs full multi-maker Q normalization.
-6. Maker fees ≈ 0 bps by assumption.
+Sparse-day claims are retired for this cache: this is **every archive day** in
+May–Aug except the known Jun 12–17 hole. It is still not live trading.
+Reward rates are current Gamma constants. Competition is BBO + exogenous floor
+(no full L2 JSON in slim). Evaluate clock is 5-min.
