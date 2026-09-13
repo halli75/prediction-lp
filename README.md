@@ -86,3 +86,4 @@ Primary metric: **`holdout_net_pnl`**. Soft-reject if holdout max drawdown **> 2
 - Jun 12–17 are missing; `2026-08-10` is a short stub.
 - If `--bar-minutes` > 1, the evaluate clock is coarser than the 1-min slim books.
 - Autoresearch mutates a hyperparameter grid, not open-ended code gen.
+- Current kept `strategy.py` (iter-38 params + overnight defenses) prints **holdout +$4,674.63 (+46.75% on $10k, DD 7.00%)** on the 96×79 cache. That is a **model number**, not live LP expectancy.

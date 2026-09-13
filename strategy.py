@@ -30,15 +30,15 @@ class Strategy:
         # When daily_reward_pool is large, tighten half-spread by this fraction
         self.reward_spread_boost = float(cfg.get("reward_spread_boost", 0.17184274218966544))
         # Cancel both sides if |Δmid| since last bar on this market exceeds this
-        self.cancel_move = float(cfg.get("cancel_move", 0.025))
+        self.cancel_move = float(cfg.get("cancel_move", 0.015))
         # After a fill, pause adding for this many seconds
         self.pause_secs = float(cfg.get("pause_secs", 900.0))
         # Size multiplier when half-spread is at or inside near_mid_half
-        self.near_mid_size_frac = float(cfg.get("near_mid_size_frac", 0.55))
+        self.near_mid_size_frac = float(cfg.get("near_mid_size_frac", 0.90))
         # Half-spread (price units) at/under which size is shrunk
         self.near_mid_half = float(cfg.get("near_mid_half", 0.02))
         # Sum of |net| across markets — stop adding when breached
-        self.portfolio_inv_cap = float(cfg.get("portfolio_inv_cap", 4500.0))
+        self.portfolio_inv_cap = float(cfg.get("portfolio_inv_cap", 8000.0))
         # Keep this fraction of starting capital as cash (don't bid it away)
         self.cash_reserve_frac = float(cfg.get("cash_reserve_frac", 0.12))
 

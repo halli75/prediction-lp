@@ -41,7 +41,7 @@ $424 figures (different days, tokens, bars, and competition floor).
 
 Primary (pre-search): **`holdout_net_pnl = 1178.5084`**. Raw JSON: `results/baseline_metrics.json`.
 
-After 40 keep/discard iters the kept `strategy.py` prints **holdout +$2,699.73 (+27.00% on $10k, DD 7.83%)**. See `results/phase3_continuous_report.md`.
+After 40 keep/discard iters the kept `strategy.py` printed **holdout +$2,699.73 (+27.00% on $10k, DD 7.83%)**. Overnight adverse-selection defenses (cancel-on-move, pause-after-fill, mild near-mid size cut, portfolio cap) then printed **holdout +$4,674.63 (+46.75%, DD 7.00%)** on the same 96×79 cache. See `results/phase3_continuous_report.md`.
 
 ## How to reproduce
 
