@@ -42,9 +42,12 @@ class Strategy:
 
 ## Search instructions (for the autoresearch agent)
 1. Read `strategy.py` and recent `results/experiments.jsonl`.
-2. Propose a small, focused change (spread, skew, size, reward targeting, inventory caps, `reward_spread_boost`).
+2. Propose a small, focused change (spread, skew, size, reward targeting, inventory caps,
+   `reward_spread_boost`, or the continuous defenses: `cancel_move`, `pause_secs`,
+   `near_mid_size_frac`, `portfolio_inv_cap`).
 3. Edit only `strategy.py`.
-4. Run `python evaluate.py` and parse JSON metrics.
+4. Prefer `python scripts/eval_sample.py --last-days 12` for fast iteration (cached
+   slice only; no download). Confirm keepers with one full `python evaluate.py`.
 5. If holdout_net_pnl improves AND max DD ≤ 25%: `git add strategy.py && git commit -m "..."`.
    Else: `git checkout -- strategy.py`.
 6. Append one JSON line to `results/experiments.jsonl`.

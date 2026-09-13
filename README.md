@@ -14,9 +14,13 @@ backtest. Starting capital **$10,000**. Kalshi is out of scope.
    One raw day at a time → DuckDB-filter to the reward-token allowlist → slim parquet
    → **delete raw day + HF cache immediately**. Never keep more than ~1–2 raw days.
 3. **`evaluate.py`** (fixed) runs train/holdout backtests and prints JSON metrics.
-4. **`strategy.py`** (editable) — two-sided quoting with inventory skew + optional
-   reward-pool spread tightening; autoresearch mutates it.
+4. **`strategy.py`** (editable) — two-sided quoting with inventory skew, reward-pool
+   spread tightening, and continuous-book defenses (inventory caps, cancel-on-move,
+   shrink size near mid, pause after fills). Autoresearch mutates it.
 5. **`scripts/run_autoresearch.py`** — keep/discard via git; logs `results/experiments.jsonl`.
+6. **`scripts/eval_sample.py`** — last-N-day slice of the cached `prices.parquet`
+   (default 12 days). No download. Use for sample-fast iteration; confirm with full
+   `evaluate.py`.
 
 This is **not** live-trading ready. Continuous-within-archive ≠ a live CLOB.
 
@@ -52,7 +56,8 @@ python scripts/discover_reward_markets.py --max-tokens 80
 # 2) Continuous May→Aug prepare (one day at a time; deletes raw)
 python prepare.py --bar-minutes 5
 
-# 3) Evaluate baseline
+# 3) Fast 12-day sample (cached parquet only) or full evaluate
+python scripts/eval_sample.py --last-days 12
 python evaluate.py
 
 # 4) Smoke tests (no network)
