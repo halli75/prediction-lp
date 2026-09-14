@@ -1,0 +1,7 @@
+{
+  "day_flatten": true,
+  "day_flatten_max_net": 8,
+  "min_daily_reward_pool": 110.0,
+  "overnight_quiet": true,
+  "overnight_mode": "reduce_only"
+}
