@@ -1,0 +1,119 @@
+{
+  "tag": "30d",
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/champions/strategy_current_best.py",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110
+  },
+  "days_file": "/workspace/polymarket-lp-autoresearch/research/window_30d_days.txt",
+  "n_days": 30,
+  "liveish": true,
+  "net_pnl": 1676.3353,
+  "reward_pnl": 1624.3207,
+  "trading_pnl": 52.0146,
+  "max_drawdown_pct": 0.4191,
+  "n_fills": 644,
+  "ledger_n_fills": 644,
+  "n_fills_match": true,
+  "n_round_trips": 620,
+  "n_closed": 602,
+  "n_open": 18,
+  "round_trip_gross_pnl_sum": -564.419,
+  "top_markets_by_fill_count": [
+    {
+      "market_question": "Bab el-Mandeb Strait effectively closed by September 30?",
+      "market_id_short": "0x95fc6a4e",
+      "n_fills": 174
+    },
+    {
+      "market_question": "Clarity Act (H.R.3633) signed into law in 2026?",
+      "market_id_short": "0x9cb23d04",
+      "n_fills": 169
+    },
+    {
+      "market_question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+      "market_id_short": "0xa3b36b2d",
+      "n_fills": 61
+    },
+    {
+      "market_question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+      "market_id_short": "0x876506d8",
+      "n_fills": 47
+    },
+    {
+      "market_question": "Iran leadership change by December 31?",
+      "market_id_short": "0x377e7fe6",
+      "n_fills": 43
+    },
+    {
+      "market_question": "Fed Rate Hike by October 2026 Meeting?",
+      "market_id_short": "0x059db22d",
+      "n_fills": 39
+    },
+    {
+      "market_question": "Bab el-Mandeb Strait effectively closed by December 31?",
+      "market_id_short": "0xd8659b58",
+      "n_fills": 18
+    },
+    {
+      "market_question": "Will another city host the final of the 2030 FIFA World Cup?",
+      "market_id_short": "0x07414b5c",
+      "n_fills": 10
+    },
+    {
+      "market_question": "Will Harry Kane win the 2026 Ballon d'Or?",
+      "market_id_short": "0x12dc2b61",
+      "n_fills": 9
+    },
+    {
+      "market_question": "Will Stephen Root \u2013 \u201cWidow\u2019s Bay\u201d win Emmys 2026: Outstanding supporting actor in a comedy series?",
+      "market_id_short": "0xbca22b54",
+      "n_fills": 6
+    }
+  ],
+  "top_markets_by_abs_pnl": [
+    {
+      "market_question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+      "gross_pnl_usd": -105.6451
+    },
+    {
+      "market_question": "Bab el-Mandeb Strait effectively closed by September 30?",
+      "gross_pnl_usd": -95.0339
+    },
+    {
+      "market_question": "Clarity Act (H.R.3633) signed into law in 2026?",
+      "gross_pnl_usd": -89.296
+    },
+    {
+      "market_question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+      "gross_pnl_usd": -71.4437
+    },
+    {
+      "market_question": "Iran leadership change by December 31?",
+      "gross_pnl_usd": -50.8446
+    },
+    {
+      "market_question": "Fed Rate Hike by October 2026 Meeting?",
+      "gross_pnl_usd": -49.2953
+    },
+    {
+      "market_question": "Bab el-Mandeb Strait effectively closed by December 31?",
+      "gross_pnl_usd": -40.9195
+    },
+    {
+      "market_question": "Will another city host the final of the 2030 FIFA World Cup?",
+      "gross_pnl_usd": -14.0086
+    },
+    {
+      "market_question": "Will the Sweden Democrats (SD) win the second most seats in the 2026 Swedish parliamentary election?",
+      "gross_pnl_usd": -13.4254
+    },
+    {
+      "market_question": "Will Oscar Isaac \u2013 \u201cBeef\u201d win Emmys 2026: Outstanding lead actor in a limited or anthology series or movie?",
+      "gross_pnl_usd": -11.3608
+    }
+  ],
+  "elapsed_sec": 189.815,
+  "expected_90d_net_pnl_approx": 2137.37
+}

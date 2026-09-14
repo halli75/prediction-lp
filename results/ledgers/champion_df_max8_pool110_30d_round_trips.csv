@@ -1,0 +1,621 @@
+trade_id,market_question,entry_time,exit_time,hold_hours,entry_side,exit_side,entry_price,exit_price,size,gross_pnl_usd,pnl_cents_per_share,entry_mid,exit_mid,status,exit_reason
+1,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-12T00:18:00+00:00,2026-07-13T00:07:00+00:00,23.8167,sell_yes,buy_yes,0.15,0.19,106.378,-4.2551,-4,0.155,0.155,closed,opposite_fill
+2,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-12T00:18:00+00:00,2026-07-13T09:49:00+00:00,33.5167,sell_yes,buy_yes,0.15,0.16,9.2952,-0.093,-1,0.155,0.14,closed,opposite_fill
+3,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T09:49:00+00:00,2026-07-13T09:51:00+00:00,0.0333,buy_yes,sell_yes,0.16,0.15,93.9848,-0.9398,-1,0.14,0.15,closed,opposite_fill
+4,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T09:51:00+00:00,2026-07-13T11:22:00+00:00,1.5167,sell_yes,buy_yes,0.15,0.16,9.2952,-0.093,-1,0.15,0.155,closed,opposite_fill
+5,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T11:22:00+00:00,2026-07-13T11:33:00+00:00,0.1833,buy_yes,sell_yes,0.16,0.16,93.9848,0,0,0.155,0.165,closed,opposite_fill
+6,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T11:33:00+00:00,2026-07-13T11:40:00+00:00,0.1167,sell_yes,buy_yes,0.16,0.17,12.3936,-0.1239,-1,0.165,0.17,closed,opposite_fill
+7,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T11:40:00+00:00,2026-07-13T11:41:00+00:00,0.0167,buy_yes,sell_yes,0.17,0.17,93.9848,0,0,0.17,0.175,closed,opposite_fill
+8,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T11:41:00+00:00,2026-07-13T11:42:00+00:00,0.0167,sell_yes,buy_yes,0.17,0.17,9.2952,0,0,0.175,0.165,closed,opposite_fill
+9,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T11:42:00+00:00,2026-07-13T12:08:00+00:00,0.4333,buy_yes,sell_yes,0.17,0.15,93.9848,-1.8797,-2,0.165,0.155,closed,opposite_fill
+10,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T12:08:00+00:00,2026-07-13T12:22:00+00:00,0.2333,sell_yes,buy_yes,0.15,0.15,9.2952,0,0,0.155,0.145,closed,opposite_fill
+11,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T12:22:00+00:00,2026-07-13T12:28:00+00:00,0.1,buy_yes,sell_yes,0.15,0.15,93.9848,0,0,0.145,0.15,closed,opposite_fill
+12,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T12:28:00+00:00,2026-07-13T12:46:00+00:00,0.3,sell_yes,buy_yes,0.15,0.16,9.2952,-0.093,-1,0.15,0.145,closed,opposite_fill
+13,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T12:46:00+00:00,2026-07-13T12:55:00+00:00,0.15,buy_yes,sell_yes,0.16,0.16,97.0832,0,0,0.145,0.165,closed,opposite_fill
+14,Iran leadership change by December 31?,2026-07-12T00:01:00+00:00,2026-07-13T14:38:00+00:00,38.6167,buy_yes,sell_yes,0.22,0.2,103.28,-2.0656,-2,0.17,0.21,closed,opposite_fill
+15,Iran leadership change by December 31?,2026-07-13T14:38:00+00:00,2026-07-13T14:42:00+00:00,0.0667,sell_yes,buy_yes,0.2,0.23,15.492,-0.4648,-3,0.21,0.23,closed,opposite_fill
+16,Iran leadership change by December 31?,2026-07-13T14:42:00+00:00,2026-07-13T14:43:00+00:00,0.0167,buy_yes,sell_yes,0.23,0.23,87.788,0,0,0.23,0.235,closed,opposite_fill
+17,Iran leadership change by December 31?,2026-07-13T14:43:00+00:00,2026-07-13T15:25:00+00:00,0.7,sell_yes,buy_yes,0.23,0.23,15.492,0,0,0.235,0.225,closed,opposite_fill
+18,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-13T14:15:00+00:00,2026-07-13T16:33:00+00:00,2.3,buy_yes,sell_yes,0.41,0.27,56.2876,-7.8803,-14,0.385,0.285,closed,opposite_fill
+19,Fed Rate Hike by October 2026 Meeting?,2026-07-13T06:41:00+00:00,2026-07-13T16:58:00+00:00,10.2833,sell_yes,buy_yes,0.57,0.69,103.28,-12.3936,-12,0.575,0.68,closed,opposite_fill
+20,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T12:55:00+00:00,2026-07-13T17:09:00+00:00,4.2333,sell_yes,buy_yes,0.16,0.2,9.2952,-0.3718,-4,0.165,0.175,closed,opposite_fill
+21,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T17:09:00+00:00,2026-07-13T17:14:00+00:00,0.0833,buy_yes,sell_yes,0.2,0.18,93.9848,-1.8797,-2,0.175,0.19,closed,opposite_fill
+22,Iran leadership change by December 31?,2026-07-13T15:25:00+00:00,2026-07-13T17:46:00+00:00,2.35,buy_yes,sell_yes,0.23,0.23,87.788,0,0,0.225,0.235,closed,opposite_fill
+23,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T17:14:00+00:00,2026-07-13T17:46:00+00:00,0.5333,sell_yes,buy_yes,0.18,0.19,9.2952,-0.093,-1,0.19,0.185,closed,opposite_fill
+24,Iran leadership change by December 31?,2026-07-13T17:46:00+00:00,2026-07-13T17:47:00+00:00,0.0167,sell_yes,buy_yes,0.23,0.23,15.492,0,0,0.235,0.23,closed,opposite_fill
+25,Iran leadership change by December 31?,2026-07-13T17:47:00+00:00,2026-07-13T18:41:00+00:00,0.9,buy_yes,sell_yes,0.23,0.23,87.788,0,0,0.23,0.245,closed,opposite_fill
+26,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-13T16:33:00+00:00,2026-07-13T18:41:00+00:00,2.1333,sell_yes,buy_yes,0.27,0.36,4.6476,-0.4183,-9,0.285,0.355,closed,opposite_fill
+27,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-13T16:47:00+00:00,2026-07-13T18:41:00+00:00,1.9,sell_yes,buy_yes,0.38,0.36,46.9924,0.9398,2,0.385,0.355,closed,opposite_fill
+28,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T17:46:00+00:00,2026-07-13T19:35:00+00:00,1.8167,buy_yes,sell_yes,0.19,0.17,93.9848,-1.8797,-2,0.185,0.18,closed,opposite_fill
+29,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T19:35:00+00:00,2026-07-13T19:45:00+00:00,0.1667,sell_yes,buy_yes,0.17,0.17,9.2952,0,0,0.18,0.17,closed,opposite_fill
+30,Iran leadership change by December 31?,2026-07-13T18:41:00+00:00,2026-07-13T19:46:00+00:00,1.0833,sell_yes,buy_yes,0.23,0.25,15.492,-0.3098,-2,0.245,0.245,closed,opposite_fill
+31,Iran leadership change by December 31?,2026-07-13T19:46:00+00:00,2026-07-13T19:47:00+00:00,0.0167,buy_yes,sell_yes,0.25,0.25,87.788,0,0,0.245,0.255,closed,opposite_fill
+32,Iran leadership change by December 31?,2026-07-13T19:47:00+00:00,2026-07-13T20:01:00+00:00,0.2333,sell_yes,buy_yes,0.25,0.25,15.492,0,0,0.255,0.245,closed,opposite_fill
+33,Fed Rate Hike by October 2026 Meeting?,2026-07-13T16:58:00+00:00,2026-07-13T20:03:00+00:00,3.0833,buy_yes,sell_yes,0.69,0.67,3.0984,-0.062,-2,0.68,0.68,closed,opposite_fill
+34,Fed Rate Hike by October 2026 Meeting?,2026-07-13T19:41:00+00:00,2026-07-13T20:03:00+00:00,0.3667,buy_yes,sell_yes,0.65,0.67,44.8235,0.8965,2,0.645,0.68,closed,opposite_fill
+35,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-13T19:10:00+00:00,2026-07-13T20:10:00+00:00,1,sell_yes,buy_yes,0.51,0.56,112.575,-5.6288,-5,0.52,0.555,closed,opposite_fill
+36,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T19:45:00+00:00,2026-07-13T20:11:00+00:00,0.4333,buy_yes,sell_yes,0.17,0.17,93.9848,0,0,0.17,0.175,closed,opposite_fill
+37,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T20:11:00+00:00,2026-07-13T20:15:00+00:00,0.0667,sell_yes,buy_yes,0.17,0.17,9.2952,0,0,0.175,0.17,closed,opposite_fill
+38,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T20:15:00+00:00,2026-07-13T20:16:00+00:00,0.0167,buy_yes,sell_yes,0.17,0.17,93.9848,0,0,0.17,0.175,closed,opposite_fill
+39,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T20:16:00+00:00,2026-07-13T20:23:00+00:00,0.1167,sell_yes,buy_yes,0.17,0.17,12.3936,0,0,0.175,0.165,closed,opposite_fill
+40,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-13T20:10:00+00:00,2026-07-13T20:26:00+00:00,0.2667,buy_yes,sell_yes,0.56,0.52,15.492,-0.6197,-4,0.555,0.53,closed,opposite_fill
+41,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T20:23:00+00:00,2026-07-13T20:26:00+00:00,0.05,buy_yes,sell_yes,0.17,0.17,90.8864,0,0,0.165,0.18,closed,opposite_fill
+42,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-13T17:12:00+00:00,2026-07-13T20:30:00+00:00,3.3,buy_yes,sell_yes,0.45,0.41,103.28,-4.1312,-4,0.445,0.415,closed,opposite_fill
+43,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T20:26:00+00:00,2026-07-13T21:01:00+00:00,0.5833,sell_yes,buy_yes,0.17,0.18,15.492,-0.1549,-1,0.18,0.175,closed,opposite_fill
+44,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-13T16:47:00+00:00,2026-07-13T21:53:00+00:00,5.1,sell_yes,buy_yes,0.38,0.36,7.746,0.1549,2,0.385,0.355,closed,opposite_fill
+45,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-13T20:26:00+00:00,2026-07-14T00:06:00+00:00,3.6667,sell_yes,buy_yes,0.52,0.5,35.3052,0.7061,2,0.53,0.495,closed,opposite_fill
+46,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-13T21:53:00+00:00,2026-07-14T00:10:00+00:00,2.2833,buy_yes,sell_yes,0.36,0.37,43.894,0.4389,1,0.355,0.375,closed,opposite_fill
+47,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T00:06:00+00:00,2026-07-14T00:58:00+00:00,0.8667,buy_yes,sell_yes,0.5,0.5,67.9748,0,0,0.495,0.525,closed,opposite_fill
+48,Will the Fed increase interest rates by 25 bps after the October 2026 meeting?,2026-07-13T16:07:00+00:00,2026-07-14T01:22:00+00:00,9.25,sell_yes,buy_yes,0.2,0.17,51.64,1.5492,3,0.205,0.17,closed,opposite_fill
+49,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-13T21:01:00+00:00,2026-07-14T01:51:00+00:00,4.8333,buy_yes,sell_yes,0.18,0.17,87.788,-0.8779,-1,0.175,0.175,closed,opposite_fill
+50,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T01:51:00+00:00,2026-07-14T02:03:00+00:00,0.2,sell_yes,buy_yes,0.17,0.17,15.492,0,0,0.175,0.165,closed,opposite_fill
+51,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T00:10:00+00:00,2026-07-14T02:26:00+00:00,2.2667,sell_yes,buy_yes,0.37,0.39,12.3936,-0.2479,-2,0.375,0.365,closed,opposite_fill
+52,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T02:26:00+00:00,2026-07-14T02:41:00+00:00,0.25,buy_yes,sell_yes,0.39,0.35,42.3448,-1.6938,-4,0.365,0.36,closed,opposite_fill
+53,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T02:03:00+00:00,2026-07-14T03:13:00+00:00,1.1667,buy_yes,sell_yes,0.17,0.17,87.788,0,0,0.165,0.175,closed,opposite_fill
+54,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T02:41:00+00:00,2026-07-14T03:20:00+00:00,0.65,sell_yes,buy_yes,0.35,0.37,9.2952,-0.1859,-2,0.36,0.365,closed,opposite_fill
+55,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T03:20:00+00:00,2026-07-14T03:57:00+00:00,0.6167,buy_yes,sell_yes,0.37,0.37,42.3448,0,0,0.365,0.375,closed,opposite_fill
+56,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T00:58:00+00:00,2026-07-14T05:41:00+00:00,4.7167,sell_yes,buy_yes,0.5,0.53,35.3052,-1.0592,-3,0.525,0.525,closed,opposite_fill
+57,Iran leadership change by December 31?,2026-07-13T20:01:00+00:00,2026-07-14T07:38:00+00:00,11.6167,buy_yes,sell_yes,0.25,0.23,87.788,-1.7558,-2,0.245,0.235,closed,opposite_fill
+58,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T03:57:00+00:00,2026-07-14T08:00:00+00:00,4.05,sell_yes,buy_yes,0.37,0.38,9.2952,-0.093,-1,0.375,0.375,closed,opposite_fill
+59,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T05:41:00+00:00,2026-07-14T08:13:00+00:00,2.5333,buy_yes,sell_yes,0.53,0.52,77.27,-0.7727,-1,0.525,0.525,closed,opposite_fill
+60,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T08:00:00+00:00,2026-07-14T10:49:00+00:00,2.8167,buy_yes,sell_yes,0.38,0.33,42.3448,-2.1172,-5,0.375,0.335,closed,opposite_fill
+61,Fed Rate Hike by October 2026 Meeting?,2026-07-13T19:41:00+00:00,2026-07-14T10:50:00+00:00,15.15,buy_yes,sell_yes,0.65,0.6,58.4565,-2.9228,-5,0.645,0.61,closed,opposite_fill
+62,Fed Rate Hike by October 2026 Meeting?,2026-07-14T10:50:00+00:00,2026-07-14T10:58:00+00:00,0.1333,sell_yes,buy_yes,0.6,0.61,51.0203,-0.5102,-1,0.61,0.595,closed,opposite_fill
+63,Fed Rate Hike by October 2026 Meeting?,2026-07-14T10:58:00+00:00,2026-07-14T11:03:00+00:00,0.0833,buy_yes,sell_yes,0.61,0.6,52.2597,-0.5226,-1,0.595,0.61,closed,opposite_fill
+64,Fed Rate Hike by October 2026 Meeting?,2026-07-14T11:03:00+00:00,2026-07-14T11:15:00+00:00,0.2,sell_yes,buy_yes,0.6,0.6,51.0203,0,0,0.61,0.59,closed,opposite_fill
+65,Iran leadership change by December 31?,2026-07-14T07:38:00+00:00,2026-07-14T11:18:00+00:00,3.6667,sell_yes,buy_yes,0.23,0.23,15.492,0,0,0.235,0.225,closed,opposite_fill
+66,Fed Rate Hike by October 2026 Meeting?,2026-07-14T11:15:00+00:00,2026-07-14T12:06:00+00:00,0.85,buy_yes,sell_yes,0.6,0.6,52.2597,0,0,0.59,0.605,closed,opposite_fill
+67,Fed Rate Hike by October 2026 Meeting?,2026-07-14T12:06:00+00:00,2026-07-14T12:30:00+00:00,0.4,sell_yes,buy_yes,0.6,0.62,57.2171,-1.1443,-2,0.605,0.615,closed,opposite_fill
+68,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T08:13:00+00:00,2026-07-14T12:30:00+00:00,4.2833,sell_yes,buy_yes,0.52,0.52,26.01,0,0,0.525,0.495,closed,opposite_fill
+69,Fed Rate Hike by October 2026 Meeting?,2026-07-14T12:30:00+00:00,2026-07-14T12:33:00+00:00,0.05,buy_yes,sell_yes,0.62,0.59,77.0469,-2.3114,-3,0.615,0.605,closed,opposite_fill
+70,Fed Rate Hike by October 2026 Meeting?,2026-07-14T12:33:00+00:00,2026-07-14T12:35:00+00:00,0.0333,sell_yes,buy_yes,0.59,0.6,26.2331,-0.2623,-1,0.605,0.565,closed,opposite_fill
+71,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T10:49:00+00:00,2026-07-14T12:38:00+00:00,1.8167,sell_yes,buy_yes,0.33,0.34,9.2952,-0.093,-1,0.335,0.34,closed,opposite_fill
+72,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T12:30:00+00:00,2026-07-14T12:40:00+00:00,0.1667,buy_yes,sell_yes,0.52,0.41,106.378,-11.7016,-11,0.495,0.415,closed,opposite_fill
+73,Fed Rate Hike by October 2026 Meeting?,2026-07-14T12:35:00+00:00,2026-07-14T12:41:00+00:00,0.1,buy_yes,sell_yes,0.6,0.55,89.4405,-4.472,-5,0.565,0.555,closed,opposite_fill
+74,Fed Rate Hike by October 2026 Meeting?,2026-07-14T12:41:00+00:00,2026-07-14T12:46:00+00:00,0.0833,sell_yes,buy_yes,0.55,0.55,13.8395,0,0,0.555,0.51,closed,opposite_fill
+75,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T12:30:00+00:00,2026-07-14T12:51:00+00:00,0.35,buy_yes,sell_yes,0.52,0.43,8.07236,-0.7265,-9,0.495,0.435,closed,opposite_fill
+76,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T03:13:00+00:00,2026-07-14T13:07:00+00:00,9.9,sell_yes,buy_yes,0.17,0.17,15.492,0,0,0.175,0.165,closed,opposite_fill
+77,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T12:51:00+00:00,2026-07-14T13:40:00+00:00,0.8167,sell_yes,buy_yes,0.43,0.42,95.2076,0.9521,1,0.435,0.415,closed,opposite_fill
+78,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T13:07:00+00:00,2026-07-14T13:52:00+00:00,0.75,buy_yes,sell_yes,0.17,0.17,87.788,0,0,0.165,0.175,closed,opposite_fill
+79,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T13:40:00+00:00,2026-07-14T14:00:00+00:00,0.3333,buy_yes,sell_yes,0.42,0.37,20.466,-1.0233,-5,0.415,0.375,closed,opposite_fill
+80,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T12:38:00+00:00,2026-07-14T14:04:00+00:00,1.4333,buy_yes,sell_yes,0.34,0.35,42.3448,0.4234,1,0.34,0.36,closed,opposite_fill
+81,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T13:52:00+00:00,2026-07-14T14:05:00+00:00,0.2167,sell_yes,buy_yes,0.17,0.17,15.492,0,0,0.175,0.17,closed,opposite_fill
+82,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T14:00:00+00:00,2026-07-14T14:08:00+00:00,0.1333,sell_yes,buy_yes,0.37,0.37,82.814,0,0,0.375,0.365,closed,opposite_fill
+83,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T14:05:00+00:00,2026-07-14T14:21:00+00:00,0.2667,buy_yes,sell_yes,0.17,0.17,90.8864,0,0,0.17,0.175,closed,opposite_fill
+84,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T14:08:00+00:00,2026-07-14T14:31:00+00:00,0.3833,buy_yes,sell_yes,0.37,0.34,20.466,-0.614,-3,0.365,0.36,closed,opposite_fill
+85,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T14:31:00+00:00,2026-07-14T14:35:00+00:00,0.0667,sell_yes,buy_yes,0.34,0.35,82.814,-0.8281,-1,0.36,0.335,closed,opposite_fill
+86,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T14:35:00+00:00,2026-07-14T14:36:00+00:00,0.0167,buy_yes,sell_yes,0.35,0.34,20.466,-0.2047,-1,0.335,0.345,closed,opposite_fill
+87,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T14:21:00+00:00,2026-07-14T15:11:00+00:00,0.8333,sell_yes,buy_yes,0.17,0.17,12.3936,0,0,0.175,0.165,closed,opposite_fill
+88,Fed Rate Hike by October 2026 Meeting?,2026-07-14T12:46:00+00:00,2026-07-14T16:12:00+00:00,3.4333,buy_yes,sell_yes,0.55,0.48,89.4405,-6.2608,-7,0.51,0.485,closed,opposite_fill
+89,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T14:04:00+00:00,2026-07-14T17:36:00+00:00,3.5333,sell_yes,buy_yes,0.35,0.37,12.3936,-0.2479,-2,0.36,0.365,closed,opposite_fill
+90,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T17:36:00+00:00,2026-07-14T18:32:00+00:00,0.9333,buy_yes,sell_yes,0.37,0.37,39.2464,0,0,0.365,0.385,closed,opposite_fill
+91,Fed Rate Hike by October 2026 Meeting?,2026-07-14T16:12:00+00:00,2026-07-14T18:41:00+00:00,2.4833,sell_yes,buy_yes,0.48,0.5,20.0363,-0.4007,-2,0.485,0.495,closed,opposite_fill
+92,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T18:32:00+00:00,2026-07-14T22:05:00+00:00,3.55,sell_yes,buy_yes,0.37,0.37,12.3936,0,0,0.385,0.365,closed,opposite_fill
+93,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T22:05:00+00:00,2026-07-14T22:08:00+00:00,0.05,buy_yes,sell_yes,0.37,0.37,39.2464,0,0,0.365,0.38,closed,opposite_fill
+94,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T22:08:00+00:00,2026-07-14T23:30:00+00:00,1.3667,sell_yes,buy_yes,0.37,0.37,12.3936,0,0,0.38,0.365,closed,opposite_fill
+95,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-14T15:11:00+00:00,2026-07-15T00:01:00+00:00,8.8333,buy_yes,sell_yes,0.17,0.16,90.8864,-0.9089,-1,0.165,0.36,closed,opposite_fill
+96,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-14T12:31:00+00:00,2026-07-15T00:13:00+00:00,11.7,sell_yes,buy_yes,0.46,0.57,103.28,-11.3608,-11,0.49,0.565,closed,opposite_fill
+97,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-14T23:30:00+00:00,2026-07-15T07:44:00+00:00,8.2333,buy_yes,sell_yes,0.37,0.37,39.2464,0,0,0.365,0.375,closed,opposite_fill
+98,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-14T14:36:00+00:00,2026-07-15T10:59:00+00:00,20.3833,sell_yes,buy_yes,0.34,0.36,89.0108,-1.7802,-2,0.345,0.345,closed,opposite_fill
+99,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-15T10:59:00+00:00,2026-07-15T11:31:00+00:00,0.5333,buy_yes,sell_yes,0.36,0.35,14.2692,-0.1427,-1,0.345,0.355,closed,opposite_fill
+100,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-14T12:31:00+00:00,2026-07-15T11:31:00+00:00,23,sell_yes,buy_yes,0.46,0.61,21.6888,-3.2533,-15,0.49,0.605,closed,opposite_fill
+101,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-15T00:01:00+00:00,2026-07-15T12:09:00+00:00,12.1333,sell_yes,buy_yes,0.16,0.15,12.3936,0.1239,1,0.36,0.145,closed,opposite_fill
+102,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-15T11:31:00+00:00,2026-07-15T12:32:00+00:00,1.0167,sell_yes,buy_yes,0.35,0.35,89.0108,0,0,0.355,0.34,closed,opposite_fill
+103,Will there be no change in Fed interest rates after the October 2026 meeting?,2026-07-14T12:44:00+00:00,2026-07-15T12:32:00+00:00,23.8,buy_yes,sell_yes,0.66,0.59,51.64,-3.6148,-7,0.655,0.595,closed,opposite_fill
+104,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-15T11:31:00+00:00,2026-07-15T12:43:00+00:00,1.2,buy_yes,sell_yes,0.61,0.61,81.5912,0,0,0.605,0.615,closed,opposite_fill
+105,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-15T12:09:00+00:00,2026-07-15T12:59:00+00:00,0.8333,buy_yes,sell_yes,0.15,0.15,90.8864,0,0,0.145,0.15,closed,opposite_fill
+106,Fed Rate Hike by October 2026 Meeting?,2026-07-14T18:41:00+00:00,2026-07-15T13:16:00+00:00,18.5833,buy_yes,sell_yes,0.5,0.46,83.2437,-3.3297,-4,0.495,0.465,closed,opposite_fill
+107,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-15T12:32:00+00:00,2026-07-15T16:01:00+00:00,3.4833,buy_yes,sell_yes,0.35,0.29,23.5644,-1.4139,-6,0.34,0.295,closed,opposite_fill
+108,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-15T16:01:00+00:00,2026-07-15T16:03:00+00:00,0.0333,sell_yes,buy_yes,0.29,0.29,79.7156,0,0,0.295,0.255,closed,opposite_fill
+109,Fed Rate Hike by October 2026 Meeting?,2026-07-15T13:16:00+00:00,2026-07-15T16:08:00+00:00,2.8667,sell_yes,buy_yes,0.46,0.46,20.0363,0,0,0.465,0.46,closed,opposite_fill
+110,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-15T12:43:00+00:00,2026-07-15T16:11:00+00:00,3.4667,sell_yes,buy_yes,0.61,0.7,21.6888,-1.952,-9,0.615,0.695,closed,opposite_fill
+111,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-15T16:11:00+00:00,2026-07-15T16:19:00+00:00,0.1333,buy_yes,sell_yes,0.7,0.68,87.788,-1.7558,-2,0.695,0.685,closed,opposite_fill
+112,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-15T16:03:00+00:00,2026-07-15T16:38:00+00:00,0.5833,buy_yes,sell_yes,0.29,0.27,23.5644,-0.4713,-2,0.255,0.275,closed,opposite_fill
+113,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-15T16:19:00+00:00,2026-07-15T16:38:00+00:00,0.3167,sell_yes,buy_yes,0.68,0.68,15.492,0,0,0.685,0.675,closed,opposite_fill
+114,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-15T07:44:00+00:00,2026-07-15T18:29:00+00:00,10.75,sell_yes,buy_yes,0.37,0.39,12.3936,-0.2479,-2,0.375,0.375,closed,opposite_fill
+115,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-15T18:29:00+00:00,2026-07-15T20:33:00+00:00,2.0667,buy_yes,sell_yes,0.39,0.38,39.2464,-0.3925,-1,0.375,0.39,closed,opposite_fill
+116,Iran leadership change by December 31?,2026-07-14T11:18:00+00:00,2026-07-16T00:00:00+00:00,36.7,buy_yes,sell_yes,0.23,0.21,87.788,-1.7558,-2,0.225,0.375,closed,opposite_fill
+117,Iran leadership change by December 31?,2026-07-16T00:00:00+00:00,2026-07-16T00:03:00+00:00,0.05,sell_yes,buy_yes,0.21,0.37,15.492,-2.4787,-16,0.375,0.2,closed,opposite_fill
+118,Will Spider-Man: Brand New Day be the top grossing movie of 2026?,2026-07-15T12:55:00+00:00,2026-07-16T00:04:00+00:00,11.15,buy_yes,sell_yes,0.68,0.72,25.82,1.0328,4,0.67,0.74,closed,opposite_fill
+119,Will Kate O’Flynn – “Widow’s Bay” win Emmys 2026: Outstanding supporting actress in a comedy series?,2026-07-15T14:02:00+00:00,2026-07-16T00:05:00+00:00,10.05,sell_yes,buy_yes,0.45,0.48,51.64,-1.5492,-3,0.464,0.4795,closed,opposite_fill
+120,Will Spider-Man: Brand New Day be the top grossing movie of 2026?,2026-07-15T13:43:00+00:00,2026-07-16T03:33:00+00:00,13.8333,buy_yes,sell_yes,0.66,0.75,25.82,2.3238,9,0.65,0.755,closed,opposite_fill
+121,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-15T12:59:00+00:00,2026-07-16T04:07:00+00:00,15.1333,sell_yes,buy_yes,0.15,0.17,12.3936,-0.2479,-2,0.15,0.17,closed,opposite_fill
+122,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T04:07:00+00:00,2026-07-16T04:15:00+00:00,0.1333,buy_yes,sell_yes,0.17,0.17,90.8864,0,0,0.17,0.175,closed,opposite_fill
+123,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T04:15:00+00:00,2026-07-16T04:19:00+00:00,0.0667,sell_yes,buy_yes,0.17,0.17,12.3936,0,0,0.175,0.17,closed,opposite_fill
+124,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T04:19:00+00:00,2026-07-16T04:29:00+00:00,0.1667,buy_yes,sell_yes,0.17,0.17,90.8864,0,0,0.17,0.175,closed,opposite_fill
+125,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-15T16:38:00+00:00,2026-07-16T04:31:00+00:00,11.8833,sell_yes,buy_yes,0.27,0.3,79.7156,-2.3915,-3,0.275,0.295,closed,opposite_fill
+126,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-15T16:38:00+00:00,2026-07-16T04:31:00+00:00,11.8833,buy_yes,sell_yes,0.68,0.65,87.788,-2.6336,-3,0.675,0.655,closed,opposite_fill
+127,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-15T20:33:00+00:00,2026-07-16T05:17:00+00:00,8.7333,sell_yes,buy_yes,0.38,0.38,12.3936,0,0,0.39,0.37,closed,opposite_fill
+128,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T04:29:00+00:00,2026-07-16T05:41:00+00:00,1.2,sell_yes,buy_yes,0.17,0.17,12.3936,0,0,0.175,0.17,closed,opposite_fill
+129,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T05:41:00+00:00,2026-07-16T07:05:00+00:00,1.4,buy_yes,sell_yes,0.17,0.17,90.8864,0,0,0.17,0.175,closed,opposite_fill
+130,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T07:05:00+00:00,2026-07-16T07:44:00+00:00,0.65,sell_yes,buy_yes,0.17,0.17,12.3936,0,0,0.175,0.17,closed,opposite_fill
+131,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-16T05:17:00+00:00,2026-07-16T09:11:00+00:00,3.9,buy_yes,sell_yes,0.38,0.35,40.7956,-1.2239,-3,0.37,0.355,closed,opposite_fill
+132,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-16T09:11:00+00:00,2026-07-16T09:59:00+00:00,0.8,sell_yes,buy_yes,0.35,0.35,10.8444,0,0,0.355,0.345,closed,opposite_fill
+133,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-16T09:59:00+00:00,2026-07-16T10:03:00+00:00,0.0667,buy_yes,sell_yes,0.35,0.35,40.7956,0,0,0.345,0.355,closed,opposite_fill
+134,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T07:44:00+00:00,2026-07-16T10:07:00+00:00,2.3833,buy_yes,sell_yes,0.17,0.16,90.8864,-0.9089,-1,0.17,0.165,closed,opposite_fill
+135,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-16T10:03:00+00:00,2026-07-16T10:18:00+00:00,0.25,sell_yes,buy_yes,0.35,0.35,10.8444,0,0,0.355,0.345,closed,opposite_fill
+136,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-16T10:18:00+00:00,2026-07-16T10:19:00+00:00,0.0167,buy_yes,sell_yes,0.35,0.35,40.7956,0,0,0.345,0.355,closed,opposite_fill
+137,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T10:07:00+00:00,2026-07-16T11:31:00+00:00,1.4,sell_yes,buy_yes,0.16,0.17,12.3936,-0.1239,-1,0.165,0.17,closed,opposite_fill
+138,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T11:31:00+00:00,2026-07-16T11:50:00+00:00,0.3167,buy_yes,sell_yes,0.17,0.17,90.8864,0,0,0.17,0.185,closed,opposite_fill
+139,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T11:50:00+00:00,2026-07-16T11:51:00+00:00,0.0167,sell_yes,buy_yes,0.17,0.18,15.492,-0.1549,-1,0.185,0.175,closed,opposite_fill
+140,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T11:51:00+00:00,2026-07-16T11:52:00+00:00,0.0167,buy_yes,sell_yes,0.18,0.18,87.788,0,0,0.175,0.19,closed,opposite_fill
+141,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-16T04:31:00+00:00,2026-07-16T12:08:00+00:00,7.6167,buy_yes,sell_yes,0.3,0.28,23.5644,-0.4713,-2,0.295,0.285,closed,opposite_fill
+142,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T11:52:00+00:00,2026-07-16T12:25:00+00:00,0.55,sell_yes,buy_yes,0.18,0.21,18.5904,-0.5577,-3,0.19,0.205,closed,opposite_fill
+143,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T12:25:00+00:00,2026-07-16T12:27:00+00:00,0.0333,buy_yes,sell_yes,0.21,0.21,84.6896,0,0,0.205,0.23,closed,opposite_fill
+144,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T12:27:00+00:00,2026-07-16T12:34:00+00:00,0.1167,sell_yes,buy_yes,0.21,0.22,18.5904,-0.1859,-1,0.23,0.21,closed,opposite_fill
+145,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-16T04:31:00+00:00,2026-07-16T13:02:00+00:00,8.5167,sell_yes,buy_yes,0.65,0.66,15.492,-0.1549,-1,0.655,0.655,closed,opposite_fill
+146,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T12:34:00+00:00,2026-07-16T13:23:00+00:00,0.8167,buy_yes,sell_yes,0.22,0.21,84.6896,-0.8469,-1,0.21,0.21,closed,opposite_fill
+147,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-16T12:08:00+00:00,2026-07-16T20:04:00+00:00,7.9333,sell_yes,buy_yes,0.28,0.33,79.7156,-3.9858,-5,0.285,0.325,closed,opposite_fill
+148,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T13:23:00+00:00,2026-07-16T20:15:00+00:00,6.8667,sell_yes,buy_yes,0.21,0.21,18.5904,0,0,0.21,0.205,closed,opposite_fill
+149,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T20:15:00+00:00,2026-07-16T20:17:00+00:00,0.0333,buy_yes,sell_yes,0.21,0.21,84.6896,0,0,0.205,0.21,closed,opposite_fill
+150,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T20:17:00+00:00,2026-07-16T20:40:00+00:00,0.3833,sell_yes,buy_yes,0.21,0.21,18.5904,0,0,0.21,0.205,closed,opposite_fill
+151,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T20:40:00+00:00,2026-07-16T22:05:00+00:00,1.4167,buy_yes,sell_yes,0.21,0.21,84.6896,0,0,0.205,0.215,closed,opposite_fill
+152,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-16T10:19:00+00:00,2026-07-16T22:27:00+00:00,12.1333,sell_yes,buy_yes,0.35,0.44,10.8444,-0.976,-9,0.355,0.435,closed,opposite_fill
+153,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-16T22:27:00+00:00,2026-07-17T00:00:00+00:00,1.55,buy_yes,sell_yes,0.44,0.42,42.3448,-0.8469,-2,0.435,0.455,closed,opposite_fill
+154,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-16T22:05:00+00:00,2026-07-17T00:04:00+00:00,1.9833,sell_yes,buy_yes,0.21,0.26,18.5904,-0.9295,-5,0.215,0.23,closed,opposite_fill
+155,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-17T00:00:00+00:00,2026-07-17T00:37:00+00:00,0.6167,sell_yes,buy_yes,0.42,0.41,9.2952,0.093,1,0.455,0.405,closed,opposite_fill
+156,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-17T00:37:00+00:00,2026-07-17T00:39:00+00:00,0.0333,buy_yes,sell_yes,0.41,0.41,46.9924,0,0,0.405,0.41,closed,opposite_fill
+157,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T00:04:00+00:00,2026-07-17T00:56:00+00:00,0.8667,buy_yes,sell_yes,0.26,0.23,84.6896,-2.5407,-3,0.23,0.235,closed,opposite_fill
+158,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T00:56:00+00:00,2026-07-17T00:59:00+00:00,0.05,sell_yes,buy_yes,0.23,0.23,18.5904,0,0,0.235,0.23,closed,opposite_fill
+159,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T00:59:00+00:00,2026-07-17T01:03:00+00:00,0.0667,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.235,closed,opposite_fill
+160,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:03:00+00:00,2026-07-17T01:05:00+00:00,0.0333,sell_yes,buy_yes,0.23,0.23,18.5904,0,0,0.235,0.23,closed,opposite_fill
+161,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:05:00+00:00,2026-07-17T01:09:00+00:00,0.0667,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.235,closed,opposite_fill
+162,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:09:00+00:00,2026-07-17T01:11:00+00:00,0.0333,sell_yes,buy_yes,0.23,0.23,18.5904,0,0,0.235,0.23,closed,opposite_fill
+163,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:11:00+00:00,2026-07-17T01:15:00+00:00,0.0667,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.235,closed,opposite_fill
+164,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:15:00+00:00,2026-07-17T01:19:00+00:00,0.0667,sell_yes,buy_yes,0.23,0.23,18.5904,0,0,0.235,0.23,closed,opposite_fill
+165,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:19:00+00:00,2026-07-17T01:23:00+00:00,0.0667,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.235,closed,opposite_fill
+166,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:23:00+00:00,2026-07-17T01:24:00+00:00,0.0167,sell_yes,buy_yes,0.23,0.23,18.5904,0,0,0.235,0.23,closed,opposite_fill
+167,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:24:00+00:00,2026-07-17T01:25:00+00:00,0.0167,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.235,closed,opposite_fill
+168,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:25:00+00:00,2026-07-17T01:27:00+00:00,0.0333,sell_yes,buy_yes,0.23,0.23,18.5904,0,0,0.235,0.23,closed,opposite_fill
+169,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:27:00+00:00,2026-07-17T01:31:00+00:00,0.0667,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.235,closed,opposite_fill
+170,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:31:00+00:00,2026-07-17T01:34:00+00:00,0.05,sell_yes,buy_yes,0.23,0.23,18.5904,0,0,0.235,0.225,closed,opposite_fill
+171,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:34:00+00:00,2026-07-17T01:59:00+00:00,0.4167,buy_yes,sell_yes,0.23,0.22,90.8864,-0.9089,-1,0.225,0.23,closed,opposite_fill
+172,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T01:59:00+00:00,2026-07-17T02:47:00+00:00,0.8,sell_yes,buy_yes,0.22,0.23,12.3936,-0.1239,-1,0.23,0.225,closed,opposite_fill
+173,Will Kate O’Flynn – “Widow’s Bay” win Emmys 2026: Outstanding supporting actress in a comedy series?,2026-07-16T07:28:00+00:00,2026-07-17T05:25:00+00:00,21.95,sell_yes,buy_yes,0.62,0.55,51.64,3.6148,7,0.699,0.5255,closed,opposite_fill
+174,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T02:47:00+00:00,2026-07-17T09:04:00+00:00,6.2833,buy_yes,sell_yes,0.23,0.23,90.8864,0,0,0.225,0.265,closed,opposite_fill
+175,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T09:04:00+00:00,2026-07-17T09:35:00+00:00,0.5167,sell_yes,buy_yes,0.23,0.25,18.5904,-0.3718,-2,0.265,0.245,closed,opposite_fill
+176,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T09:35:00+00:00,2026-07-17T14:51:00+00:00,5.2667,buy_yes,sell_yes,0.25,0.22,84.6896,-2.5407,-3,0.245,0.225,closed,opposite_fill
+177,Fed Rate Hike by October 2026 Meeting?,2026-07-15T16:08:00+00:00,2026-07-17T16:57:00+00:00,48.8167,buy_yes,sell_yes,0.46,0.43,83.2437,-2.4973,-3,0.46,0.435,closed,opposite_fill
+178,Iran leadership change by December 31?,2026-07-16T00:03:00+00:00,2026-07-17T17:51:00+00:00,41.8,buy_yes,sell_yes,0.37,0.2,87.788,-14.924,-17,0.2,0.205,closed,opposite_fill
+179,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-16T20:04:00+00:00,2026-07-17T20:24:00+00:00,24.3333,buy_yes,sell_yes,0.33,0.35,23.5644,0.4713,2,0.325,0.355,closed,opposite_fill
+180,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-17T20:24:00+00:00,2026-07-17T20:25:00+00:00,0.0167,sell_yes,buy_yes,0.35,0.35,79.7156,0,0,0.355,0.345,closed,opposite_fill
+181,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-17T20:25:00+00:00,2026-07-17T20:36:00+00:00,0.1833,buy_yes,sell_yes,0.35,0.35,23.5644,0,0,0.345,0.355,closed,opposite_fill
+182,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-16T13:02:00+00:00,2026-07-17T20:50:00+00:00,31.8,buy_yes,sell_yes,0.66,0.6,87.788,-5.2673,-6,0.655,0.605,closed,opposite_fill
+183,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T14:51:00+00:00,2026-07-17T23:47:00+00:00,8.9333,sell_yes,buy_yes,0.22,0.23,18.5904,-0.1859,-1,0.225,0.23,closed,opposite_fill
+184,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T23:47:00+00:00,2026-07-17T23:48:00+00:00,0.0167,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.235,closed,opposite_fill
+185,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T23:48:00+00:00,2026-07-17T23:59:00+00:00,0.1833,sell_yes,buy_yes,0.23,0.23,21.6888,0,0,0.235,0.23,closed,opposite_fill
+186,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-17T20:50:00+00:00,2026-07-18T00:00:00+00:00,3.1667,sell_yes,buy_yes,0.6,0.6,15.492,0,0,0.605,0.595,closed,opposite_fill
+187,Strait of Hormuz traffic returns to normal by December 31?,2026-07-18T00:00:00+00:00,2026-07-18T00:01:00+00:00,0.0167,sell_yes,buy_yes,0.54,0.55,103.28,-1.0328,-1,0.555,0.53,closed,opposite_fill
+188,Will Ulf Kristersson be the next Prime Minister of Sweden?,2026-07-18T00:00:00+00:00,2026-07-18T00:01:00+00:00,0.0167,buy_yes,sell_yes,0.12,0.12,51.64,0,0,0.115,0.155,closed,opposite_fill
+189,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-17T23:59:00+00:00,2026-07-18T00:01:00+00:00,0.0333,buy_yes,sell_yes,0.23,0.23,81.5912,0,0,0.23,0.235,closed,opposite_fill
+190,Will “The Late Show With Stephen Colbert” win Emmys 2026: Outstanding variety series?,2026-07-18T00:00:00+00:00,2026-07-18T00:03:00+00:00,0.05,sell_yes,buy_yes,0.19,0.18,51.64,0.5164,1,0.2,0.145,closed,opposite_fill
+191,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-18T00:01:00+00:00,2026-07-18T00:08:00+00:00,0.1167,sell_yes,buy_yes,0.23,0.23,24.7872,0,0,0.235,0.23,closed,opposite_fill
+192,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-18T00:08:00+00:00,2026-07-18T00:25:00+00:00,0.2833,buy_yes,sell_yes,0.23,0.23,81.5912,0,0,0.23,0.24,closed,opposite_fill
+193,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-18T00:25:00+00:00,2026-07-18T08:40:00+00:00,8.25,sell_yes,buy_yes,0.23,0.23,21.6888,0,0,0.24,0.225,closed,opposite_fill
+194,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-18T08:40:00+00:00,2026-07-18T12:03:00+00:00,3.3833,buy_yes,sell_yes,0.23,0.23,81.5912,0,0,0.225,0.235,closed,opposite_fill
+195,Will the Fed increase interest rates by 25 bps after the October 2026 meeting?,2026-07-16T11:15:00+00:00,2026-07-19T00:00:00+00:00,60.75,buy_yes,sell_yes,0.21,0.19,51.64,-1.0328,-2,0.205,0.23,closed,opposite_fill
+196,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-18T12:03:00+00:00,2026-07-19T00:16:00+00:00,12.2167,sell_yes,buy_yes,0.23,0.25,21.6888,-0.4338,-2,0.235,0.245,closed,opposite_fill
+197,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-17T00:39:00+00:00,2026-07-19T02:40:00+00:00,50.0167,sell_yes,buy_yes,0.41,0.41,4.6476,0,0,0.41,0.395,closed,opposite_fill
+198,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-18T03:02:00+00:00,2026-07-19T02:40:00+00:00,23.6333,sell_yes,buy_yes,0.36,0.41,46.9924,-2.3496,-5,0.375,0.395,closed,opposite_fill
+199,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-17T20:36:00+00:00,2026-07-19T04:06:00+00:00,31.5,sell_yes,buy_yes,0.35,0.36,82.814,-0.8281,-1,0.355,0.355,closed,opposite_fill
+200,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T00:16:00+00:00,2026-07-19T04:34:00+00:00,4.3,buy_yes,sell_yes,0.25,0.24,84.6896,-0.8469,-1,0.245,0.245,closed,opposite_fill
+201,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T04:34:00+00:00,2026-07-19T07:55:00+00:00,3.35,sell_yes,buy_yes,0.24,0.23,18.5904,0.1859,1,0.245,0.23,closed,opposite_fill
+202,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T07:55:00+00:00,2026-07-19T08:13:00+00:00,0.3,buy_yes,sell_yes,0.23,0.23,84.6896,0,0,0.23,0.24,closed,opposite_fill
+203,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-18T03:02:00+00:00,2026-07-19T08:17:00+00:00,29.25,sell_yes,buy_yes,0.36,0.38,6.1968,-0.1239,-2,0.375,0.35,closed,opposite_fill
+204,Iran leadership change by December 31?,2026-07-17T17:51:00+00:00,2026-07-19T11:24:00+00:00,41.55,sell_yes,buy_yes,0.2,0.26,15.492,-0.9295,-6,0.205,0.255,closed,opposite_fill
+205,Iran leadership change by December 31?,2026-07-19T11:24:00+00:00,2026-07-19T13:50:00+00:00,2.4333,buy_yes,sell_yes,0.26,0.26,87.788,0,0,0.255,0.265,closed,opposite_fill
+206,Will there be no change in Fed interest rates after the October 2026 meeting?,2026-07-14T12:44:00+00:00,2026-07-19T15:19:00+00:00,122.583,buy_yes,sell_yes,0.66,0.6,3.0984,-0.1859,-6,0.655,0.6,closed,opposite_fill
+207,Will there be no change in Fed interest rates after the October 2026 meeting?,2026-07-19T15:07:00+00:00,2026-07-19T15:19:00+00:00,0.2,buy_yes,sell_yes,0.62,0.6,48.5416,-0.9708,-2,0.585,0.6,closed,opposite_fill
+208,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-18T00:00:00+00:00,2026-07-19T15:55:00+00:00,39.9167,buy_yes,sell_yes,0.6,0.59,87.788,-0.8779,-1,0.595,0.595,closed,opposite_fill
+209,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T08:13:00+00:00,2026-07-19T17:54:00+00:00,9.6833,sell_yes,buy_yes,0.23,0.24,18.5904,-0.1859,-1,0.24,0.235,closed,opposite_fill
+210,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T17:54:00+00:00,2026-07-19T17:58:00+00:00,0.0667,buy_yes,sell_yes,0.24,0.23,84.6896,-0.8469,-1,0.235,0.235,closed,opposite_fill
+211,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T17:58:00+00:00,2026-07-19T19:04:00+00:00,1.1,sell_yes,buy_yes,0.23,0.26,21.6888,-0.6507,-3,0.235,0.255,closed,opposite_fill
+212,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T19:04:00+00:00,2026-07-19T20:31:00+00:00,1.45,buy_yes,sell_yes,0.26,0.27,81.5912,0.8159,1,0.255,0.285,closed,opposite_fill
+213,Strait of Hormuz traffic returns to normal by December 31?,2026-07-18T00:01:00+00:00,2026-07-19T20:33:00+00:00,44.5333,buy_yes,sell_yes,0.55,0.54,6.1968,-0.062,-1,0.53,0.545,closed,opposite_fill
+214,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T20:31:00+00:00,2026-07-19T21:46:00+00:00,1.25,sell_yes,buy_yes,0.27,0.27,21.6888,0,0,0.285,0.265,closed,opposite_fill
+215,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-19T04:06:00+00:00,2026-07-19T22:25:00+00:00,18.3167,buy_yes,sell_yes,0.36,0.36,20.466,0,0,0.355,0.365,closed,opposite_fill
+216,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-19T21:44:00+00:00,2026-07-19T22:47:00+00:00,1.05,sell_yes,buy_yes,0.22,0.5,29.1508,-8.1622,-28,0.228,0.4865,closed,opposite_fill
+217,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-19T22:47:00+00:00,2026-07-19T22:54:00+00:00,0.1167,buy_yes,sell_yes,0.5,0.43,8.98536,-0.629,-7,0.4865,0.4345,closed,opposite_fill
+218,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-19T22:54:00+00:00,2026-07-19T23:01:00+00:00,0.1167,sell_yes,buy_yes,0.43,0.39,4.32495,0.173,4,0.4345,0.387,closed,opposite_fill
+219,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-19T15:55:00+00:00,2026-07-19T23:01:00+00:00,7.1,sell_yes,buy_yes,0.59,0.59,15.492,0,0,0.595,0.585,closed,opposite_fill
+220,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T21:46:00+00:00,2026-07-19T23:31:00+00:00,1.75,buy_yes,sell_yes,0.27,0.26,81.5912,-0.8159,-1,0.265,0.28,closed,opposite_fill
+221,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T23:31:00+00:00,2026-07-19T23:33:00+00:00,0.0333,sell_yes,buy_yes,0.26,0.26,21.6888,0,0,0.28,0.25,closed,opposite_fill
+222,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-19T23:01:00+00:00,2026-07-19T23:53:00+00:00,0.8667,buy_yes,sell_yes,0.39,0.43,7.65553,0.3062,4,0.387,0.438,closed,opposite_fill
+223,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-19T23:53:00+00:00,2026-07-19T23:56:00+00:00,0.05,sell_yes,buy_yes,0.43,0.41,11.9805,0.2396,2,0.438,0.405,closed,opposite_fill
+224,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-19T23:33:00+00:00,2026-07-20T00:00:00+00:00,0.45,buy_yes,sell_yes,0.26,0.25,81.5912,-0.8159,-1,0.25,0.33,closed,opposite_fill
+225,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-19T23:53:00+00:00,2026-07-20T00:08:00+00:00,0.25,sell_yes,buy_yes,0.43,0.44,6.18399,-0.0618,-1,0.438,0.4265,closed,opposite_fill
+226,Will “The Late Show With Stephen Colbert” win Emmys 2026: Outstanding variety series?,2026-07-19T00:02:00+00:00,2026-07-20T00:13:00+00:00,24.1833,buy_yes,sell_yes,0.15,0.15,51.64,0,0,0.145,0.15,closed,opposite_fill
+227,Strait of Hormuz traffic returns to normal by December 31?,2026-07-19T20:33:00+00:00,2026-07-20T05:48:00+00:00,9.25,sell_yes,buy_yes,0.54,0.52,100.182,2.0036,2,0.545,0.505,closed,opposite_fill
+228,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T00:00:00+00:00,2026-07-20T07:15:00+00:00,7.25,sell_yes,buy_yes,0.25,0.24,21.6888,0.2169,1,0.33,0.235,closed,opposite_fill
+229,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T07:15:00+00:00,2026-07-20T07:32:00+00:00,0.2833,buy_yes,sell_yes,0.24,0.23,81.5912,-0.8159,-1,0.235,0.235,closed,opposite_fill
+230,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T07:32:00+00:00,2026-07-20T07:55:00+00:00,0.3833,sell_yes,buy_yes,0.23,0.23,21.6888,0,0,0.235,0.18,closed,opposite_fill
+231,Iran leadership change by December 31?,2026-07-19T13:50:00+00:00,2026-07-20T07:56:00+00:00,18.1,sell_yes,buy_yes,0.26,0.26,15.492,0,0,0.265,0.255,closed,opposite_fill
+232,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T07:55:00+00:00,2026-07-20T08:08:00+00:00,0.2167,buy_yes,sell_yes,0.23,0.17,84.6896,-5.0814,-6,0.18,0.175,closed,opposite_fill
+233,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T08:08:00+00:00,2026-07-20T08:53:00+00:00,0.75,sell_yes,buy_yes,0.17,0.17,18.5904,0,0,0.175,0.17,closed,opposite_fill
+234,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T08:53:00+00:00,2026-07-20T08:54:00+00:00,0.0167,buy_yes,sell_yes,0.17,0.17,84.6896,0,0,0.17,0.175,closed,opposite_fill
+235,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T08:54:00+00:00,2026-07-20T08:55:00+00:00,0.0167,sell_yes,buy_yes,0.17,0.17,18.5904,0,0,0.175,0.17,closed,opposite_fill
+236,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T08:55:00+00:00,2026-07-20T08:59:00+00:00,0.0667,buy_yes,sell_yes,0.17,0.17,84.6896,0,0,0.17,0.175,closed,opposite_fill
+237,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T08:59:00+00:00,2026-07-20T09:01:00+00:00,0.0333,sell_yes,buy_yes,0.17,0.17,18.5904,0,0,0.175,0.17,closed,opposite_fill
+238,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T09:01:00+00:00,2026-07-20T09:51:00+00:00,0.8333,buy_yes,sell_yes,0.17,0.17,84.6896,0,0,0.17,0.175,closed,opposite_fill
+239,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T09:51:00+00:00,2026-07-20T09:53:00+00:00,0.0333,sell_yes,buy_yes,0.17,0.17,18.5904,0,0,0.175,0.17,closed,opposite_fill
+240,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T09:53:00+00:00,2026-07-20T12:01:00+00:00,2.1333,buy_yes,sell_yes,0.17,0.16,84.6896,-0.8469,-1,0.17,0.18,closed,opposite_fill
+241,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T12:01:00+00:00,2026-07-20T12:04:00+00:00,0.05,sell_yes,buy_yes,0.16,0.22,43.3776,-2.6027,-6,0.18,0.2,closed,opposite_fill
+242,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T12:04:00+00:00,2026-07-20T12:06:00+00:00,0.0333,buy_yes,sell_yes,0.22,0.21,59.9024,-0.599,-1,0.2,0.22,closed,opposite_fill
+243,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T12:06:00+00:00,2026-07-20T12:14:00+00:00,0.1333,sell_yes,buy_yes,0.21,0.23,52.6728,-1.0535,-2,0.22,0.23,closed,opposite_fill
+244,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T12:14:00+00:00,2026-07-20T12:20:00+00:00,0.1,buy_yes,sell_yes,0.23,0.22,59.9024,-0.599,-1,0.23,0.225,closed,opposite_fill
+245,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T12:20:00+00:00,2026-07-20T13:55:00+00:00,1.5833,sell_yes,buy_yes,0.22,0.23,46.476,-0.4648,-1,0.225,0.23,closed,opposite_fill
+246,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T13:55:00+00:00,2026-07-20T14:36:00+00:00,0.6833,buy_yes,sell_yes,0.23,0.21,56.804,-1.1361,-2,0.23,0.21,closed,opposite_fill
+247,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-19T23:01:00+00:00,2026-07-20T16:48:00+00:00,17.7833,buy_yes,sell_yes,0.59,0.54,87.788,-4.3894,-5,0.585,0.545,closed,opposite_fill
+248,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-20T16:48:00+00:00,2026-07-20T16:49:00+00:00,0.0167,sell_yes,buy_yes,0.54,0.54,15.492,0,0,0.545,0.535,closed,opposite_fill
+249,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-20T16:49:00+00:00,2026-07-20T16:50:00+00:00,0.0167,buy_yes,sell_yes,0.54,0.54,87.788,0,0,0.535,0.545,closed,opposite_fill
+250,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T14:36:00+00:00,2026-07-20T17:43:00+00:00,3.1167,sell_yes,buy_yes,0.21,0.24,46.476,-1.3943,-3,0.21,0.225,closed,opposite_fill
+251,Will Japan's core-core CPI increase by between 2.0 and 2.4% in 2026?,2026-07-18T00:00:00+00:00,2026-07-20T22:23:00+00:00,70.3833,buy_yes,sell_yes,0.37,0.41,10.328,0.4131,4,0.29,0.57,closed,opposite_fill
+252,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-19T08:17:00+00:00,2026-07-20T22:53:00+00:00,38.6,buy_yes,sell_yes,0.38,0.32,45.4432,-2.7266,-6,0.35,0.325,closed,opposite_fill
+253,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-20T00:08:00+00:00,2026-07-20T23:11:00+00:00,23.05,buy_yes,sell_yes,0.44,0.36,5.79649,-0.4637,-8,0.4265,0.378,closed,opposite_fill
+254,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-20T07:00:00+00:00,2026-07-20T23:11:00+00:00,16.1833,buy_yes,sell_yes,0.36,0.36,20.101,0,0,0.3585,0.378,closed,opposite_fill
+255,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-19T22:25:00+00:00,2026-07-21T00:00:00+00:00,25.5833,sell_yes,buy_yes,0.36,0.41,82.814,-4.1407,-5,0.365,0.405,closed,opposite_fill
+256,Iran leadership change by December 31?,2026-07-20T07:56:00+00:00,2026-07-21T00:02:00+00:00,16.1,buy_yes,sell_yes,0.26,0.23,87.788,-2.6336,-3,0.255,0.235,closed,opposite_fill
+257,Will “DTF St. Louis” win Emmys 2026: Outstanding limited or anthology series?,2026-07-21T00:00:00+00:00,2026-07-21T00:02:00+00:00,0.0333,sell_yes,buy_yes,0.53,0.54,51.64,-0.5164,-1,0.565,0.495,closed,opposite_fill
+258,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-21T00:00:00+00:00,2026-07-21T00:02:00+00:00,0.0333,sell_yes,buy_yes,0.36,0.44,103.28,-8.2624,-8,0.445,0.34,closed,opposite_fill
+259,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-21T00:00:00+00:00,2026-07-21T00:13:00+00:00,0.2167,buy_yes,sell_yes,0.41,0.41,20.466,0,0,0.405,0.415,closed,opposite_fill
+260,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-20T22:53:00+00:00,2026-07-21T01:37:00+00:00,2.7333,sell_yes,buy_yes,0.32,0.42,15.492,-1.5492,-10,0.325,0.415,closed,opposite_fill
+261,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T01:37:00+00:00,2026-07-21T01:42:00+00:00,0.0833,buy_yes,sell_yes,0.42,0.42,36.148,0,0,0.415,0.425,closed,opposite_fill
+262,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T01:42:00+00:00,2026-07-21T02:32:00+00:00,0.8333,sell_yes,buy_yes,0.42,0.43,15.492,-0.1549,-1,0.425,0.425,closed,opposite_fill
+263,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T02:32:00+00:00,2026-07-21T05:44:00+00:00,3.2,buy_yes,sell_yes,0.43,0.4,36.148,-1.0844,-3,0.425,0.405,closed,opposite_fill
+264,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-20T17:43:00+00:00,2026-07-21T10:49:00+00:00,17.1,buy_yes,sell_yes,0.24,0.21,56.804,-1.7041,-3,0.225,0.215,closed,opposite_fill
+265,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-20T16:50:00+00:00,2026-07-21T12:43:00+00:00,19.8833,sell_yes,buy_yes,0.54,0.54,15.492,0,0,0.545,0.535,closed,opposite_fill
+266,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-21T00:02:00+00:00,2026-07-21T12:56:00+00:00,12.9,buy_yes,sell_yes,0.44,0.33,9.2952,-1.0225,-11,0.34,0.335,closed,opposite_fill
+267,Fed Rate Hike by October 2026 Meeting?,2026-07-17T16:57:00+00:00,2026-07-21T13:43:00+00:00,92.7667,sell_yes,buy_yes,0.43,0.53,23.1347,-2.3135,-10,0.435,0.52,closed,opposite_fill
+268,Will “DTF St. Louis” win Emmys 2026: Outstanding limited or anthology series?,2026-07-21T00:04:00+00:00,2026-07-21T13:50:00+00:00,13.7667,sell_yes,buy_yes,0.54,0.43,51.64,5.6804,11,0.545,0.425,closed,opposite_fill
+269,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T05:44:00+00:00,2026-07-21T15:21:00+00:00,9.6167,sell_yes,buy_yes,0.4,0.52,15.492,-1.859,-12,0.405,0.51,closed,opposite_fill
+270,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T15:21:00+00:00,2026-07-21T15:41:00+00:00,0.3333,buy_yes,sell_yes,0.52,0.5,36.148,-0.723,-2,0.51,0.505,closed,opposite_fill
+271,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T15:41:00+00:00,2026-07-21T16:34:00+00:00,0.8833,sell_yes,buy_yes,0.5,0.52,15.492,-0.3098,-2,0.505,0.495,closed,opposite_fill
+272,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T16:34:00+00:00,2026-07-21T17:07:00+00:00,0.55,buy_yes,sell_yes,0.52,0.46,36.148,-2.1689,-6,0.495,0.465,closed,opposite_fill
+273,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T17:07:00+00:00,2026-07-21T17:42:00+00:00,0.5833,sell_yes,buy_yes,0.46,0.46,18.5904,0,0,0.465,0.46,closed,opposite_fill
+274,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-21T10:49:00+00:00,2026-07-21T17:55:00+00:00,7.1,sell_yes,buy_yes,0.21,0.27,46.476,-2.7886,-6,0.215,0.265,closed,opposite_fill
+275,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T17:42:00+00:00,2026-07-21T17:59:00+00:00,0.2833,buy_yes,sell_yes,0.46,0.44,33.0496,-0.661,-2,0.46,0.45,closed,opposite_fill
+276,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T17:59:00+00:00,2026-07-21T18:01:00+00:00,0.0333,sell_yes,buy_yes,0.44,0.44,20.1396,0,0,0.45,0.435,closed,opposite_fill
+277,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T18:01:00+00:00,2026-07-21T18:04:00+00:00,0.05,buy_yes,sell_yes,0.44,0.44,31.5004,0,0,0.435,0.455,closed,opposite_fill
+278,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T18:04:00+00:00,2026-07-21T18:28:00+00:00,0.4,sell_yes,buy_yes,0.44,0.47,20.1396,-0.6042,-3,0.455,0.465,closed,opposite_fill
+279,Fed Rate Hike by October 2026 Meeting?,2026-07-21T13:43:00+00:00,2026-07-21T18:37:00+00:00,4.9,buy_yes,sell_yes,0.53,0.56,80.1453,2.4044,3,0.52,0.57,closed,opposite_fill
+280,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-21T17:55:00+00:00,2026-07-21T19:15:00+00:00,1.3333,buy_yes,sell_yes,0.27,0.26,56.804,-0.568,-1,0.265,0.265,closed,opposite_fill
+281,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T18:28:00+00:00,2026-07-21T19:23:00+00:00,0.9167,buy_yes,sell_yes,0.47,0.47,31.5004,0,0,0.465,0.475,closed,opposite_fill
+282,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-21T12:43:00+00:00,2026-07-21T19:47:00+00:00,7.0667,buy_yes,sell_yes,0.54,0.43,87.788,-9.6567,-11,0.535,0.435,closed,opposite_fill
+283,Fed Rate Hike by October 2026 Meeting?,2026-07-21T18:37:00+00:00,2026-07-21T20:09:00+00:00,1.5333,sell_yes,buy_yes,0.56,0.6,29.3315,-1.1733,-4,0.57,0.575,closed,opposite_fill
+284,Fed Rate Hike by October 2026 Meeting?,2026-07-21T20:09:00+00:00,2026-07-21T20:55:00+00:00,0.7667,buy_yes,sell_yes,0.6,0.57,77.0469,-2.3114,-3,0.575,0.57,closed,opposite_fill
+285,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-21T19:15:00+00:00,2026-07-21T21:10:00+00:00,1.9167,sell_yes,buy_yes,0.26,0.26,46.476,0,0,0.265,0.255,closed,opposite_fill
+286,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T19:23:00+00:00,2026-07-21T21:57:00+00:00,2.5667,sell_yes,buy_yes,0.47,0.48,20.1396,-0.2014,-1,0.475,0.465,closed,opposite_fill
+287,Iran leadership change by December 31?,2026-07-21T00:02:00+00:00,2026-07-21T22:43:00+00:00,22.6833,sell_yes,buy_yes,0.23,0.27,15.492,-0.6197,-4,0.235,0.265,closed,opposite_fill
+288,Iran leadership change by December 31?,2026-07-21T22:43:00+00:00,2026-07-22T00:00:00+00:00,1.2833,buy_yes,sell_yes,0.27,0.27,87.788,0,0,0.265,0.28,closed,opposite_fill
+289,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-21T21:10:00+00:00,2026-07-22T00:00:00+00:00,2.8333,buy_yes,sell_yes,0.26,0.25,56.804,-0.568,-1,0.255,0.44,closed,opposite_fill
+290,Will Stephen Root – “Widow’s Bay” win Emmys 2026: Outstanding supporting actor in a comedy series?,2026-07-21T04:57:00+00:00,2026-07-22T00:13:00+00:00,19.2667,buy_yes,sell_yes,0.39,0.26,51.64,-6.7132,-13,0.36,0.37,closed,opposite_fill
+291,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-21T21:57:00+00:00,2026-07-22T01:34:00+00:00,3.6167,buy_yes,sell_yes,0.48,0.46,34.5988,-0.692,-2,0.465,0.465,closed,opposite_fill
+292,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T01:34:00+00:00,2026-07-22T02:54:00+00:00,1.3333,sell_yes,buy_yes,0.46,0.47,17.0412,-0.1704,-1,0.465,0.465,closed,opposite_fill
+293,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-21T19:47:00+00:00,2026-07-22T03:27:00+00:00,7.6667,sell_yes,buy_yes,0.43,0.44,15.492,-0.1549,-1,0.435,0.435,closed,opposite_fill
+294,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-22T00:00:00+00:00,2026-07-22T03:41:00+00:00,3.6833,sell_yes,buy_yes,0.25,0.23,46.476,0.9295,2,0.44,0.225,closed,opposite_fill
+295,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T02:54:00+00:00,2026-07-22T08:52:00+00:00,5.9667,buy_yes,sell_yes,0.47,0.41,34.5988,-2.0759,-6,0.465,0.41,closed,opposite_fill
+296,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-22T03:27:00+00:00,2026-07-22T09:20:00+00:00,5.8833,buy_yes,sell_yes,0.44,0.44,87.788,0,0,0.435,0.445,closed,opposite_fill
+297,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-22T03:41:00+00:00,2026-07-22T14:39:00+00:00,10.9667,buy_yes,sell_yes,0.23,0.25,56.804,1.1361,2,0.225,0.26,closed,opposite_fill
+298,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-22T14:39:00+00:00,2026-07-22T14:56:00+00:00,0.2833,sell_yes,buy_yes,0.25,0.25,46.476,0,0,0.26,0.245,closed,opposite_fill
+299,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T08:52:00+00:00,2026-07-22T15:08:00+00:00,6.2667,sell_yes,buy_yes,0.41,0.4,17.0412,0.1704,1,0.41,0.395,closed,opposite_fill
+300,Fed Rate Hike by October 2026 Meeting?,2026-07-21T20:55:00+00:00,2026-07-22T15:21:00+00:00,18.4333,sell_yes,buy_yes,0.57,0.6,26.2331,-0.787,-3,0.57,0.595,closed,opposite_fill
+301,Fed Rate Hike by October 2026 Meeting?,2026-07-22T15:21:00+00:00,2026-07-22T15:26:00+00:00,0.0833,buy_yes,sell_yes,0.6,0.61,77.0469,0.7705,1,0.595,0.64,closed,opposite_fill
+302,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T15:08:00+00:00,2026-07-22T18:50:00+00:00,3.7,buy_yes,sell_yes,0.4,0.33,34.5988,-2.4219,-7,0.395,0.345,closed,opposite_fill
+303,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T18:50:00+00:00,2026-07-22T19:35:00+00:00,0.75,sell_yes,buy_yes,0.33,0.37,17.0412,-0.6816,-4,0.345,0.365,closed,opposite_fill
+304,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T19:35:00+00:00,2026-07-22T19:50:00+00:00,0.25,buy_yes,sell_yes,0.37,0.37,34.5988,0,0,0.365,0.375,closed,opposite_fill
+305,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T19:50:00+00:00,2026-07-22T20:34:00+00:00,0.7333,sell_yes,buy_yes,0.37,0.39,18.5904,-0.3718,-2,0.375,0.385,closed,opposite_fill
+306,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-22T14:56:00+00:00,2026-07-22T21:16:00+00:00,6.3333,buy_yes,sell_yes,0.25,0.24,56.804,-0.568,-1,0.245,0.25,closed,opposite_fill
+307,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-21T12:56:00+00:00,2026-07-22T21:35:00+00:00,32.65,sell_yes,buy_yes,0.33,0.37,93.9848,-3.7594,-4,0.335,0.365,closed,opposite_fill
+308,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-22T21:16:00+00:00,2026-07-22T22:10:00+00:00,0.9,sell_yes,buy_yes,0.24,0.3,58.8696,-3.5322,-6,0.25,0.295,closed,opposite_fill
+309,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-21T00:13:00+00:00,2026-07-23T00:00:00+00:00,47.7833,sell_yes,buy_yes,0.41,0.49,82.814,-6.6251,-8,0.415,0.485,closed,opposite_fill
+310,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-22T21:35:00+00:00,2026-07-23T00:51:00+00:00,3.2667,buy_yes,sell_yes,0.37,0.37,9.2952,0,0,0.365,0.375,closed,opposite_fill
+311,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-23T00:51:00+00:00,2026-07-23T02:40:00+00:00,1.8167,sell_yes,buy_yes,0.37,0.39,100.182,-2.0036,-2,0.375,0.375,closed,opposite_fill
+312,Fed Rate Hike by October 2026 Meeting?,2026-07-22T15:26:00+00:00,2026-07-23T03:41:00+00:00,12.25,sell_yes,buy_yes,0.61,0.63,26.2331,-0.5247,-2,0.64,0.625,closed,opposite_fill
+313,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-22T22:10:00+00:00,2026-07-23T08:28:00+00:00,10.3,buy_yes,sell_yes,0.3,0.27,44.4104,-1.3323,-3,0.295,0.275,closed,opposite_fill
+314,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-22T20:34:00+00:00,2026-07-23T08:35:00+00:00,12.0167,buy_yes,sell_yes,0.39,0.31,33.0496,-2.644,-8,0.385,0.315,closed,opposite_fill
+315,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T08:35:00+00:00,2026-07-23T08:57:00+00:00,0.3667,sell_yes,buy_yes,0.31,0.31,18.5904,0,0,0.315,0.305,closed,opposite_fill
+316,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T08:57:00+00:00,2026-07-23T09:40:00+00:00,0.7167,buy_yes,sell_yes,0.31,0.31,33.0496,0,0,0.305,0.415,closed,opposite_fill
+317,Fed Rate Hike by October 2026 Meeting?,2026-07-23T03:41:00+00:00,2026-07-23T10:28:00+00:00,6.7833,buy_yes,sell_yes,0.63,0.65,77.0469,1.5409,2,0.625,0.665,closed,opposite_fill
+318,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-22T09:20:00+00:00,2026-07-23T10:29:00+00:00,25.15,sell_yes,buy_yes,0.44,0.44,21.6888,0,0,0.445,0.435,closed,opposite_fill
+319,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-23T00:00:00+00:00,2026-07-23T10:35:00+00:00,10.5833,buy_yes,sell_yes,0.49,0.42,20.466,-1.4326,-7,0.485,0.43,closed,opposite_fill
+320,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T09:40:00+00:00,2026-07-23T11:02:00+00:00,1.3667,sell_yes,buy_yes,0.31,0.41,18.5904,-1.859,-10,0.415,0.405,closed,opposite_fill
+321,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-23T10:35:00+00:00,2026-07-23T11:10:00+00:00,0.5833,sell_yes,buy_yes,0.42,0.46,89.0108,-3.5604,-4,0.43,0.46,closed,opposite_fill
+322,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-23T08:28:00+00:00,2026-07-23T11:36:00+00:00,3.1333,sell_yes,buy_yes,0.27,0.27,58.8696,0,0,0.275,0.265,closed,opposite_fill
+323,Fed Rate Hike by October 2026 Meeting?,2026-07-23T10:28:00+00:00,2026-07-23T11:47:00+00:00,1.3167,sell_yes,buy_yes,0.65,0.68,32.4299,-0.9729,-3,0.665,0.68,closed,opposite_fill
+324,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-23T11:10:00+00:00,2026-07-23T12:52:00+00:00,1.7,buy_yes,sell_yes,0.46,0.47,14.2692,0.1427,1,0.46,0.475,closed,opposite_fill
+325,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-23T12:52:00+00:00,2026-07-23T14:00:00+00:00,1.1333,sell_yes,buy_yes,0.47,0.49,89.0108,-1.7802,-2,0.475,0.485,closed,opposite_fill
+326,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-23T14:00:00+00:00,2026-07-23T16:05:00+00:00,2.0833,buy_yes,sell_yes,0.49,0.48,14.2692,-0.1427,-1,0.485,0.49,closed,opposite_fill
+327,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-23T16:05:00+00:00,2026-07-23T16:53:00+00:00,0.8,sell_yes,buy_yes,0.48,0.51,103.28,-3.0984,-3,0.49,0.505,closed,opposite_fill
+328,Fed Rate Hike by October 2026 Meeting?,2026-07-23T11:47:00+00:00,2026-07-23T18:37:00+00:00,6.8333,buy_yes,sell_yes,0.68,0.68,70.8501,0,0,0.68,0.685,closed,opposite_fill
+329,Iran leadership change by December 31?,2026-07-22T00:00:00+00:00,2026-07-23T20:53:00+00:00,44.8833,sell_yes,buy_yes,0.27,0.28,15.492,-0.1549,-1,0.28,0.275,closed,opposite_fill
+330,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T11:02:00+00:00,2026-07-23T22:28:00+00:00,11.4333,buy_yes,sell_yes,0.41,0.32,33.0496,-2.9745,-9,0.405,0.335,closed,opposite_fill
+331,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T22:28:00+00:00,2026-07-23T22:47:00+00:00,0.3167,sell_yes,buy_yes,0.32,0.33,18.5904,-0.1859,-1,0.335,0.325,closed,opposite_fill
+332,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T22:47:00+00:00,2026-07-23T22:49:00+00:00,0.0333,buy_yes,sell_yes,0.33,0.33,33.0496,0,0,0.325,0.335,closed,opposite_fill
+333,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T22:49:00+00:00,2026-07-23T23:29:00+00:00,0.6667,sell_yes,buy_yes,0.33,0.31,18.5904,0.3718,2,0.335,0.305,closed,opposite_fill
+334,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-23T23:29:00+00:00,2026-07-24T00:36:00+00:00,1.1167,buy_yes,sell_yes,0.31,0.33,33.0496,0.661,2,0.305,0.34,closed,opposite_fill
+335,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-23T11:36:00+00:00,2026-07-24T02:13:00+00:00,14.6167,buy_yes,sell_yes,0.27,0.23,44.4104,-1.7764,-4,0.265,0.235,closed,opposite_fill
+336,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T02:13:00+00:00,2026-07-24T02:32:00+00:00,0.3167,sell_yes,buy_yes,0.23,0.23,58.8696,0,0,0.235,0.225,closed,opposite_fill
+337,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T02:32:00+00:00,2026-07-24T05:01:00+00:00,2.4833,buy_yes,sell_yes,0.23,0.21,44.4104,-0.8882,-2,0.225,0.21,closed,opposite_fill
+338,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-24T00:36:00+00:00,2026-07-24T06:16:00+00:00,5.6667,sell_yes,buy_yes,0.33,0.37,23.238,-0.9295,-4,0.34,0.365,closed,opposite_fill
+339,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T05:01:00+00:00,2026-07-24T13:09:00+00:00,8.1333,sell_yes,buy_yes,0.21,0.22,61.968,-0.6197,-1,0.21,0.215,closed,opposite_fill
+340,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T13:09:00+00:00,2026-07-24T13:50:00+00:00,0.6833,buy_yes,sell_yes,0.22,0.21,41.312,-0.4131,-1,0.215,0.21,closed,opposite_fill
+341,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-24T06:16:00+00:00,2026-07-24T15:20:00+00:00,9.0667,buy_yes,sell_yes,0.37,0.32,28.402,-1.4201,-5,0.365,0.325,closed,opposite_fill
+342,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-24T15:20:00+00:00,2026-07-24T15:35:00+00:00,0.25,sell_yes,buy_yes,0.32,0.31,23.238,0.2324,1,0.325,0.3,closed,opposite_fill
+343,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-24T15:35:00+00:00,2026-07-24T15:42:00+00:00,0.1167,buy_yes,sell_yes,0.31,0.29,29.9512,-0.599,-2,0.3,0.29,closed,opposite_fill
+344,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T13:50:00+00:00,2026-07-24T17:16:00+00:00,3.4333,sell_yes,buy_yes,0.21,0.22,61.968,-0.6197,-1,0.21,0.215,closed,opposite_fill
+345,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T17:16:00+00:00,2026-07-24T18:36:00+00:00,1.3333,buy_yes,sell_yes,0.22,0.22,41.312,0,0,0.215,0.225,closed,opposite_fill
+346,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-24T15:42:00+00:00,2026-07-24T19:10:00+00:00,3.4667,sell_yes,buy_yes,0.29,0.36,34.0824,-2.3858,-7,0.29,0.345,closed,opposite_fill
+347,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T18:36:00+00:00,2026-07-24T21:18:00+00:00,2.7,sell_yes,buy_yes,0.22,0.23,61.968,-0.6197,-1,0.225,0.23,closed,opposite_fill
+348,Fed Rate Hike by October 2026 Meeting?,2026-07-23T18:37:00+00:00,2026-07-25T00:00:00+00:00,29.3833,sell_yes,buy_yes,0.68,0.68,32.4299,0,0,0.685,0.68,closed,opposite_fill
+349,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-24T19:10:00+00:00,2026-07-25T03:24:00+00:00,8.2333,buy_yes,sell_yes,0.36,0.32,17.5576,-0.7023,-4,0.345,0.325,closed,opposite_fill
+350,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-25T03:24:00+00:00,2026-07-25T14:11:00+00:00,10.7833,sell_yes,buy_yes,0.32,0.35,34.0824,-1.0225,-3,0.325,0.345,closed,opposite_fill
+351,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-25T14:11:00+00:00,2026-07-25T15:10:00+00:00,0.9833,buy_yes,sell_yes,0.35,0.35,17.5576,0,0,0.345,0.355,closed,opposite_fill
+352,Iran leadership change by December 31?,2026-07-23T20:53:00+00:00,2026-07-25T15:18:00+00:00,42.4167,buy_yes,sell_yes,0.28,0.24,87.788,-3.5115,-4,0.275,0.245,closed,opposite_fill
+353,Iran leadership change by December 31?,2026-07-25T15:18:00+00:00,2026-07-25T16:20:00+00:00,1.0333,sell_yes,buy_yes,0.24,0.24,15.492,0,0,0.245,0.235,closed,opposite_fill
+354,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-25T15:10:00+00:00,2026-07-25T16:20:00+00:00,1.1667,sell_yes,buy_yes,0.35,0.35,34.0824,0,0,0.355,0.335,closed,opposite_fill
+355,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-25T16:20:00+00:00,2026-07-25T17:34:00+00:00,1.2333,buy_yes,sell_yes,0.35,0.34,17.5576,-0.1756,-1,0.335,0.345,closed,opposite_fill
+356,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-25T17:34:00+00:00,2026-07-25T17:51:00+00:00,0.2833,sell_yes,buy_yes,0.34,0.34,34.0824,0,0,0.345,0.34,closed,opposite_fill
+357,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-24T21:18:00+00:00,2026-07-25T22:39:00+00:00,25.35,buy_yes,sell_yes,0.23,0.21,41.312,-0.8262,-2,0.23,0.21,closed,opposite_fill
+358,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-25T22:39:00+00:00,2026-07-25T23:14:00+00:00,0.5833,sell_yes,buy_yes,0.21,0.2,61.968,0.6197,1,0.21,0.19,closed,opposite_fill
+359,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-25T17:51:00+00:00,2026-07-25T23:57:00+00:00,6.1,buy_yes,sell_yes,0.34,0.35,17.5576,0.1756,1,0.34,0.355,closed,opposite_fill
+360,Iran leadership change by December 31?,2026-07-25T16:20:00+00:00,2026-07-26T00:01:00+00:00,7.6833,buy_yes,sell_yes,0.24,0.23,87.788,-0.8779,-1,0.235,0.235,closed,opposite_fill
+361,Iran leadership change by December 31?,2026-07-26T00:01:00+00:00,2026-07-26T05:50:00+00:00,5.8167,sell_yes,buy_yes,0.23,0.23,15.492,0,0,0.235,0.225,closed,opposite_fill
+362,Will Gadi Eizenkot be the next Prime Minister of Israel?,2026-07-25T15:24:00+00:00,2026-07-26T06:10:00+00:00,14.7667,sell_yes,buy_yes,0.53,0.53,53.9638,0,0,0.545,0.522,closed,opposite_fill
+363,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-25T23:57:00+00:00,2026-07-26T09:01:00+00:00,9.0667,sell_yes,buy_yes,0.35,0.38,35.6316,-1.0689,-3,0.355,0.375,closed,opposite_fill
+364,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-25T23:14:00+00:00,2026-07-26T12:50:00+00:00,13.6,buy_yes,sell_yes,0.2,0.14,47.5088,-2.8505,-6,0.19,0.145,closed,opposite_fill
+365,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-23T10:29:00+00:00,2026-07-26T14:43:00+00:00,76.2333,buy_yes,sell_yes,0.44,0.41,81.5912,-2.4477,-3,0.435,0.415,closed,opposite_fill
+366,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-26T12:50:00+00:00,2026-07-26T17:09:00+00:00,4.3167,sell_yes,buy_yes,0.14,0.15,58.8696,-0.5887,-1,0.145,0.145,closed,opposite_fill
+367,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-26T14:43:00+00:00,2026-07-27T01:24:00+00:00,10.6833,sell_yes,buy_yes,0.41,0.45,21.6888,-0.8676,-4,0.415,0.445,closed,opposite_fill
+368,Iran leadership change by December 31?,2026-07-26T05:50:00+00:00,2026-07-27T01:25:00+00:00,19.5833,buy_yes,sell_yes,0.23,0.21,87.788,-1.7558,-2,0.225,0.21,closed,opposite_fill
+369,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-26T17:09:00+00:00,2026-07-27T04:28:00+00:00,11.3167,buy_yes,sell_yes,0.15,0.14,44.4104,-0.4441,-1,0.145,0.145,closed,opposite_fill
+370,Fed Rate Hike by October 2026 Meeting?,2026-07-25T00:00:00+00:00,2026-07-27T14:37:00+00:00,62.6167,buy_yes,sell_yes,0.68,0.63,70.8501,-3.5425,-5,0.68,0.635,closed,opposite_fill
+371,Will no Fed rate cuts happen in 2026?,2026-07-27T15:13:00+00:00,2026-07-27T15:31:00+00:00,0.3,buy_yes,sell_yes,0.81,0.83,25.82,0.5164,2,0.782,0.8505,closed,opposite_fill
+372,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-27T04:28:00+00:00,2026-07-27T15:54:00+00:00,11.4333,sell_yes,buy_yes,0.14,0.15,58.8696,-0.5887,-1,0.145,0.145,closed,opposite_fill
+373,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-27T15:54:00+00:00,2026-07-27T15:55:00+00:00,0.0167,buy_yes,sell_yes,0.15,0.15,44.4104,0,0,0.145,0.15,closed,opposite_fill
+374,Fed Rate Hike by October 2026 Meeting?,2026-07-27T14:37:00+00:00,2026-07-27T23:02:00+00:00,8.4167,sell_yes,buy_yes,0.63,0.68,32.4299,-1.6215,-5,0.635,0.68,closed,opposite_fill
+375,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-27T15:55:00+00:00,2026-07-28T00:01:00+00:00,8.1,sell_yes,buy_yes,0.15,0.16,61.968,-0.6197,-1,0.15,0.155,closed,opposite_fill
+376,Fed Rate Hike by October 2026 Meeting?,2026-07-27T23:02:00+00:00,2026-07-28T03:39:00+00:00,4.6167,buy_yes,sell_yes,0.68,0.7,70.8501,1.417,2,0.68,0.725,closed,opposite_fill
+377,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-23T16:05:00+00:00,2026-07-28T05:06:00+00:00,109.017,sell_yes,buy_yes,0.48,0.57,4.32123,-0.3889,-9,0.49,0.565,closed,opposite_fill
+378,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-27T22:06:00+00:00,2026-07-28T05:06:00+00:00,7,sell_yes,buy_yes,0.53,0.57,98.9588,-3.9584,-4,0.545,0.565,closed,opposite_fill
+379,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-27T01:24:00+00:00,2026-07-28T10:09:00+00:00,32.75,buy_yes,sell_yes,0.45,0.35,81.5912,-8.1591,-10,0.445,0.355,closed,opposite_fill
+380,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-28T10:09:00+00:00,2026-07-28T10:10:00+00:00,0.0167,sell_yes,buy_yes,0.35,0.35,21.6888,0,0,0.355,0.345,closed,opposite_fill
+381,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-28T10:10:00+00:00,2026-07-28T11:15:00+00:00,1.0833,buy_yes,sell_yes,0.35,0.35,81.5912,0,0,0.345,0.355,closed,opposite_fill
+382,Fed Rate Hike by October 2026 Meeting?,2026-07-28T03:39:00+00:00,2026-07-28T13:33:00+00:00,9.9,sell_yes,buy_yes,0.7,0.73,32.4299,-0.9729,-3,0.725,0.725,closed,opposite_fill
+383,Fed Rate Hike by October 2026 Meeting?,2026-07-28T13:33:00+00:00,2026-07-28T16:57:00+00:00,3.4,buy_yes,sell_yes,0.73,0.73,70.8501,0,0,0.725,0.735,closed,opposite_fill
+384,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-28T00:01:00+00:00,2026-07-28T18:37:00+00:00,18.6,buy_yes,sell_yes,0.16,0.15,41.312,-0.4131,-1,0.155,0.175,closed,opposite_fill
+385,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-26T09:01:00+00:00,2026-07-28T21:17:00+00:00,60.2667,buy_yes,sell_yes,0.38,0.3,16.0084,-1.2807,-8,0.375,0.305,closed,opposite_fill
+386,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-28T18:37:00+00:00,2026-07-28T21:20:00+00:00,2.7167,sell_yes,buy_yes,0.15,0.17,61.968,-1.2394,-2,0.175,0.17,closed,opposite_fill
+387,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-28T21:20:00+00:00,2026-07-28T23:37:00+00:00,2.2833,buy_yes,sell_yes,0.17,0.19,41.312,0.8262,2,0.17,0.205,closed,opposite_fill
+388,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-28T23:37:00+00:00,2026-07-29T00:00:00+00:00,0.3833,sell_yes,buy_yes,0.19,0.2,61.968,-0.6197,-1,0.205,0.15,closed,opposite_fill
+389,Will the Sweden Democrats (SD) win the second most seats in the 2026 Swedish parliamentary election?,2026-07-13T00:00:00+00:00,2026-07-29T00:00:00+00:00,384,buy_yes,sell_yes,0.77,0.81,61.968,2.4787,4,0.415,0.82,closed,opposite_fill
+390,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-23T02:40:00+00:00,2026-07-29T00:00:00+00:00,141.333,buy_yes,sell_yes,0.39,0.27,3.0984,-0.3718,-12,0.375,0.315,closed,opposite_fill
+391,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-29T00:00:00+00:00,2026-07-29T00:02:00+00:00,0.0333,buy_yes,sell_yes,0.2,0.19,41.312,-0.4131,-1,0.15,0.2,closed,opposite_fill
+392,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-29T00:00:00+00:00,2026-07-29T00:03:00+00:00,0.05,sell_yes,buy_yes,0.27,0.25,100.182,2.0036,2,0.315,0.245,closed,opposite_fill
+393,Will Katherine LaNasa – “The Pitt” win Emmys 2026: Outstanding supporting actress in a drama series?,2026-07-29T01:41:00+00:00,2026-07-29T02:00:00+00:00,0.3167,buy_yes,sell_yes,0.7,0.69,56.2876,-0.5629,-1,0.675,0.72,closed,opposite_fill
+394,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-28T21:17:00+00:00,2026-07-29T03:45:00+00:00,6.4667,sell_yes,buy_yes,0.3,0.31,35.6316,-0.3563,-1,0.305,0.305,closed,opposite_fill
+395,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-29T03:45:00+00:00,2026-07-29T05:18:00+00:00,1.55,buy_yes,sell_yes,0.31,0.25,16.0084,-0.9605,-6,0.305,0.265,closed,opposite_fill
+396,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-29T05:18:00+00:00,2026-07-29T05:26:00+00:00,0.1333,sell_yes,buy_yes,0.25,0.27,35.6316,-0.7126,-2,0.265,0.255,closed,opposite_fill
+397,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-29T05:26:00+00:00,2026-07-29T05:28:00+00:00,0.0333,buy_yes,sell_yes,0.27,0.26,16.0084,-0.1601,-1,0.255,0.265,closed,opposite_fill
+398,Iran leadership change by December 31?,2026-07-27T01:25:00+00:00,2026-07-29T06:33:00+00:00,53.1333,sell_yes,buy_yes,0.21,0.21,15.492,0,0,0.21,0.205,closed,opposite_fill
+399,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-28T11:15:00+00:00,2026-07-29T11:14:00+00:00,23.9833,sell_yes,buy_yes,0.35,0.4,21.6888,-1.0844,-5,0.355,0.395,closed,opposite_fill
+400,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-29T05:28:00+00:00,2026-07-29T13:10:00+00:00,7.7,sell_yes,buy_yes,0.26,0.29,35.6316,-1.0689,-3,0.265,0.265,closed,opposite_fill
+401,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T11:14:00+00:00,2026-07-29T13:53:00+00:00,2.65,buy_yes,sell_yes,0.4,0.4,81.5912,0,0,0.395,0.405,closed,opposite_fill
+402,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T13:53:00+00:00,2026-07-29T13:54:00+00:00,0.0167,sell_yes,buy_yes,0.4,0.4,21.6888,0,0,0.405,0.395,closed,opposite_fill
+403,Iran leadership change by December 31?,2026-07-29T06:33:00+00:00,2026-07-29T14:25:00+00:00,7.8667,buy_yes,sell_yes,0.21,0.21,87.788,0,0,0.205,0.21,closed,opposite_fill
+404,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-29T13:10:00+00:00,2026-07-29T15:58:00+00:00,2.8,buy_yes,sell_yes,0.29,0.27,16.0084,-0.3202,-2,0.265,0.275,closed,opposite_fill
+405,Fed Rate Hike by October 2026 Meeting?,2026-07-28T16:57:00+00:00,2026-07-29T17:58:00+00:00,25.0167,sell_yes,buy_yes,0.73,0.73,32.4299,0,0,0.735,0.695,closed,opposite_fill
+406,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T13:54:00+00:00,2026-07-29T18:03:00+00:00,4.15,buy_yes,sell_yes,0.4,0.33,87.788,-6.1452,-7,0.395,0.335,closed,opposite_fill
+407,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:03:00+00:00,2026-07-29T18:08:00+00:00,0.0833,sell_yes,buy_yes,0.33,0.36,27.8856,-0.8366,-3,0.335,0.355,closed,opposite_fill
+408,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:08:00+00:00,2026-07-29T18:10:00+00:00,0.0333,buy_yes,sell_yes,0.36,0.36,75.3944,0,0,0.355,0.365,closed,opposite_fill
+409,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:10:00+00:00,2026-07-29T18:15:00+00:00,0.0833,sell_yes,buy_yes,0.36,0.36,27.8856,0,0,0.365,0.345,closed,opposite_fill
+410,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:15:00+00:00,2026-07-29T18:16:00+00:00,0.0167,buy_yes,sell_yes,0.36,0.35,75.3944,-0.7539,-1,0.345,0.355,closed,opposite_fill
+411,Fed Rate Hike by October 2026 Meeting?,2026-07-29T17:58:00+00:00,2026-07-29T18:18:00+00:00,0.3333,buy_yes,sell_yes,0.73,0.64,98.7357,-8.8862,-9,0.695,0.655,closed,opposite_fill
+412,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:16:00+00:00,2026-07-29T18:28:00+00:00,0.2,sell_yes,buy_yes,0.35,0.39,34.0824,-1.3633,-4,0.355,0.38,closed,opposite_fill
+413,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:28:00+00:00,2026-07-29T18:35:00+00:00,0.1167,buy_yes,sell_yes,0.39,0.32,97.0832,-6.7958,-7,0.38,0.325,closed,opposite_fill
+414,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-27T22:06:00+00:00,2026-07-29T18:42:00+00:00,44.6,sell_yes,buy_yes,0.53,0.61,4.32123,-0.3457,-8,0.545,0.59,closed,opposite_fill
+415,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-29T18:00:00+00:00,2026-07-29T18:42:00+00:00,0.7,sell_yes,buy_yes,0.58,0.61,98.9588,-2.9688,-3,0.6,0.59,closed,opposite_fill
+416,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:35:00+00:00,2026-07-29T18:54:00+00:00,0.3167,sell_yes,buy_yes,0.32,0.4,12.3936,-0.9915,-8,0.325,0.395,closed,opposite_fill
+417,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:54:00+00:00,2026-07-29T18:58:00+00:00,0.0667,buy_yes,sell_yes,0.4,0.4,90.8864,0,0,0.395,0.415,closed,opposite_fill
+418,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T18:58:00+00:00,2026-07-29T19:29:00+00:00,0.5167,sell_yes,buy_yes,0.4,0.46,18.5904,-1.1154,-6,0.415,0.455,closed,opposite_fill
+419,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-29T15:58:00+00:00,2026-07-29T20:31:00+00:00,4.55,sell_yes,buy_yes,0.27,0.29,35.6316,-0.7126,-2,0.275,0.275,closed,opposite_fill
+420,Iran leadership change by December 31?,2026-07-29T14:25:00+00:00,2026-07-30T01:22:00+00:00,10.95,sell_yes,buy_yes,0.21,0.22,15.492,-0.1549,-1,0.21,0.215,closed,opposite_fill
+421,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-29T00:02:00+00:00,2026-07-30T02:10:00+00:00,26.1333,sell_yes,buy_yes,0.19,0.21,61.968,-1.2394,-2,0.2,0.205,closed,opposite_fill
+422,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-29T20:31:00+00:00,2026-07-30T02:16:00+00:00,5.75,buy_yes,sell_yes,0.29,0.27,16.0084,-0.3202,-2,0.275,0.275,closed,opposite_fill
+423,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-30T02:10:00+00:00,2026-07-30T02:17:00+00:00,0.1167,buy_yes,sell_yes,0.21,0.21,44.4104,0,0,0.205,0.21,closed,opposite_fill
+424,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T02:16:00+00:00,2026-07-30T08:21:00+00:00,6.0833,sell_yes,buy_yes,0.27,0.31,35.6316,-1.4253,-4,0.275,0.295,closed,opposite_fill
+425,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T08:21:00+00:00,2026-07-30T11:40:00+00:00,3.3167,buy_yes,sell_yes,0.31,0.28,22.2052,-0.6662,-3,0.295,0.285,closed,opposite_fill
+426,Will there be no change in Fed interest rates after the October 2026 meeting?,2026-07-19T15:07:00+00:00,2026-07-30T12:02:00+00:00,260.917,buy_yes,sell_yes,0.62,0.67,3.0984,0.1549,5,0.585,0.675,closed,opposite_fill
+427,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-29T19:29:00+00:00,2026-07-30T12:29:00+00:00,17,buy_yes,sell_yes,0.46,0.39,84.6896,-5.9283,-7,0.455,0.395,closed,opposite_fill
+428,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-30T02:17:00+00:00,2026-07-30T13:58:00+00:00,11.6833,sell_yes,buy_yes,0.21,0.17,58.8696,2.3548,4,0.21,0.17,closed,opposite_fill
+429,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-30T12:29:00+00:00,2026-07-30T15:12:00+00:00,2.7167,sell_yes,buy_yes,0.39,0.45,18.5904,-1.1154,-6,0.395,0.445,closed,opposite_fill
+430,Iran leadership change by December 31?,2026-07-30T01:22:00+00:00,2026-07-30T16:38:00+00:00,15.2667,buy_yes,sell_yes,0.22,0.21,87.788,-0.8779,-1,0.215,0.21,closed,opposite_fill
+431,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T11:40:00+00:00,2026-07-30T16:54:00+00:00,5.2333,sell_yes,buy_yes,0.28,0.29,29.4348,-0.2943,-1,0.285,0.24,closed,opposite_fill
+432,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T16:54:00+00:00,2026-07-30T17:25:00+00:00,0.5167,buy_yes,sell_yes,0.29,0.25,22.2052,-0.8882,-4,0.24,0.255,closed,opposite_fill
+433,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T17:25:00+00:00,2026-07-30T18:02:00+00:00,0.6167,sell_yes,buy_yes,0.25,0.26,29.4348,-0.2943,-1,0.255,0.255,closed,opposite_fill
+434,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T18:02:00+00:00,2026-07-30T19:00:00+00:00,0.9667,buy_yes,sell_yes,0.26,0.26,22.2052,0,0,0.255,0.265,closed,opposite_fill
+435,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T19:00:00+00:00,2026-07-30T19:28:00+00:00,0.4667,sell_yes,buy_yes,0.26,0.26,29.4348,0,0,0.265,0.255,closed,opposite_fill
+436,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T19:28:00+00:00,2026-07-30T19:40:00+00:00,0.2,buy_yes,sell_yes,0.26,0.26,22.2052,0,0,0.255,0.265,closed,opposite_fill
+437,Iran leadership change by December 31?,2026-07-30T16:38:00+00:00,2026-07-30T22:48:00+00:00,6.1667,sell_yes,buy_yes,0.21,0.21,15.492,0,0,0.21,0.205,closed,opposite_fill
+438,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T19:40:00+00:00,2026-07-30T23:05:00+00:00,3.4167,sell_yes,buy_yes,0.26,0.29,29.4348,-0.883,-3,0.265,0.285,closed,opposite_fill
+439,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-30T13:58:00+00:00,2026-07-31T00:00:00+00:00,10.0333,buy_yes,sell_yes,0.17,0.15,44.4104,-0.8882,-2,0.17,0.24,closed,opposite_fill
+440,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-29T00:03:00+00:00,2026-07-31T00:01:00+00:00,47.9667,buy_yes,sell_yes,0.25,0.24,3.0984,-0.031,-1,0.245,0.285,closed,opposite_fill
+441,Will there be no change in Fed interest rates after the October 2026 meeting?,2026-07-30T12:02:00+00:00,2026-07-31T00:25:00+00:00,12.3833,sell_yes,buy_yes,0.67,0.69,51.64,-1.0328,-2,0.675,0.685,closed,opposite_fill
+442,Will Japan's core-core CPI increase by between 2.0 and 2.4% in 2026?,2026-07-20T22:23:00+00:00,2026-07-31T01:15:00+00:00,242.867,sell_yes,buy_yes,0.41,0.61,3.0984,-0.6197,-20,0.57,0.56,closed,opposite_fill
+443,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-30T23:05:00+00:00,2026-07-31T02:45:00+00:00,3.6667,buy_yes,sell_yes,0.29,0.29,22.2052,0,0,0.285,0.29,closed,opposite_fill
+444,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-31T00:01:00+00:00,2026-07-31T02:46:00+00:00,2.75,sell_yes,buy_yes,0.24,0.2,100.182,4.0073,4,0.285,0.195,closed,opposite_fill
+445,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T02:45:00+00:00,2026-07-31T03:17:00+00:00,0.5333,sell_yes,buy_yes,0.29,0.28,29.4348,0.2943,1,0.29,0.275,closed,opposite_fill
+446,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T03:17:00+00:00,2026-07-31T04:36:00+00:00,1.3167,buy_yes,sell_yes,0.28,0.29,22.2052,0.2221,1,0.275,0.29,closed,opposite_fill
+447,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-31T00:00:00+00:00,2026-07-31T05:02:00+00:00,5.0333,sell_yes,buy_yes,0.15,0.14,58.8696,0.5887,1,0.24,0.135,closed,opposite_fill
+448,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T04:36:00+00:00,2026-07-31T07:58:00+00:00,3.3667,sell_yes,buy_yes,0.29,0.32,29.4348,-0.883,-3,0.29,0.305,closed,opposite_fill
+449,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T07:58:00+00:00,2026-07-31T08:09:00+00:00,0.1833,buy_yes,sell_yes,0.32,0.3,22.2052,-0.4441,-2,0.305,0.305,closed,opposite_fill
+450,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T08:09:00+00:00,2026-07-31T08:16:00+00:00,0.1167,sell_yes,buy_yes,0.3,0.31,29.4348,-0.2943,-1,0.305,0.305,closed,opposite_fill
+451,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T08:16:00+00:00,2026-07-31T15:48:00+00:00,7.5333,buy_yes,sell_yes,0.31,0.22,25.3036,-2.2773,-9,0.305,0.23,closed,opposite_fill
+452,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T15:48:00+00:00,2026-07-31T15:57:00+00:00,0.15,sell_yes,buy_yes,0.22,0.23,27.8856,-0.2789,-1,0.23,0.225,closed,opposite_fill
+453,Will the U.S. invade Iran before 2027?,2026-07-30T01:34:00+00:00,2026-07-31T16:02:00+00:00,38.4667,sell_yes,buy_yes,0.29,0.24,103.28,5.164,5,0.305,0.235,closed,opposite_fill
+454,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T15:57:00+00:00,2026-07-31T16:26:00+00:00,0.4833,buy_yes,sell_yes,0.23,0.23,23.7544,0,0,0.225,0.235,closed,opposite_fill
+455,Iran leadership change by December 31?,2026-07-30T22:48:00+00:00,2026-07-31T16:44:00+00:00,17.9333,buy_yes,sell_yes,0.21,0.21,87.788,0,0,0.205,0.215,closed,opposite_fill
+456,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-31T05:02:00+00:00,2026-07-31T17:28:00+00:00,12.4333,buy_yes,sell_yes,0.14,0.14,44.4104,0,0,0.135,0.145,closed,opposite_fill
+457,Bab el-Mandeb Strait effectively closed by December 31?,2026-07-31T02:46:00+00:00,2026-08-01T00:00:00+00:00,21.2333,buy_yes,sell_yes,0.2,0.23,6.1968,0.1859,3,0.195,0.255,closed,opposite_fill
+458,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-01T00:00:00+00:00,2026-08-01T00:10:00+00:00,0.1667,sell_yes,buy_yes,0.23,0.25,97.0832,-1.9417,-2,0.255,0.215,closed,opposite_fill
+459,Bab el-Mandeb Strait effectively closed by September 30?,2026-07-31T17:28:00+00:00,2026-08-01T06:58:00+00:00,13.5,sell_yes,buy_yes,0.14,0.15,58.8696,-0.5887,-1,0.145,0.145,closed,opposite_fill
+460,Clarity Act (H.R.3633) signed into law in 2026?,2026-07-31T16:26:00+00:00,2026-08-01T11:11:00+00:00,18.75,sell_yes,buy_yes,0.23,0.32,27.8856,-2.5097,-9,0.235,0.315,closed,opposite_fill
+461,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T11:11:00+00:00,2026-08-01T15:30:00+00:00,4.3167,buy_yes,sell_yes,0.32,0.32,26.8528,0,0,0.315,0.325,closed,opposite_fill
+462,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T15:30:00+00:00,2026-08-01T15:55:00+00:00,0.4167,sell_yes,buy_yes,0.32,0.32,24.7872,0,0,0.325,0.295,closed,opposite_fill
+463,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T15:55:00+00:00,2026-08-01T18:00:00+00:00,2.0833,buy_yes,sell_yes,0.32,0.29,29.9512,-0.8985,-3,0.295,0.29,closed,opposite_fill
+464,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T18:00:00+00:00,2026-08-01T19:05:00+00:00,1.0833,sell_yes,buy_yes,0.29,0.29,21.6888,0,0,0.29,0.285,closed,opposite_fill
+465,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T19:05:00+00:00,2026-08-01T19:19:00+00:00,0.2333,buy_yes,sell_yes,0.29,0.29,29.9512,0,0,0.285,0.295,closed,opposite_fill
+466,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T19:19:00+00:00,2026-08-01T20:45:00+00:00,1.4333,sell_yes,buy_yes,0.29,0.29,21.6888,0,0,0.295,0.285,closed,opposite_fill
+467,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T20:45:00+00:00,2026-08-01T22:47:00+00:00,2.0333,buy_yes,sell_yes,0.29,0.29,29.9512,0,0,0.285,0.29,closed,opposite_fill
+468,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T22:47:00+00:00,2026-08-01T23:33:00+00:00,0.7667,sell_yes,buy_yes,0.29,0.37,21.6888,-1.7351,-8,0.29,0.36,closed,opposite_fill
+469,Iran leadership change by December 31?,2026-07-31T16:44:00+00:00,2026-08-01T23:46:00+00:00,31.0333,sell_yes,buy_yes,0.21,0.23,15.492,-0.3098,-2,0.215,0.225,closed,opposite_fill
+470,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-01T23:33:00+00:00,2026-08-02T00:20:00+00:00,0.7833,buy_yes,sell_yes,0.37,0.32,36.148,-1.8074,-5,0.36,0.325,closed,opposite_fill
+471,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T00:20:00+00:00,2026-08-02T01:06:00+00:00,0.7667,sell_yes,buy_yes,0.32,0.33,17.0412,-0.1704,-1,0.325,0.325,closed,opposite_fill
+472,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T01:06:00+00:00,2026-08-02T01:10:00+00:00,0.0667,buy_yes,sell_yes,0.33,0.33,34.5988,0,0,0.325,0.35,closed,opposite_fill
+473,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T01:10:00+00:00,2026-08-02T01:11:00+00:00,0.0167,sell_yes,buy_yes,0.33,0.34,17.0412,-0.1704,-1,0.35,0.335,closed,opposite_fill
+474,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T01:11:00+00:00,2026-08-02T01:31:00+00:00,0.3333,buy_yes,sell_yes,0.34,0.34,34.5988,0,0,0.335,0.35,closed,opposite_fill
+475,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T01:31:00+00:00,2026-08-02T01:50:00+00:00,0.3167,sell_yes,buy_yes,0.34,0.35,18.5904,-0.1859,-1,0.35,0.345,closed,opposite_fill
+476,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T01:50:00+00:00,2026-08-02T02:51:00+00:00,1.0167,buy_yes,sell_yes,0.35,0.32,33.0496,-0.9915,-3,0.345,0.335,closed,opposite_fill
+477,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-07-30T15:12:00+00:00,2026-08-02T03:07:00+00:00,59.9167,buy_yes,sell_yes,0.45,0.39,84.6896,-5.0814,-6,0.445,0.395,closed,opposite_fill
+478,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T02:51:00+00:00,2026-08-02T03:30:00+00:00,0.65,sell_yes,buy_yes,0.32,0.33,20.1396,-0.2014,-1,0.335,0.325,closed,opposite_fill
+479,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T03:30:00+00:00,2026-08-02T03:38:00+00:00,0.1333,buy_yes,sell_yes,0.33,0.33,31.5004,0,0,0.325,0.335,closed,opposite_fill
+480,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T03:38:00+00:00,2026-08-02T04:15:00+00:00,0.6167,sell_yes,buy_yes,0.33,0.34,20.1396,-0.2014,-1,0.335,0.335,closed,opposite_fill
+481,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T04:15:00+00:00,2026-08-02T04:16:00+00:00,0.0167,buy_yes,sell_yes,0.34,0.34,31.5004,0,0,0.335,0.345,closed,opposite_fill
+482,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-29T18:00:00+00:00,2026-08-02T04:52:00+00:00,82.8667,sell_yes,buy_yes,0.58,0.59,7.41964,-0.0742,-1,0.6,0.585,closed,opposite_fill
+483,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-31T20:59:00+00:00,2026-08-02T04:52:00+00:00,31.8833,sell_yes,buy_yes,0.6,0.59,95.8604,0.9586,1,0.625,0.585,closed,opposite_fill
+484,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T04:16:00+00:00,2026-08-02T04:56:00+00:00,0.6667,sell_yes,buy_yes,0.34,0.34,20.1396,0,0,0.345,0.335,closed,opposite_fill
+485,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T04:56:00+00:00,2026-08-02T08:03:00+00:00,3.1167,buy_yes,sell_yes,0.34,0.29,31.5004,-1.575,-5,0.335,0.295,closed,opposite_fill
+486,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T08:03:00+00:00,2026-08-02T09:03:00+00:00,1,sell_yes,buy_yes,0.29,0.31,20.1396,-0.4028,-2,0.295,0.305,closed,opposite_fill
+487,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T09:03:00+00:00,2026-08-02T10:15:00+00:00,1.2,buy_yes,sell_yes,0.31,0.26,31.5004,-1.575,-5,0.305,0.265,closed,opposite_fill
+488,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T10:15:00+00:00,2026-08-02T13:12:00+00:00,2.95,sell_yes,buy_yes,0.26,0.28,20.1396,-0.4028,-2,0.265,0.275,closed,opposite_fill
+489,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T13:12:00+00:00,2026-08-02T13:35:00+00:00,0.3833,buy_yes,sell_yes,0.28,0.28,31.5004,0,0,0.275,0.285,closed,opposite_fill
+490,Iran leadership change by December 31?,2026-08-01T23:46:00+00:00,2026-08-02T20:55:00+00:00,21.15,buy_yes,sell_yes,0.23,0.2,87.788,-2.6336,-3,0.225,0.205,closed,opposite_fill
+491,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-02T03:07:00+00:00,2026-08-02T22:46:00+00:00,19.65,sell_yes,buy_yes,0.39,0.41,18.5904,-0.3718,-2,0.395,0.405,closed,opposite_fill
+492,Iran leadership change by December 31?,2026-08-02T20:55:00+00:00,2026-08-02T23:42:00+00:00,2.7833,sell_yes,buy_yes,0.2,0.2,15.492,0,0,0.205,0.195,closed,opposite_fill
+493,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-01T06:58:00+00:00,2026-08-03T00:00:00+00:00,41.0333,buy_yes,sell_yes,0.15,0.12,47.5088,-1.4253,-3,0.145,0.14,closed,opposite_fill
+494,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-03T00:00:00+00:00,2026-08-03T00:01:00+00:00,0.0167,sell_yes,buy_yes,0.12,0.13,55.7712,-0.5577,-1,0.14,0.11,closed,opposite_fill
+495,Will “The Late Show With Stephen Colbert” win Emmys 2026: Outstanding variety series?,2026-08-02T21:49:00+00:00,2026-08-03T00:48:00+00:00,2.9833,sell_yes,buy_yes,0.5,0.54,51.64,-2.0656,-4,0.545,0.53,closed,opposite_fill
+496,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-02T22:46:00+00:00,2026-08-03T01:32:00+00:00,2.7667,buy_yes,sell_yes,0.41,0.41,84.6896,0,0,0.405,0.415,closed,opposite_fill
+497,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-02T13:35:00+00:00,2026-08-03T02:07:00+00:00,12.5333,sell_yes,buy_yes,0.28,0.3,20.1396,-0.4028,-2,0.285,0.295,closed,opposite_fill
+498,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T02:07:00+00:00,2026-08-03T02:16:00+00:00,0.15,buy_yes,sell_yes,0.3,0.29,34.5988,-0.346,-1,0.295,0.3,closed,opposite_fill
+499,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T02:16:00+00:00,2026-08-03T04:16:00+00:00,2,sell_yes,buy_yes,0.29,0.3,17.0412,-0.1704,-1,0.3,0.295,closed,opposite_fill
+500,Iran leadership change by December 31?,2026-08-02T23:42:00+00:00,2026-08-03T05:05:00+00:00,5.3833,buy_yes,sell_yes,0.2,0.17,87.788,-2.6336,-3,0.195,0.175,closed,opposite_fill
+501,Iran leadership change by December 31?,2026-08-03T05:05:00+00:00,2026-08-03T05:06:00+00:00,0.0167,sell_yes,buy_yes,0.17,0.17,15.492,0,0,0.175,0.17,closed,opposite_fill
+502,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T04:16:00+00:00,2026-08-03T05:11:00+00:00,0.9167,buy_yes,sell_yes,0.3,0.29,34.5988,-0.346,-1,0.295,0.29,closed,opposite_fill
+503,Iran leadership change by December 31?,2026-08-03T05:06:00+00:00,2026-08-03T05:17:00+00:00,0.1833,buy_yes,sell_yes,0.17,0.16,97.0832,-0.9708,-1,0.17,0.165,closed,opposite_fill
+504,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T05:11:00+00:00,2026-08-03T09:23:00+00:00,4.2,sell_yes,buy_yes,0.29,0.29,17.0412,0,0,0.29,0.285,closed,opposite_fill
+505,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T09:23:00+00:00,2026-08-03T09:26:00+00:00,0.05,buy_yes,sell_yes,0.29,0.29,34.5988,0,0,0.285,0.295,closed,opposite_fill
+506,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T09:26:00+00:00,2026-08-03T11:29:00+00:00,2.05,sell_yes,buy_yes,0.29,0.3,17.0412,-0.1704,-1,0.295,0.295,closed,opposite_fill
+507,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T11:29:00+00:00,2026-08-03T11:53:00+00:00,0.4,buy_yes,sell_yes,0.3,0.29,34.5988,-0.346,-1,0.295,0.29,closed,opposite_fill
+508,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T11:53:00+00:00,2026-08-03T12:59:00+00:00,1.1,sell_yes,buy_yes,0.29,0.29,17.0412,0,0,0.29,0.275,closed,opposite_fill
+509,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T12:59:00+00:00,2026-08-03T15:25:00+00:00,2.4333,buy_yes,sell_yes,0.29,0.27,40.7956,-0.8159,-2,0.275,0.275,closed,opposite_fill
+510,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T15:25:00+00:00,2026-08-03T17:13:00+00:00,1.8,sell_yes,buy_yes,0.27,0.27,10.8444,0,0,0.275,0.265,closed,opposite_fill
+511,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T17:13:00+00:00,2026-08-03T18:13:00+00:00,1,buy_yes,sell_yes,0.27,0.27,40.7956,0,0,0.265,0.275,closed,opposite_fill
+512,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T18:13:00+00:00,2026-08-03T18:27:00+00:00,0.2333,sell_yes,buy_yes,0.27,0.27,10.8444,0,0,0.275,0.265,closed,opposite_fill
+513,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-03T00:01:00+00:00,2026-08-03T21:32:00+00:00,21.5167,buy_yes,sell_yes,0.13,0.09,47.5088,-1.9004,-4,0.11,0.095,closed,opposite_fill
+514,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-03T21:32:00+00:00,2026-08-04T00:01:00+00:00,2.4833,sell_yes,buy_yes,0.09,0.11,55.7712,-1.1154,-2,0.095,0.085,closed,opposite_fill
+515,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-01T00:10:00+00:00,2026-08-04T00:01:00+00:00,71.85,buy_yes,sell_yes,0.25,0.21,6.1968,-0.2479,-4,0.215,0.32,closed,opposite_fill
+516,Will Stephen Root – “Widow’s Bay” win Emmys 2026: Outstanding supporting actor in a comedy series?,2026-08-03T09:01:00+00:00,2026-08-04T00:06:00+00:00,15.0833,buy_yes,sell_yes,0.39,0.4,51.64,0.5164,1,0.37,0.405,closed,opposite_fill
+517,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-03T18:27:00+00:00,2026-08-04T07:20:00+00:00,12.8833,buy_yes,sell_yes,0.27,0.25,40.7956,-0.8159,-2,0.265,0.26,closed,opposite_fill
+518,Fed Rate Hike by October 2026 Meeting?,2026-07-29T18:18:00+00:00,2026-08-04T12:23:00+00:00,138.083,sell_yes,buy_yes,0.64,0.62,4.54432,0.0909,2,0.655,0.615,closed,opposite_fill
+519,Fed Rate Hike by October 2026 Meeting?,2026-07-31T21:09:00+00:00,2026-08-04T12:23:00+00:00,87.2333,sell_yes,buy_yes,0.65,0.62,98.7357,2.9621,3,0.665,0.615,closed,opposite_fill
+520,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-04T07:20:00+00:00,2026-08-04T14:06:00+00:00,6.7667,sell_yes,buy_yes,0.25,0.25,10.8444,0,0,0.26,0.235,closed,opposite_fill
+521,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-04T14:06:00+00:00,2026-08-04T14:07:00+00:00,0.0167,buy_yes,sell_yes,0.25,0.24,40.7956,-0.408,-1,0.235,0.245,closed,opposite_fill
+522,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-03T01:32:00+00:00,2026-08-04T14:44:00+00:00,37.2,sell_yes,buy_yes,0.41,0.49,18.5904,-1.4872,-8,0.415,0.485,closed,opposite_fill
+523,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-04T00:01:00+00:00,2026-08-04T15:58:00+00:00,15.95,sell_yes,buy_yes,0.21,0.18,97.0832,2.9125,3,0.32,0.17,closed,opposite_fill
+524,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-04T14:44:00+00:00,2026-08-04T17:09:00+00:00,2.4167,buy_yes,sell_yes,0.49,0.49,84.6896,0,0,0.485,0.495,closed,opposite_fill
+525,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-04T17:09:00+00:00,2026-08-04T20:36:00+00:00,3.45,sell_yes,buy_yes,0.49,0.51,18.5904,-0.3718,-2,0.495,0.505,closed,opposite_fill
+526,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-04T14:07:00+00:00,2026-08-04T20:49:00+00:00,6.7,sell_yes,buy_yes,0.24,0.24,10.8444,0,0,0.245,0.235,closed,opposite_fill
+527,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-04T00:01:00+00:00,2026-08-05T00:00:00+00:00,23.9833,buy_yes,sell_yes,0.11,0.09,47.5088,-0.9502,-2,0.085,0.11,closed,opposite_fill
+528,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-05T00:00:00+00:00,2026-08-05T00:01:00+00:00,0.0167,sell_yes,buy_yes,0.09,0.1,55.7712,-0.5577,-1,0.11,0.085,closed,opposite_fill
+529,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-04T20:36:00+00:00,2026-08-05T02:11:00+00:00,5.5833,buy_yes,sell_yes,0.51,0.49,84.6896,-1.6938,-2,0.505,0.495,closed,opposite_fill
+530,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-04T20:49:00+00:00,2026-08-05T07:55:00+00:00,11.1,buy_yes,sell_yes,0.24,0.14,40.7956,-4.0796,-10,0.235,0.145,closed,opposite_fill
+531,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T07:55:00+00:00,2026-08-05T08:43:00+00:00,0.8,sell_yes,buy_yes,0.14,0.15,10.8444,-0.1084,-1,0.145,0.145,closed,opposite_fill
+532,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-05T02:11:00+00:00,2026-08-05T10:10:00+00:00,7.9833,sell_yes,buy_yes,0.49,0.51,18.5904,-0.3718,-2,0.495,0.505,closed,opposite_fill
+533,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-05T10:10:00+00:00,2026-08-05T10:13:00+00:00,0.05,buy_yes,sell_yes,0.51,0.51,84.6896,0,0,0.505,0.515,closed,opposite_fill
+534,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T08:43:00+00:00,2026-08-05T11:33:00+00:00,2.8333,buy_yes,sell_yes,0.15,0.13,40.7956,-0.8159,-2,0.145,0.135,closed,opposite_fill
+535,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T11:33:00+00:00,2026-08-05T13:01:00+00:00,1.4667,sell_yes,buy_yes,0.13,0.15,10.8444,-0.2169,-2,0.135,0.145,closed,opposite_fill
+536,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T13:01:00+00:00,2026-08-05T14:05:00+00:00,1.0667,buy_yes,sell_yes,0.15,0.15,40.7956,0,0,0.145,0.15,closed,opposite_fill
+537,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T14:05:00+00:00,2026-08-05T15:27:00+00:00,1.3667,sell_yes,buy_yes,0.15,0.16,10.8444,-0.1084,-1,0.15,0.155,closed,opposite_fill
+538,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T15:27:00+00:00,2026-08-05T18:29:00+00:00,3.0333,buy_yes,sell_yes,0.16,0.15,40.7956,-0.408,-1,0.155,0.155,closed,opposite_fill
+539,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T18:29:00+00:00,2026-08-05T21:12:00+00:00,2.7167,sell_yes,buy_yes,0.15,0.17,10.8444,-0.2169,-2,0.155,0.17,closed,opposite_fill
+540,Will Madrid host the final of the 2030 FIFA World Cup?,2026-08-05T21:06:00+00:00,2026-08-05T21:29:00+00:00,0.3833,buy_yes,sell_yes,0.47,0.33,25.82,-3.6148,-14,0.255,0.375,closed,opposite_fill
+541,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T21:12:00+00:00,2026-08-05T21:31:00+00:00,0.3167,buy_yes,sell_yes,0.17,0.16,40.7956,-0.408,-1,0.17,0.17,closed,opposite_fill
+542,Will Madrid host the final of the 2030 FIFA World Cup?,2026-08-05T21:29:00+00:00,2026-08-05T22:01:00+00:00,0.5333,sell_yes,buy_yes,0.33,0.59,25.82,-6.7132,-26,0.375,0.29,closed,opposite_fill
+543,Will another city host the final of the 2030 FIFA World Cup?,2026-08-05T21:06:00+00:00,2026-08-05T22:46:00+00:00,1.6667,buy_yes,sell_yes,0.47,0.33,25.82,-3.6148,-14,0.255,0.54,closed,opposite_fill
+544,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T21:31:00+00:00,2026-08-05T23:29:00+00:00,1.9667,sell_yes,buy_yes,0.16,0.17,12.3936,-0.1239,-1,0.17,0.165,closed,opposite_fill
+545,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-04T15:58:00+00:00,2026-08-06T00:00:00+00:00,32.0333,buy_yes,sell_yes,0.18,0.16,6.1968,-0.1239,-2,0.17,0.35,closed,opposite_fill
+546,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-05T00:01:00+00:00,2026-08-06T00:02:00+00:00,24.0167,buy_yes,sell_yes,0.1,0.08,47.5088,-0.9502,-2,0.085,0.085,closed,opposite_fill
+547,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-06T00:00:00+00:00,2026-08-06T00:02:00+00:00,0.0333,sell_yes,buy_yes,0.16,0.33,97.0832,-16.5041,-17,0.35,0.3,closed,opposite_fill
+548,Will Japan's core-core CPI increase by between 2.0 and 2.4% in 2026?,2026-07-31T01:15:00+00:00,2026-08-06T00:03:00+00:00,142.8,buy_yes,sell_yes,0.61,0.54,8.15912,-0.5711,-7,0.56,0.545,closed,opposite_fill
+549,Will the Sweden Democrats (SD) win the second most seats in the 2026 Swedish parliamentary election?,2026-08-04T00:02:00+00:00,2026-08-06T00:03:00+00:00,48.0167,buy_yes,sell_yes,0.81,0.61,61.968,-12.3936,-20,0.6,0.845,closed,opposite_fill
+550,Will another city host the final of the 2030 FIFA World Cup?,2026-08-05T22:09:00+00:00,2026-08-06T03:24:00+00:00,5.25,buy_yes,sell_yes,0.51,0.27,25.82,-6.1968,-24,0.295,0.325,closed,opposite_fill
+551,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-05T10:13:00+00:00,2026-08-06T08:40:00+00:00,22.45,sell_yes,buy_yes,0.51,0.54,18.5904,-0.5577,-3,0.515,0.535,closed,opposite_fill
+552,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-06T00:02:00+00:00,2026-08-06T09:01:00+00:00,8.9833,buy_yes,sell_yes,0.33,0.17,109.477,-17.5163,-16,0.3,0.185,closed,opposite_fill
+553,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T00:02:00+00:00,2026-08-06T09:06:00+00:00,9.0667,sell_yes,buy_yes,0.08,0.17,32.4912,-2.9242,-9,0.085,0.165,closed,opposite_fill
+554,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T09:06:00+00:00,2026-08-06T09:08:00+00:00,0.0333,buy_yes,sell_yes,0.17,0.15,76.9856,-1.5397,-2,0.165,0.16,closed,opposite_fill
+555,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T09:08:00+00:00,2026-08-06T09:28:00+00:00,0.3333,sell_yes,buy_yes,0.15,0.14,26.2944,0.2629,1,0.16,0.135,closed,opposite_fill
+556,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T09:28:00+00:00,2026-08-06T10:09:00+00:00,0.6833,buy_yes,sell_yes,0.14,0.13,76.9856,-0.7699,-1,0.135,0.135,closed,opposite_fill
+557,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T10:09:00+00:00,2026-08-06T10:33:00+00:00,0.4,sell_yes,buy_yes,0.13,0.14,26.2944,-0.2629,-1,0.135,0.12,closed,opposite_fill
+558,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T10:33:00+00:00,2026-08-06T10:42:00+00:00,0.15,buy_yes,sell_yes,0.14,0.12,80.084,-1.6017,-2,0.12,0.13,closed,opposite_fill
+559,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T10:42:00+00:00,2026-08-06T13:06:00+00:00,2.4,sell_yes,buy_yes,0.12,0.12,23.196,0,0,0.13,0.115,closed,opposite_fill
+560,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-05T23:29:00+00:00,2026-08-06T13:17:00+00:00,13.8,buy_yes,sell_yes,0.17,0.16,39.2464,-0.3925,-1,0.165,0.165,closed,opposite_fill
+561,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T13:06:00+00:00,2026-08-06T14:48:00+00:00,1.7,buy_yes,sell_yes,0.12,0.12,80.084,0,0,0.115,0.125,closed,opposite_fill
+562,Will another city host the final of the 2030 FIFA World Cup?,2026-08-06T14:40:00+00:00,2026-08-06T15:35:00+00:00,0.9167,sell_yes,buy_yes,0.32,0.38,25.82,-1.5492,-6,0.4,0.36,closed,opposite_fill
+563,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-06T13:17:00+00:00,2026-08-06T15:45:00+00:00,2.4667,sell_yes,buy_yes,0.16,0.15,12.3936,0.1239,1,0.165,0.145,closed,opposite_fill
+564,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-06T15:45:00+00:00,2026-08-06T15:59:00+00:00,0.2333,buy_yes,sell_yes,0.15,0.15,39.2464,0,0,0.145,0.15,closed,opposite_fill
+565,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T14:48:00+00:00,2026-08-06T18:03:00+00:00,3.25,sell_yes,buy_yes,0.12,0.12,23.196,0,0,0.125,0.115,closed,opposite_fill
+566,Will Caliste Win the LEC 2026 Summer Split MVP?,2026-08-06T16:08:00+00:00,2026-08-06T22:03:00+00:00,5.9167,buy_yes,sell_yes,0.47,0.17,10.328,-3.0984,-30,0.25,0.32,closed,opposite_fill
+567,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-06T18:03:00+00:00,2026-08-07T00:00:00+00:00,5.95,buy_yes,sell_yes,0.12,0.12,80.084,0,0,0.115,0.26,closed,opposite_fill
+568,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-07T00:00:00+00:00,2026-08-07T00:02:00+00:00,0.0333,sell_yes,buy_yes,0.12,0.25,23.196,-3.0155,-13,0.26,0.14,closed,opposite_fill
+569,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-06T15:59:00+00:00,2026-08-07T02:19:00+00:00,10.3333,sell_yes,buy_yes,0.15,0.15,12.3936,0,0,0.15,0.145,closed,opposite_fill
+570,Will Stephen Root – “Widow’s Bay” win Emmys 2026: Outstanding supporting actor in a comedy series?,2026-08-05T00:00:00+00:00,2026-08-07T03:12:00+00:00,51.2,sell_yes,buy_yes,0.42,0.38,51.64,2.0656,4,0.45,0.37,closed,opposite_fill
+571,Iran leadership change by December 31?,2026-08-03T05:17:00+00:00,2026-08-07T10:31:00+00:00,101.233,sell_yes,buy_yes,0.16,0.23,6.1968,-0.4338,-7,0.165,0.22,closed,opposite_fill
+572,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-06T08:40:00+00:00,2026-08-07T12:10:00+00:00,27.5,buy_yes,sell_yes,0.54,0.49,84.6896,-4.2345,-5,0.535,0.495,closed,opposite_fill
+573,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-07T02:19:00+00:00,2026-08-07T12:22:00+00:00,10.05,buy_yes,sell_yes,0.15,0.13,39.2464,-0.7849,-2,0.145,0.135,closed,opposite_fill
+574,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-07-31T20:59:00+00:00,2026-08-07T12:30:00+00:00,159.517,sell_yes,buy_yes,0.6,0.46,7.41964,1.0387,14,0.625,0.385,closed,opposite_fill
+575,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T12:10:00+00:00,2026-08-07T12:33:00+00:00,0.3833,sell_yes,buy_yes,0.49,0.64,18.5904,-2.7886,-15,0.495,0.62,closed,opposite_fill
+576,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T12:33:00+00:00,2026-08-07T12:37:00+00:00,0.0667,buy_yes,sell_yes,0.64,0.61,84.6896,-2.5407,-3,0.62,0.625,closed,opposite_fill
+577,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T12:37:00+00:00,2026-08-07T12:40:00+00:00,0.05,sell_yes,buy_yes,0.61,0.62,18.5904,-0.1859,-1,0.625,0.615,closed,opposite_fill
+578,Will the Fed increase interest rates by 25 bps after the October 2026 meeting?,2026-07-16T11:15:00+00:00,2026-08-07T12:42:00+00:00,529.45,buy_yes,sell_yes,0.21,0.23,6.1968,0.1239,2,0.205,0.235,closed,opposite_fill
+579,Will the Fed increase interest rates by 25 bps after the October 2026 meeting?,2026-07-29T19:03:00+00:00,2026-08-07T12:42:00+00:00,209.65,buy_yes,sell_yes,0.24,0.23,46.9924,-0.4699,-1,0.215,0.235,closed,opposite_fill
+580,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T12:40:00+00:00,2026-08-07T12:43:00+00:00,0.05,buy_yes,sell_yes,0.62,0.62,84.6896,0,0,0.615,0.625,closed,opposite_fill
+581,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T12:43:00+00:00,2026-08-07T12:56:00+00:00,0.2167,sell_yes,buy_yes,0.62,0.65,37.1808,-1.1154,-3,0.625,0.645,closed,opposite_fill
+582,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-07T00:02:00+00:00,2026-08-07T14:27:00+00:00,14.4167,buy_yes,sell_yes,0.25,0.11,103.28,-14.4592,-14,0.14,0.115,closed,opposite_fill
+583,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T12:56:00+00:00,2026-08-07T14:37:00+00:00,1.6833,buy_yes,sell_yes,0.65,0.63,66.0992,-1.322,-2,0.645,0.635,closed,opposite_fill
+584,Will another city host the final of the 2030 FIFA World Cup?,2026-08-06T14:40:00+00:00,2026-08-07T15:35:00+00:00,24.9167,sell_yes,buy_yes,0.32,0.4,3.0984,-0.2479,-8,0.4,0.375,closed,opposite_fill
+585,Will another city host the final of the 2030 FIFA World Cup?,2026-08-06T16:07:00+00:00,2026-08-07T15:35:00+00:00,23.4667,sell_yes,buy_yes,0.4,0.4,25.82,0,0,0.405,0.375,closed,opposite_fill
+586,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T14:37:00+00:00,2026-08-07T15:57:00+00:00,1.3333,sell_yes,buy_yes,0.63,0.63,37.1808,0,0,0.635,0.625,closed,opposite_fill
+587,Will another city host the final of the 2030 FIFA World Cup?,2026-08-07T15:35:00+00:00,2026-08-07T19:18:00+00:00,3.7167,buy_yes,sell_yes,0.4,0.35,2.3238,-0.1162,-5,0.375,0.425,closed,opposite_fill
+588,Will Benjamin Netanyahu be the next Prime Minister of Israel?,2026-08-06T00:00:00+00:00,2026-08-08T00:02:00+00:00,48.0333,buy_yes,sell_yes,0.3,0.19,51.64,-5.6804,-11,0.185,0.325,closed,opposite_fill
+589,Iran leadership change by December 31?,2026-08-07T10:31:00+00:00,2026-08-08T06:32:00+00:00,20.0167,buy_yes,sell_yes,0.23,0.21,100.182,-2.0036,-2,0.22,0.235,closed,opposite_fill
+590,Iran leadership change by December 31?,2026-08-08T06:32:00+00:00,2026-08-08T06:38:00+00:00,0.1,sell_yes,buy_yes,0.21,0.26,21.6888,-1.0844,-5,0.235,0.25,closed,opposite_fill
+591,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-07T12:22:00+00:00,2026-08-08T15:32:00+00:00,27.1667,sell_yes,buy_yes,0.13,0.18,12.3936,-0.6197,-5,0.135,0.175,closed,opposite_fill
+592,Will another city host the final of the 2030 FIFA World Cup?,2026-08-07T19:18:00+00:00,2026-08-08T16:02:00+00:00,20.7333,sell_yes,buy_yes,0.35,0.42,23.4962,-1.6447,-7,0.425,0.405,closed,opposite_fill
+593,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-08T15:32:00+00:00,2026-08-08T16:25:00+00:00,0.8833,buy_yes,sell_yes,0.18,0.2,39.2464,0.7849,2,0.175,0.205,closed,opposite_fill
+594,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-08T16:25:00+00:00,2026-08-08T16:41:00+00:00,0.2667,sell_yes,buy_yes,0.2,0.23,15.492,-0.4648,-3,0.205,0.225,closed,opposite_fill
+595,Will Benjamin Netanyahu be the next Prime Minister of Israel?,2026-08-08T00:02:00+00:00,2026-08-09T00:00:00+00:00,23.9667,sell_yes,buy_yes,0.19,0.29,1.5492,-0.1549,-10,0.325,0.23,closed,opposite_fill
+596,Will Benjamin Netanyahu be the next Prime Minister of Israel?,2026-08-09T00:00:00+00:00,2026-08-09T08:51:00+00:00,8.85,buy_yes,sell_yes,0.29,0.33,50.0908,2.0036,4,0.23,0.335,closed,opposite_fill
+597,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-08-07T12:30:00+00:00,2026-08-09T11:51:00+00:00,47.35,buy_yes,sell_yes,0.46,0.35,103.28,-11.3608,-11,0.385,0.355,closed,opposite_fill
+598,Will Katherine LaNasa – “The Pitt” win Emmys 2026: Outstanding supporting actress in a drama series?,2026-07-29T01:41:00+00:00,2026-08-10T00:00:00+00:00,286.317,buy_yes,sell_yes,0.7,0.76,6.1968,0.3718,6,0.675,0.815,closed,opposite_fill
+599,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-06T00:02:00+00:00,2026-08-10T00:00:00+00:00,95.9667,buy_yes,sell_yes,0.33,0.2,2.0656,-0.2685,-13,0.3,0.335,closed,opposite_fill
+600,Will Ulf Kristersson be the next Prime Minister of Sweden?,2026-07-18T00:01:00+00:00,2026-08-10T00:01:00+00:00,552,sell_yes,buy_yes,0.12,0.09,1.5492,0.0465,3,0.155,0.075,closed,opposite_fill
+601,Will Oscar Isaac – “Beef” win Emmys 2026: Outstanding lead actor in a limited or anthology series or movie?,2026-08-10T00:00:00+00:00,2026-08-10T00:02:00+00:00,0.0333,buy_yes,sell_yes,0.55,0.33,51.64,-11.3608,-22,0.32,0.595,closed,opposite_fill
+602,Will the Moderate Party (M) win the third most seats in the 2026 Swedish parliamentary election?,2026-08-10T00:00:00+00:00,2026-08-10T00:07:00+00:00,0.1167,buy_yes,sell_yes,0.8,0.66,46.476,-6.5066,-14,0.605,0.835,closed,opposite_fill
+603,Iran leadership change by December 31?,2026-08-08T06:38:00+00:00,2026-08-10T00:41:00+00:00,42.05,buy_yes,eod_mark,0.26,0.195,84.6896,-5.5048,-6.5,0.25,0.195,open_at_end,eod_mark
+604,Bab el-Mandeb Strait effectively closed by September 30?,2026-08-07T00:02:00+00:00,2026-08-10T00:41:00+00:00,72.65,buy_yes,eod_mark,0.25,0.07,1.5912,-0.2864,-18,0.14,0.07,open_at_end,eod_mark
+605,Will the Sweden Democrats (SD) win the second most seats in the 2026 Swedish parliamentary election?,2026-08-08T00:03:00+00:00,2026-08-10T00:41:00+00:00,48.6333,sell_yes,eod_mark,0.79,0.845,63.827,-3.5105,-5.5,0.835,0.845,open_at_end,eod_mark
+606,Fed Rate Hike by October 2026 Meeting?,2026-07-31T21:09:00+00:00,2026-08-10T00:41:00+00:00,219.533,sell_yes,eod_mark,0.65,0.47,4.54432,0.818,18,0.665,0.47,open_at_end,eod_mark
+607,Clarity Act (H.R.3633) signed into law in 2026?,2026-08-08T16:41:00+00:00,2026-08-10T00:41:00+00:00,32,buy_yes,eod_mark,0.23,0.205,36.148,-0.9037,-2.5,0.225,0.205,open_at_end,eod_mark
+608,Will the Fed increase interest rates by 25 bps after the October 2026 meeting?,2026-07-29T19:03:00+00:00,2026-08-10T00:41:00+00:00,269.633,buy_yes,eod_mark,0.24,0.245,4.6476,0.0232,0.5,0.215,0.245,open_at_end,eod_mark
+609,Will there be no change in Fed interest rates after the September 2026 meeting?,2026-08-07T15:57:00+00:00,2026-08-10T00:41:00+00:00,56.7333,buy_yes,eod_mark,0.63,0.625,66.0992,-0.3305,-0.5,0.625,0.625,open_at_end,eod_mark
+610,Will the Fed increase interest rates by 25 bps after the September 2026 meeting?,2026-08-07T12:30:00+00:00,2026-08-10T00:41:00+00:00,60.1833,buy_yes,eod_mark,0.46,0.355,11.1708,-1.1729,-10.5,0.385,0.355,open_at_end,eod_mark
+611,Strait of Hormuz traffic returns to normal by December 31?,2026-07-20T05:48:00+00:00,2026-08-10T00:41:00+00:00,498.883,buy_yes,eod_mark,0.52,0.475,3.0984,-0.1394,-4.5,0.505,0.475,open_at_end,eod_mark
+612,Will Ulf Kristersson be the next Prime Minister of Sweden?,2026-08-10T00:01:00+00:00,2026-08-10T00:41:00+00:00,0.6667,buy_yes,eod_mark,0.09,0.12,50.0908,1.5027,3,0.075,0.12,open_at_end,eod_mark
+613,Will Japan's core-core CPI increase by between 2.0 and 2.4% in 2026?,2026-08-06T00:03:00+00:00,2026-08-10T00:41:00+00:00,96.6333,sell_yes,eod_mark,0.54,0.535,2.16888,0.0108,0.5,0.545,0.535,open_at_end,eod_mark
+614,Will Harry Kane win the 2026 Ballon d'Or?,2026-07-20T07:00:00+00:00,2026-08-10T00:41:00+00:00,497.683,buy_yes,eod_mark,0.36,0.5855,6.64855,1.4992,22.55,0.3585,0.5855,open_at_end,eod_mark
+615,Bab el-Mandeb Strait effectively closed by December 31?,2026-08-10T00:00:00+00:00,2026-08-10T00:41:00+00:00,0.6833,sell_yes,eod_mark,0.2,0.18,101.214,2.0243,2,0.335,0.18,open_at_end,eod_mark
+616,Will Gadi Eizenkot be the next Prime Minister of Israel?,2026-07-25T15:24:00+00:00,2026-08-10T00:41:00+00:00,369.283,sell_yes,eod_mark,0.53,0.512,4.6476,0.0837,1.8,0.545,0.512,open_at_end,eod_mark
+617,Will Katherine LaNasa – “The Pitt” win Emmys 2026: Outstanding supporting actress in a drama series?,2026-08-10T00:00:00+00:00,2026-08-10T00:41:00+00:00,0.6833,sell_yes,eod_mark,0.76,0.72,45.4432,1.8177,4,0.815,0.72,open_at_end,eod_mark
+618,Will another city host the final of the 2030 FIFA World Cup?,2026-08-08T16:02:00+00:00,2026-08-10T00:41:00+00:00,32.65,buy_yes,eod_mark,0.42,0.345,8.5206,-0.639,-7.5,0.405,0.345,open_at_end,eod_mark
+619,Will Madrid host the final of the 2030 FIFA World Cup?,2026-08-05T21:29:00+00:00,2026-08-10T00:41:00+00:00,99.2,sell_yes,eod_mark,0.33,0.385,12.1354,-0.6674,-5.5,0.375,0.385,open_at_end,eod_mark
+620,Will Benjamin Netanyahu be the next Prime Minister of Israel?,2026-08-09T08:51:00+00:00,2026-08-10T00:41:00+00:00,15.8333,sell_yes,eod_mark,0.33,0.335,1.5492,-0.0077,-0.5,0.335,0.335,open_at_end,eod_mark
