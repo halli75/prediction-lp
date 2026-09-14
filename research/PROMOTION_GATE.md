@@ -17,4 +17,6 @@ Promoted creative wave4 2026-09-14T01:10:42.821706+00:00 under **LIVEISH Aug10**
 
 Creative overlay: `{"day_flatten": true, "day_flatten_max_net": 8, "min_daily_reward_pool": 110.0, "overnight_quiet": true, "overnight_mode": "reduce_only", "overnight_end_hour": 3}`
 
-Artifact: `results/promotion_creative_wave4_ovn_e3.json`
+**Liveish 90d (May14→Aug10, 83d):** **+$2089.00** (dd 3.16%; vs prior df_max8_pool110 90d +$2137).
+
+Artifact: `results/promotion_creative_wave4_ovn_e3.json` / `results/creative_wave4_ovn_e3_liveish_90d.json`

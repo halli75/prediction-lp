@@ -112,7 +112,7 @@ class Strategy:
         self.flatten_size_mult = float(cfg.get("flatten_size_mult", 2.0))
 
         # --- creative mode 2: day_boundary_flatten ---
-        self.day_flatten = bool(cfg.get("day_flatten", True)  # PROMOTED creative default)
+        self.day_flatten = bool(cfg.get("day_flatten", True))  # PROMOTED creative default
         self.day_flatten_max_net = float(cfg.get("day_flatten_max_net", 8.0))
         self.day_flatten_global = bool(cfg.get("day_flatten_global", False))
 

@@ -1,0 +1,30 @@
+{
+  "sample_net_pnl": 2089.0021,
+  "window_net_pnl": 2089.0021,
+  "net_pnl": 2089.0021,
+  "max_dd_pct": 3.1561,
+  "max_drawdown_pct": 3.1561,
+  "n_fills": 3777,
+  "reward_pnl": 3632.0547,
+  "trading_pnl": -1543.0525,
+  "soft_reject": false,
+  "elapsed_sec": 409.575,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110,
+    "overnight_quiet": true,
+    "overnight_mode": "reduce_only",
+    "overnight_end_hour": 3
+  },
+  "strategy_module": "research/champions/strategy_current_best.py",
+  "champion": "creative_wave4_ovn_e3",
+  "window": "90d",
+  "days_file": "research/window_90d_days.txt",
+  "days_range": "2026-05-14\u21922026-08-10",
+  "compare_df_max8_pool110_90d": 2137.3746,
+  "compare_wave5b_90d": 547.2302,
+  "delta_vs_df_max8_pool110_90d": -48.3725,
+  "saved_at": "2026-09-14T02:37:24.844603+00:00"
+}
