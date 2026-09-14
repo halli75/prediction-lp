@@ -1,0 +1,20 @@
+{
+  "job": "independent_verify_day_boundary_flatten",
+  "liveish": true,
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 5
+  },
+  "sample": {
+    "verify": 651.394,
+    "promoted": 651.394,
+    "delta": 0.0
+  },
+  "30d": {
+    "verify": 1431.5577,
+    "promoted": 1431.5577,
+    "delta": 0.0
+  },
+  "verdict": "PASS_exact_match",
+  "threshold_investigate_usd": 20
+}

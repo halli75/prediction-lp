@@ -1,0 +1,36 @@
+{
+  "ts": "2026-09-13T07:00:13Z",
+  "champion": "pool100",
+  "liveish_gates": {
+    "sample": 528.35,
+    "30d": 432.94,
+    "60d": 423.35
+  },
+  "optimistic_promo_void": "wave2_cancel_on_mid_move_20260913T063448Z",
+  "wave3_liveish_sample_rescored": {
+    "wave3-cancel_on_mid_move": 358.1748,
+    "wave3-pause_after_fill": 526.7296,
+    "wave3-pull_size_after_adverse_fill": 443.6947,
+    "wave3-near_mid_size": 528.3479,
+    "wave3-free_explore": 405.1509,
+    "wave3-shrink_size": 528.3479,
+    "wave3-skew_aggressive": 332.9236
+  },
+  "conclusion": "No wave3 optimistic winner beats pool100 liveish sample; cancel_mid worse under liveish (358). Wave4b (6 axes) searching with --liveish. No liveish promotion yet.",
+  "wave4b_active": [
+    "wave4b-cancel_on_mid_move",
+    "wave4b-inventory_hard_cap",
+    "wave4b-near_mid_size",
+    "wave4b-pause_after_fill",
+    "wave4b-pull_size_after_adverse_fill",
+    "wave4b-shrink_size"
+  ],
+  "wave4b_pids": {
+    "wave4b-cancel_on_mid_move": 183365,
+    "wave4b-pull_size_after_adverse_fill": 183485,
+    "wave4b-pause_after_fill": 183562,
+    "wave4b-inventory_hard_cap": 183646,
+    "wave4b-shrink_size": 184856,
+    "wave4b-near_mid_size": 184959
+  }
+}

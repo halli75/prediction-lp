@@ -1,0 +1,22 @@
+{
+  "job": "creative_wave2_promotion_df_max8_pool110",
+  "label": "creative_df_max8_pool110",
+  "parent": "creative_day_boundary_flatten",
+  "eval": "liveish",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110.0
+  },
+  "created_at": "2026-09-13T22:16:27.616180+00:00",
+  "windows_liveish": {
+    "sample": 611.0451,
+    "30d": 1676.3353,
+    "60d": 2512.1413
+  },
+  "gates_beaten": {
+    "30d_gate": 1431.56,
+    "60d_gate": 1979.75,
+    "sample_gate": 651.39
+  }
+}

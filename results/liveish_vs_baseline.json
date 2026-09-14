@@ -1,0 +1,174 @@
+{
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/strategy.py",
+  "capital0": 10000.0,
+  "liveish_engine": {
+    "quote_latency_rows": 1,
+    "max_fill_frac": 0.4,
+    "adverse_mid_cross_strength": 6.0,
+    "fill_persist_rows": 1,
+    "portfolio_inv_cap": 400.0,
+    "adverse_lookback_min": 5,
+    "use_trades": false
+  },
+  "liveish_strategy": {
+    "near_mid_size_mult": 0.5,
+    "near_mid_dist": 0.02,
+    "portfolio_inv_cap": 400.0,
+    "cancel_move": 0.02
+  },
+  "champion_optimistic_gate": {
+    "label": "pool100",
+    "min_daily_reward_pool": 100.0,
+    "sample": 1673.11,
+    "30d": 2734.01,
+    "60d": 2604.43,
+    "prior_pool150": {
+      "sample": 1197.56,
+      "30d": 2083.31,
+      "60d": 1913.93
+    }
+  },
+  "windows": {
+    "sample": {
+      "baseline": {
+        "net_pnl": 1673.1066,
+        "reward_pnl": 291.7366,
+        "trading_pnl": 1381.37,
+        "max_dd_pct": 1.2799,
+        "max_drawdown_usd": 127.9908,
+        "n_fills": 384,
+        "end_equity": 11673.1066,
+        "soft_reject": false,
+        "realism": {
+          "quote_latency_rows": 0,
+          "max_fill_frac": 1.0,
+          "adverse_mid_cross_strength": 0.0,
+          "fill_persist_rows": 0,
+          "portfolio_inv_cap": 0.0
+        },
+        "engine_cfg": {
+          "use_trades": false
+        },
+        "strategy_cfg": {}
+      },
+      "liveish": {
+        "net_pnl": 528.3479,
+        "reward_pnl": 182.8407,
+        "trading_pnl": 345.5071,
+        "max_dd_pct": 0.3116,
+        "max_drawdown_usd": 31.1566,
+        "n_fills": 221,
+        "end_equity": 10528.3479,
+        "soft_reject": false,
+        "realism": {
+          "quote_latency_rows": 1,
+          "max_fill_frac": 0.4,
+          "adverse_mid_cross_strength": 6.0,
+          "fill_persist_rows": 1,
+          "portfolio_inv_cap": 400.0
+        },
+        "engine_cfg": {
+          "quote_latency_rows": 1,
+          "max_fill_frac": 0.4,
+          "adverse_mid_cross_strength": 6.0,
+          "fill_persist_rows": 1,
+          "portfolio_inv_cap": 400.0,
+          "use_trades": false
+        },
+        "strategy_cfg": {
+          "near_mid_size_mult": 0.5,
+          "near_mid_dist": 0.02,
+          "portfolio_inv_cap": 400.0,
+          "cancel_move": 0.02
+        }
+      },
+      "delta_net_pnl": -1144.7587,
+      "n_price_rows": 503681
+    },
+    "30d": {
+      "baseline": {
+        "net_pnl": 2734.014,
+        "reward_pnl": 1547.0847,
+        "trading_pnl": 1186.9293,
+        "max_dd_pct": 1.2217,
+        "max_drawdown_usd": 122.1683,
+        "n_fills": 293,
+        "end_equity": 12734.014,
+        "soft_reject": false,
+        "realism": {
+          "quote_latency_rows": 0,
+          "max_fill_frac": 1.0,
+          "adverse_mid_cross_strength": 0.0,
+          "fill_persist_rows": 0,
+          "portfolio_inv_cap": 0.0
+        },
+        "engine_cfg": {
+          "use_trades": false
+        },
+        "strategy_cfg": {}
+      },
+      "liveish": {
+        "net_pnl": 432.9417,
+        "reward_pnl": 399.9214,
+        "trading_pnl": 33.0204,
+        "max_dd_pct": 0.467,
+        "max_drawdown_usd": 46.6993,
+        "n_fills": 118,
+        "end_equity": 10432.9417,
+        "soft_reject": false,
+        "realism": {
+          "quote_latency_rows": 1,
+          "max_fill_frac": 0.4,
+          "adverse_mid_cross_strength": 6.0,
+          "fill_persist_rows": 1,
+          "portfolio_inv_cap": 400.0
+        },
+        "engine_cfg": {
+          "quote_latency_rows": 1,
+          "max_fill_frac": 0.4,
+          "adverse_mid_cross_strength": 6.0,
+          "fill_persist_rows": 1,
+          "portfolio_inv_cap": 400.0,
+          "use_trades": false
+        },
+        "strategy_cfg": {
+          "near_mid_size_mult": 0.5,
+          "near_mid_dist": 0.02,
+          "portfolio_inv_cap": 400.0,
+          "cancel_move": 0.02
+        }
+      },
+      "delta_net_pnl": -2301.0723,
+      "n_days": 30,
+      "n_price_rows": 1836666
+    }
+  },
+  "elapsed_sec": 374.112,
+  "champion": "pool100",
+  "min_daily_reward_pool": 100.0,
+  "windows_note": "60d liveish not run here: concurrent eval_window 60d/90d from other agents; avoid OOM. Optimistic 60d gate is 2604.43.",
+  "candidate_hunt": {
+    "liveish_sample_pool100": 528.3479,
+    "liveish_30d_pool100": 432.9417,
+    "swept": [
+      "wider_spread",
+      "smaller_size",
+      "wider_smaller",
+      "more_skew",
+      "wider_skew",
+      "near_mid_harder",
+      "soft_inv_tighter",
+      "pause_longer",
+      "size_1p40",
+      "size_1p55",
+      "spread_0p62",
+      "spread_0p62_size_1p40",
+      "skew_0p45_size_1p40"
+    ],
+    "best_sample_label": "more_skew",
+    "best_sample_net": 528.6546,
+    "best_sample_delta": 0.3067,
+    "saved_candidate": null,
+    "reason": "No knob set improved liveish 30d. Only more_skew (0.45 vs 0.35) was +0.31 on liveish sample (noise); all size-up / tighter-spread / wider variants lost materially on liveish sample. Did not write strategy_liveish_candidate.py. Did not overwrite strategy_current_best (need both liveish-30d and liveish-60d to beat pool100 under the same liveish flags)."
+  }
+}

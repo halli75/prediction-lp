@@ -57,5 +57,5 @@ class Strategy:
 
 
 ## Data regime
-Sparse-day HuggingFace `orderbook_1min` L2 (Fed Sep + geopolitics). See README.
-Do not switch prepare.py to multi-GB continuous downloads during search.
+Continuous HuggingFace `orderbook_1min` L2 (May14–Aug10, allowlist top reward markets). See README / `data/manifest.json`.
+Do not download the TB raw `orderbook` stream. During search, do not re-run full prepare.

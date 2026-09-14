@@ -1,0 +1,24 @@
+{
+  "sample_net_pnl": 669.9433,
+  "window_net_pnl": 669.9433,
+  "net_pnl": 669.9433,
+  "max_dd_pct": 0.6988,
+  "max_drawdown_pct": 0.6988,
+  "n_fills": 622,
+  "reward_pnl": 405.3807,
+  "trading_pnl": 264.5626,
+  "soft_reject": false,
+  "elapsed_sec": 38.31,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 10
+  },
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/champions/strategy_creative_day_boundary_flatten.py",
+  "elapsed_wall_sec": 38.73,
+  "candidate_id": "df_max10",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 10
+  }
+}

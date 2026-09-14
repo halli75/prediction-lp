@@ -1,0 +1,418 @@
+{
+  "wave": "creative_wave4",
+  "started_at": "2026-09-13T23:33:04.064028+00:00",
+  "champion": "creative_df_max8_pool110",
+  "gates": {
+    "sample": 611.05,
+    "30d": 1676.34,
+    "60d": 2512.14
+  },
+  "parent_near_miss": {
+    "id": "ovn_reduce",
+    "sample": 783.97,
+    "30d": 1598.62,
+    "60d": 2540.89
+  },
+  "pid": 217752,
+  "phase": "window_eval:ovn_max10",
+  "candidates": {
+    "ovn_e3": {
+      "id": "ovn_e3",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_end_hour": 3
+      },
+      "sample_net_pnl": 726.7343,
+      "max_dd_pct": 0.5948,
+      "soft_reject": false,
+      "n_fills": 573,
+      "reward_pnl": 464.3816,
+      "trading_pnl": 262.3527,
+      "error": false
+    },
+    "ovn_e4": {
+      "id": "ovn_e4",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_end_hour": 4
+      },
+      "sample_net_pnl": 723.4543,
+      "max_dd_pct": 0.6604,
+      "soft_reject": false,
+      "n_fills": 491,
+      "reward_pnl": 446.0335,
+      "trading_pnl": 277.4208,
+      "error": false
+    },
+    "ovn_e5": {
+      "id": "ovn_e5",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_end_hour": 5
+      },
+      "sample_net_pnl": 690.1208,
+      "max_dd_pct": 0.98,
+      "soft_reject": false,
+      "n_fills": 494,
+      "reward_pnl": 490.0883,
+      "trading_pnl": 200.0324,
+      "error": false
+    },
+    "ovn_s1_e6": {
+      "id": "ovn_s1_e6",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_start_hour": 1,
+        "overnight_end_hour": 6
+      },
+      "sample_net_pnl": 676.195,
+      "max_dd_pct": 0.5993,
+      "soft_reject": false,
+      "n_fills": 627,
+      "reward_pnl": 456.6652,
+      "trading_pnl": 219.5297,
+      "error": false
+    },
+    "ovn_s2_e6": {
+      "id": "ovn_s2_e6",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_start_hour": 2,
+        "overnight_end_hour": 6
+      },
+      "sample_net_pnl": 607.4021,
+      "max_dd_pct": 0.5283,
+      "soft_reject": false,
+      "n_fills": 658,
+      "reward_pnl": 431.4566,
+      "trading_pnl": 175.9456,
+      "error": false
+    },
+    "ovn_s0_e6_ctrl": {
+      "id": "ovn_s0_e6_ctrl",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 783.9748,
+      "max_dd_pct": 0.4511,
+      "soft_reject": false,
+      "n_fills": 478,
+      "reward_pnl": 466.8268,
+      "trading_pnl": 317.148,
+      "error": false
+    },
+    "ovn_sz05": {
+      "id": "ovn_sz05",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "size_mult",
+        "overnight_size_mult": 0.5
+      },
+      "sample_net_pnl": 317.3259,
+      "max_dd_pct": 1.3186,
+      "soft_reject": false,
+      "n_fills": 599,
+      "reward_pnl": 391.5713,
+      "trading_pnl": -74.2454,
+      "error": false
+    },
+    "ovn_sz07": {
+      "id": "ovn_sz07",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "size_mult",
+        "overnight_size_mult": 0.7
+      },
+      "sample_net_pnl": 298.3055,
+      "max_dd_pct": 1.0917,
+      "soft_reject": false,
+      "n_fills": 613,
+      "reward_pnl": 391.3327,
+      "trading_pnl": -93.0272,
+      "error": false
+    },
+    "ovn_sz085": {
+      "id": "ovn_sz085",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "size_mult",
+        "overnight_size_mult": 0.85
+      },
+      "sample_net_pnl": 362.7723,
+      "max_dd_pct": 0.7035,
+      "soft_reject": false,
+      "n_fills": 478,
+      "reward_pnl": 398.5259,
+      "trading_pnl": -35.7535,
+      "error": false
+    },
+    "ovn_sz05_e4": {
+      "id": "ovn_sz05_e4",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "size_mult",
+        "overnight_size_mult": 0.5,
+        "overnight_end_hour": 4
+      },
+      "sample_net_pnl": 349.2814,
+      "max_dd_pct": 1.041,
+      "soft_reject": false,
+      "n_fills": 553,
+      "reward_pnl": 390.8414,
+      "trading_pnl": -41.56,
+      "error": false
+    },
+    "ovn_pool100": {
+      "id": "ovn_pool100",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 100.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 832.4228,
+      "max_dd_pct": 0.4387,
+      "soft_reject": false,
+      "n_fills": 480,
+      "reward_pnl": 469.1664,
+      "trading_pnl": 363.2563,
+      "error": false,
+      "30d": 1608.3767,
+      "60d": 1950.243,
+      "beats_gates": false
+    },
+    "ovn_pool105": {
+      "id": "ovn_pool105",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 105.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 785.3845,
+      "max_dd_pct": 0.4496,
+      "soft_reject": false,
+      "n_fills": 478,
+      "reward_pnl": 468.2365,
+      "trading_pnl": 317.148,
+      "error": false
+    },
+    "ovn_pool108": {
+      "id": "ovn_pool108",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 108.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 783.9748,
+      "max_dd_pct": 0.4511,
+      "soft_reject": false,
+      "n_fills": 478,
+      "reward_pnl": 466.8268,
+      "trading_pnl": 317.148,
+      "error": false
+    },
+    "ovn_pool115": {
+      "id": "ovn_pool115",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 115.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 783.5452,
+      "max_dd_pct": 0.4511,
+      "soft_reject": false,
+      "n_fills": 478,
+      "reward_pnl": 466.3972,
+      "trading_pnl": 317.148,
+      "error": false
+    },
+    "ovn_max6": {
+      "id": "ovn_max6",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 6,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 771.3351,
+      "max_dd_pct": 0.4511,
+      "soft_reject": false,
+      "n_fills": 480,
+      "reward_pnl": 476.857,
+      "trading_pnl": 294.4781,
+      "error": false
+    },
+    "ovn_max7": {
+      "id": "ovn_max7",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 7,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 783.9748,
+      "max_dd_pct": 0.4511,
+      "soft_reject": false,
+      "n_fills": 478,
+      "reward_pnl": 466.8268,
+      "trading_pnl": 317.148,
+      "error": false
+    },
+    "ovn_max10": {
+      "id": "ovn_max10",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 10,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 791.2218,
+      "max_dd_pct": 0.4511,
+      "soft_reject": false,
+      "n_fills": 476,
+      "reward_pnl": 467.1385,
+      "trading_pnl": 324.0833,
+      "error": false,
+      "30d": 1697.6336,
+      "60d": 2376.7274,
+      "beats_gates": false
+    },
+    "ovn_e4_pool105": {
+      "id": "ovn_e4_pool105",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 105.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_end_hour": 4
+      },
+      "sample_net_pnl": 724.902,
+      "max_dd_pct": 0.6603,
+      "soft_reject": false,
+      "n_fills": 491,
+      "reward_pnl": 447.4813,
+      "trading_pnl": 277.4208,
+      "error": false
+    },
+    "ovn_e4_max10": {
+      "id": "ovn_e4_max10",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 10,
+        "min_daily_reward_pool": 110.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_end_hour": 4
+      },
+      "sample_net_pnl": 737.4241,
+      "max_dd_pct": 0.6604,
+      "soft_reject": false,
+      "n_fills": 490,
+      "reward_pnl": 450.2279,
+      "trading_pnl": 287.1962,
+      "error": false
+    },
+    "ovn_sz07_pool105": {
+      "id": "ovn_sz07_pool105",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 8,
+        "min_daily_reward_pool": 105.0,
+        "overnight_quiet": true,
+        "overnight_mode": "size_mult",
+        "overnight_size_mult": 0.7
+      },
+      "sample_net_pnl": 287.0648,
+      "max_dd_pct": 1.1679,
+      "soft_reject": false,
+      "n_fills": 630,
+      "reward_pnl": 393.2998,
+      "trading_pnl": -106.2349,
+      "error": false
+    },
+    "ovn_e5_max10_p105": {
+      "id": "ovn_e5_max10_p105",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 10,
+        "min_daily_reward_pool": 105.0,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_end_hour": 5
+      },
+      "sample_net_pnl": 698.8059,
+      "max_dd_pct": 0.98,
+      "soft_reject": false,
+      "n_fills": 492,
+      "reward_pnl": 491.8382,
+      "trading_pnl": 206.9677,
+      "error": false
+    }
+  },
+  "promoted": false,
+  "running_pids": [
+    217752
+  ],
+  "n_candidates": 21,
+  "mandate": "recover overnight 30d while keeping sample/60d edge",
+  "updated_at": "2026-09-14T00:03:51.886378+00:00",
+  "advance": [
+    "ovn_pool100",
+    "ovn_max10",
+    "ovn_pool105",
+    "ovn_s0_e6_ctrl",
+    "ovn_pool108",
+    "ovn_max7",
+    "ovn_pool115",
+    "ovn_max6",
+    "ovn_e4_max10",
+    "ovn_e3"
+  ]
+}

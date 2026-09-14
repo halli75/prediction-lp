@@ -1,0 +1,59 @@
+[verify] df_max10 fresh start 2026-09-13T21:34:51+00:00
+=== SAMPLE ===
+{
+  "sample_net_pnl": 669.9433,
+  "window_net_pnl": 669.9433,
+  "net_pnl": 669.9433,
+  "max_dd_pct": 0.6988,
+  "max_drawdown_pct": 0.6988,
+  "n_fills": 622,
+  "reward_pnl": 405.3807,
+  "trading_pnl": 264.5626,
+  "soft_reject": false,
+  "elapsed_sec": 38.84,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 10
+  },
+  "strategy_module": "research/champions/strategy_creative_day_boundary_flatten.py"
+}
+=== 30D ===
+{
+  "sample_net_pnl": 1427.0554,
+  "window_net_pnl": 1427.0554,
+  "net_pnl": 1427.0554,
+  "max_dd_pct": 0.3555,
+  "max_drawdown_pct": 0.3555,
+  "n_fills": 531,
+  "reward_pnl": 1285.088,
+  "trading_pnl": 141.9675,
+  "soft_reject": false,
+  "elapsed_sec": 184.595,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 10
+  },
+  "strategy_module": "research/champions/strategy_creative_day_boundary_flatten.py"
+}
+=== 60D ===
+{
+  "sample_net_pnl": 2068.1103,
+  "window_net_pnl": 2068.1103,
+  "net_pnl": 2068.1103,
+  "max_dd_pct": 0.5956,
+  "max_drawdown_pct": 0.5956,
+  "n_fills": 1183,
+  "reward_pnl": 2584.3237,
+  "trading_pnl": -516.2134,
+  "soft_reject": false,
+  "elapsed_sec": 287.676,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 10
+  },
+  "strategy_module": "research/champions/strategy_creative_day_boundary_flatten.py"
+}
+[verify] df_max10 done 2026-09-13T21:43:24+00:00

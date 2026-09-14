@@ -13,20 +13,21 @@ backtest. Starting capital **$10,000**. Kalshi is out of scope.
 3. **`strategy.py`** (editable) — two-sided quoting with inventory skew; autoresearch mutates it.
 4. **`scripts/run_autoresearch.py`** — keep/discard via git; logs `results/experiments.jsonl`.
 
-## Data coverage (honest)
+## Data coverage
 
-This is **sparse-day sampling across ~3 calendar months**, **not** continuous 90-day L2.
+**Continuous** ~3-month L2 from HF `orderbook_1min` (day-at-a-time; raw deleted after filter).
 
 | Item | Value |
 |------|--------|
 | Source | HF `orderbook_1min` only (not the TB raw stream) |
-| Default days | 2026-05-14, 2026-06-01, 2026-06-25, 2026-07-20, (+ optional 2026-08-06) |
+| Default range | **2026-05-14 → 2026-08-10** continuous (83 days) |
 | Gaps | Jun 12–17 missing in archive; archives end 2026-08-10 |
-| Markets | Fed Decision Sep 2026 (5 outcomes) + US invade Iran before 2027 + Trump out before 2027 |
-| Rewards | Current Gamma `rewardsMinSize` / `rewardsMaxSpread` / `rewardsDailyRate` held **constant**; historical rates may have differed |
-| Not used | CLOB `prices-history` for May–Jul (lookback too short / almost no overlap with archives) |
+| Markets | Allowlist in `data/top_reward_markets.json` (~40–80 YES tokens ranked by `rewardsDailyRate`, long-lived overlap preferred) |
+| Rewards | Current Gamma/CLOB `rewardsMinSize` / `rewardsMaxSpread` / `rewardsDailyRate` held **constant**; historical rates may have differed |
+| Disk | Downloads **one day** (~1–2GB), DuckDB-filters to allowlist, writes `data/slim_days/YYYY-MM-DD.parquet`, deletes raw immediately |
+| Resume | `python prepare.py --continuous --resume` (state in `data/manifest.json`) |
 
-Quick first run uses **two days only**: `--quick` → 2026-05-14 + 2026-07-20 (~2–3GB transient download).
+Quick smoke: `--quick` → 2026-05-14 + 2026-07-20. Legacy sparse: `--sparse`.
 
 ## Setup
 
@@ -40,11 +41,13 @@ pip install -r requirements.txt
 ## Run
 
 ```bash
-# 1) Prepare data (quick 2-day baseline first)
-python prepare.py --quick
+# 1) Prepare continuous May14–Aug10 (resume-friendly; one day at a time)
+python prepare.py --continuous
+# python prepare.py --continuous --resume
 
-# Or full sparse set (~5 days, watch disk; raw files deleted after filter)
-python prepare.py
+# Quick smoke / legacy sparse
+# python prepare.py --quick
+# python prepare.py --sparse
 
 # 2) Evaluate baseline
 python evaluate.py
@@ -78,7 +81,7 @@ sim/  scripts/run_autoresearch.py  tests/  fixtures/  data/  results/
 
 ## Limitations
 
-- Sparse days ≠ continuous path; overnight/weekend gaps between sample days are **not** modeled as holding risk continuously in calendar time beyond concatenated timestamps.
+- Continuous day concat still has the Jun 12–17 archive gap; overnight inventory carries across day boundaries via timestamps.
 - Reward schedule is **not** historically accurate day-by-day.
 - No full adverse-selection microstructure from aggressor flow when trade tape absent.
 - Inventory settlement / merge-split complete-set mechanics simplified.

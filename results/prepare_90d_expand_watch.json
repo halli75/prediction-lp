@@ -1,0 +1,53 @@
+{
+  "updated_at": "2026-09-13T07:00:07Z",
+  "phase": "done",
+  "prepare_pid": 175152,
+  "prepare_alive": false,
+  "slim_n": 83,
+  "log_tail": [
+    "[prepare] progress 81/83 (disk free check...)",
+    "[prepare] downloading HF orderbook_1min date=2026-08-09 ...",
+    "/workspace/polymarket-lp-autoresearch/.venv/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.",
+    "  warnings.warn(",
+    "[prepare]   got /workspace/polymarket-lp-autoresearch/data/raw_hf/orderbook_1min/date=2026-08-09/data_0.parquet (2.37 GB) in 49s",
+    "[prepare]   schema cols (12): ['asset_id', 'condition_id', 'minute_ts', 'bids_json', 'asks_json', 'n_bid_levels', 'n_ask_levels', 'best_bid', 'best_ask', 'mid', 'spread', 'date']..."
+  ],
+  "last_rebuild_n": 80,
+  "summary": {
+    "job": "pool100_expand_window_evals",
+    "updated_at": "2026-09-13T07:00:07Z",
+    "strategy": "research/champions/strategy_pool100.py",
+    "windows": {
+      "30d": {
+        "net_pnl": 3192.4223,
+        "reward_pnl": 1451.7601,
+        "trading_pnl": 1740.6622,
+        "max_dd_pct": 1.214,
+        "n_days": 30,
+        "n_fills": 307,
+        "soft_reject": false,
+        "artifact": "results/pool100_expand_evals/pool100_30d.json"
+      },
+      "60d": {
+        "net_pnl": 3634.586,
+        "reward_pnl": 2456.7998,
+        "trading_pnl": 1177.7862,
+        "max_dd_pct": 1.5913,
+        "n_days": 54,
+        "n_fills": 485,
+        "soft_reject": false,
+        "artifact": "results/pool100_expand_evals/pool100_60d.json"
+      },
+      "90d": {
+        "net_pnl": 3171.5655,
+        "reward_pnl": 2607.0196,
+        "trading_pnl": 564.5459,
+        "max_dd_pct": 2.9548,
+        "n_days": 83,
+        "n_fills": 1605,
+        "soft_reject": false,
+        "artifact": "results/pool100_expand_evals/pool100_90d.json"
+      }
+    }
+  }
+}

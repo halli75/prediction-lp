@@ -1,0 +1,85 @@
+{
+  "wave": "wave6_from_wave5b",
+  "updated_at": "2026-09-13T11:03:34Z",
+  "parent": "wave5b_pull24_p46_sf672",
+  "champion_label": "wave5b_pull24_p46_sf672",
+  "liveish_mode": true,
+  "liveish_sample_gate": 528.47,
+  "liveish_30d_gate": 496.98,
+  "liveish_60d_gate": 861.11,
+  "agents": {
+    "wave6-from-wave5b": {
+      "kind": "window_aware_joint",
+      "axis": "around_wave5b",
+      "pid": 265360,
+      "alive": true,
+      "log": "results/window_aware_hunt_wave6_from_wave5b.log",
+      "artifact": "results/window_aware_hunt_wave6_from_wave5b.json",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave6"
+    },
+    "wave6-pull_size_after_adverse_fill": {
+      "kind": "axis",
+      "axis": "pull_size_after_adverse_fill",
+      "pid": 264854,
+      "alive": true,
+      "seed": 6101,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave6-pull_size_after_adverse_fill/run.log",
+      "wave": "wave6"
+    },
+    "wave6-pause_after_fill": {
+      "kind": "axis",
+      "axis": "pause_after_fill",
+      "pid": 264855,
+      "alive": true,
+      "seed": 6102,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave6-pause_after_fill/run.log",
+      "wave": "wave6"
+    },
+    "wave6-free_explore": {
+      "kind": "axis",
+      "axis": "free_explore",
+      "pid": 264856,
+      "alive": true,
+      "seed": 6103,
+      "iters_target": 40,
+      "liveish_search": true,
+      "log": "research/agents/wave6-free_explore/run.log",
+      "wave": "wave6"
+    },
+    "wave6-widen_spread": {
+      "kind": "axis",
+      "axis": "widen_spread",
+      "pid": 264857,
+      "alive": true,
+      "seed": 6104,
+      "iters_target": 30,
+      "liveish_search": true,
+      "log": "research/agents/wave6-widen_spread/run.log",
+      "wave": "wave6"
+    }
+  },
+  "alive_count": 5,
+  "promotions": [
+    {
+      "label": "wave5b_pull24_p46_sf672",
+      "source": "wave5b-bridge",
+      "liveish": {
+        "sample": 528.4746,
+        "30d": 496.9795,
+        "60d": 861.1133
+      },
+      "ts": "2026-09-13T10:17:24Z"
+    }
+  ],
+  "commander_actions": [
+    "killed stale liveish_joint_hunt on pool100/old gates",
+    "retargeted gate constants to wave5b",
+    "launched wave6 joint + 4 liveish axes from wave5b",
+    "updated shared_findings + overnight_digest"
+  ]
+}

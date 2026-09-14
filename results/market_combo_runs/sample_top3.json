@@ -1,0 +1,41 @@
+{
+  "set_name": "top3",
+  "set_kind": "rank_pool",
+  "set_n": 3,
+  "set_min_pool": 0.0,
+  "set_path": "research/market_sets/top3.json",
+  "window": "sample",
+  "n_days": null,
+  "days": null,
+  "sample_net_pnl": 304.7836,
+  "window_net_pnl": null,
+  "net_pnl": 304.7836,
+  "return_pct": 3.0478,
+  "reward_pnl": 102.0966,
+  "trading_pnl": 202.687,
+  "max_dd_pct": 0.6455,
+  "max_drawdown_pct": 0.6455,
+  "max_drawdown_usd": 64.55,
+  "n_fills": 29,
+  "end_equity": 10304.7836,
+  "n_price_rows": 36199,
+  "n_markets_in_set": 3,
+  "n_markets_with_prices": 3,
+  "capital0": 10000.0,
+  "soft_reject": false,
+  "dd_limit_pct": 25.0,
+  "elapsed_sec": 5.733,
+  "strategy": "pool150_champion",
+  "champion_knobs_held": {
+    "spread_frac": 0.6676,
+    "size_mult": 1.291,
+    "inv_soft_cap": 35.0,
+    "max_abs_inv": 100.0
+  },
+  "applied_min_daily_reward_pool": 0.0,
+  "market_ids": [
+    "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a",
+    "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d",
+    "0x58d5cc2bf06a3289b127049239aee051f3b941f219efebbca02d3f50f0eb2a64"
+  ]
+}

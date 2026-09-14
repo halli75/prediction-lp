@@ -1,0 +1,40 @@
+{
+  "job": "COMMANDER_promotion_keep_mid_move_hard_cancel_cents_3p0",
+  "label": "keep_mid_move_hard_cancel_cents_3p0",
+  "parent": "pool100",
+  "strategy": "research/champions/strategy_keep_mid_move_hard_cancel_cents_3p0.py",
+  "knob": "mid_move_hard_cancel_cents",
+  "value": 3.0,
+  "parent_value": 4.0,
+  "created_at": "2026-09-13T06:42:16.176281+00:00",
+  "gate_beaten": {
+    "sample": 1673.11,
+    "30d": 2734.01,
+    "60d": 2604.43
+  },
+  "windows": {
+    "sample": {
+      "net_pnl": 1651.9959,
+      "max_dd_pct": 1.2983,
+      "soft_reject": false,
+      "n_fills": 400
+    },
+    "30d": {
+      "net_pnl": 2925.4096,
+      "max_dd_pct": 1.1224,
+      "soft_reject": false,
+      "delta_vs_pool100": 191.3996
+    },
+    "60d": {
+      "net_pnl": 3165.2407,
+      "max_dd_pct": 2.2064,
+      "soft_reject": false,
+      "delta_vs_pool100": 560.8107
+    }
+  },
+  "inv_caps": {
+    "inv_soft_cap": "\u226435",
+    "max_abs_inv": "\u2264100"
+  },
+  "source_try": 2004
+}

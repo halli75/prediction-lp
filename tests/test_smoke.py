@@ -54,7 +54,7 @@ def test_strategy_quotes_inside_band():
             "capital0": 10_000,
             "rewards_min_size": 10,
             "rewards_max_spread": 5.0,
-            "daily_reward_pool": 100,
+            "daily_reward_pool": 500,
             "competition_q": 200,
         }
     )

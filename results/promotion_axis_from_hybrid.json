@@ -1,0 +1,74 @@
+{
+  "job": "axis-from-hybrid_free_explore_seed77",
+  "agent_id": "axis-from-hybrid",
+  "axis": "free_explore",
+  "seed": 77,
+  "iters": 60,
+  "keeps": 2,
+  "parent": "hybrid_spread_size",
+  "parent_path": "research/champions/strategy_hybrid_spread_size.py",
+  "strategy_best": "research/agents/axis-from-hybrid/strategy_best.py",
+  "knobs": {
+    "spread_frac": 0.6676,
+    "size_mult": 1.291,
+    "max_abs_inv": 150.0,
+    "inv_soft_cap": 35.0,
+    "min_daily_reward_pool": 200.0,
+    "pull_size_mult": 0.28783489375899773,
+    "skew_bps_per_share": 0.21010559658867356,
+    "inv_pause_ticks": 16,
+    "mid_move_cancel_cents": 2.0,
+    "market_allowlist_mode": null
+  },
+  "inventory_floors": {
+    "inv_soft_cap_min": 20,
+    "max_abs_inv_min": 80,
+    "ok": true
+  },
+  "sample": {
+    "net_pnl": 1183.5958,
+    "reward_pnl": 176.6454,
+    "trading_pnl": 1006.9504,
+    "max_dd_pct": 1.5332,
+    "n_fills": 161,
+    "soft_reject": false
+  },
+  "windows": {
+    "30d": {
+      "net_pnl": 1877.7467,
+      "reward_pnl": 1073.1955,
+      "trading_pnl": 804.5512,
+      "max_dd_pct": 0.6471,
+      "n_fills": 94,
+      "n_days": 30,
+      "soft_reject": false
+    },
+    "60d": {
+      "net_pnl": 1412.3624,
+      "reward_pnl": 982.0647,
+      "trading_pnl": 430.2977,
+      "max_dd_pct": 2.4598,
+      "n_fills": 468,
+      "n_days": 54,
+      "soft_reject": false
+    }
+  },
+  "champion_to_beat": {
+    "label": "hybrid_spread_size",
+    "sample_net_pnl": 1086.4703,
+    "window_30d_net_pnl": 1938.7596,
+    "window_60d_net_pnl": 1581.2224
+  },
+  "deltas_vs_hybrid": {
+    "sample": 97.1255,
+    "30d": -61.0129,
+    "60d": -168.86
+  },
+  "gate": "beat hybrid 30d 1938.76 AND 60d 1581.22",
+  "beats_sample": true,
+  "beats_30d": false,
+  "beats_60d": false,
+  "promoted": false,
+  "reason": "sample +1183.60 beats hybrid +1086.47 but 30d +1877.75 < +1938.76 and 60d +1412.36 < +1581.22; NEW GATE fail",
+  "created_at": "2026-09-13T05:27:31.079706+00:00"
+}

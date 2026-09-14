@@ -1,0 +1,18 @@
+{
+  "sample_net_pnl": 1431.5577,
+  "window_net_pnl": 1431.5577,
+  "net_pnl": 1431.5577,
+  "max_dd_pct": 0.5588,
+  "max_drawdown_pct": 0.5588,
+  "n_fills": 743,
+  "reward_pnl": 1530.3796,
+  "trading_pnl": -98.8219,
+  "soft_reject": false,
+  "elapsed_sec": 291.184,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 5
+  },
+  "strategy_module": "research/champions/strategy_creative_day_boundary_flatten.py"
+}

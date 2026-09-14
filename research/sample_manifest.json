@@ -1,0 +1,62 @@
+{
+  "days": [
+    "2026-05-14",
+    "2026-05-20",
+    "2026-05-25",
+    "2026-05-31",
+    "2026-06-06",
+    "2026-06-11",
+    "2026-06-23",
+    "2026-06-28",
+    "2026-07-04",
+    "2026-07-10",
+    "2026-07-15",
+    "2026-07-21"
+  ],
+  "n_days": 12,
+  "n_markets_policy": "all_allowlist_from_markets_json; strategy may further filter via market_allowlist (defensive baseline=top5)",
+  "capital": 10000,
+  "primary_metric": "sample_net_pnl",
+  "eval_mode": "full_run_on_sample_no_holdout_split",
+  "soft_reject": {
+    "max_dd_pct_of_capital": 25.0
+  },
+  "prices_path": "data/research_sample_prices.parquet",
+  "markets_path": "data/markets.json",
+  "notes": "12 evenly spaced slim days across available continuous prepare window. Primary metric is full-sample net PnL (not holdout split).",
+  "build_meta": {
+    "days": [
+      "2026-05-14",
+      "2026-05-20",
+      "2026-05-25",
+      "2026-05-31",
+      "2026-06-06",
+      "2026-06-11",
+      "2026-06-23",
+      "2026-06-28",
+      "2026-07-04",
+      "2026-07-10",
+      "2026-07-15",
+      "2026-07-21"
+    ],
+    "days_present": [
+      "2026-05-14",
+      "2026-05-20",
+      "2026-05-25",
+      "2026-05-31",
+      "2026-06-06",
+      "2026-06-11",
+      "2026-06-23",
+      "2026-06-28",
+      "2026-07-04",
+      "2026-07-10",
+      "2026-07-15",
+      "2026-07-21"
+    ],
+    "missing_days": [],
+    "n_rows": 503681,
+    "n_markets": 61,
+    "prices_path": "data/research_sample_prices.parquet",
+    "markets_path": "data/markets.json"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "wave": "wave4b_liveish",
+  "parent": "pool100",
+  "champion_label": "pool100",
+  "optimistic_promo_void": "wave2_cancel_on_mid_move_20260913T063448Z",
+  "parent_sample_optimistic": 1673.11,
+  "liveish_sample_gate": 528.35,
+  "liveish_30d_gate": 432.94,
+  "liveish_60d_gate": 423.35,
+  "gate_30d_optimistic": 2734.01,
+  "gate_60d_optimistic": 2604.43,
+  "liveish_mode": true,
+  "search_criterion": "eval_sample --liveish",
+  "liveish_scores": {
+    "wave3-cancel_on_mid_move": {
+      "sample_liveish": 358.1748,
+      "max_dd_pct": 0.3414,
+      "beats_pool100": false,
+      "delta": -170.1752
+    },
+    "wave3-pause_after_fill": {
+      "sample_liveish": 526.7296,
+      "max_dd_pct": 0.3116,
+      "beats_pool100": false,
+      "delta": -1.6204
+    },
+    "wave3-pull_size_after_adverse_fill": {
+      "sample_liveish": 443.6947,
+      "max_dd_pct": 0.2827,
+      "beats_pool100": false,
+      "delta": -84.6553
+    },
+    "wave3-near_mid_size": {
+      "sample_liveish": 528.3479,
+      "max_dd_pct": 0.3116,
+      "beats_pool100": false,
+      "delta": -0.0021
+    },
+    "wave3-free_explore": {
+      "sample_liveish": 405.1509,
+      "max_dd_pct": 0.2698,
+      "beats_pool100": false,
+      "delta": -123.1991
+    },
+    "wave3-shrink_size": {
+      "sample_liveish": 528.3479,
+      "max_dd_pct": 0.3116,
+      "beats_pool100": false,
+      "delta": -0.0021
+    },
+    "wave3-skew_aggressive": {
+      "sample_liveish": 332.9236,
+      "max_dd_pct": 0.6805,
+      "beats_pool100": false,
+      "delta": -195.4264
+    }
+  },
+  "optimistic_winners_liveish_sample": {
+    "wave3-cancel_on_mid_move": 358.1748,
+    "wave3-pause_after_fill": 526.7296,
+    "wave3-pull_size_after_adverse_fill": 443.6947,
+    "wave3-near_mid_size": 528.3479,
+    "wave3-free_explore": 405.1509,
+    "wave3-shrink_size": 528.3479,
+    "wave3-skew_aggressive": 332.9236
+  },
+  "agents": {
+    "wave4b-cancel_on_mid_move": {
+      "axis": "cancel_on_mid_move",
+      "pid": 183365,
+      "seed": 4201,
+      "alive": true,
+      "liveish_search": true,
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116,
+      "liveish": true,
+      "iters": 5,
+      "log": "research/agents/wave4b-cancel_on_mid_move/run.log",
+      "parent": "pool100",
+      "wave": "wave4b"
+    },
+    "wave4b-pull_size_after_adverse_fill": {
+      "axis": "pull_size_after_adverse_fill",
+      "pid": 183485,
+      "seed": 4202,
+      "alive": true,
+      "liveish_search": true,
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116,
+      "liveish": true,
+      "iters": 4,
+      "log": "research/agents/wave4b-pull_size_after_adverse_fill/run.log",
+      "parent": "pool100",
+      "wave": "wave4b"
+    },
+    "wave4b-pause_after_fill": {
+      "axis": "pause_after_fill",
+      "pid": 183562,
+      "seed": 4203,
+      "alive": true,
+      "liveish_search": true,
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116,
+      "liveish": true,
+      "iters": 4,
+      "log": "research/agents/wave4b-pause_after_fill/run.log",
+      "parent": "pool100",
+      "wave": "wave4b"
+    },
+    "wave4b-inventory_hard_cap": {
+      "axis": "inventory_hard_cap",
+      "pid": 183646,
+      "seed": 4204,
+      "alive": true,
+      "liveish_search": true,
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116,
+      "liveish": true,
+      "iters": 4,
+      "log": "research/agents/wave4b-inventory_hard_cap/run.log",
+      "parent": "pool100",
+      "wave": "wave4b"
+    },
+    "wave4b-shrink_size": {
+      "axis": "shrink_size",
+      "pid": 184856,
+      "seed": 4205,
+      "alive": true,
+      "liveish_search": true,
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116,
+      "liveish": true,
+      "iters": 1,
+      "log": "research/agents/wave4b-shrink_size/run.log",
+      "parent": "pool100",
+      "wave": "wave4b"
+    },
+    "wave4b-near_mid_size": {
+      "axis": "near_mid_size",
+      "pid": 184959,
+      "seed": 4206,
+      "alive": true,
+      "liveish_search": true,
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116,
+      "liveish": true,
+      "iters": 0,
+      "log": "research/agents/wave4b-near_mid_size/run.log",
+      "parent": "pool100",
+      "wave": "wave4b"
+    }
+  },
+  "alive_count": 6,
+  "promotions": [],
+  "liveish_rescore_done": true,
+  "note": "Champion=pool100. Optimistic cancel_mid VOID (liveish sample 358.17 < 528.35). Liveish gates: sample>528.35 / 30d>432.94 / 60d>423.35. All wave3 optimistic winners failed liveish sample; none promoted. Wave4b: 6 axes searching with --liveish keep criterion (cancel/pull/pause/inventory/shrink/near_mid). Attach: tail -f research/agents/wave4b-<axis>/run.log | summary: cat results/liveish_wave3_rescore_summary.json | status: cat results/swarm_wave2_status.json",
+  "how_to_attach": {
+    "status": "cat results/swarm_wave2_status.json",
+    "wave4b_log": "tail -f research/agents/wave4b-<axis>/run.log",
+    "summary": "cat results/liveish_wave3_rescore_summary.json",
+    "rescore_log": "tail -f results/swarm_liveish_rescore.log"
+  },
+  "updated_at": "2026-09-13T07:00:13Z"
+}

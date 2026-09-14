@@ -1,0 +1,30 @@
+{
+  "sample_net_pnl": -177.0688,
+  "window_net_pnl": -177.0688,
+  "net_pnl": -177.0688,
+  "max_dd_pct": 3.4527,
+  "max_drawdown_pct": 3.4527,
+  "n_fills": 669,
+  "reward_pnl": 241.5379,
+  "trading_pnl": -418.6067,
+  "soft_reject": false,
+  "elapsed_sec": 38.953,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110.0,
+    "max_inv_age_ticks": 120,
+    "carry_budget_shares": 80
+  },
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/creative/strategy_creative_base.py",
+  "elapsed_wall_sec": 39.369,
+  "candidate_id": "age120_carry80",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110.0,
+    "max_inv_age_ticks": 120,
+    "carry_budget_shares": 80
+  }
+}

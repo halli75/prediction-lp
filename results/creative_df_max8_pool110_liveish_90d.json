@@ -1,0 +1,36 @@
+{
+  "sample_net_pnl": 2137.3746,
+  "window_net_pnl": 2137.3746,
+  "net_pnl": 2137.3746,
+  "max_dd_pct": 3.2874,
+  "max_drawdown_pct": 3.2874,
+  "n_fills": 4195,
+  "reward_pnl": 3616.5535,
+  "trading_pnl": -1479.1789,
+  "soft_reject": false,
+  "elapsed_sec": 382.048,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110
+  },
+  "strategy_module": "research/champions/strategy_current_best.py",
+  "window": "90d",
+  "days_file": "research/window_90d_days.txt",
+  "n_days": 83,
+  "days_range": "2026-05-14\u21922026-08-10",
+  "champion": "creative_df_max8_pool110",
+  "compare_day_boundary_flatten_90d": 1074.6145,
+  "delta_vs_day_boundary_flatten_90d": 1062.7601,
+  "compare_wave5b_90d": 547.2302,
+  "delta_vs_wave5b_90d": 1590.1444,
+  "saved_at": "2026-09-13T22:27:41.911255+00:00",
+  "engine": "LIVEISH_CONFIG via eval_liveish_candidate",
+  "strategy_cfg_base_note": "LIVEISH_STRATEGY_CFG + champion defaults (day_flatten=True, max_net=8, pool=110)",
+  "gates_at_promote": {
+    "sample": 611.05,
+    "30d": 1676.34,
+    "60d": 2512.14
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "job": "wave5b_promotion_wave5b_pull24_p46_sf672",
+  "label": "wave5b_pull24_p46_sf672",
+  "parent": "pool100",
+  "eval": "liveish",
+  "mutation_label": "pull24_p46_sf672",
+  "knobs": [
+    [
+      "inv_pause_ticks",
+      24
+    ],
+    [
+      "pull_size_mult",
+      0.464
+    ],
+    [
+      "spread_frac",
+      0.672
+    ]
+  ],
+  "created_at": "2026-09-13T10:17:24.526745+00:00",
+  "gate_liveish_aug10": {
+    "sample": 528.35,
+    "30d": 473.85,
+    "60d": 723.72
+  },
+  "windows_liveish": {
+    "sample": 528.4746,
+    "30d": 496.9795,
+    "60d": 861.1133,
+    "deltas": {
+      "sample": 0.1246,
+      "30d": 23.1295,
+      "60d": 137.3933
+    }
+  }
+}

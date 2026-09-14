@@ -1,0 +1,68 @@
+{
+  "axes": [
+    {
+      "name": "inventory_hard_cap",
+      "mutation": "Tune max_abs_inv (40\u2013200) and inv_soft_cap (~25\u201345% of hard). Inventory drag is the known killer."
+    },
+    {
+      "name": "widen_spread",
+      "mutation": "Raise spread_frac (0.65\u20130.95) and/or min_half_spread; fewer fills, less adverse selection."
+    },
+    {
+      "name": "shrink_size",
+      "mutation": "Lower size_mult (0.7\u20131.3) and low_pool_size_frac; smaller clips limit inventory per fill."
+    },
+    {
+      "name": "skew_aggressive",
+      "mutation": "Raise skew_bps_per_share (0.15\u20130.60) to lean harder against inventory."
+    },
+    {
+      "name": "cancel_on_mid_move",
+      "mutation": "Tune mid_move_cancel_cents, mid_move_hard_cancel_cents, mid_move_widen_mult."
+    },
+    {
+      "name": "top5_reward_markets_only",
+      "mutation": "Set market_allowlist_mode='top5'; optionally raise min_daily_reward_pool."
+    },
+    {
+      "name": "seed_fed_iran_only",
+      "mutation": "Set market_allowlist_mode='fed_iran'; keep tight inventory caps."
+    },
+    {
+      "name": "pull_size_after_adverse_fill",
+      "mutation": "Tune inv_pause_ticks and pull_size_mult after inventory growth."
+    },
+    {
+      "name": "min_edge_vs_bbo",
+      "mutation": "Raise min_edge_vs_bbo (0\u20130.02) to sit farther from touch."
+    },
+    {
+      "name": "size_by_reward_pool",
+      "mutation": "Tune min_daily_reward_pool + low_pool_size_frac; keep enforce_pool_allowlist True."
+    },
+    {
+      "name": "pause_after_fill",
+      "mutation": "Tune inv_pause_ticks (3\u201332) to pause adding side longer after inventory growth."
+    },
+    {
+      "name": "vol_regime_filter",
+      "mutation": "Tune vol_filter and vol_lookback to skip high short-horizon vol."
+    },
+    {
+      "name": "two_sided_strict",
+      "mutation": "Toggle two_sided_strict and skip_extreme_tails; keep inventory soft caps tight."
+    },
+    {
+      "name": "free_explore",
+      "mutation": "Any small multi-lever change favoring inventory defense / high-pool markets."
+    },
+    {
+      "name": "min_daily_reward_pool_fine",
+      "mutation": "Tune min_daily_reward_pool in {100,125,150,175,200} with enforce_pool_allowlist True; keep inv caps defensive."
+    },
+    {
+      "name": "near_mid_size",
+      "mutation": "Tune near_mid_size_mult (0.4\u20131.0) and near_mid_dist; shrink size near mid for live defense."
+    }
+  ]
+}

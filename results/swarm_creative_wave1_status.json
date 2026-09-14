@@ -1,0 +1,73 @@
+{
+  "wave": "creative_wave1",
+  "phase": "done",
+  "finished_at": "2026-09-13T21:12:20.054956+00:00",
+  "champion_prev": "wave5b_pull24_p46_sf672",
+  "champion_new": "creative_day_boundary_flatten",
+  "promoted": true,
+  "promoted_id": "day_boundary_flatten",
+  "promoted_windows": {
+    "sample": 651.39,
+    "30d": 1431.56,
+    "60d": 1979.75
+  },
+  "gates_beaten": {
+    "sample_gate": 528.47,
+    "30d_gate": 496.98,
+    "60d_gate": 861.11
+  },
+  "modes_implemented": [
+    "force_flatten",
+    "day_boundary_flatten",
+    "toxicity_blackout",
+    "dynamic_top_k",
+    "harvest_or_flatten",
+    "weekly_reset_ablation"
+  ],
+  "serious_candidates": {
+    "day_boundary_flatten": {
+      "sample": 651.39,
+      "30d": 1431.56,
+      "60d": 1979.75,
+      "beats": true
+    },
+    "tox_blackout_40_1p5": {
+      "sample": 527.08,
+      "30d": 485.96,
+      "60d": 840.2,
+      "beats": false
+    },
+    "tox_blackout_60_1p0": {
+      "sample": 492.2,
+      "30d": 477.21,
+      "60d": 574.59,
+      "beats": false
+    }
+  },
+  "weekly_ablation_headline": {
+    "sum_weekly_full": 2754.16,
+    "continuous_full": 547.23,
+    "delta_full": 2206.93,
+    "sum_weekly_60": 2037.32,
+    "continuous_60": 861.11,
+    "delta_60": 1176.2
+  },
+  "running_pids": [
+    92293,
+    154529
+  ],
+  "wave11_untouched": true,
+  "artifacts": {
+    "strategy": "research/creative/strategy_creative_base.py",
+    "agenda": "research/CREATIVE_AGENDA.md",
+    "findings": "results/creative_wave1_findings.md",
+    "ablation_json": "results/creative_weekly_reset_ablation.json",
+    "ablation_md": "results/creative_weekly_reset_ablation.md",
+    "promotion": "results/promotion_creative_day_boundary_flatten.json"
+  },
+  "running_notes": [
+    "92293:window_aware_hunt_wave11",
+    "154529:creative_wave2_hunt"
+  ],
+  "updated_at": "2026-09-13T21:12:28.304061+00:00"
+}

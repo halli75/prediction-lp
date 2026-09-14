@@ -1,0 +1,19 @@
+{
+  "n_days": 32,
+  "day_first": "2026-05-14",
+  "day_last": "2026-06-20",
+  "n_markets": 65,
+  "n_markets_with_prices": 36,
+  "n_price_rows": 1261352,
+  "full_period_net_pnl": -2101.7799,
+  "full_period_return_pct": -21.018,
+  "full_period_max_dd_pct": 35.3755,
+  "full_reward_pnl": 1864.0096,
+  "full_trading_pnl": -3965.7895,
+  "full_n_fills": 1001,
+  "train_net_pnl": -2097.9661,
+  "train_return_pct": -20.98,
+  "holdout_net_pnl": 2281.7222,
+  "holdout_return_pct": 22.817,
+  "holdout_max_dd_pct": 4.4673
+}

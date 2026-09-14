@@ -1,0 +1,15 @@
+{
+  "sample_net_pnl": 651.394,
+  "window_net_pnl": 651.394,
+  "net_pnl": 651.394,
+  "max_dd_pct": 0.4787,
+  "max_drawdown_pct": 0.4787,
+  "n_fills": 673,
+  "reward_pnl": 444.447,
+  "trading_pnl": 206.9469,
+  "soft_reject": false,
+  "elapsed_sec": 37.97,
+  "liveish": true,
+  "strategy_overlay": {},
+  "strategy_module": "strategy.py"
+}

@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
 """
-Fixed data preparation — sparse-day L2 from HuggingFace Joseph3222/polymarket-orderbook
-(orderbook_1min only). Does NOT download the raw TB-scale orderbook stream.
+Data preparation — continuous (or sparse) L2 from HuggingFace
+Joseph3222/polymarket-orderbook (orderbook_1min only).
 
-Downloads selected UTC day files (~1–2GB each), DuckDB-filters to the curated YES
-token set, writes slim caches under data/, then deletes full day files.
+Downloads ONE UTC day at a time (~1–2GB), DuckDB-filters to the allowlist
+YES tokens from data/top_reward_markets.json, writes slim caches under
+data/slim_days/, then deletes the raw day file immediately.
 
-This is sparse-day sampling across ~3 calendar months — NOT continuous 90-day L2.
+Never stages the full ~90×2GB corpus at once.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 import time
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -33,54 +35,26 @@ GAMMA = "https://gamma-api.polymarket.com"
 HF_REPO = "Joseph3222/polymarket-orderbook"
 HF_CONFIG_PREFIX = "orderbook_1min"
 
-# Sparse days spanning May–Aug 2026 (skip Jun 12–17 missing). Archives end 2026-08-10.
-DEFAULT_DAYS = [
+# Continuous window (archives end 2026-08-10; Jun 12–17 missing)
+CONTINUOUS_START = "2026-05-14"
+CONTINUOUS_END = "2026-08-10"
+SKIP_DAYS = {
+    "2026-06-12",
+    "2026-06-13",
+    "2026-06-14",
+    "2026-06-15",
+    "2026-06-16",
+    "2026-06-17",
+}
+
+# Legacy sparse fallback
+DEFAULT_SPARSE_DAYS = [
     "2026-05-14",
     "2026-06-01",
     "2026-06-25",
     "2026-07-20",
     "2026-08-06",
 ]
-
-# YES token asset_ids (Fed Sep 2026 + geopolitics)
-YES_TOKENS = {
-    # Fed -50+
-    "97186030785608128217926542396950266594898339988989015155120280107165449433603": {
-        "slug_key": "fed_m50",
-        "event_slug": "fed-decision-in-september-762",
-    },
-    # Fed -25
-    "57748138085022719760345772310040703848567377822400132842014290209986511882046": {
-        "slug_key": "fed_m25",
-        "event_slug": "fed-decision-in-september-762",
-    },
-    # Fed no change (~1000 daily)
-    "5615282760875985231868508008056959876238536896643315063916840237042205273721": {
-        "slug_key": "fed_0",
-        "event_slug": "fed-decision-in-september-762",
-    },
-    # Fed +25 (~1000 daily)
-    "63842529068710005716169325380315470359047749786610778647370693404952498013178": {
-        "slug_key": "fed_p25",
-        "event_slug": "fed-decision-in-september-762",
-    },
-    # Fed +50+
-    "88912926533493988427719291698947688154042720958310632316541141466409683822293": {
-        "slug_key": "fed_p50",
-        "event_slug": "fed-decision-in-september-762",
-    },
-    # US invade Iran before 2027 (~400)
-    "55115078421062885512539156303747803058407616201213034911037320915726138659123": {
-        "slug_key": "iran",
-        "event_slug": None,
-        "condition_id": "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
-    },
-    # Trump out before 2027
-    "59252515735652674747158950210016502214756531287333895140318848923768750410355": {
-        "slug_key": "trump_out",
-        "event_slug": "trump-out-as-president-before-2027",
-    },
-}
 
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": "polymarket-lp-autoresearch/0.1"})
@@ -117,78 +91,59 @@ def daily_rate_from_gamma(m: dict) -> float:
     return total
 
 
-def fetch_market_meta() -> list[dict[str, Any]]:
-    """Resolve Gamma metadata for each YES token; rewards from current Gamma fields."""
-    by_token: dict[str, dict] = {}
+def daterange(start: str, end: str, skip: set[str] | None = None) -> list[str]:
+    skip = skip or set()
+    d0 = date.fromisoformat(start)
+    d1 = date.fromisoformat(end)
+    out: list[str] = []
+    cur = d0
+    while cur <= d1:
+        s = cur.isoformat()
+        if s not in skip:
+            out.append(s)
+        cur += timedelta(days=1)
+    return out
 
-    # Fed event batch
-    ev = get_json(f"{GAMMA}/events/slug/fed-decision-in-september-762")
-    for m in ev.get("markets") or []:
-        toks = parse_token_ids(m.get("clobTokenIds"))
-        if not toks:
+
+def allowlist_fingerprint(yes_tokens: list[str]) -> str:
+    h = hashlib.sha1(",".join(sorted(yes_tokens)).encode()).hexdigest()[:12]
+    return h
+
+
+def load_allowlist_markets(path: Path | None = None) -> list[dict[str, Any]]:
+    """Load curated top-reward markets; fall back to discovering from file."""
+    path = path or (DATA / "top_reward_markets.json")
+    if not path.exists():
+        raise SystemExit(
+            f"Missing {path}. Run discovery first or pass --allowlist."
+        )
+    with open(path) as f:
+        raw = json.load(f)
+    markets_in = raw.get("markets") or []
+    markets: list[dict[str, Any]] = []
+    for i, m in enumerate(markets_in):
+        yes = str(m.get("yes_token") or "")
+        if not yes:
             continue
-        yes = toks[0]
-        if yes in YES_TOKENS:
-            by_token[yes] = m
-
-    # Trump event
-    ev2 = get_json(f"{GAMMA}/events/slug/trump-out-as-president-before-2027")
-    for m in ev2.get("markets") or []:
-        toks = parse_token_ids(m.get("clobTokenIds"))
-        if toks and toks[0] in YES_TOKENS:
-            by_token[toks[0]] = m
-
-    # Iran by condition
-    iran_cid = YES_TOKENS[
-        "55115078421062885512539156303747803058407616201213034911037320915726138659123"
-    ]["condition_id"]
-    rows = get_json(f"{GAMMA}/markets", {"condition_ids": iran_cid})
-    if rows:
-        toks = parse_token_ids(rows[0].get("clobTokenIds"))
-        if toks:
-            by_token[toks[0]] = rows[0]
-
-    markets: list[dict] = []
-    for yes, meta0 in YES_TOKENS.items():
-        g = by_token.get(yes)
-        if not g:
-            print(f"[prepare] WARNING: no gamma meta for {meta0['slug_key']} ({yes[:16]}...)")
-            continue
-        toks = parse_token_ids(g.get("clobTokenIds"))
-        daily = daily_rate_from_gamma(g)
-        # Defaults when Gamma has no active clobRewards entry
-        if daily <= 0:
-            defaults = {
-                "fed_m50": 50.0,
-                "fed_m25": 100.0,
-                "fed_0": 1000.0,
-                "fed_p25": 1000.0,
-                "fed_p50": 50.0,
-                "iran": 400.0,
-                "trump_out": 1.0,
-            }
-            daily = defaults.get(meta0["slug_key"], 50.0)
-        min_size = float(g.get("rewardsMinSize") or 50)
-        max_spread = float(g.get("rewardsMaxSpread") or 4.5)
         markets.append(
             {
-                "market_id": str(g.get("conditionId") or yes),
-                "condition_id": str(g.get("conditionId") or ""),
-                "question": g.get("question"),
+                "market_id": str(m.get("market_id") or m.get("condition_id") or yes),
+                "condition_id": str(m.get("condition_id") or m.get("market_id") or ""),
+                "question": m.get("question"),
                 "yes_token": yes,
-                "no_token": toks[1] if len(toks) > 1 else None,
-                "slug_key": meta0["slug_key"],
-                "rewards_min_size": min_size,
-                "rewards_max_spread": max_spread,
-                "daily_reward_pool": daily,
-                # Fallback competition; overwritten per-row from L2 when available
-                "competition_q": max(800.0, min_size * 30.0),
-                "volume_num": float(g.get("volumeNum") or 0),
-                "start_date": g.get("startDate"),
-                "end_date": g.get("endDate"),
+                "no_token": m.get("no_token"),
+                "slug_key": m.get("slug_key") or (m.get("slug") or f"m{i}")[:40],
+                "rewards_min_size": float(m.get("rewards_min_size") or 50),
+                "rewards_max_spread": float(m.get("rewards_max_spread") or 4.5),
+                "daily_reward_pool": float(m.get("daily_reward_pool") or 0),
+                "competition_q": max(800.0, float(m.get("rewards_min_size") or 50) * 30.0),
+                "volume_num": float(m.get("volume_num") or 0),
+                "start_date": m.get("start_date"),
+                "end_date": m.get("end_date"),
+                "overlap_days": m.get("overlap_days"),
                 "rewards_note": (
-                    "Using current Gamma rewardsMinSize/rewardsMaxSpread/rewardsDailyRate "
-                    "as a constant schedule; historical rates may have differed."
+                    "Using current Gamma/CLOB rewardsDailyRate held constant; "
+                    "historical rates may have differed."
                 ),
             }
         )
@@ -197,7 +152,8 @@ def fetch_market_meta() -> list[dict[str, Any]]:
 
 def download_day(day: str) -> Path:
     RAW.mkdir(parents=True, exist_ok=True)
-    print(f"[prepare] downloading HF orderbook_1min date={day} ...")
+    print(f"[prepare] downloading HF orderbook_1min date={day} ...", flush=True)
+    t0 = time.time()
     path = hf_hub_download(
         repo_id=HF_REPO,
         repo_type="dataset",
@@ -206,22 +162,23 @@ def download_day(day: str) -> Path:
         local_dir_use_symlinks=False,
     )
     p = Path(path)
-    print(f"[prepare]   got {p} ({p.stat().st_size / 1e9:.2f} GB)")
+    print(
+        f"[prepare]   got {p} ({p.stat().st_size / 1e9:.2f} GB) in {time.time()-t0:.0f}s",
+        flush=True,
+    )
     return p
 
 
-def filter_day(day_path: Path, day: str, yes_tokens: list[str], token_to_market: dict[str, str]) -> Path:
-    """DuckDB-filter full day parquet → slim parquet for our tokens only."""
+def filter_day(day_path: Path, day: str, yes_tokens: list[str]) -> Path:
+    """DuckDB-filter full day parquet → slim parquet for allowlist tokens only."""
     SLIM.mkdir(parents=True, exist_ok=True)
     out = SLIM / f"{day}.parquet"
     token_list_sql = ",".join(f"'{t}'" for t in yes_tokens)
 
     con = duckdb.connect()
-    # Discover columns once
     cols = [r[0] for r in con.execute(f"DESCRIBE SELECT * FROM read_parquet('{day_path}')").fetchall()]
-    print(f"[prepare]   schema cols ({len(cols)}): {cols[:20]}...")
+    print(f"[prepare]   schema cols ({len(cols)}): {cols[:12]}...", flush=True)
 
-    # Flexible column names across archive versions
     ts_col = "minute_ts" if "minute_ts" in cols else ("ts" if "ts" in cols else None)
     asset_col = "asset_id" if "asset_id" in cols else ("asset" if "asset" in cols else None)
     if not ts_col or not asset_col:
@@ -229,7 +186,6 @@ def filter_day(day_path: Path, day: str, yes_tokens: list[str], token_to_market:
 
     bid_col = "best_bid" if "best_bid" in cols else None
     ask_col = "best_ask" if "best_ask" in cols else None
-    mid_expr = None
     if "mid" in cols:
         mid_expr = "mid"
     elif "mid_price" in cols:
@@ -239,7 +195,6 @@ def filter_day(day_path: Path, day: str, yes_tokens: list[str], token_to_market:
     else:
         raise RuntimeError(f"No mid/best_bid/best_ask in schema: {cols}")
 
-    # Depth arrays (HF schema: bids_json / asks_json)
     bids_col = (
         "bids_json" if "bids_json" in cols
         else ("bids" if "bids" in cols else ("bid_levels" if "bid_levels" in cols else None))
@@ -249,28 +204,12 @@ def filter_day(day_path: Path, day: str, yes_tokens: list[str], token_to_market:
         else ("asks" if "asks" in cols else ("ask_levels" if "ask_levels" in cols else None))
     )
 
-    # Also try bid_depth/ask_depth aggregates
     extra_select = []
-    if bid_col:
-        extra_select.append(f"{bid_col} AS best_bid")
-    else:
-        extra_select.append("NULL::DOUBLE AS best_bid")
-    if ask_col:
-        extra_select.append(f"{ask_col} AS best_ask")
-    else:
-        extra_select.append("NULL::DOUBLE AS best_ask")
-    if "spread" in cols:
-        extra_select.append("spread AS spread")
-    else:
-        extra_select.append("NULL::DOUBLE AS spread")
-    if bids_col:
-        extra_select.append(f"{bids_col} AS bids_raw")
-    else:
-        extra_select.append("NULL AS bids_raw")
-    if asks_col:
-        extra_select.append(f"{asks_col} AS asks_raw")
-    else:
-        extra_select.append("NULL AS asks_raw")
+    extra_select.append(f"{bid_col} AS best_bid" if bid_col else "NULL::DOUBLE AS best_bid")
+    extra_select.append(f"{ask_col} AS best_ask" if ask_col else "NULL::DOUBLE AS best_ask")
+    extra_select.append("spread AS spread" if "spread" in cols else "NULL::DOUBLE AS spread")
+    extra_select.append(f"{bids_col} AS bids_raw" if bids_col else "NULL AS bids_raw")
+    extra_select.append(f"{asks_col} AS asks_raw" if asks_col else "NULL AS asks_raw")
 
     sql = f"""
     COPY (
@@ -285,19 +224,41 @@ def filter_day(day_path: Path, day: str, yes_tokens: list[str], token_to_market:
     """
     con.execute(sql)
     n = con.execute(f"SELECT COUNT(*) FROM read_parquet('{out}')").fetchone()[0]
-    print(f"[prepare]   slim {out.name}: {n} rows ({out.stat().st_size / 1e6:.2f} MB)")
+    n_assets = con.execute(
+        f"SELECT COUNT(DISTINCT asset_id) FROM read_parquet('{out}')"
+    ).fetchone()[0]
+    print(
+        f"[prepare]   slim {out.name}: {n} rows, {n_assets} assets "
+        f"({out.stat().st_size / 1e6:.2f} MB)",
+        flush=True,
+    )
     con.close()
     return out
 
 
+def delete_raw(day_path: Path) -> None:
+    try:
+        if day_path.exists():
+            print(f"[prepare]   deleting raw {day_path} to free disk", flush=True)
+            day_path.unlink()
+        # Also purge nested HF cache copies if present under RAW/orderbook_1min
+        nested = RAW / HF_CONFIG_PREFIX / f"date={day_path.parent.name.split('=')[-1] if 'date=' in str(day_path.parent) else ''}"
+        # Best-effort: remove empty date dirs and any leftover parquet under RAW
+        for p in RAW.rglob("data_0.parquet"):
+            try:
+                print(f"[prepare]   deleting leftover raw {p}", flush=True)
+                p.unlink()
+            except Exception:
+                pass
+    except Exception as e:
+        print(f"[prepare]   warn: could not delete raw: {e}", flush=True)
+
+
 def competition_from_book(row: pd.Series, max_spread_cents: float) -> float:
-    """Approximate competing Q from observed L2 depth within max spread of mid."""
     mid = float(row["mid"]) if pd.notna(row["mid"]) else None
     if mid is None or mid <= 0:
         return 800.0
     v = max_spread_cents
-    # Prefer explicit best sizes if depth arrays missing
-    q = 0.0
     bids_raw = row.get("bids_raw")
     asks_raw = row.get("asks_raw")
 
@@ -305,7 +266,6 @@ def competition_from_book(row: pd.Series, max_spread_cents: float) -> float:
         total = 0.0
         if levels is None or (isinstance(levels, float) and pd.isna(levels)):
             return 0.0
-        # levels may be list of dicts, list of [price,size], or JSON string
         parsed = levels
         if isinstance(levels, str):
             try:
@@ -317,7 +277,7 @@ def competition_from_book(row: pd.Series, max_spread_cents: float) -> float:
         for lv in parsed:
             try:
                 if isinstance(lv, dict):
-                    px = float(lv.get("price") or lv.get("p") or lv.get(0) or 0)
+                    px = float(lv.get("price") or lv.get("p") or 0)
                     sz = float(lv.get("size") or lv.get("s") or lv.get("quantity") or 0)
                 elif isinstance(lv, (list, tuple)) and len(lv) >= 2:
                     px, sz = float(lv[0]), float(lv[1])
@@ -336,154 +296,111 @@ def competition_from_book(row: pd.Series, max_spread_cents: float) -> float:
 
     q_bid = score_levels(bids_raw, True)
     q_ask = score_levels(asks_raw, False)
-    # Two-sided competition mass ≈ min-style blend
     if q_bid > 0 and q_ask > 0:
         q = max(min(q_bid, q_ask), max(q_bid, q_ask) / 3.0)
     else:
         q = max(q_bid, q_ask) / 3.0
 
-    # Fallback: use spread tightness × dummy size if no depth
     if q <= 0:
         bb = row.get("best_bid")
         ba = row.get("best_ask")
         if pd.notna(bb) and pd.notna(ba):
             half_c = (float(ba) - float(bb)) * 50.0
             if 0 <= half_c < v:
-                q = ((v - half_c) / v) ** 2 * 200.0  # assume ~200 sh near touch
+                q = ((v - half_c) / v) ** 2 * 200.0
     return float(max(q, 50.0))
 
 
 def assemble_prices(slim_paths: list[Path], markets: list[dict]) -> pd.DataFrame:
+    """Vectorized assemble; competition_q uses spread-based fallback (fast).
+
+    Full L2 quadratic competition is expensive over millions of rows; we use a
+    spread-tightness proxy here and keep per-market competition_q as floor.
+    """
     token_to_m = {m["yes_token"]: m for m in markets}
     frames = []
-    for p in slim_paths:
-        df = pd.read_parquet(p)
+    for pth in slim_paths:
+        if not pth.exists() or pth.stat().st_size == 0:
+            continue
+        df = pd.read_parquet(pth)
+        if len(df) == 0:
+            continue
         frames.append(df)
     if not frames:
         return pd.DataFrame()
     raw = pd.concat(frames, ignore_index=True)
+    raw["asset_id"] = raw["asset_id"].astype(str)
 
-    # Normalize ts to unix seconds
     if pd.api.types.is_datetime64_any_dtype(raw["ts"]):
         raw["ts"] = (raw["ts"].astype("int64") // 10**9).astype("int64")
     else:
-        # may be ms
         ts = raw["ts"].astype("int64")
         raw["ts"] = ts.where(ts < 10_000_000_000, ts // 1000)
 
-    rows = []
-    for _, r in raw.iterrows():
-        asset = str(r["asset_id"])
-        m = token_to_m.get(asset)
-        if not m:
-            continue
-        mid = float(r["mid"])
-        if not (0.0 < mid < 1.0):
-            continue
-        comp = competition_from_book(r, float(m["rewards_max_spread"]))
-        rows.append(
-            {
-                "ts": int(r["ts"]),
-                "market_id": m["market_id"],
-                "asset_id": asset,
-                "mid": mid,
-                "yes_mid": mid,
-                "no_mid": 1.0 - mid,
-                "best_bid": float(r["best_bid"]) if pd.notna(r.get("best_bid")) else mid - 0.01,
-                "best_ask": float(r["best_ask"]) if pd.notna(r.get("best_ask")) else mid + 0.01,
-                "competition_q": comp,
-            }
-        )
-    out = pd.DataFrame(rows)
-    if out.empty:
-        return out
+    raw = raw[raw["asset_id"].isin(token_to_m.keys())].copy()
+    mid = raw["mid"].astype(float)
+    raw = raw[(mid > 0.0) & (mid < 1.0)].copy()
+    if raw.empty:
+        return pd.DataFrame()
+
+    raw["market_id"] = raw["asset_id"].map(lambda a: token_to_m[a]["market_id"])
+    raw["max_spread"] = raw["asset_id"].map(lambda a: float(token_to_m[a]["rewards_max_spread"]))
+    raw["base_comp"] = raw["asset_id"].map(lambda a: float(token_to_m[a].get("competition_q") or 800.0))
+
+    bb = raw["best_bid"].astype(float)
+    ba = raw["best_ask"].astype(float)
+    mid = raw["mid"].astype(float)
+    half_c = (ba - bb) * 50.0
+    v = raw["max_spread"].astype(float)
+    # spread-tightness proxy in [50, ...]
+    frac = ((v - half_c) / v).clip(lower=0.0, upper=1.0)
+    comp = (frac ** 2) * 200.0
+    comp = comp.where((half_c >= 0) & (half_c < v), 50.0)
+    raw["competition_q"] = comp.clip(lower=50.0).combine(raw["base_comp"], max)
+
+    out = pd.DataFrame(
+        {
+            "ts": raw["ts"].astype("int64"),
+            "market_id": raw["market_id"],
+            "asset_id": raw["asset_id"],
+            "mid": mid,
+            "yes_mid": mid,
+            "no_mid": 1.0 - mid,
+            "best_bid": bb.fillna(mid - 0.01),
+            "best_ask": ba.fillna(mid + 0.01),
+            "competition_q": raw["competition_q"].astype(float),
+        }
+    )
     out = out.sort_values(["ts", "market_id"]).drop_duplicates(["ts", "market_id"], keep="last")
     return out.reset_index(drop=True)
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument(
-        "--days",
-        type=str,
-        default="",
-        help="Comma-separated UTC days YYYY-MM-DD (default: curated sparse set)",
-    )
-    ap.add_argument(
-        "--quick",
-        action="store_true",
-        help="Only two days (2026-05-14, 2026-07-20) for a fast first baseline",
-    )
-    ap.add_argument("--keep-raw", action="store_true", help="Keep full HF day files")
-    args = ap.parse_args()
-
-    DATA.mkdir(parents=True, exist_ok=True)
-
-    if args.days:
-        days = [d.strip() for d in args.days.split(",") if d.strip()]
-    elif args.quick:
-        days = ["2026-05-14", "2026-07-20"]
-    else:
-        days = list(DEFAULT_DAYS)
-
-    print(f"[prepare] sparse days: {days}")
-    markets = fetch_market_meta()
-    print(f"[prepare] resolved {len(markets)} markets:")
-    for m in markets:
-        print(
-            f"  {m['slug_key']}: pool=${m['daily_reward_pool']:.0f}/d "
-            f"min={m['rewards_min_size']} spread={m['rewards_max_spread']} | {(m['question'] or '')[:60]}"
-        )
-
-    yes_tokens = [m["yes_token"] for m in markets]
-    token_to_market = {m["yes_token"]: m["market_id"] for m in markets}
-
-    slim_paths: list[Path] = []
-    for day in days:
-        existing = SLIM / f"{day}.parquet"
-        if existing.exists() and existing.stat().st_size > 0:
-            print(f"[prepare] reusing slim cache {existing}")
-            slim_paths.append(existing)
-            continue
-        day_path = download_day(day)
-        try:
-            slim = filter_day(day_path, day, yes_tokens, token_to_market)
-            slim_paths.append(slim)
-        finally:
-            if not args.keep_raw:
-                # Remove the full day file (and empty parents under RAW)
-                try:
-                    # hf_hub_download may nest under RAW/orderbook_1min/date=...
-                    if day_path.exists():
-                        print(f"[prepare]   deleting raw {day_path} to free disk")
-                        day_path.unlink()
-                except Exception as e:
-                    print(f"[prepare]   warn: could not delete raw: {e}")
-
-    prices = assemble_prices(slim_paths, markets)
-    if prices.empty:
-        raise SystemExit("No rows after filter — check tokens/days presence in archive")
-
-    # Empty trades placeholder (L2 mid-cross fills; no separate tape in this path)
-    trades = pd.DataFrame(columns=["ts", "market_id", "price", "size", "side"])
-
-    with open(DATA / "markets.json", "w") as f:
-        json.dump(markets, f, indent=2)
-    prices.to_parquet(DATA / "prices.parquet", index=False)
-    trades.to_parquet(DATA / "trades.parquet", index=False)
-
-    manifest = {
+def write_manifest(
+    *,
+    mode: str,
+    days: list[str],
+    completed_days: list[str],
+    pending_days: list[str],
+    markets: list[dict],
+    prices: pd.DataFrame | None,
+    fp: str,
+    notes: str,
+) -> dict:
+    manifest: dict[str, Any] = {
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "mode": "sparse_day_l2",
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "mode": mode,
         "hf_repo": HF_REPO,
         "hf_config": HF_CONFIG_PREFIX,
-        "days": days,
-        "start_ts": int(prices["ts"].min()),
-        "end_ts": int(prices["ts"].max()),
-        "start_iso": datetime.fromtimestamp(int(prices["ts"].min()), timezone.utc).isoformat(),
-        "end_iso": datetime.fromtimestamp(int(prices["ts"].max()), timezone.utc).isoformat(),
+        "allowlist_fingerprint": fp,
+        "allowlist_path": "data/top_reward_markets.json",
+        "days": completed_days,
+        "target_days": days,
+        "pending_days": pending_days,
+        "n_days_completed": len(completed_days),
+        "n_days_target": len(days),
         "n_markets": len(markets),
-        "n_price_rows": int(len(prices)),
+        "n_price_rows": int(len(prices)) if prices is not None and len(prices) else 0,
         "n_trade_rows": 0,
         "markets": [
             {
@@ -499,23 +416,313 @@ def main() -> None:
         ],
         "data_sources": [
             f"hf://datasets/{HF_REPO}/{HF_CONFIG_PREFIX}/date=YYYY-MM-DD/data_0.parquet",
-            "https://gamma-api.polymarket.com (reward params, metadata)",
+            "https://gamma-api.polymarket.com",
+            "https://clob.polymarket.com/sampling-simplified-markets",
+            "data/top_reward_markets.json",
         ],
-        "notes": (
-            "SPARSE-DAY sampling (not continuous 90-day L2). "
-            "Full HF day files filtered to curated YES tokens then discarded. "
-            "Reward rates from current Gamma fields held constant over the window. "
-            "CLOB prices-history was NOT used for May–Jul (insufficient lookback overlap)."
-        ),
+        "notes": notes,
+        "resume": {
+            "next_day": pending_days[0] if pending_days else None,
+            "command": (
+                f"python prepare.py --continuous --resume"
+                if mode.startswith("continuous")
+                else "python prepare.py"
+            ),
+        },
     }
+    if prices is not None and len(prices) > 0:
+        manifest["start_ts"] = int(prices["ts"].min())
+        manifest["end_ts"] = int(prices["ts"].max())
+        manifest["start_iso"] = datetime.fromtimestamp(
+            int(prices["ts"].min()), timezone.utc
+        ).isoformat()
+        manifest["end_iso"] = datetime.fromtimestamp(
+            int(prices["ts"].max()), timezone.utc
+        ).isoformat()
     with open(DATA / "manifest.json", "w") as f:
         json.dump(manifest, f, indent=2)
+    return manifest
 
+
+def slim_matches_allowlist(day_parquet: Path, yes_tokens: set[str]) -> bool:
+    """True if slim file already contains (subset of) current allowlist tokens."""
+    try:
+        con = duckdb.connect()
+        assets = {
+            str(r[0])
+            for r in con.execute(
+                f"SELECT DISTINCT CAST(asset_id AS VARCHAR) FROM read_parquet('{day_parquet}')"
+            ).fetchall()
+        }
+        con.close()
+        # Reuse only if it has a meaningful fraction of allowlist (or any overlap with current set)
+        # Old 7-token caches must be rebuilt when allowlist expanded.
+        if not assets:
+            return False
+        # If slim has tokens outside allowlist only, or far fewer than expected, rebuild
+        overlap = assets & yes_tokens
+        if len(overlap) < min(5, len(yes_tokens)):
+            # Might be sparse day with few markets present — OK if all assets ⊆ allowlist
+            return assets <= yes_tokens and len(overlap) >= 1
+        return assets <= yes_tokens or len(overlap) >= 5
+    except Exception:
+        return False
+
+
+def process_days(
+    days: list[str],
+    markets: list[dict],
+    *,
+    mode: str,
+    keep_raw: bool,
+    max_days: int | None,
+    reassemble_every: int,
+    force_refilter: bool,
+) -> None:
+    DATA.mkdir(parents=True, exist_ok=True)
+    SLIM.mkdir(parents=True, exist_ok=True)
+
+    yes_tokens = [m["yes_token"] for m in markets]
+    yes_set = set(yes_tokens)
+    fp = allowlist_fingerprint(yes_tokens)
+
+    # Resume: load prior completed if fingerprint matches
+    completed: list[str] = []
+    prior_path = DATA / "manifest.json"
+    if prior_path.exists():
+        try:
+            prior = json.loads(prior_path.read_text())
+            if prior.get("allowlist_fingerprint") == fp:
+                completed = list(prior.get("days") or [])
+                print(
+                    f"[prepare] resume: {len(completed)} days already done (fp={fp})",
+                    flush=True,
+                )
+            else:
+                print(
+                    f"[prepare] allowlist fingerprint changed "
+                    f"({prior.get('allowlist_fingerprint')} → {fp}); "
+                    f"will refilter slim caches as needed",
+                    flush=True,
+                )
+        except Exception:
+            pass
+
+    pending = [d for d in days if d not in completed]
+    # Also re-check slim validity
+    really_done: list[str] = []
+    for d in completed:
+        sp = SLIM / f"{d}.parquet"
+        if sp.exists() and not force_refilter and slim_matches_allowlist(sp, yes_set):
+            really_done.append(d)
+        else:
+            print(f"[prepare] will refilter {d} (slim missing/stale)", flush=True)
+    completed = really_done
+    pending = [d for d in days if d not in completed]
+
+    print(
+        f"[prepare] mode={mode} target={len(days)} done={len(completed)} pending={len(pending)} "
+        f"markets={len(markets)} fp={fp}",
+        flush=True,
+    )
+    for m in markets[:12]:
+        print(
+            f"  ${m['daily_reward_pool']:.0f}/d  min={m['rewards_min_size']} "
+            f"spr={m['rewards_max_spread']} | {(m.get('question') or '')[:55]}",
+            flush=True,
+        )
+    if len(markets) > 12:
+        print(f"  ... +{len(markets)-12} more", flush=True)
+
+    n_processed = 0
+    for day in pending:
+        if max_days is not None and n_processed >= max_days:
+            print(f"[prepare] hit --max-days={max_days}; stopping for resume", flush=True)
+            break
+
+        existing = SLIM / f"{day}.parquet"
+        if (
+            existing.exists()
+            and existing.stat().st_size > 0
+            and not force_refilter
+            and slim_matches_allowlist(existing, yes_set)
+        ):
+            print(f"[prepare] reusing slim cache {existing}", flush=True)
+            completed.append(day)
+            n_processed += 1
+        else:
+            if existing.exists():
+                existing.unlink()
+            day_path = download_day(day)
+            try:
+                filter_day(day_path, day, yes_tokens)
+                completed.append(day)
+                n_processed += 1
+            except Exception as e:
+                print(f"[prepare] ERROR day={day}: {e}", flush=True)
+                # Leave day pending for resume
+            finally:
+                if not keep_raw:
+                    delete_raw(day_path)
+
+        # Incremental manifest (resume-friendly) every day
+        still_pending = [d for d in days if d not in completed]
+        prices_partial = None
+        do_assemble = (n_processed % max(1, reassemble_every) == 0) or (not still_pending)
+        if do_assemble:
+            slim_paths = [SLIM / f"{d}.parquet" for d in completed]
+            print(f"[prepare] assembling prices from {len(slim_paths)} slim days...", flush=True)
+            prices_partial = assemble_prices(slim_paths, markets)
+            if prices_partial is not None and len(prices_partial) > 0:
+                with open(DATA / "markets.json", "w") as f:
+                    json.dump(markets, f, indent=2)
+                prices_partial.to_parquet(DATA / "prices.parquet", index=False)
+                pd.DataFrame(columns=["ts", "market_id", "price", "size", "side"]).to_parquet(
+                    DATA / "trades.parquet", index=False
+                )
+                print(
+                    f"[prepare] wrote prices.parquet rows={len(prices_partial)}",
+                    flush=True,
+                )
+
+        # If we skipped assemble, reload existing prices for accurate manifest stats
+        if prices_partial is None and (DATA / "prices.parquet").exists():
+            try:
+                prices_partial = pd.read_parquet(DATA / "prices.parquet")
+            except Exception:
+                prices_partial = None
+
+        write_manifest(
+            mode=mode,
+            days=days,
+            completed_days=completed,
+            pending_days=still_pending,
+            markets=markets,
+            prices=prices_partial,
+            fp=fp,
+            notes=(
+                f"{mode}: day-at-a-time HF orderbook_1min → allowlist filter → slim cache; "
+                f"raw deleted. Skip {sorted(SKIP_DAYS)}. "
+                "Reward rates from current Gamma/CLOB held constant."
+            ),
+        )
+        print(
+            f"[prepare] progress {len(completed)}/{len(days)} "
+            f"(disk free check...)",
+            flush=True,
+        )
+
+    # Final assemble if needed
+    still_pending = [d for d in days if d not in completed]
+    slim_paths = [SLIM / f"{d}.parquet" for d in completed if (SLIM / f"{d}.parquet").exists()]
+    print(f"[prepare] final assemble from {len(slim_paths)} days...", flush=True)
+    prices = assemble_prices(slim_paths, markets)
+    if prices is None or prices.empty:
+        write_manifest(
+            mode=mode,
+            days=days,
+            completed_days=completed,
+            pending_days=still_pending,
+            markets=markets,
+            prices=None,
+            fp=fp,
+            notes="INCOMPLETE: no price rows yet — resume prepare.",
+        )
+        print("[prepare] WARNING: no price rows yet; resume later", flush=True)
+        return
+
+    with open(DATA / "markets.json", "w") as f:
+        json.dump(markets, f, indent=2)
+    prices.to_parquet(DATA / "prices.parquet", index=False)
+    pd.DataFrame(columns=["ts", "market_id", "price", "size", "side"]).to_parquet(
+        DATA / "trades.parquet", index=False
+    )
+    write_manifest(
+        mode=mode if not still_pending else f"{mode}_partial",
+        days=days,
+        completed_days=completed,
+        pending_days=still_pending,
+        markets=markets,
+        prices=prices,
+        fp=fp,
+        notes=(
+            f"{'COMPLETE' if not still_pending else 'PARTIAL'} continuous L2. "
+            f"Completed {len(completed)}/{len(days)} days, {len(markets)} markets. "
+            f"Raw day files deleted after filter. Skip {sorted(SKIP_DAYS)}."
+        ),
+    )
     slim_mb = sum(p.stat().st_size for p in SLIM.glob("*.parquet")) / 1e6
-    cache_mb = sum(p.stat().st_size for p in DATA.glob("*") if p.is_file()) / 1e6
-    print(f"[prepare] prices rows={len(prices)} markets={len(markets)}")
-    print(f"[prepare] slim days ≈ {slim_mb:.2f} MB; top-level data files ≈ {cache_mb:.2f} MB")
-    print("[prepare] done")
+    print(
+        f"[prepare] done: prices rows={len(prices)} markets={len(markets)} "
+        f"days={len(completed)}/{len(days)} slim≈{slim_mb:.1f}MB "
+        f"pending={len(still_pending)}",
+        flush=True,
+    )
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        "--continuous",
+        action="store_true",
+        help=f"Full day range {CONTINUOUS_START}→{CONTINUOUS_END} (skip Jun 12–17)",
+    )
+    ap.add_argument("--start", type=str, default=CONTINUOUS_START)
+    ap.add_argument("--end", type=str, default=CONTINUOUS_END)
+    ap.add_argument(
+        "--days",
+        type=str,
+        default="",
+        help="Comma-separated UTC days YYYY-MM-DD (overrides continuous/sparse)",
+    )
+    ap.add_argument(
+        "--quick",
+        action="store_true",
+        help="Only two days (2026-05-14, 2026-07-20)",
+    )
+    ap.add_argument("--sparse", action="store_true", help="Legacy 5 sparse days")
+    ap.add_argument("--keep-raw", action="store_true")
+    ap.add_argument("--max-days", type=int, default=None, help="Process at most N pending days")
+    ap.add_argument("--resume", action="store_true", help="Continue from manifest.json")
+    ap.add_argument("--force-refilter", action="store_true")
+    ap.add_argument("--reassemble-every", type=int, default=5)
+    ap.add_argument(
+        "--allowlist",
+        type=str,
+        default=str(DATA / "top_reward_markets.json"),
+    )
+    args = ap.parse_args()
+
+    markets = load_allowlist_markets(Path(args.allowlist))
+    if not markets:
+        raise SystemExit("Allowlist empty")
+
+    if args.days:
+        days = [d.strip() for d in args.days.split(",") if d.strip()]
+        mode = "custom_days_l2"
+    elif args.quick:
+        days = ["2026-05-14", "2026-07-20"]
+        mode = "quick_l2"
+    elif args.sparse:
+        days = list(DEFAULT_SPARSE_DAYS)
+        mode = "sparse_day_l2"
+    elif args.continuous or args.resume:
+        days = daterange(args.start, args.end, SKIP_DAYS)
+        mode = "continuous_l2"
+    else:
+        # Default: continuous (user request)
+        days = daterange(args.start, args.end, SKIP_DAYS)
+        mode = "continuous_l2"
+
+    process_days(
+        days,
+        markets,
+        mode=mode,
+        keep_raw=args.keep_raw,
+        max_days=args.max_days,
+        reassemble_every=args.reassemble_every,
+        force_refilter=args.force_refilter,
+    )
 
 
 if __name__ == "__main__":

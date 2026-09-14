@@ -1,0 +1,72 @@
+{
+  "job": "wave6_widen_spread_reeval_reject",
+  "label": "wave6_widen_spread_sf664_mhs025",
+  "parent": "wave5b_pull24_p46_sf672",
+  "eval": "liveish",
+  "decision": "REJECT",
+  "reason": "liveish windows fail dual gate (need 30d>496.98 AND 60d>861.11)",
+  "strategy_module": "research/agents/wave6-widen_spread/strategy_best.py",
+  "knobs": {
+    "spread_frac": 0.6639809656298452,
+    "min_half_spread": 0.025,
+    "size_mult": 1.291,
+    "inv_soft_cap": 35.0,
+    "max_abs_inv": 100.0,
+    "inv_pause_ticks": 24,
+    "pull_size_mult": 0.464,
+    "min_daily_reward_pool": 100.0
+  },
+  "created_at": "2026-09-13T12:05:24.417216+00:00",
+  "gate_liveish_aug10": {
+    "sample": 528.47,
+    "30d": 496.98,
+    "60d": 861.11
+  },
+  "windows_liveish": {
+    "sample": 544.0321,
+    "30d": 403.2871,
+    "60d": 835.9566,
+    "soft_reject": {
+      "sample": false,
+      "30d": false,
+      "60d": false
+    },
+    "max_dd_pct": {
+      "sample": 0.3387,
+      "30d": 0.3101,
+      "60d": 0.456
+    },
+    "deltas": {
+      "sample": 15.5621,
+      "30d": -93.6929,
+      "60d": -25.1534
+    }
+  },
+  "beats_both_windows": false,
+  "promoted": false,
+  "other_wave6_contenders": {
+    "wave6-free_explore": {
+      "sample": 528.4746,
+      "note": "tie champion; no window eval"
+    },
+    "wave6-pause_after_fill": {
+      "sample": 528.4746,
+      "note": "tie champion; no window eval"
+    },
+    "wave6-pull_size_after_adverse_fill": {
+      "sample": 528.4746,
+      "note": "tie champion; no window eval"
+    },
+    "wave6-from-wave5b_best_so_far": {
+      "sample": 529.0784,
+      "30d": 498.0065,
+      "60d": 860.789,
+      "note": "already window-evaled in hunt; 60d miss"
+    }
+  },
+  "artifacts": {
+    "sample_log": "results/wave6_widen_reeval/sample.json.log",
+    "d30_log": "results/wave6_widen_reeval/30d.json.log",
+    "d60_log": "results/wave6_widen_reeval/60d.json.log"
+  }
+}

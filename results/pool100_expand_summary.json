@@ -1,0 +1,37 @@
+{
+  "job": "pool100_expand_window_evals",
+  "updated_at": "2026-09-13T07:00:07Z",
+  "strategy": "research/champions/strategy_pool100.py",
+  "windows": {
+    "30d": {
+      "net_pnl": 3192.4223,
+      "reward_pnl": 1451.7601,
+      "trading_pnl": 1740.6622,
+      "max_dd_pct": 1.214,
+      "n_days": 30,
+      "n_fills": 307,
+      "soft_reject": false,
+      "artifact": "results/pool100_expand_evals/pool100_30d.json"
+    },
+    "60d": {
+      "net_pnl": 3634.586,
+      "reward_pnl": 2456.7998,
+      "trading_pnl": 1177.7862,
+      "max_dd_pct": 1.5913,
+      "n_days": 54,
+      "n_fills": 485,
+      "soft_reject": false,
+      "artifact": "results/pool100_expand_evals/pool100_60d.json"
+    },
+    "90d": {
+      "net_pnl": 3171.5655,
+      "reward_pnl": 2607.0196,
+      "trading_pnl": 564.5459,
+      "max_dd_pct": 2.9548,
+      "n_days": 83,
+      "n_fills": 1605,
+      "soft_reject": false,
+      "artifact": "results/pool100_expand_evals/pool100_90d.json"
+    }
+  }
+}

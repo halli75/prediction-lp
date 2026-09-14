@@ -1,0 +1,42 @@
+{
+  "job": "independent_reeval_wave9_try_9116",
+  "mutation_label": "sf672_pull48_widen165",
+  "knobs": [
+    [
+      "spread_frac",
+      0.672
+    ],
+    [
+      "inv_pause_ticks",
+      24
+    ],
+    [
+      "pull_size_mult",
+      0.48
+    ],
+    [
+      "mid_move_widen_mult",
+      1.65
+    ]
+  ],
+  "parent": "wave5b_pull24_p46_sf672",
+  "eval": "liveish",
+  "gates": {
+    "sample": 528.47,
+    "30d": 496.98,
+    "60d": 861.11
+  },
+  "windows_liveish": {
+    "sample": 520.516,
+    "30d": 498.1616,
+    "60d": 862.9001,
+    "deltas": {
+      "sample": -7.954,
+      "30d": 1.1816,
+      "60d": 1.7901
+    }
+  },
+  "margin_30_60": 2.9717,
+  "promote": false,
+  "promote_reason": "30d/60d margins noise (<$5 total) and sample below champion"
+}

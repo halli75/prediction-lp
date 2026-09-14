@@ -1,0 +1,19 @@
+{
+  "label": "wave10_widen_spread_sf658",
+  "parent": "wave5b_pull24_p46_sf672",
+  "eval": "liveish_aug10",
+  "decision": "REJECT",
+  "reason": "30d 407.15 < gate 496.98 (sample-only lift)",
+  "metrics": {
+    "sample": 545.5697,
+    "30d": 407.1469,
+    "60d": "pending"
+  },
+  "gates": {
+    "sample": 528.47,
+    "30d": 496.98,
+    "60d": 861.11
+  },
+  "strategy": "research/agents/wave10-widen_spread/strategy_best.py",
+  "ts": "2026-09-13T20:05:41Z"
+}

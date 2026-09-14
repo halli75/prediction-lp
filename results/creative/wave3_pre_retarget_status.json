@@ -1,0 +1,443 @@
+{
+  "wave": "creative_wave3",
+  "started_at": "2026-09-13T21:36:49.078765+00:00",
+  "champion": "creative_day_boundary_flatten",
+  "gates": {
+    "sample": 651.39,
+    "30d": 1431.56,
+    "60d": 1979.75
+  },
+  "pid": 187993,
+  "phase": "window_eval:dfgate_pool110",
+  "candidates": {
+    "sess12": {
+      "id": "sess12",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "session_flatten": true,
+        "session_hours": 12
+      },
+      "sample_net_pnl": 482.7315,
+      "max_dd_pct": 0.9554,
+      "soft_reject": false,
+      "n_fills": 733,
+      "reward_pnl": 376.7625,
+      "trading_pnl": 105.969,
+      "error": false
+    },
+    "sess8": {
+      "id": "sess8",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "session_flatten": true,
+        "session_hours": 8
+      },
+      "sample_net_pnl": 413.1834,
+      "max_dd_pct": 1.8728,
+      "soft_reject": false,
+      "n_fills": 928,
+      "reward_pnl": 485.999,
+      "trading_pnl": -72.8156,
+      "error": false
+    },
+    "sess12_max3": {
+      "id": "sess12_max3",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "session_flatten": true,
+        "session_hours": 12,
+        "session_flatten_max_net": 3
+      },
+      "sample_net_pnl": 373.7614,
+      "max_dd_pct": 2.3264,
+      "soft_reject": false,
+      "n_fills": 1022,
+      "reward_pnl": 424.3447,
+      "trading_pnl": -50.5833,
+      "error": false
+    },
+    "sess12_max8": {
+      "id": "sess12_max8",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "session_flatten": true,
+        "session_hours": 12,
+        "session_flatten_max_net": 8
+      },
+      "sample_net_pnl": 554.041,
+      "max_dd_pct": 0.4213,
+      "soft_reject": false,
+      "n_fills": 715,
+      "reward_pnl": 400.8787,
+      "trading_pnl": 153.1623,
+      "error": false
+    },
+    "age60": {
+      "id": "age60",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "max_inv_age_ticks": 60
+      },
+      "sample_net_pnl": 43.9448,
+      "max_dd_pct": 4.0941,
+      "soft_reject": false,
+      "n_fills": 1319,
+      "reward_pnl": 531.6077,
+      "trading_pnl": -487.6629,
+      "error": false
+    },
+    "age120": {
+      "id": "age120",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "max_inv_age_ticks": 120
+      },
+      "sample_net_pnl": 203.4851,
+      "max_dd_pct": 2.993,
+      "soft_reject": false,
+      "n_fills": 1238,
+      "reward_pnl": 522.5189,
+      "trading_pnl": -319.0338,
+      "error": false
+    },
+    "age240": {
+      "id": "age240",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "max_inv_age_ticks": 240
+      },
+      "sample_net_pnl": 302.7068,
+      "max_dd_pct": 2.7328,
+      "soft_reject": false,
+      "n_fills": 1193,
+      "reward_pnl": 538.7267,
+      "trading_pnl": -236.0199,
+      "error": false
+    },
+    "ovn_reduce": {
+      "id": "ovn_reduce",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 731.8294,
+      "max_dd_pct": 0.4821,
+      "soft_reject": false,
+      "n_fills": 481,
+      "reward_pnl": 474.7187,
+      "trading_pnl": 257.1107,
+      "error": false,
+      "30d": 1441.4574,
+      "60d": 1978.1945,
+      "beats_gates": false
+    },
+    "ovn_sz03": {
+      "id": "ovn_sz03",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "overnight_quiet": true,
+        "overnight_mode": "size_mult",
+        "overnight_size_mult": 0.3
+      },
+      "sample_net_pnl": 397.0931,
+      "max_dd_pct": 0.9201,
+      "soft_reject": false,
+      "n_fills": 607,
+      "reward_pnl": 413.5981,
+      "trading_pnl": -16.505,
+      "error": false
+    },
+    "ovn_reduce_0_8": {
+      "id": "ovn_reduce_0_8",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "overnight_end_hour": 8
+      },
+      "sample_net_pnl": 788.4664,
+      "max_dd_pct": 0.277,
+      "soft_reject": false,
+      "n_fills": 424,
+      "reward_pnl": 454.8754,
+      "trading_pnl": 333.591,
+      "error": false,
+      "30d": 1338.5723,
+      "60d": 1884.6404,
+      "beats_gates": false
+    },
+    "carry50": {
+      "id": "carry50",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "carry_budget_shares": 50
+      },
+      "sample_net_pnl": -336.9205,
+      "max_dd_pct": 3.7582,
+      "soft_reject": false,
+      "n_fills": 810,
+      "reward_pnl": 202.0888,
+      "trading_pnl": -539.0093,
+      "error": false
+    },
+    "carry80": {
+      "id": "carry80",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "carry_budget_shares": 80
+      },
+      "sample_net_pnl": 20.6408,
+      "max_dd_pct": 2.2028,
+      "soft_reject": false,
+      "n_fills": 743,
+      "reward_pnl": 177.3701,
+      "trading_pnl": -156.7293,
+      "error": false
+    },
+    "carry120": {
+      "id": "carry120",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "carry_budget_shares": 120
+      },
+      "sample_net_pnl": -116.149,
+      "max_dd_pct": 2.5341,
+      "soft_reject": false,
+      "n_fills": 782,
+      "reward_pnl": 188.3406,
+      "trading_pnl": -304.4896,
+      "error": false
+    },
+    "ban1p5": {
+      "id": "ban1p5",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "tox_day_ban_cents": 1.5
+      },
+      "sample_net_pnl": 34.9893,
+      "max_dd_pct": 3.8697,
+      "soft_reject": false,
+      "n_fills": 1230,
+      "reward_pnl": 437.9604,
+      "trading_pnl": -402.9711,
+      "error": false
+    },
+    "ban2p0": {
+      "id": "ban2p0",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "tox_day_ban_cents": 2.0
+      },
+      "sample_net_pnl": 34.4531,
+      "max_dd_pct": 3.8712,
+      "soft_reject": false,
+      "n_fills": 1230,
+      "reward_pnl": 437.4242,
+      "trading_pnl": -402.9711,
+      "error": false
+    },
+    "ban3p0": {
+      "id": "ban3p0",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "tox_day_ban_cents": 3.0
+      },
+      "sample_net_pnl": 38.0662,
+      "max_dd_pct": 3.8359,
+      "soft_reject": false,
+      "n_fills": 1230,
+      "reward_pnl": 437.6844,
+      "trading_pnl": -399.6182,
+      "error": false
+    },
+    "dfgate": {
+      "id": "dfgate",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "day_flatten_harvest_gate": true
+      },
+      "sample_net_pnl": 651.394,
+      "max_dd_pct": 0.4787,
+      "soft_reject": false,
+      "n_fills": 673,
+      "reward_pnl": 444.447,
+      "trading_pnl": 206.9469,
+      "error": false
+    },
+    "dfgate_vol01": {
+      "id": "dfgate_vol01",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "day_flatten_harvest_gate": true,
+        "df_gate_vol": 0.01
+      },
+      "sample_net_pnl": 651.394,
+      "max_dd_pct": 0.4787,
+      "soft_reject": false,
+      "n_fills": 673,
+      "reward_pnl": 444.447,
+      "trading_pnl": 206.9469,
+      "error": false
+    },
+    "dfgate_pool110": {
+      "id": "dfgate_pool110",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "day_flatten_harvest_gate": true,
+        "df_gate_min_pool": 110.0
+      },
+      "sample_net_pnl": 651.3959,
+      "max_dd_pct": 0.4787,
+      "soft_reject": false,
+      "n_fills": 673,
+      "reward_pnl": 444.4489,
+      "trading_pnl": 206.9469,
+      "error": false,
+      "30d": 1431.5581,
+      "60d": 1979.7528,
+      "beats_gates": false
+    },
+    "sess12_ovn": {
+      "id": "sess12_ovn",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "session_flatten": true,
+        "session_hours": 12,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only"
+      },
+      "sample_net_pnl": 605.4344,
+      "max_dd_pct": 0.7062,
+      "soft_reject": false,
+      "n_fills": 543,
+      "reward_pnl": 381.6098,
+      "trading_pnl": 223.8246,
+      "error": false
+    },
+    "age120_carry80": {
+      "id": "age120_carry80",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "max_inv_age_ticks": 120,
+        "carry_budget_shares": 80
+      },
+      "sample_net_pnl": -174.4725,
+      "max_dd_pct": 3.4331,
+      "soft_reject": false,
+      "n_fills": 669,
+      "reward_pnl": 244.1342,
+      "trading_pnl": -418.6067,
+      "error": false
+    },
+    "ovn_ban2": {
+      "id": "ovn_ban2",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "overnight_quiet": true,
+        "overnight_mode": "reduce_only",
+        "tox_day_ban_cents": 2.0
+      },
+      "sample_net_pnl": 140.9604,
+      "max_dd_pct": 4.9607,
+      "soft_reject": false,
+      "n_fills": 1166,
+      "reward_pnl": 492.8269,
+      "trading_pnl": -351.8664,
+      "error": false
+    },
+    "sess12_age120": {
+      "id": "sess12_age120",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "session_flatten": true,
+        "session_hours": 12,
+        "max_inv_age_ticks": 120
+      },
+      "sample_net_pnl": 203.0874,
+      "max_dd_pct": 2.99,
+      "soft_reject": false,
+      "n_fills": 1238,
+      "reward_pnl": 523.1539,
+      "trading_pnl": -320.0666,
+      "error": false
+    },
+    "carry80_dfgate": {
+      "id": "carry80_dfgate",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "carry_budget_shares": 80,
+        "day_flatten_harvest_gate": true
+      },
+      "sample_net_pnl": 20.6408,
+      "max_dd_pct": 2.2028,
+      "soft_reject": false,
+      "n_fills": 743,
+      "reward_pnl": 177.3701,
+      "trading_pnl": -156.7293,
+      "error": false
+    },
+    "ban2_age120": {
+      "id": "ban2_age120",
+      "overlay": {
+        "day_flatten": true,
+        "day_flatten_max_net": 5,
+        "tox_day_ban_cents": 2.0,
+        "max_inv_age_ticks": 120
+      },
+      "sample_net_pnl": 121.9803,
+      "max_dd_pct": 3.5449,
+      "soft_reject": false,
+      "n_fills": 1308,
+      "reward_pnl": 520.0145,
+      "trading_pnl": -398.0342,
+      "error": false
+    }
+  },
+  "promoted": false,
+  "running_pids": [
+    187993
+  ],
+  "n_candidates": 25,
+  "modes": [
+    "session_flatten",
+    "inventory_age_flatten",
+    "overnight_quiet",
+    "carry_budget",
+    "toxic_market_day_ban",
+    "day_flatten_harvest_gate"
+  ],
+  "updated_at": "2026-09-13T22:17:47.554860+00:00",
+  "advance": [
+    "ovn_reduce_0_8",
+    "ovn_reduce",
+    "dfgate_pool110",
+    "dfgate",
+    "dfgate_vol01",
+    "sess12_ovn"
+  ]
+}

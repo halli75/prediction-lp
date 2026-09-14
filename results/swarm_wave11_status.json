@@ -1,0 +1,143 @@
+{
+  "wave": "wave11_from_wave5b",
+  "updated_at": "2026-09-13T21:35:04Z",
+  "parent": "wave5b_pull24_p46_sf672",
+  "champion_label": "wave5b_pull24_p46_sf672",
+  "promotion": false,
+  "liveish_mode": true,
+  "liveish_sample_gate": 528.47,
+  "liveish_30d_gate": 496.98,
+  "liveish_60d_gate": 861.11,
+  "liveish_90d_champion": 547.23,
+  "mandate": "Post-wave10: pool ridge 102-120 with size/pull/pause/spread sample-recovery (wave10 pool110 windows+++ sample-10)",
+  "agents": {
+    "wave11-from-wave5b": {
+      "kind": "window_aware_joint",
+      "axis": "pool_ridge_sample_recovery",
+      "log": "results/window_aware_hunt_wave11_from_wave5b.log",
+      "artifact": "results/window_aware_hunt_wave11_from_wave5b.json",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave11",
+      "liveish_search": true,
+      "mandate": "Post-wave10: pool ridge 102-120 with size/pull/pause/spread sample-recovery (wave10 pool110 windows+++ sample-10)",
+      "pid": 92307,
+      "alive": false,
+      "retarget": "creative_wave3"
+    },
+    "wave11-free_explore": {
+      "kind": "axis",
+      "axis": "free_explore",
+      "seed": 11101,
+      "iters_target": 30,
+      "pid": 92309,
+      "alive": false,
+      "liveish_search": true,
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave11",
+      "log": "research/agents/wave11-free_explore/run.log",
+      "retarget": "creative_wave3"
+    },
+    "wave11-cancel_on_mid_move": {
+      "kind": "axis",
+      "axis": "cancel_on_mid_move",
+      "seed": 11102,
+      "iters_target": 30,
+      "pid": 92308,
+      "alive": false,
+      "liveish_search": true,
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave11",
+      "log": "research/agents/wave11-cancel_on_mid_move/run.log",
+      "retarget": "creative_wave3"
+    },
+    "wave11-min_edge_vs_bbo": {
+      "kind": "axis",
+      "axis": "min_edge_vs_bbo",
+      "seed": 11103,
+      "iters_target": 30,
+      "pid": 92312,
+      "alive": false,
+      "liveish_search": true,
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave11",
+      "log": "research/agents/wave11-min_edge_vs_bbo/run.log",
+      "retarget": "creative_wave3"
+    },
+    "wave11-vol_regime_filter": {
+      "kind": "axis",
+      "axis": "vol_regime_filter",
+      "seed": 11104,
+      "iters_target": 30,
+      "pid": 92310,
+      "alive": false,
+      "liveish_search": true,
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave11",
+      "log": "research/agents/wave11-vol_regime_filter/run.log",
+      "retarget": "creative_wave3"
+    },
+    "wave11-two_sided_strict": {
+      "kind": "axis",
+      "axis": "two_sided_strict",
+      "seed": 11105,
+      "iters_target": 30,
+      "pid": 92311,
+      "alive": false,
+      "liveish_search": true,
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave11",
+      "log": "research/agents/wave11-two_sided_strict/run.log",
+      "retarget": "creative_wave3"
+    },
+    "wave11-near_mid_size": {
+      "kind": "axis",
+      "axis": "near_mid_size",
+      "seed": 11106,
+      "iters_target": 30,
+      "pid": 92342,
+      "alive": false,
+      "liveish_search": true,
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave11",
+      "log": "research/agents/wave11-near_mid_size/run.log",
+      "retarget": "creative_wave3"
+    }
+  },
+  "prior_wave10": {
+    "joint_finished_at": "2026-09-13T19:49:00Z",
+    "joint_best": "sf672_pool110_pull24",
+    "joint_best_windows": {
+      "sample": 517.97,
+      "30d": 696.59,
+      "60d": 992.52
+    },
+    "promoted": false,
+    "axes_best": {
+      "widen_spread_sample": 545.57,
+      "others": 528.47
+    },
+    "widen_window_reeval": {
+      "sample": 545.57,
+      "30d": 407.15,
+      "30d_delta_vs_gate": -89.83,
+      "60d": "pending",
+      "decision": "reject_on_30d"
+    }
+  },
+  "commander_actions": [
+    "Wave10 joint+axes DONE no promote; strongest lead pool110 windows beat but sample -10.5",
+    "Independent window re-eval of wave10-widen_spread (sample 545.57) running",
+    "Launched wave11 pool-ridge sample-recovery joint + 6 fresh liveish axes (seeds 11101-11106)",
+    "Axes: free_explore, cancel_on_mid_move, min_edge_vs_bbo, vol_regime_filter, two_sided_strict, near_mid_size",
+    "continuous prepare stays STOPPED; no HF download"
+  ],
+  "alive_count": 13,
+  "widen_reeval": {
+    "sample": 545.57,
+    "30d": 407.15,
+    "30d_delta_vs_gate": -89.83,
+    "60d": "pending",
+    "decision": "reject_on_30d"
+  },
+  "note": "All wave11 knob-only agents dead; retargeting to creative WAVE3 structural modes. Prefer creative axes over pool/spread/size micro-sweeps."
+}

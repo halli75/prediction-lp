@@ -1,0 +1,22 @@
+{
+  "sample_net_pnl": 465.3323,
+  "net_pnl": 465.3323,
+  "return_pct": 4.6533,
+  "reward_pnl": 61.2505,
+  "trading_pnl": 404.0818,
+  "max_dd_pct": 1.1278,
+  "max_drawdown_pct": 1.1278,
+  "max_drawdown_usd": 112.7828,
+  "n_fills": 99,
+  "end_equity": 10465.3323,
+  "n_price_rows": 503681,
+  "n_markets": 65,
+  "n_markets_with_prices": 61,
+  "capital0": 10000.0,
+  "soft_reject": false,
+  "dd_limit_pct": 25.0,
+  "primary_metric": "sample_net_pnl",
+  "elapsed_sec": 20.181,
+  "prices": "/workspace/polymarket-lp-autoresearch/data/research_sample_prices.parquet",
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/agents/axis-shrink_size/strategy.py"
+}

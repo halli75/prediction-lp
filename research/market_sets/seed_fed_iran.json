@@ -1,0 +1,113 @@
+{
+  "name": "seed_fed_iran",
+  "kind": "seed",
+  "min_pool": 0.0,
+  "n": 9,
+  "note": "strategy.py SEED_FED_IRAN_MARKETS (Fed rate + Iran geopolitics). Allowlist binding; includes two sub-150 pool names.",
+  "created_at": "2026-09-13T06:26:17.183674+00:00",
+  "market_ids": [
+    "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a",
+    "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d",
+    "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
+    "0x12aa13b3da17ceae1b0a59b5d5b77121e91bb79b4bb0b52bf6543ed3f8d0953b",
+    "0xdf9bf27ee5757c55b44b8b9826ddc9ec3a8809aa3278634c45edbb7fc8f1a3e3",
+    "0x377e7fe65cf198a7fc4fdae3f2136b74729279267858daaf96718b23bc2a5607",
+    "0x059db22dae2d735516017d47d1def0ea43e5d7221259c3aaa60c090d32566d4e",
+    "0xd4e77ba6f29fc093509d24f508631abd445ecf506bbdc9c4c80e60256a318527",
+    "0x094772b3529f455e881a4483eaf1c24266384f55e97c23f24f638f5726ba9920"
+  ],
+  "markets": [
+    {
+      "market_id": "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a",
+      "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+      "daily_reward_pool": 1000.0,
+      "volume_num": 37012871.57026714,
+      "overlap_days": 89,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d",
+      "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+      "daily_reward_pool": 1000.0,
+      "volume_num": 28676744.21692401,
+      "overlap_days": 89,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
+      "question": "Will the U.S. invade Iran before 2027?",
+      "daily_reward_pool": 400.0,
+      "volume_num": 65865669.31509099,
+      "overlap_days": 89,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 3.5,
+      "theme": "iran_geo"
+    },
+    {
+      "market_id": "0x12aa13b3da17ceae1b0a59b5d5b77121e91bb79b4bb0b52bf6543ed3f8d0953b",
+      "question": "Will the Fed increase interest rates by 25 bps after the October 2026 meeting?",
+      "daily_reward_pool": 250.0,
+      "volume_num": 374608.465564,
+      "overlap_days": 54,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0xdf9bf27ee5757c55b44b8b9826ddc9ec3a8809aa3278634c45edbb7fc8f1a3e3",
+      "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
+      "daily_reward_pool": 250.0,
+      "volume_num": 301908.3323010001,
+      "overlap_days": 53,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0x377e7fe65cf198a7fc4fdae3f2136b74729279267858daaf96718b23bc2a5607",
+      "question": "Iran leadership change by December 31?",
+      "daily_reward_pool": 200.0,
+      "volume_num": 4466297.4366729995,
+      "overlap_days": 89,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 3.5,
+      "theme": "iran_geo"
+    },
+    {
+      "market_id": "0x059db22dae2d735516017d47d1def0ea43e5d7221259c3aaa60c090d32566d4e",
+      "question": "Fed Rate Hike by October 2026 Meeting?",
+      "daily_reward_pool": 150.0,
+      "volume_num": 770121.7591189996,
+      "overlap_days": 89,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0xd4e77ba6f29fc093509d24f508631abd445ecf506bbdc9c4c80e60256a318527",
+      "question": "Will no Fed rate cuts happen in 2026?",
+      "daily_reward_pool": 116.0,
+      "volume_num": 8289365.706753002,
+      "overlap_days": 89,
+      "rewards_min_size": 50.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0x094772b3529f455e881a4483eaf1c24266384f55e97c23f24f638f5726ba9920",
+      "question": "Iran leadership change by September 30?",
+      "daily_reward_pool": 100.0,
+      "volume_num": 1044738.6189580001,
+      "overlap_days": 41,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5,
+      "theme": "iran_geo"
+    }
+  ],
+  "total_daily_pool": 3466.0,
+  "total_volume": 146802325.42165014
+}

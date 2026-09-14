@@ -1,0 +1,23 @@
+{
+  "sample_net_pnl": 529.2189,
+  "net_pnl": 529.2189,
+  "return_pct": 5.2922,
+  "reward_pnl": 182.7823,
+  "trading_pnl": 346.4366,
+  "max_dd_pct": 0.3069,
+  "max_drawdown_pct": 0.3069,
+  "max_drawdown_usd": 30.6918,
+  "n_fills": 221,
+  "end_equity": 10529.2189,
+  "n_price_rows": 503681,
+  "n_markets": 65,
+  "n_markets_with_prices": 61,
+  "capital0": 10000.0,
+  "soft_reject": false,
+  "dd_limit_pct": 25.0,
+  "primary_metric": "sample_net_pnl",
+  "elapsed_sec": 38.238,
+  "prices": "/workspace/polymarket-lp-autoresearch/data/research_sample_prices.parquet",
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/agents/wave4-inventory_hard_cap/strategy.py",
+  "liveish": true
+}

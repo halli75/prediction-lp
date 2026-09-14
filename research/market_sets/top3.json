@@ -1,0 +1,47 @@
+{
+  "name": "top3",
+  "kind": "rank_pool",
+  "min_pool": 0.0,
+  "n": 3,
+  "note": "Top 3 by daily_reward_pool, tie-break volume then overlap_days. Allowlist is binding; pool filter disabled in eval.",
+  "created_at": "2026-09-13T06:26:17.170493+00:00",
+  "market_ids": [
+    "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a",
+    "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d",
+    "0x58d5cc2bf06a3289b127049239aee051f3b941f219efebbca02d3f50f0eb2a64"
+  ],
+  "markets": [
+    {
+      "market_id": "0xa3b36b2d6104d34af4e6c6215fc818e43352e78a748fbfb0b85e3a35f71dec9a",
+      "question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+      "daily_reward_pool": 1000.0,
+      "volume_num": 37012871.57026714,
+      "overlap_days": 89,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0x876506d8b2bd7a0d3fa4fe18c024eee6e1dd81ee24c26795dadd6cfe4a7b5d0d",
+      "question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+      "daily_reward_pool": 1000.0,
+      "volume_num": 28676744.21692401,
+      "overlap_days": 89,
+      "rewards_min_size": 200.0,
+      "rewards_max_spread": 4.5,
+      "theme": "fed"
+    },
+    {
+      "market_id": "0x58d5cc2bf06a3289b127049239aee051f3b941f219efebbca02d3f50f0eb2a64",
+      "question": "Will Magdalena Andersson be the next Prime Minister of Sweden?",
+      "daily_reward_pool": 1000.0,
+      "volume_num": 902473.9733479999,
+      "overlap_days": 89,
+      "rewards_min_size": 100.0,
+      "rewards_max_spread": 5.5,
+      "theme": "sweden_pm"
+    }
+  ],
+  "total_daily_pool": 3000.0,
+  "total_volume": 66592089.76053915
+}

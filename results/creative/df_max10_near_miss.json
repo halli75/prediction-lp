@@ -1,0 +1,28 @@
+{
+  "candidate": "df_max10",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 10
+  },
+  "parent": "creative_day_boundary_flatten",
+  "verified_at": "2026-09-13T21:45:31.945380+00:00",
+  "fresh_liveish": {
+    "sample": 669.9433,
+    "30d": 1427.0554,
+    "60d": 2068.1103,
+    "soft_reject": false
+  },
+  "prior_wave2": {
+    "sample": 669.9433,
+    "30d": 1427.0554,
+    "60d": 2068.1103
+  },
+  "gates": {
+    "sample": 651.39,
+    "30d": 1431.56,
+    "60d": 1979.75
+  },
+  "promote": false,
+  "reason": "Fresh independent re-eval: 30d 1427.0554 is ~$4.50 under gate 1431.56 (60d 2068.11 beats). Identical to wave2 numbers \u2014 not noise. NEAR-MISS; do not promote.",
+  "verdict": "near-miss"
+}

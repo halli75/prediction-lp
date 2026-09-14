@@ -1,0 +1,33 @@
+{
+  "sample_net_pnl": 1074.6145,
+  "window_net_pnl": 1074.6145,
+  "net_pnl": 1074.6145,
+  "max_dd_pct": 7.2892,
+  "max_drawdown_pct": 7.2892,
+  "n_fills": 4947,
+  "reward_pnl": 3453.9286,
+  "trading_pnl": -2379.3141,
+  "soft_reject": false,
+  "elapsed_sec": 488.218,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 5
+  },
+  "strategy_module": "research/champions/strategy_creative_day_boundary_flatten.py",
+  "window": "90d",
+  "days_file": "research/window_90d_days.txt",
+  "n_days": 83,
+  "days_range": "2026-05-14\u21922026-08-10",
+  "champion": "creative_day_boundary_flatten",
+  "compare_wave5b_90d": 547.2302,
+  "delta_vs_wave5b_90d": 527.3843,
+  "saved_at": "2026-09-13T21:08:51.328127+00:00",
+  "engine": "LIVEISH_CONFIG via eval_liveish_candidate",
+  "strategy_cfg_base": {
+    "near_mid_size_mult": 0.5,
+    "near_mid_dist": 0.02,
+    "portfolio_inv_cap": 400.0,
+    "cancel_move": 0.02
+  }
+}

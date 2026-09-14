@@ -1,0 +1,312 @@
+{
+  "job": "creative_weekly_reset_ablation",
+  "strategy": "wave5b_pull24_p46_sf672",
+  "liveish": true,
+  "capital_per_book": 10000.0,
+  "created_at": "2026-09-13T20:56:47.964326+00:00",
+  "elapsed_sec": 1529.0,
+  "continuous": {
+    "60d": {
+      "net_pnl": 861.1133,
+      "reward_pnl": 644.8001,
+      "trading_pnl": 216.3132,
+      "max_dd_pct": 0.4021,
+      "soft_reject": false,
+      "n_fills": 165,
+      "n_days": 54,
+      "day_start": "2026-06-18",
+      "day_end": "2026-08-10"
+    },
+    "90d": {
+      "net_pnl": 547.2302,
+      "reward_pnl": 634.7366,
+      "trading_pnl": -87.5064,
+      "max_dd_pct": 1.2689,
+      "soft_reject": false,
+      "n_fills": 901,
+      "n_days": 83,
+      "day_start": "2026-05-14",
+      "day_end": "2026-08-10"
+    },
+    "full_83d": {
+      "net_pnl": 547.2302,
+      "reward_pnl": 634.7366,
+      "trading_pnl": -87.5064,
+      "max_dd_pct": 1.2689,
+      "soft_reject": false,
+      "n_fills": 901,
+      "n_days": 83,
+      "day_start": "2026-05-14",
+      "day_end": "2026-08-10"
+    }
+  },
+  "weekly_resets_full": {
+    "n_weeks": 12,
+    "week_len": 7,
+    "weeks": [
+      {
+        "net_pnl": 85.4393,
+        "reward_pnl": 99.4034,
+        "trading_pnl": -13.9641,
+        "max_dd_pct": 0.6236,
+        "soft_reject": false,
+        "n_fills": 172,
+        "n_days": 7,
+        "day_start": "2026-05-14",
+        "day_end": "2026-05-20",
+        "week_index": 0
+      },
+      {
+        "net_pnl": 174.6018,
+        "reward_pnl": 109.0103,
+        "trading_pnl": 65.5915,
+        "max_dd_pct": 0.813,
+        "soft_reject": false,
+        "n_fills": 256,
+        "n_days": 7,
+        "day_start": "2026-05-21",
+        "day_end": "2026-05-27",
+        "week_index": 1
+      },
+      {
+        "net_pnl": 276.9804,
+        "reward_pnl": 44.6626,
+        "trading_pnl": 232.3178,
+        "max_dd_pct": 0.332,
+        "soft_reject": false,
+        "n_fills": 377,
+        "n_days": 7,
+        "day_start": "2026-05-28",
+        "day_end": "2026-06-03",
+        "week_index": 2
+      },
+      {
+        "net_pnl": 131.1638,
+        "reward_pnl": 57.1501,
+        "trading_pnl": 74.0137,
+        "max_dd_pct": 0.4993,
+        "soft_reject": false,
+        "n_fills": 98,
+        "n_days": 7,
+        "day_start": "2026-06-04",
+        "day_end": "2026-06-10",
+        "week_index": 3
+      },
+      {
+        "net_pnl": 204.1034,
+        "reward_pnl": 64.0774,
+        "trading_pnl": 140.0259,
+        "max_dd_pct": 0.2791,
+        "soft_reject": false,
+        "n_fills": 26,
+        "n_days": 7,
+        "day_start": "2026-06-11",
+        "day_end": "2026-06-23",
+        "week_index": 4
+      },
+      {
+        "net_pnl": 203.9864,
+        "reward_pnl": 138.0048,
+        "trading_pnl": 65.9816,
+        "max_dd_pct": 0.0781,
+        "soft_reject": false,
+        "n_fills": 36,
+        "n_days": 7,
+        "day_start": "2026-06-24",
+        "day_end": "2026-06-30",
+        "week_index": 5
+      },
+      {
+        "net_pnl": 500.127,
+        "reward_pnl": 390.1377,
+        "trading_pnl": 109.9892,
+        "max_dd_pct": 0.1563,
+        "soft_reject": false,
+        "n_fills": 58,
+        "n_days": 7,
+        "day_start": "2026-07-01",
+        "day_end": "2026-07-07",
+        "week_index": 6
+      },
+      {
+        "net_pnl": 255.1975,
+        "reward_pnl": 63.3316,
+        "trading_pnl": 191.8658,
+        "max_dd_pct": 0.3179,
+        "soft_reject": false,
+        "n_fills": 28,
+        "n_days": 7,
+        "day_start": "2026-07-08",
+        "day_end": "2026-07-14",
+        "week_index": 7
+      },
+      {
+        "net_pnl": 54.8071,
+        "reward_pnl": 89.5725,
+        "trading_pnl": -34.7653,
+        "max_dd_pct": 0.5653,
+        "soft_reject": false,
+        "n_fills": 53,
+        "n_days": 7,
+        "day_start": "2026-07-15",
+        "day_end": "2026-07-21",
+        "week_index": 8
+      },
+      {
+        "net_pnl": 315.9937,
+        "reward_pnl": 130.2668,
+        "trading_pnl": 185.7269,
+        "max_dd_pct": 0.362,
+        "soft_reject": false,
+        "n_fills": 37,
+        "n_days": 7,
+        "day_start": "2026-07-22",
+        "day_end": "2026-07-28",
+        "week_index": 9
+      },
+      {
+        "net_pnl": 314.7104,
+        "reward_pnl": 140.8618,
+        "trading_pnl": 173.8486,
+        "max_dd_pct": 0.1814,
+        "soft_reject": false,
+        "n_fills": 23,
+        "n_days": 7,
+        "day_start": "2026-07-29",
+        "day_end": "2026-08-04",
+        "week_index": 10
+      },
+      {
+        "net_pnl": 237.0536,
+        "reward_pnl": 115.081,
+        "trading_pnl": 121.9726,
+        "max_dd_pct": 0.3787,
+        "soft_reject": false,
+        "n_fills": 39,
+        "n_days": 6,
+        "day_start": "2026-08-05",
+        "day_end": "2026-08-10",
+        "week_index": 11
+      }
+    ],
+    "sum_net_pnl": 2754.1644
+  },
+  "weekly_resets_60d": {
+    "n_weeks": 8,
+    "weeks": [
+      {
+        "net_pnl": 219.2707,
+        "reward_pnl": 124.8563,
+        "trading_pnl": 94.4144,
+        "max_dd_pct": 0.3881,
+        "soft_reject": false,
+        "n_fills": 38,
+        "n_days": 7,
+        "day_start": "2026-06-18",
+        "day_end": "2026-06-24",
+        "week_index": 0
+      },
+      {
+        "net_pnl": 270.9236,
+        "reward_pnl": 202.5725,
+        "trading_pnl": 68.3511,
+        "max_dd_pct": 0.1047,
+        "soft_reject": false,
+        "n_fills": 49,
+        "n_days": 7,
+        "day_start": "2026-06-25",
+        "day_end": "2026-07-01",
+        "week_index": 1
+      },
+      {
+        "net_pnl": 439.3403,
+        "reward_pnl": 369.9729,
+        "trading_pnl": 69.3673,
+        "max_dd_pct": 0.1917,
+        "soft_reject": false,
+        "n_fills": 40,
+        "n_days": 7,
+        "day_start": "2026-07-02",
+        "day_end": "2026-07-08",
+        "week_index": 2
+      },
+      {
+        "net_pnl": 291.1964,
+        "reward_pnl": 165.6574,
+        "trading_pnl": 125.539,
+        "max_dd_pct": 0.3329,
+        "soft_reject": false,
+        "n_fills": 39,
+        "n_days": 7,
+        "day_start": "2026-07-09",
+        "day_end": "2026-07-15",
+        "week_index": 3
+      },
+      {
+        "net_pnl": 305.6242,
+        "reward_pnl": 83.5766,
+        "trading_pnl": 222.0477,
+        "max_dd_pct": 0.202,
+        "soft_reject": false,
+        "n_fills": 58,
+        "n_days": 7,
+        "day_start": "2026-07-16",
+        "day_end": "2026-07-22",
+        "week_index": 4
+      },
+      {
+        "net_pnl": 84.5654,
+        "reward_pnl": 59.7947,
+        "trading_pnl": 24.7707,
+        "max_dd_pct": 0.2892,
+        "soft_reject": false,
+        "n_fills": 17,
+        "n_days": 7,
+        "day_start": "2026-07-23",
+        "day_end": "2026-07-29",
+        "week_index": 5
+      },
+      {
+        "net_pnl": 282.055,
+        "reward_pnl": 120.1429,
+        "trading_pnl": 161.9121,
+        "max_dd_pct": 0.2479,
+        "soft_reject": false,
+        "n_fills": 14,
+        "n_days": 7,
+        "day_start": "2026-07-30",
+        "day_end": "2026-08-05",
+        "week_index": 6
+      },
+      {
+        "net_pnl": 144.3406,
+        "reward_pnl": 32.5573,
+        "trading_pnl": 111.7832,
+        "max_dd_pct": 0.1921,
+        "soft_reject": false,
+        "n_fills": 23,
+        "n_days": 5,
+        "day_start": "2026-08-06",
+        "day_end": "2026-08-10",
+        "week_index": 7
+      }
+    ],
+    "sum_net_pnl": 2037.3162
+  },
+  "headline": {
+    "sum_weekly_full_vs_continuous_full": {
+      "sum_weekly": 2754.1644,
+      "continuous": 547.2302,
+      "delta_weekly_minus_cont": 2206.9342
+    },
+    "sum_weekly_60_vs_continuous_60": {
+      "sum_weekly": 2037.3162,
+      "continuous": 861.1133,
+      "delta_weekly_minus_cont": 1176.2029
+    },
+    "sum_weekly_full_vs_continuous_90": {
+      "sum_weekly_full": 2754.1644,
+      "continuous_90": 547.2302
+    }
+  }
+}

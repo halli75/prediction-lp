@@ -1,0 +1,478 @@
+{
+  "wave": "wave5_liveish_aug10",
+  "parent": "pool100",
+  "champion_label": "wave5b_pull24_p46_sf672",
+  "liveish_mode": true,
+  "liveish_sample_gate": 528.47,
+  "liveish_30d_gate": 496.98,
+  "liveish_60d_gate": 861.11,
+  "search_criterion": "eval_sample --liveish / window_aware joint --liveish Aug10 days",
+  "avoid": [
+    "portfolio_inv_cap<=300",
+    "hard_cancel=3.0 alone",
+    "aggressive inv_soft cuts"
+  ],
+  "prefer": [
+    "mild spread+pause",
+    "size_mult slight down",
+    "inv_pause_ticks",
+    "pull after adverse",
+    "near_mid shrink",
+    "free_explore floors"
+  ],
+  "agents": {
+    "wave5-joint-hunt": {
+      "kind": "window_aware_joint",
+      "axis": "joint_mutations",
+      "pid": 228762,
+      "seed": null,
+      "iters_target": 18,
+      "alive": false,
+      "liveish_search": true,
+      "log": "results/window_aware_hunt_wave5_joint.log",
+      "artifact": "results/window_aware_hunt_wave5_joint.json",
+      "parent": "pool100",
+      "wave": "wave5"
+    },
+    "wave5-pause_after_fill": {
+      "kind": "axis",
+      "axis": "pause_after_fill",
+      "pid": 228816,
+      "seed": 5101,
+      "iters_target": 40,
+      "alive": false,
+      "liveish_search": true,
+      "log": "research/agents/wave5-pause_after_fill/run.log",
+      "parent": "pool100",
+      "wave": "wave5",
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116
+    },
+    "wave5-pull_size_after_adverse_fill": {
+      "kind": "axis",
+      "axis": "pull_size_after_adverse_fill",
+      "pid": 228860,
+      "seed": 5102,
+      "iters_target": 40,
+      "alive": false,
+      "liveish_search": true,
+      "log": "research/agents/wave5-pull_size_after_adverse_fill/run.log",
+      "parent": "pool100",
+      "wave": "wave5",
+      "best_sample_net_pnl": 543.5336,
+      "max_dd_pct": 0.3396
+    },
+    "wave5-near_mid_size": {
+      "kind": "axis",
+      "axis": "near_mid_size",
+      "pid": 228904,
+      "seed": 5103,
+      "iters_target": 40,
+      "alive": false,
+      "liveish_search": true,
+      "log": "research/agents/wave5-near_mid_size/run.log",
+      "parent": "pool100",
+      "wave": "wave5",
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116
+    },
+    "wave5-shrink_size": {
+      "kind": "axis",
+      "axis": "shrink_size",
+      "pid": 228948,
+      "seed": 5104,
+      "iters_target": 35,
+      "alive": false,
+      "liveish_search": true,
+      "log": "research/agents/wave5-shrink_size/run.log",
+      "parent": "pool100",
+      "wave": "wave5",
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116
+    },
+    "wave5-free_explore": {
+      "kind": "axis",
+      "axis": "free_explore",
+      "pid": 228992,
+      "seed": 5105,
+      "iters_target": 45,
+      "alive": false,
+      "liveish_search": true,
+      "log": "research/agents/wave5-free_explore/run.log",
+      "parent": "pool100",
+      "wave": "wave5",
+      "best_sample_net_pnl": 532.3473,
+      "max_dd_pct": 0.3063
+    },
+    "wave5-widen_spread": {
+      "kind": "axis",
+      "axis": "widen_spread",
+      "pid": 229070,
+      "seed": 5106,
+      "iters_target": 35,
+      "alive": false,
+      "liveish_search": true,
+      "log": "research/agents/wave5-widen_spread/run.log",
+      "parent": "pool100",
+      "wave": "wave5",
+      "best_sample_net_pnl": 528.3479,
+      "max_dd_pct": 0.3116
+    },
+    "wave5-promote-watcher": {
+      "kind": "watcher",
+      "pid": 229104,
+      "alive": false,
+      "log": "results/wave5_promote_watcher.log",
+      "wave": "wave5"
+    },
+    "wave5b-bridge-hunt": {
+      "kind": "window_aware_joint",
+      "axis": "spread_pull_bridge",
+      "pid": 245228,
+      "alive": true,
+      "liveish_search": true,
+      "log": "results/window_aware_hunt_wave5b_bridge.log",
+      "artifact": "results/window_aware_hunt_wave5b_bridge.json",
+      "parent": "pool100",
+      "wave": "wave5b",
+      "note": "bridge pull(+60d) with tiny spread(+30d)"
+    }
+  },
+  "alive_count": 1,
+  "promotions": [
+    {
+      "label": "wave5b_pull24_p46_sf672",
+      "source": "wave5b-bridge",
+      "knobs": [
+        [
+          "inv_pause_ticks",
+          24
+        ],
+        [
+          "pull_size_mult",
+          0.464
+        ],
+        [
+          "spread_frac",
+          0.672
+        ]
+      ],
+      "liveish": {
+        "sample": 528.4746,
+        "30d": 496.9795,
+        "60d": 861.1133
+      },
+      "deltas": {
+        "sample": 0.1246,
+        "30d": 23.1295,
+        "60d": 137.3933
+      },
+      "ts": "2026-09-13T10:17:24Z"
+    },
+    {
+      "source": "wave5b",
+      "trial": {
+        "try": 6003,
+        "phase": "wave5b_bridge",
+        "mutation_label": "pull24_p46_sf672",
+        "knobs": [
+          [
+            "inv_pause_ticks",
+            24
+          ],
+          [
+            "pull_size_mult",
+            0.464
+          ],
+          [
+            "spread_frac",
+            0.672
+          ]
+        ],
+        "parent_label": "pool100",
+        "eval": "liveish",
+        "ts": "2026-09-13T10:09:27.625289+00:00",
+        "sample_net_pnl": 528.4746,
+        "sample_max_dd_pct": 0.3387,
+        "sample_soft_reject": false,
+        "delta_sample": 0.1246,
+        "net_30d": 496.9795,
+        "net_60d": 861.1133,
+        "soft_30d": false,
+        "soft_60d": false,
+        "delta_30d": 23.1295,
+        "delta_60d": 137.3933,
+        "score_vs_pool100_liveish_aug10": 160.6474,
+        "beats_pool100_liveish": true,
+        "status": "PROMOTED",
+        "promoted_label": "wave5b_pull24_p46_sf672"
+      }
+    }
+  ],
+  "launched_at": "2026-09-13T09:11:27Z",
+  "updated_at": "2026-09-13T10:38:57Z",
+  "how_to_attach": {
+    "status": "cat results/swarm_wave5_status.json",
+    "joint_log": "tail -f results/window_aware_hunt_wave5_joint.log",
+    "joint_json": "cat results/window_aware_hunt_wave5_joint.json",
+    "axis_log": "tail -f research/agents/wave5-<axis>/run.log",
+    "watcher": "tail -f results/wave5_promote_watcher.log",
+    "wave5b_log": "tail -f results/window_aware_hunt_wave5b_bridge.log",
+    "wave5b_json": "cat results/window_aware_hunt_wave5b_bridge.json",
+    "promotion": "cat results/promotion_wave5b_pull24_p46_sf672.json",
+    "gate": "cat research/PROMOTION_GATE.md",
+    "verify30": "cat results/wave5b_verify_30d.json",
+    "verify60": "cat results/wave5b_verify_60d.json"
+  },
+  "note": "PROMOTED wave5b_pull24_p46_sf672. Dual liveish Aug10 beat. Attach: cat results/swarm_wave5_status.json | promotion: cat results/promotion_wave5b_pull24_p46_sf672.json",
+  "joint_summary": {
+    "n_tried": 18,
+    "n_window_eval": 3,
+    "n_promoted": 0,
+    "anything_beat_pool100_liveish_aug10": false,
+    "best": {
+      "try": 5002,
+      "phase": "wave5_joint_liveish_aug10",
+      "mutation_label": "spread_mild_pull_pause",
+      "knobs": [
+        [
+          "spread_frac",
+          0.68
+        ],
+        [
+          "pull_size_mult",
+          0.4
+        ],
+        [
+          "inv_pause_ticks",
+          10
+        ]
+      ],
+      "parent_label": "pool100",
+      "eval": "liveish",
+      "gate": "aug10",
+      "ts": "2026-09-13T09:11:28.257879+00:00",
+      "sample_net_pnl": 558.3793,
+      "sample_max_dd_pct": 0.2414,
+      "sample_soft_reject": false,
+      "sample_n_fills": 216,
+      "sample_elapsed_sec": 37.329,
+      "delta_sample": 30.0293,
+      "net_30d": 586.9795,
+      "net_60d": 643.7762,
+      "dd_30d": 0.3957,
+      "dd_60d": 0.4238,
+      "soft_30d": false,
+      "soft_60d": false,
+      "delta_30d": 113.1295,
+      "delta_60d": -79.9438,
+      "score_vs_pool100_liveish_aug10": 63.215,
+      "beats_pool100_liveish": false,
+      "promote_eligible": false
+    },
+    "gate": {
+      "sample": 528.35,
+      "30d": 473.85,
+      "60d": 723.72,
+      "90d_info": 669.01
+    },
+    "elapsed_sec": 2108.4
+  },
+  "skipped_inv_caps": [
+    {
+      "agent": "wave5-free_explore",
+      "sample": 528.4044
+    }
+  ],
+  "window_evals": [
+    {
+      "agent": "wave5-pull_size_after_adverse_fill",
+      "sample": 536.7311,
+      "net_30d": 427.3714,
+      "net_60d": 837.4056,
+      "soft_30d": false,
+      "soft_60d": false,
+      "ts": "2026-09-13T09:27:46.291964+00:00"
+    },
+    {
+      "agent": "wave5-pull_size_after_adverse_fill",
+      "sample": 543.5336,
+      "net_30d": 404.9077,
+      "net_60d": 837.4056,
+      "soft_30d": false,
+      "soft_60d": false,
+      "ts": "2026-09-13T09:37:24.701358+00:00"
+    },
+    {
+      "agent": "wave5-free_explore",
+      "sample": 530.7761,
+      "net_30d": 409.1443,
+      "net_60d": 612.4715,
+      "soft_30d": false,
+      "soft_60d": false,
+      "ts": "2026-09-13T09:44:41.180764+00:00"
+    },
+    {
+      "agent": "wave5-free_explore",
+      "sample": 532.3473,
+      "net_30d": 409.1443,
+      "net_60d": 612.4715,
+      "soft_30d": false,
+      "soft_60d": false,
+      "ts": "2026-09-13T09:53:29.075945+00:00"
+    }
+  ],
+  "watcher_finished_at": "2026-09-13T09:53:29Z",
+  "wave5b_launched_at": "2026-09-13T09:53:34Z",
+  "wave5b_summary": {
+    "best": {
+      "try": 6004,
+      "phase": "wave5b_bridge",
+      "mutation_label": "pull24_p46_sf675",
+      "knobs": [
+        [
+          "inv_pause_ticks",
+          24
+        ],
+        [
+          "pull_size_mult",
+          0.464
+        ],
+        [
+          "spread_frac",
+          0.675
+        ]
+      ],
+      "parent_label": "pool100",
+      "eval": "liveish",
+      "ts": "2026-09-13T10:17:24.528517+00:00",
+      "sample_net_pnl": 529.5004,
+      "sample_max_dd_pct": 0.3387,
+      "sample_soft_reject": false,
+      "delta_sample": 1.1504,
+      "net_30d": 498.8838,
+      "net_60d": 859.4972,
+      "soft_30d": false,
+      "soft_60d": false,
+      "delta_30d": 25.0338,
+      "delta_60d": 135.7772,
+      "score_vs_pool100_liveish_aug10": 161.9614,
+      "beats_pool100_liveish": true
+    },
+    "promoted": true,
+    "n_trials": 8,
+    "finished_at": null
+  },
+  "champion_still": "pool100",
+  "champion_knobs": {
+    "spread_frac": 0.672,
+    "size_mult": 1.291,
+    "min_daily_reward_pool": 100.0,
+    "inv_soft_cap": 35.0,
+    "max_abs_inv": 100.0
+  },
+  "promoted": true,
+  "independent_verify": {
+    "sample_liveish": 528.4746,
+    "30d": 496.9795,
+    "60d": 861.1133,
+    "soft_30d": false,
+    "soft_60d": false,
+    "dd_30d": 0.3551,
+    "dd_60d": 0.4021,
+    "beats_pool100_gates": true,
+    "verified_at": "2026-09-13T10:32:34Z"
+  },
+  "wall_monitoring_note": "~81+ min monitored; wave5b still exploring neighbors post-promote; leave running",
+  "promotion_result": [
+    {
+      "label": "wave5b_pull24_p46_sf672",
+      "source": "wave5b-bridge",
+      "knobs": [
+        [
+          "inv_pause_ticks",
+          24
+        ],
+        [
+          "pull_size_mult",
+          0.464
+        ],
+        [
+          "spread_frac",
+          0.672
+        ]
+      ],
+      "liveish": {
+        "sample": 528.4746,
+        "30d": 496.9795,
+        "60d": 861.1133
+      },
+      "deltas": {
+        "sample": 0.1246,
+        "30d": 23.1295,
+        "60d": 137.3933
+      },
+      "ts": "2026-09-13T10:17:24Z"
+    },
+    {
+      "source": "wave5b",
+      "trial": {
+        "try": 6003,
+        "phase": "wave5b_bridge",
+        "mutation_label": "pull24_p46_sf672",
+        "knobs": [
+          [
+            "inv_pause_ticks",
+            24
+          ],
+          [
+            "pull_size_mult",
+            0.464
+          ],
+          [
+            "spread_frac",
+            0.672
+          ]
+        ],
+        "parent_label": "pool100",
+        "eval": "liveish",
+        "ts": "2026-09-13T10:09:27.625289+00:00",
+        "sample_net_pnl": 528.4746,
+        "sample_max_dd_pct": 0.3387,
+        "sample_soft_reject": false,
+        "delta_sample": 0.1246,
+        "net_30d": 496.9795,
+        "net_60d": 861.1133,
+        "soft_30d": false,
+        "soft_60d": false,
+        "delta_30d": 23.1295,
+        "delta_60d": 137.3933,
+        "score_vs_pool100_liveish_aug10": 160.6474,
+        "beats_pool100_liveish": true,
+        "status": "PROMOTED",
+        "promoted_label": "wave5b_pull24_p46_sf672"
+      }
+    }
+  ],
+  "closest_signals_wave5": {
+    "pull24_p46": {
+      "sample": 543.59,
+      "30d": 404.89,
+      "60d": 837.38,
+      "note": "+60d/-30d"
+    },
+    "spread_mild_pull_pause": {
+      "sample": 558.38,
+      "30d": 586.98,
+      "60d": 643.78,
+      "note": "+30d/-60d"
+    },
+    "max_abs_inv_90": "approx tie",
+    "free_explore_532": {
+      "sample": 532.35,
+      "30d": 409.14,
+      "60d": 612.47,
+      "note": "fails both windows"
+    }
+  }
+}

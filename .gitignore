@@ -5,3 +5,13 @@ __pycache__/
 data/raw_hf/
 *.egg-info/
 .DS_Store
+
+# runtime noise
+*.log
+*.pid
+*.lock
+results/**/*.log
+results/**/*.pid
+data/prepare_continuous.log
+research/agents/**/run.log
+research/agents/**/__pycache__/

@@ -1,0 +1,15 @@
+{
+  "sample_net_pnl": 337.9182,
+  "window_net_pnl": 337.9182,
+  "net_pnl": 337.9182,
+  "max_dd_pct": 0.293,
+  "max_drawdown_pct": 0.293,
+  "n_fills": 204,
+  "reward_pnl": 99.2264,
+  "trading_pnl": 238.6918,
+  "soft_reject": false,
+  "elapsed_sec": 36.903,
+  "liveish": true,
+  "strategy_overlay": {},
+  "strategy_module": "research/creative/strategy_creative_base.py"
+}

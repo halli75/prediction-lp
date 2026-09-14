@@ -1,0 +1,117 @@
+{
+  "wave": "wave9_from_wave5b",
+  "updated_at": "2026-09-13T17:05:30Z",
+  "parent": "wave5b_pull24_p46_sf672",
+  "champion_label": "wave5b_pull24_p46_sf672",
+  "promotion": false,
+  "liveish_mode": true,
+  "liveish_sample_gate": 528.47,
+  "liveish_30d_gate": 496.98,
+  "liveish_60d_gate": 861.11,
+  "liveish_90d_champion": 547.23,
+  "agents": {
+    "wave9-from-wave5b": {
+      "kind": "window_aware_joint",
+      "axis": "skew_x_pull_compensate",
+      "pid": 23097,
+      "alive": true,
+      "log": "results/window_aware_hunt_wave9_from_wave5b.log",
+      "artifact": "results/window_aware_hunt_wave9_from_wave5b.json",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave9",
+      "liveish_search": true,
+      "mandate": "Compensate wave8 skew(+30d/\u221260d) with stronger pull/pause + mild skew"
+    },
+    "wave9-skew_aggressive": {
+      "kind": "axis",
+      "axis": "skew_aggressive",
+      "pid": 23098,
+      "alive": true,
+      "seed": 9101,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave9-skew_aggressive/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave9"
+    },
+    "wave9-min_edge_vs_bbo": {
+      "kind": "axis",
+      "axis": "min_edge_vs_bbo",
+      "pid": 23099,
+      "alive": true,
+      "seed": 9102,
+      "iters_target": 30,
+      "liveish_search": true,
+      "log": "research/agents/wave9-min_edge_vs_bbo/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave9"
+    },
+    "wave9-vol_regime_filter": {
+      "kind": "axis",
+      "axis": "vol_regime_filter",
+      "pid": 23100,
+      "alive": true,
+      "seed": 9103,
+      "iters_target": 30,
+      "liveish_search": true,
+      "log": "research/agents/wave9-vol_regime_filter/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave9"
+    },
+    "wave9-two_sided_strict": {
+      "kind": "axis",
+      "axis": "two_sided_strict",
+      "pid": 23101,
+      "alive": true,
+      "seed": 9104,
+      "iters_target": 25,
+      "liveish_search": true,
+      "log": "research/agents/wave9-two_sided_strict/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave9"
+    },
+    "wave9-cancel_on_mid_move": {
+      "kind": "axis",
+      "axis": "cancel_on_mid_move",
+      "pid": 23102,
+      "alive": true,
+      "seed": 9105,
+      "iters_target": 30,
+      "liveish_search": true,
+      "log": "research/agents/wave9-cancel_on_mid_move/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave9"
+    },
+    "wave9-near_mid_size": {
+      "kind": "axis",
+      "axis": "near_mid_size",
+      "pid": 23103,
+      "alive": true,
+      "seed": 9106,
+      "iters_target": 30,
+      "liveish_search": true,
+      "log": "research/agents/wave9-near_mid_size/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave9"
+    }
+  },
+  "alive_count": 7,
+  "prior_wave8": {
+    "joint_finished_at": "2026-09-13T15:40:51Z",
+    "joint_best": "sf672_pull24_p46_skew48",
+    "joint_best_windows": {
+      "sample": 525.61,
+      "30d": 683.96,
+      "60d": 707.02
+    },
+    "axes_all_tied_sample": 528.4746,
+    "promoted": false
+  },
+  "commander_actions": [
+    "wave8 joint DONE @15:40Z: best skew48 sample 525.61 / 30d +187 / 60d -154 \u2014 no promote",
+    "wave8 axes DONE: all sample-tied 528.47, 0 keeps",
+    "wave5b liveish 90d measured +547.23 (83d May14\u2192Aug10; rewards +635 / trading -88)",
+    "swarm idle after wave8; relaunched wave9 skew\u00d7pull compensate joint + 6 fresh liveish axes",
+    "continuous prepare stays STOPPED; no HF download"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "sample_net_pnl": 528.4746,
+  "window_net_pnl": 528.4746,
+  "net_pnl": 528.4746,
+  "max_dd_pct": 0.3387,
+  "max_drawdown_pct": 0.3387,
+  "n_fills": 235,
+  "reward_pnl": 157.9594,
+  "trading_pnl": 370.5151,
+  "soft_reject": false,
+  "elapsed_sec": 33.313,
+  "liveish": true,
+  "strategy_overlay": {},
+  "strategy_module": "research/champions/strategy_wave5b_pull24_p46_sf672.py"
+}

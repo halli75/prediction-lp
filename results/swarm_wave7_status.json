@@ -1,0 +1,119 @@
+{
+  "wave": "wave7_from_wave5b",
+  "updated_at": "2026-09-13T14:01:35Z",
+  "parent": "wave5b_pull24_p46_sf672",
+  "champion_label": "wave5b_pull24_p46_sf672",
+  "promotion": false,
+  "liveish_mode": true,
+  "liveish_sample_gate": 528.47,
+  "liveish_30d_gate": 496.98,
+  "liveish_60d_gate": 861.11,
+  "agents": {
+    "wave7-from-wave5b": {
+      "kind": "window_aware_joint",
+      "axis": "around_wave5b",
+      "pid": 286866,
+      "alive": true,
+      "log": "results/window_aware_hunt_wave7_from_wave5b.log",
+      "artifact": "results/window_aware_hunt_wave7_from_wave5b.json",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave7",
+      "liveish_search": true
+    },
+    "wave7-skew_aggressive": {
+      "kind": "axis",
+      "axis": "skew_aggressive",
+      "pid": 286738,
+      "alive": false,
+      "seed": 7101,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave7-skew_aggressive/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave7",
+      "finished": true
+    },
+    "wave7-shrink_size": {
+      "kind": "axis",
+      "axis": "shrink_size",
+      "pid": 286763,
+      "alive": false,
+      "seed": 7102,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave7-shrink_size/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave7",
+      "finished": true
+    },
+    "wave7-near_mid_size": {
+      "kind": "axis",
+      "axis": "near_mid_size",
+      "pid": 286789,
+      "alive": false,
+      "seed": 7103,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave7-near_mid_size/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave7",
+      "finished": true
+    },
+    "wave7-cancel_on_mid_move": {
+      "kind": "axis",
+      "axis": "cancel_on_mid_move",
+      "pid": 286814,
+      "alive": false,
+      "seed": 7104,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave7-cancel_on_mid_move/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave7",
+      "finished": true
+    },
+    "wave7-inventory_hard_cap": {
+      "kind": "axis",
+      "axis": "inventory_hard_cap",
+      "pid": 286843,
+      "alive": false,
+      "seed": 7105,
+      "iters_target": 35,
+      "liveish_search": true,
+      "log": "research/agents/wave7-inventory_hard_cap/run.log",
+      "parent": "wave5b_pull24_p46_sf672",
+      "wave": "wave7",
+      "finished": true
+    }
+  },
+  "continued_from_prior_wave": {
+    "wave6-from-wave5b": {
+      "kind": "window_aware_joint",
+      "pid": 265360,
+      "alive": true,
+      "log": "results/window_aware_hunt_wave6_from_wave5b.log",
+      "artifact": "results/window_aware_hunt_wave6_from_wave5b.json",
+      "note": "left running (productive); not killed",
+      "wave": "wave6"
+    }
+  },
+  "alive_count": 1,
+  "commander_actions": [
+    "independently re-evaled wave6-widen_spread strategy_best under liveish Aug10",
+    "REJECT widen: sample 544.03 / 30d 403.29 / 60d 835.96 (windows miss)",
+    "other wave6 axes sample-tied at 528.47 \u2014 no window contenders",
+    "launched wave7 joint + 5 liveish axes from wave5b",
+    "left wave6-from-wave5b joint hunt running"
+  ],
+  "prior_reject": {
+    "label": "wave6_widen_spread_sf664_mhs025",
+    "artifact": "results/promotion_wave6_widen_spread_sf664_mhs025.json",
+    "liveish": {
+      "sample": 544.0321,
+      "30d": 403.2871,
+      "60d": 835.9566
+    }
+  },
+  "axes_finished": true,
+  "commander_note": "axes finished ~12:28Z; joint left running; wave8 launched 14:00Z"
+}

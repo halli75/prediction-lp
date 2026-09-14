@@ -1,0 +1,62 @@
+{
+  "job": "COMMANDER_promotion_pool150",
+  "label": "pool150",
+  "parent": "hybrid_spread_size (min_daily_reward_pool=200)",
+  "strategy": "research/champions/strategy_pool150.py",
+  "also_synced": [
+    "research/champions/strategy_hybrid_spread_size.py",
+    "research/champions/strategy_current_best.py",
+    "strategy.py"
+  ],
+  "historical_parent_saved_as": "research/champions/strategy_hybrid_spread_size_pool200.py",
+  "knobs": {
+    "change": "min_daily_reward_pool 200 \u2192 150",
+    "spread_frac": 0.6676,
+    "size_mult": 1.291,
+    "skew_bps_per_share": 0.35,
+    "inv_soft_cap": 35.0,
+    "max_abs_inv": 100.0,
+    "inv_pause_ticks": 8,
+    "pull_size_mult": 0.5,
+    "min_daily_reward_pool": 150.0
+  },
+  "created_at": "2026-09-13T05:32:16.599725+00:00",
+  "beat_previous_champion": {
+    "label": "hybrid_spread_size",
+    "sample": {
+      "candidate": 1197.5641,
+      "champ": 1086.47,
+      "delta": 111.09
+    },
+    "30d": {
+      "candidate": 2083.3103,
+      "champ": 1938.76,
+      "delta": 144.5503
+    },
+    "60d": {
+      "candidate": 1913.9283,
+      "champ": 1581.22,
+      "delta": 332.7083
+    }
+  },
+  "windows": {
+    "sample": {
+      "net_pnl": 1197.5641,
+      "max_dd_pct": 1.1844,
+      "n_fills": 295,
+      "soft_reject": false
+    },
+    "30d": {
+      "net_pnl": 2083.3103,
+      "max_dd_pct": 0.8714,
+      "soft_reject": false
+    },
+    "60d": {
+      "net_pnl": 1913.9283,
+      "max_dd_pct": 2.695,
+      "soft_reject": false
+    }
+  },
+  "gate": "BOTH 30d and 60d strictly > hybrid (1938.76 / 1581.22); soft_reject false; inv caps unchanged",
+  "source": "results/window_aware_hunt.json try 1"
+}

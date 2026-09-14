@@ -1,0 +1,18 @@
+{
+  "sample_net_pnl": 477.2067,
+  "window_net_pnl": 477.2067,
+  "net_pnl": 477.2067,
+  "max_dd_pct": 0.6739,
+  "max_drawdown_pct": 0.6739,
+  "n_fills": 133,
+  "reward_pnl": 294.1115,
+  "trading_pnl": 183.0953,
+  "soft_reject": false,
+  "elapsed_sec": 181.497,
+  "liveish": true,
+  "strategy_overlay": {
+    "tox_blackout_ticks": 60,
+    "tox_move_cents": 1.0
+  },
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/creative/strategy_creative_base.py"
+}
