@@ -15,3 +15,10 @@ results/**/*.pid
 data/prepare_continuous.log
 research/agents/**/run.log
 research/agents/**/__pycache__/
+
+# paper runtime
+results/paper/run.log
+results/paper/paper.pid
+results/paper/status.json
+results/paper/fills.csv
+results/paper/equity.csv

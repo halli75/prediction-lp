@@ -1,0 +1,17 @@
+{
+  "pid": 515802,
+  "start_time": "2026-09-14T18:56:49.967018+00:00",
+  "champion": "creative_wave5_fr_w20_t3_b30",
+  "capital": 10000.0,
+  "poll_sec": 15,
+  "n_markets": 103,
+  "first_status_equity": 10000.0,
+  "first_status_ts": "2026-09-14T18:56:38+00:00",
+  "paper": true,
+  "real_orders": false,
+  "status_path": "results/paper/status.json",
+  "fills_csv": "results/paper/fills.csv",
+  "equity_csv": "results/paper/equity.csv",
+  "run_log": "results/paper/run.log",
+  "markets_live": "data/markets_live.json"
+}
