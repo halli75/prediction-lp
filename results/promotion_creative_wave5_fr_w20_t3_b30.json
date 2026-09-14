@@ -1,0 +1,30 @@
+{
+  "job": "creative_wave5_promotion_fr_w20_t3_b30",
+  "label": "creative_wave5_fr_w20_t3_b30",
+  "parent": "creative_wave4_ovn_e3",
+  "eval": "liveish",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110.0,
+    "overnight_quiet": true,
+    "overnight_mode": "reduce_only",
+    "overnight_end_hour": 3,
+    "fill_rate_window": 20,
+    "fill_rate_threshold": 3,
+    "fill_rate_brake_ticks": 30
+  },
+  "created_at": "2026-09-14T04:28:16.102650+00:00",
+  "windows_liveish": {
+    "sample": 719.431,
+    "30d": 1711.3042,
+    "60d": 2737.8836,
+    "90d": 2946.1239
+  },
+  "gates_beaten": {
+    "30d_gate": 1703.17,
+    "60d_gate": 2710.25,
+    "90d_gate_promote": 2109.0,
+    "sample_gate": 726.73
+  }
+}

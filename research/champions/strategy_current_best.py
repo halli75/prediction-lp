@@ -1,7 +1,7 @@
-"""Promoted creative champion: creative_wave4_ovn_e3
+"""Promoted creative champion: creative_wave5_fr_w20_t3_b30
 
-Fork of creative_df_max8_pool110 + WAVE4 overnight overlay {"day_flatten": true, "day_flatten_max_net": 8, "min_daily_reward_pool": 110.0, "overnight_quiet": true, "overnight_mode": "reduce_only", "overnight_end_hour": 3}.
-Liveish: sample 726.73 / 30d 1703.17 / 60d 2710.25.
+Fork of creative_wave4_ovn_e3 + WAVE5 early-bleed overlay {"day_flatten": true, "day_flatten_max_net": 8, "min_daily_reward_pool": 110.0, "overnight_quiet": true, "overnight_mode": "reduce_only", "overnight_end_hour": 3, "fill_rate_window": 20, "fill_rate_threshold": 3, "fill_rate_brake_ticks": 30}.
+Liveish: sample 719.43 / 30d 1711.30 / 60d 2737.88 / 90d 2946.12.
 """
 from __future__ import annotations
 
@@ -137,8 +137,13 @@ class Strategy:
             cfg.get("session_flatten_max_net", cfg.get("day_flatten_max_net", 5.0))
         )
 
-        # --- WAVE3 mode 7: inventory_age_flatten ---
-        self.max_inv_age_ticks = int(cfg.get("max_inv_age_ticks", 0))  # 0 = off
+        # --- WAVE3 mode 7 / WAVE5 inv_age_flatten ---
+        # inv_age_flatten bool enables with default 120 ticks if max_inv_age_ticks unset/0
+        self.inv_age_flatten = bool(cfg.get("inv_age_flatten", False))
+        _max_age = int(cfg.get("max_inv_age_ticks", 0))
+        if self.inv_age_flatten and _max_age <= 0:
+            _max_age = 120
+        self.max_inv_age_ticks = _max_age  # 0 = off
         self.inv_age_flat_eps = float(cfg.get("inv_age_flat_eps", 1.0))
 
         # --- WAVE3 mode 8: overnight_quiet ---
@@ -161,6 +166,31 @@ class Strategy:
         self.df_gate_vol = float(cfg.get("df_gate_vol", 0.015))  # require |Δmid| < this
         self.df_gate_min_pool = float(cfg.get("df_gate_min_pool", 0.0))  # 0 → use min_daily_reward_pool
         self.df_gate_vol_lookback = int(cfg.get("df_gate_vol_lookback", 5))
+
+        # --- WAVE5 mode 13: warm_start ---
+        self.warm_start = bool(cfg.get("warm_start", False))
+        self.warm_days = int(cfg.get("warm_days", 14))
+        # Optional absolute UTC date: if set, warm while utc_day < warm_until_date
+        # (targets May bleed on 90d without shrinking later 30d/60d windows)
+        self.warm_until_date = cfg.get("warm_until_date")  # "YYYY-MM-DD" or None
+        if self.warm_until_date is not None:
+            self.warm_until_date = str(self.warm_until_date)[:10]
+        self.warm_size_frac = float(cfg.get("warm_size_frac", 0.5))
+        self.warm_max_net = float(cfg.get("warm_max_net", 5.0))
+        self.warm_pause_mult = float(cfg.get("warm_pause_mult", 1.5))
+        self.warm_pull_frac = float(cfg.get("warm_pull_frac", 0.7))  # <1 → stronger pull
+
+        # --- WAVE5 mode 14: fill_rate_brake ---
+        self.fill_rate_window = int(cfg.get("fill_rate_window", 20))  # 0 = off
+        self.fill_rate_threshold = int(cfg.get("fill_rate_threshold", 3))
+        self.fill_rate_brake_ticks = int(cfg.get("fill_rate_brake_ticks", 30))
+        self.fill_rate_size_frac = float(cfg.get("fill_rate_size_frac", 0.5))
+        self.fill_rate_pause_add = bool(cfg.get("fill_rate_pause_add", True))
+
+        # --- WAVE5 mode 15: daily_trading_stop ---
+        # Stop if cumulative day MTM (midΔ * net across markets) < -daily_trading_stop
+        self.daily_trading_stop = float(cfg.get("daily_trading_stop", 0.0))  # 0 = off
+        self.daily_stop_mode = str(cfg.get("daily_stop_mode", "reduce_only"))  # or "empty"
 
         # Per-market / creative internal state
         self._last_mid: dict[str, float] = {}
@@ -195,6 +225,20 @@ class Strategy:
         self._df_gate_pending: dict[str, bool] = {}  # after day-flatten clear, gate resume
         self._df_was_active: dict[str, bool] = {}
 
+        # WAVE5 state
+        self._run_start_day: str | None = None
+        self._fill_tick_i: dict[str, int] = {}
+        self._fill_ticks: dict[str, list[int]] = {}
+        self._fill_brake_left: dict[str, int] = {}
+        self._mtm_utc_day: str | None = None
+        self._day_mtm_pnl: float = 0.0
+        self._day_trading_stopped: bool = False
+        # baseline champion knobs (warm_start restores after warm window)
+        self._base_size_mult = self.size_mult
+        self._base_day_flatten_max_net = self.day_flatten_max_net
+        self._base_inv_pause_ticks = self.inv_pause_ticks
+        self._base_pull_size_mult = self.pull_size_mult
+
     def quote(self, state: dict) -> dict:
         mid = float(state["mid"])
         min_size = float(state["rewards_min_size"])
@@ -216,6 +260,67 @@ class Strategy:
 
         net = inv_yes - inv_no
         utc_day = _utc_date_str(ts) if ts is not None else None
+
+        # --- WAVE5 warm_start: track run-start day, apply warmer caps ---
+        in_warm = False
+        if self.warm_start and utc_day is not None:
+            if self._run_start_day is None:
+                self._run_start_day = utc_day
+            if self.warm_until_date:
+                in_warm = utc_day < self.warm_until_date
+            else:
+                try:
+                    d0 = datetime.strptime(self._run_start_day, "%Y-%m-%d").date()
+                    d1 = datetime.strptime(utc_day, "%Y-%m-%d").date()
+                    day_idx = (d1 - d0).days
+                except ValueError:
+                    day_idx = 0
+                in_warm = day_idx < self.warm_days
+            if in_warm:
+                self.size_mult = self._base_size_mult * self.warm_size_frac
+                self.day_flatten_max_net = self.warm_max_net
+                self.inv_pause_ticks = max(
+                    1, int(round(self._base_inv_pause_ticks * self.warm_pause_mult))
+                )
+                self.pull_size_mult = max(
+                    0.05, self._base_pull_size_mult * self.warm_pull_frac
+                )
+            else:
+                self.size_mult = self._base_size_mult
+                self.day_flatten_max_net = self._base_day_flatten_max_net
+                self.inv_pause_ticks = self._base_inv_pause_ticks
+                self.pull_size_mult = self._base_pull_size_mult
+
+        # --- WAVE5 daily_trading_stop: accumulate day MTM before mid update ---
+        if self.daily_trading_stop > 0 and utc_day is not None:
+            if self._mtm_utc_day != utc_day:
+                self._mtm_utc_day = utc_day
+                self._day_mtm_pnl = 0.0
+                self._day_trading_stopped = False
+            last_m = self._last_mid.get(market_id)
+            if last_m is not None:
+                self._day_mtm_pnl += (mid - last_m) * net
+            if self._day_mtm_pnl < -self.daily_trading_stop:
+                self._day_trading_stopped = True
+
+        # --- WAVE5 fill_rate_brake: sliding window of net-change fills ---
+        in_fill_brake = False
+        if self.fill_rate_window > 0:
+            ti = int(self._fill_tick_i.get(market_id, 0)) + 1
+            self._fill_tick_i[market_id] = ti
+            prev_n = self._last_net.get(market_id)
+            if prev_n is not None and abs(net - prev_n) > 1e-6:
+                fl = self._fill_ticks.setdefault(market_id, [])
+                fl.append(ti)
+                cutoff = ti - self.fill_rate_window
+                while fl and fl[0] < cutoff:
+                    fl.pop(0)
+                if len(fl) > self.fill_rate_threshold:
+                    self._fill_brake_left[market_id] = self.fill_rate_brake_ticks
+            br = int(self._fill_brake_left.get(market_id, 0))
+            if br > 0:
+                in_fill_brake = True
+                self._fill_brake_left[market_id] = br - 1
 
         # --- day boundary tracking (mode 2) ---
         if self.day_flatten and utc_day is not None:
@@ -484,6 +589,10 @@ class Strategy:
         # banned but still holding → reduce-only
         in_ban_reduce = bool(banned_today and abs(net) >= 1e-9)
 
+        # WAVE5 daily trading stop regime
+        in_day_stop = bool(self.daily_trading_stop > 0 and self._day_trading_stopped)
+        in_day_stop_reduce = bool(in_day_stop and abs(net) >= 1e-9)
+
         # Creative reduce-only only (hard max_abs_inv handled like champion below)
         want_reduce_only = (
             in_force_flatten
@@ -496,7 +605,14 @@ class Strategy:
             or in_carry_budget
             or in_ban_reduce
             or in_df_gate
+            or in_day_stop_reduce
         )
+
+        # WAVE5 daily stop: empty mode or flat → stand down
+        if in_day_stop:
+            if self.daily_stop_mode == "empty" or abs(net) < 1e-9:
+                self._update_state(market_id, mid, net)
+                return empty
 
         # Overnight quiet: when flat, do not open new overnight risk in reduce_only mode
         if in_overnight and self.overnight_mode == "reduce_only" and abs(net) < 1e-9:
@@ -525,6 +641,7 @@ class Strategy:
             or in_age_flatten
             or in_carry_budget
             or in_ban_reduce
+            or in_day_stop_reduce
         )
         if tight_flatten:
             half = max(
@@ -569,6 +686,8 @@ class Strategy:
             size = max(min_size * 0.5, size * self.near_mid_size_mult)
         if in_overnight and self.overnight_mode == "size_mult":
             size = max(min_size * 0.5, size * self.overnight_size_mult)
+        if in_fill_brake:
+            size = max(min_size * 0.5, size * self.fill_rate_size_frac)
 
         # Enlarge reduce side when force/day flattening
         reduce_size = size
@@ -603,6 +722,13 @@ class Strategy:
             self._add_pause_left[market_id] = pause_left - 1
         elif pause_left > 0:
             self._add_pause_left[market_id] = pause_left - 1
+
+        # WAVE5 fill_rate_brake: pause add side while braking
+        if in_fill_brake and self.fill_rate_pause_add and not want_reduce_only:
+            if net >= 0:
+                bid_price, bid_size = None, 0.0
+            if net <= 0:
+                ask_price, ask_size = None, 0.0
 
         # Hard inventory: never add past hard cap
         if abs(net) >= self.max_abs_inv:

@@ -1,11 +1,8 @@
 # Saved algorithms
 
 ## Champion (current)
-- `champion_wave4_ovn_e3.py` — day_flatten max_net=8, pool≥110, overnight reduce-only until UTC hour 3
-- Also: `strategy.py`, `research/champions/strategy_current_best.py`
+- `champion_wave5_fr_w20_t3_b30.py` — ovn_e3 + fill-rate brake (window=20, threshold=3, brake=30)
+- Liveish 90d **+$2946**
 
-## Prior champion
-- `champion_df_max8_pool110.py` (still kept if present)
-
-## Near-misses
-- See `../near_misses/`
+## Prior
+- `champion_wave4_ovn_e3.py`, `champion_df_max8_pool110.py`

@@ -1,12 +1,13 @@
 {
-  "saved_at": "2026-09-14T02:29:09.102492+00:00",
+  "saved_at": "2026-09-14T04:30:01.276058+00:00",
   "champion": {
-    "label": "creative_wave4_ovn_e3",
+    "label": "creative_wave5_fr_w20_t3_b30",
+    "parent": "creative_wave4_ovn_e3",
     "files": [
       "strategy.py",
       "research/champions/strategy_current_best.py",
-      "research/champions/strategy_creative_wave4_ovn_e3.py",
-      "research/saved_algorithms/champion_wave4_ovn_e3.py"
+      "research/champions/strategy_creative_wave5_fr_w20_t3_b30.py",
+      "research/saved_algorithms/champion_wave5_fr_w20_t3_b30.py"
     ],
     "overlay": {
       "day_flatten": true,
@@ -14,14 +15,17 @@
       "min_daily_reward_pool": 110.0,
       "overnight_quiet": true,
       "overnight_mode": "reduce_only",
-      "overnight_end_hour": 3
+      "overnight_end_hour": 3,
+      "fill_rate_window": 20,
+      "fill_rate_threshold": 3,
+      "fill_rate_brake_ticks": 30
     },
     "liveish_gates": {
-      "sample": 726.73,
-      "30d": 1703.17,
-      "60d": 2710.25
-    },
-    "parent": "creative_df_max8_pool110"
+      "sample": 719.43,
+      "30d": 1711.3,
+      "60d": 2737.88,
+      "90d": 2946.12
+    }
   },
   "near_misses": [
     {

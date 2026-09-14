@@ -1,0 +1,42 @@
+{
+  "sample_net_pnl": 407.5808,
+  "window_net_pnl": 407.5808,
+  "net_pnl": 407.5808,
+  "max_dd_pct": 1.9376,
+  "max_drawdown_pct": 1.9376,
+  "n_fills": 942,
+  "reward_pnl": 509.3748,
+  "trading_pnl": -101.794,
+  "soft_reject": false,
+  "elapsed_sec": 41.566,
+  "liveish": true,
+  "strategy_overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110.0,
+    "overnight_quiet": true,
+    "overnight_mode": "reduce_only",
+    "overnight_end_hour": 3,
+    "warm_start": true,
+    "warm_until_date": "2026-06-15",
+    "warm_size_frac": 0.7,
+    "warm_max_net": 5,
+    "max_inv_age_ticks": 240
+  },
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/creative/strategy_creative_base.py",
+  "elapsed_wall_sec": 41.959,
+  "candidate_id": "wcal_jun15_age240",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110.0,
+    "overnight_quiet": true,
+    "overnight_mode": "reduce_only",
+    "overnight_end_hour": 3,
+    "warm_start": true,
+    "warm_until_date": "2026-06-15",
+    "warm_size_frac": 0.7,
+    "warm_max_net": 5,
+    "max_inv_age_ticks": 240
+  }
+}
