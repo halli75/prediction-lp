@@ -1,0 +1,119 @@
+{
+  "tag": "90d",
+  "strategy_module": "/workspace/polymarket-lp-autoresearch/research/champions/strategy_current_best.py",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110
+  },
+  "days_file": "/workspace/polymarket-lp-autoresearch/research/window_90d_days.txt",
+  "n_days": 83,
+  "liveish": true,
+  "net_pnl": 2137.3746,
+  "reward_pnl": 3616.5535,
+  "trading_pnl": -1479.1789,
+  "max_drawdown_pct": 3.2874,
+  "n_fills": 4195,
+  "ledger_n_fills": 4195,
+  "n_fills_match": true,
+  "n_round_trips": 4148,
+  "n_closed": 4119,
+  "n_open": 29,
+  "round_trip_gross_pnl_sum": -2310.6908,
+  "top_markets_by_fill_count": [
+    {
+      "market_question": "Fed Rate Hike by October 2026 Meeting?",
+      "market_id_short": "0x059db22d",
+      "n_fills": 941
+    },
+    {
+      "market_question": "Will the Moderate Party (M) win the second most seats in the 2026 Swedish parliamentary election?",
+      "market_id_short": "0xa3d50cf0",
+      "n_fills": 855
+    },
+    {
+      "market_question": "Will the Sweden Democrats (SD) win the third most seats in the 2026 Swedish parliamentary election?",
+      "market_id_short": "0x939abe4a",
+      "n_fills": 444
+    },
+    {
+      "market_question": "Bab el-Mandeb Strait effectively closed by September 30?",
+      "market_id_short": "0x95fc6a4e",
+      "n_fills": 368
+    },
+    {
+      "market_question": "Will the U.S. invade Iran before 2027?",
+      "market_id_short": "0x5db999fa",
+      "n_fills": 304
+    },
+    {
+      "market_question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+      "market_id_short": "0xa3b36b2d",
+      "n_fills": 298
+    },
+    {
+      "market_question": "Will the Sweden Democrats (SD) win the second most seats in the 2026 Swedish parliamentary election?",
+      "market_id_short": "0x9e2966ab",
+      "n_fills": 235
+    },
+    {
+      "market_question": "Clarity Act (H.R.3633) signed into law in 2026?",
+      "market_id_short": "0x9cb23d04",
+      "n_fills": 167
+    },
+    {
+      "market_question": "Will the Moderate Party (M) win the third most seats in the 2026 Swedish parliamentary election?",
+      "market_id_short": "0xbbb881b0",
+      "n_fills": 103
+    },
+    {
+      "market_question": "Will Harry Kane win the 2026 Ballon d'Or?",
+      "market_id_short": "0x12dc2b61",
+      "n_fills": 95
+    }
+  ],
+  "top_markets_by_abs_pnl": [
+    {
+      "market_question": "Fed Rate Hike by October 2026 Meeting?",
+      "gross_pnl_usd": -567.5293
+    },
+    {
+      "market_question": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+      "gross_pnl_usd": -461.9473
+    },
+    {
+      "market_question": "Will the Moderate Party (M) win the second most seats in the 2026 Swedish parliamentary election?",
+      "gross_pnl_usd": -217.7182
+    },
+    {
+      "market_question": "Bab el-Mandeb Strait effectively closed by September 30?",
+      "gross_pnl_usd": -198.2512
+    },
+    {
+      "market_question": "Will Kimi Antonelli be the 2026 F1 Drivers' Champion?",
+      "gross_pnl_usd": -126.7941
+    },
+    {
+      "market_question": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+      "gross_pnl_usd": -122.242
+    },
+    {
+      "market_question": "Clarity Act (H.R.3633) signed into law in 2026?",
+      "gross_pnl_usd": -111.94
+    },
+    {
+      "market_question": "Will the U.S. invade Iran before 2027?",
+      "gross_pnl_usd": -110.2824
+    },
+    {
+      "market_question": "Will the Sweden Democrats (SD) win the second most seats in the 2026 Swedish parliamentary election?",
+      "gross_pnl_usd": -106.7267
+    },
+    {
+      "market_question": "Will the Sweden Democrats (SD) win the third most seats in the 2026 Swedish parliamentary election?",
+      "gross_pnl_usd": -64.5428
+    }
+  ],
+  "elapsed_sec": 401.588,
+  "expected_90d_net_pnl_approx": 2137.37
+}
