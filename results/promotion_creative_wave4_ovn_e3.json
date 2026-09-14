@@ -1,0 +1,25 @@
+{
+  "job": "creative_wave4_promotion_ovn_e3",
+  "label": "creative_wave4_ovn_e3",
+  "parent": "creative_df_max8_pool110",
+  "eval": "liveish",
+  "overlay": {
+    "day_flatten": true,
+    "day_flatten_max_net": 8,
+    "min_daily_reward_pool": 110.0,
+    "overnight_quiet": true,
+    "overnight_mode": "reduce_only",
+    "overnight_end_hour": 3
+  },
+  "created_at": "2026-09-14T01:10:42.821561+00:00",
+  "windows_liveish": {
+    "sample": 726.7343,
+    "30d": 1703.1739,
+    "60d": 2710.2515
+  },
+  "gates_beaten": {
+    "30d_gate": 1676.34,
+    "60d_gate": 2512.14,
+    "sample_gate": 611.05
+  }
+}

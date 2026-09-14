@@ -1,8 +1,7 @@
-"""Promoted creative champion: creative_day_boundary_flatten
+"""Promoted creative champion: creative_wave4_ovn_e3
 
-Fork of wave5b_pull24_p46_sf672 + day_boundary_flatten (day_flatten=True, day_flatten_max_net=5).
-Liveish gates beaten: sample 651.39 / 30d 1431.56 / 60d 1979.75 (vs wave5b 528.47 / 496.98 / 861.11).
-Self-contained (no import of creative base) for root strategy.py + champions.
+Fork of creative_df_max8_pool110 + WAVE4 overnight overlay {"day_flatten": true, "day_flatten_max_net": 8, "min_daily_reward_pool": 110.0, "overnight_quiet": true, "overnight_mode": "reduce_only", "overnight_end_hour": 3}.
+Liveish: sample 726.73 / 30d 1703.17 / 60d 2710.25.
 """
 from __future__ import annotations
 
@@ -37,6 +36,27 @@ def _utc_date_str(ts) -> str:
     except (TypeError, ValueError, OSError, OverflowError):
         s = str(ts)
         return s[:10] if len(s) >= 10 else s
+
+
+def _utc_hour(ts) -> int | None:
+    """UTC hour 0-23 from unix seconds, or None if unparseable."""
+    try:
+        t = float(ts)
+        return datetime.fromtimestamp(t, tz=timezone.utc).hour
+    except (TypeError, ValueError, OSError, OverflowError):
+        return None
+
+
+def _session_id(ts, session_hours: int) -> str | None:
+    """Bucket id for session boundaries every `session_hours` UTC hours."""
+    try:
+        t = float(ts)
+        dt = datetime.fromtimestamp(t, tz=timezone.utc)
+        sh = max(1, int(session_hours))
+        bucket = (dt.hour // sh) * sh
+        return f"{dt.strftime('%Y-%m-%d')}:{bucket:02d}"
+    except (TypeError, ValueError, OSError, OverflowError):
+        return None
 
 
 class Strategy:
@@ -92,7 +112,7 @@ class Strategy:
         self.flatten_size_mult = float(cfg.get("flatten_size_mult", 2.0))
 
         # --- creative mode 2: day_boundary_flatten ---
-        self.day_flatten = bool(cfg.get("day_flatten", True))  # PROMOTED creative default
+        self.day_flatten = bool(cfg.get("day_flatten", True)  # PROMOTED creative default)
         self.day_flatten_max_net = float(cfg.get("day_flatten_max_net", 8.0))
         self.day_flatten_global = bool(cfg.get("day_flatten_global", False))
 
@@ -109,6 +129,38 @@ class Strategy:
         self.harvest_flat_max = float(cfg.get("harvest_flat_max", 2.0))
         self.harvest_flatten_half_frac = float(cfg.get("harvest_flatten_half_frac", 0.5))
         self.harvest_flatten_size_mult = float(cfg.get("harvest_flatten_size_mult", 1.5))
+
+        # --- WAVE3 mode 6: session_flatten ---
+        self.session_flatten = bool(cfg.get("session_flatten", False))
+        self.session_hours = int(cfg.get("session_hours", 12))  # 12 → 00/12; 8 → 00/08/16
+        self.session_flatten_max_net = float(
+            cfg.get("session_flatten_max_net", cfg.get("day_flatten_max_net", 5.0))
+        )
+
+        # --- WAVE3 mode 7: inventory_age_flatten ---
+        self.max_inv_age_ticks = int(cfg.get("max_inv_age_ticks", 0))  # 0 = off
+        self.inv_age_flat_eps = float(cfg.get("inv_age_flat_eps", 1.0))
+
+        # --- WAVE3 mode 8: overnight_quiet ---
+        self.overnight_quiet = bool(cfg.get("overnight_quiet", True))
+        self.overnight_start_hour = int(cfg.get("overnight_start_hour", 0))
+        self.overnight_end_hour = int(cfg.get("overnight_end_hour", 3))  # [start, end)
+        # "reduce_only" | "size_mult"
+        self.overnight_mode = str(cfg.get("overnight_mode", "reduce_only"))
+        self.overnight_size_mult = float(cfg.get("overnight_size_mult", 0.3))
+
+        # --- WAVE3 mode 9: carry_budget ---
+        self.carry_budget_shares = float(cfg.get("carry_budget_shares", 0.0))  # 0 = off
+
+        # --- WAVE3 mode 10: toxic_market_day_ban ---
+        self.tox_day_ban_cents = float(cfg.get("tox_day_ban_cents", 0.0))  # 0 = off
+        self.tox_day_ban_flat_eps = float(cfg.get("tox_day_ban_flat_eps", 1.0))
+
+        # --- WAVE3 mode 11: day_flatten + mild harvest gate ---
+        self.day_flatten_harvest_gate = bool(cfg.get("day_flatten_harvest_gate", False))
+        self.df_gate_vol = float(cfg.get("df_gate_vol", 0.015))  # require |Δmid| < this
+        self.df_gate_min_pool = float(cfg.get("df_gate_min_pool", 0.0))  # 0 → use min_daily_reward_pool
+        self.df_gate_vol_lookback = int(cfg.get("df_gate_vol_lookback", 5))
 
         # Per-market / creative internal state
         self._last_mid: dict[str, float] = {}
@@ -132,6 +184,16 @@ class Strategy:
         self._topk_day: str | None = None
         self._topk_pools: dict[str, float] = {}
         self._topk_set: set[str] | None = None  # None = bootstrap (allow all)
+
+        # WAVE3 state
+        self._session_flatten_active: dict[str, bool] = {}
+        self._last_session_id: dict[str, str] = {}
+        self._inv_age_ticks: dict[str, int] = {}
+        self._tox_day_ban_day: dict[str, str] = {}  # market -> utc_day banned
+        self._tox_hold_mid: dict[str, float] = {}  # mid when |net| left ~0
+        self._tox_hold_side: dict[str, str] = {}  # "long"|"short"
+        self._df_gate_pending: dict[str, bool] = {}  # after day-flatten clear, gate resume
+        self._df_was_active: dict[str, bool] = {}
 
     def quote(self, state: dict) -> dict:
         mid = float(state["mid"])
@@ -188,6 +250,90 @@ class Strategy:
             self.day_flatten and self._day_flatten_active.get(market_id, False)
         )
 
+        # Track day-flatten clear → harvest gate pending (mode 11)
+        if self.day_flatten_harvest_gate and self.day_flatten:
+            was = bool(self._df_was_active.get(market_id, False))
+            if was and not in_day_flatten:
+                self._df_gate_pending[market_id] = True
+            self._df_was_active[market_id] = in_day_flatten
+
+        utc_hr = _utc_hour(ts) if ts is not None else None
+        in_df_gate = False
+
+        # --- WAVE3 session_flatten (mode 6) ---
+        in_session_flatten = False
+        if self.session_flatten and ts is not None:
+            sid = _session_id(ts, self.session_hours)
+            if sid is not None:
+                last_sid = self._last_session_id.get(market_id)
+                if last_sid is not None and last_sid != sid:
+                    self._session_flatten_active[market_id] = True
+                self._last_session_id[market_id] = sid
+                if abs(net) <= self.session_flatten_max_net:
+                    self._session_flatten_active[market_id] = False
+            in_session_flatten = bool(self._session_flatten_active.get(market_id, False))
+
+        # --- WAVE3 inventory_age_flatten (mode 7) ---
+        in_age_flatten = False
+        if self.max_inv_age_ticks > 0:
+            if abs(net) <= self.inv_age_flat_eps:
+                self._inv_age_ticks[market_id] = 0
+            else:
+                self._inv_age_ticks[market_id] = int(self._inv_age_ticks.get(market_id, 0)) + 1
+            if self._inv_age_ticks.get(market_id, 0) > self.max_inv_age_ticks:
+                in_age_flatten = True
+
+        # --- WAVE3 overnight_quiet (mode 8) ---
+        in_overnight = False
+        if self.overnight_quiet and utc_hr is not None:
+            lo = self.overnight_start_hour
+            hi = self.overnight_end_hour
+            if lo <= hi:
+                in_overnight = lo <= utc_hr < hi
+            else:
+                # wraps midnight e.g. 22..6
+                in_overnight = utc_hr >= lo or utc_hr < hi
+
+        # --- WAVE3 carry_budget (mode 9) ---
+        port_abs = float(state.get("portfolio_abs_inv") or 0.0)
+        in_carry_budget = bool(
+            self.carry_budget_shares > 0 and port_abs > self.carry_budget_shares
+        )
+
+        # --- WAVE3 toxic_market_day_ban (mode 10) ---
+        banned_today = False
+        if self.tox_day_ban_cents > 0 and utc_day is not None:
+            ban_day = self._tox_day_ban_day.get(market_id)
+            if ban_day == utc_day:
+                banned_today = True
+            else:
+                # track hold mid when leaving flat
+                prev_net = self._last_net.get(market_id)
+                if abs(net) > self.tox_day_ban_flat_eps:
+                    if market_id not in self._tox_hold_mid or (
+                        prev_net is not None and abs(prev_net) <= self.tox_day_ban_flat_eps
+                    ):
+                        self._tox_hold_mid[market_id] = mid
+                        self._tox_hold_side[market_id] = "long" if net > 0 else "short"
+                    hmid = self._tox_hold_mid.get(market_id, mid)
+                    hside = self._tox_hold_side.get(market_id, "long" if net > 0 else "short")
+                    adverse = False
+                    if hside == "long" and (hmid - mid) * 100.0 >= self.tox_day_ban_cents:
+                        adverse = True
+                    elif hside == "short" and (mid - hmid) * 100.0 >= self.tox_day_ban_cents:
+                        adverse = True
+                    if adverse:
+                        self._tox_day_ban_day[market_id] = utc_day
+                        banned_today = True
+                else:
+                    self._tox_hold_mid.pop(market_id, None)
+                    self._tox_hold_side.pop(market_id, None)
+
+        # If banned and flat → stand down; if banned and holding → reduce-only via flag
+        if banned_today and abs(net) < 1e-9:
+            self._update_state(market_id, mid, net)
+            return empty
+
         # --- dynamic top-k (mode 4) ---
         if self.dynamic_top_k > 0 and utc_day is not None:
             if self._topk_day != utc_day:
@@ -233,6 +379,23 @@ class Strategy:
         if self.enforce_pool_allowlist and daily_pool < self.min_daily_reward_pool:
             self._update_state(market_id, mid, net)
             return empty
+
+        # --- WAVE3 day_flatten harvest gate (mode 11) ---
+        if self.day_flatten_harvest_gate and self._df_gate_pending.get(market_id, False):
+            gate_pool = self.df_gate_min_pool if self.df_gate_min_pool > 0 else self.min_daily_reward_pool
+            # vol quiet: |mid - mid[lookback]| < df_gate_vol
+            hist_g = self._mid_hist.get(market_id, [])
+            vol_ok = False
+            if len(hist_g) > self.df_gate_vol_lookback:
+                vol_ok = abs(hist_g[-1] - hist_g[-1 - self.df_gate_vol_lookback]) < self.df_gate_vol
+            pool_ok = daily_pool >= gate_pool
+            if vol_ok or pool_ok:
+                self._df_gate_pending[market_id] = False
+            else:
+                in_df_gate = True  # hold reduce-only / no add until gate passes
+                if abs(net) < 1e-9:
+                    self._update_state(market_id, mid, net)
+                    return empty
 
         in_tail = mid < self.tail_lo or mid > self.tail_hi
         if in_tail and self.skip_extreme_tails:
@@ -314,13 +477,36 @@ class Strategy:
             and abs(net) >= 1e-9
         )
 
+        # overnight reduce-only path
+        in_overnight_reduce = bool(
+            in_overnight and self.overnight_mode == "reduce_only" and abs(net) >= 1e-9
+        )
+        # banned but still holding → reduce-only
+        in_ban_reduce = bool(banned_today and abs(net) >= 1e-9)
+
         # Creative reduce-only only (hard max_abs_inv handled like champion below)
         want_reduce_only = (
             in_force_flatten
             or in_day_flatten
             or in_harvest_flatten
             or in_topk_reduce
+            or in_session_flatten
+            or in_age_flatten
+            or in_overnight_reduce
+            or in_carry_budget
+            or in_ban_reduce
+            or in_df_gate
         )
+
+        # Overnight quiet: when flat, do not open new overnight risk in reduce_only mode
+        if in_overnight and self.overnight_mode == "reduce_only" and abs(net) < 1e-9:
+            self._update_state(market_id, mid, net)
+            return empty
+
+        # Carry budget: when portfolio over budget and this market flat, do not add
+        if in_carry_budget and abs(net) < 1e-9:
+            self._update_state(market_id, mid, net)
+            return empty
 
         # Half-spread
         max_half = (max_spread_cents / 100.0) * 0.95
@@ -331,7 +517,15 @@ class Strategy:
             half = min(max_half, half * 1.25)
 
         # Tight flatten half when paying to exit
-        tight_flatten = in_force_flatten or in_day_flatten or in_topk_reduce
+        tight_flatten = (
+            in_force_flatten
+            or in_day_flatten
+            or in_topk_reduce
+            or in_session_flatten
+            or in_age_flatten
+            or in_carry_budget
+            or in_ban_reduce
+        )
         if tight_flatten:
             half = max(
                 self.min_half_spread * 0.5,
@@ -373,6 +567,8 @@ class Strategy:
             size = min_size
         if self.near_mid_size_mult < 1.0 - 1e-12 and half <= self.near_mid_dist:
             size = max(min_size * 0.5, size * self.near_mid_size_mult)
+        if in_overnight and self.overnight_mode == "size_mult":
+            size = max(min_size * 0.5, size * self.overnight_size_mult)
 
         # Enlarge reduce side when force/day flattening
         reduce_size = size
@@ -428,7 +624,7 @@ class Strategy:
                 bid_size = reduce_size
 
         # Portfolio-level inventory cap
-        port_abs = float(state.get("portfolio_abs_inv") or 0.0)
+        # port_abs already computed above for carry_budget
         port_cap = self.portfolio_inv_cap
         if port_cap <= 0:
             port_cap = float(state.get("portfolio_inv_cap") or 0.0)

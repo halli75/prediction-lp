@@ -1,9 +1,11 @@
 # Saved algorithms
 
-## Champion
-- `champion_df_max8_pool110.py` — current liveish champion
-- Also: repo `strategy.py`, `research/champions/strategy_current_best.py`
+## Champion (current)
+- `champion_wave4_ovn_e3.py` — day_flatten max_net=8, pool≥110, overnight reduce-only until UTC hour 3
+- Also: `strategy.py`, `research/champions/strategy_current_best.py`
+
+## Prior champion
+- `champion_df_max8_pool110.py` (still kept if present)
 
 ## Near-misses
-- See `../near_misses/` wrappers + `wave3_wave4_near_misses.json`
-- `INDEX.json` lists overlays and window scores
+- See `../near_misses/`

@@ -1,24 +1,27 @@
 {
-  "saved_at": "2026-09-14T00:31:53.571888+00:00",
+  "saved_at": "2026-09-14T02:29:09.102492+00:00",
   "champion": {
-    "label": "creative_df_max8_pool110",
+    "label": "creative_wave4_ovn_e3",
     "files": [
       "strategy.py",
       "research/champions/strategy_current_best.py",
-      "research/champions/strategy_creative_wave2_df_max8_pool110.py",
-      "research/saved_algorithms/champion_df_max8_pool110.py"
+      "research/champions/strategy_creative_wave4_ovn_e3.py",
+      "research/saved_algorithms/champion_wave4_ovn_e3.py"
     ],
     "overlay": {
       "day_flatten": true,
       "day_flatten_max_net": 8,
-      "min_daily_reward_pool": 110.0
+      "min_daily_reward_pool": 110.0,
+      "overnight_quiet": true,
+      "overnight_mode": "reduce_only",
+      "overnight_end_hour": 3
     },
     "liveish_gates": {
-      "sample": 611.05,
-      "30d": 1676.34,
-      "60d": 2512.14,
-      "90d": 2137.37
-    }
+      "sample": 726.73,
+      "30d": 1703.17,
+      "60d": 2710.25
+    },
+    "parent": "creative_df_max8_pool110"
   },
   "near_misses": [
     {

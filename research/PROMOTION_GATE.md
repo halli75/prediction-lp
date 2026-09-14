@@ -1,20 +1,20 @@
 # Promotion gate (authoritative)
 
-**Current champion:** `creative_df_max8_pool110` (creative wave2 over day_boundary_flatten)
-Files: `research/champions/strategy_creative_wave2_df_max8_pool110.py` = `strategy_current_best.py` = root `strategy.py`
+**Current champion:** `creative_wave4_ovn_e3` (creative wave4 overnight recovery over df_max8_pool110)
+Files: `research/champions/strategy_creative_wave4_ovn_e3.py` = `strategy_current_best.py` = root `strategy.py`
 
-Promoted creative wave2 2026-09-13T22:16:27.616311+00:00 under **LIVEISH Aug10** gates. Prior day_boundary_flatten liveish: sample 651.39 / 30d 1431.56 / 60d 1979.75.
+Promoted creative wave4 2026-09-14T01:10:42.821706+00:00 under **LIVEISH Aug10** gates. Prior creative_df_max8_pool110 liveish: sample 611.05 / 30d 1676.34 / 60d 2512.14.
 
 ## LIVEISH (authoritative promotion gate)
 
 | Window | **Liveish net (GATE)** | Soft_reject |
 |--------|-----------------------:|:-----------:|
-| 12d sample | **611.05** | false |
-| **30d** | **1676.34** | false |
-| **60d** | **2512.14** | false |
+| 12d sample | **726.73** | false |
+| **30d** | **1703.17** | false |
+| **60d** | **2710.25** | false |
 
-**To replace champion:** both **liveish-30d > 1676.34** AND **liveish-60d > 2512.14** under the **same `--liveish` flags**, `soft_reject=false`, `max_dd_pct < 25`, sample preferred >611.05. Inventory: soft ≤35 ≥20; hard ≤100.
+**To replace champion:** both **liveish-30d > 1703.17** AND **liveish-60d > 2710.25** under the **same `--liveish` flags**, `soft_reject=false`, `max_dd_pct < 25`, sample preferred >726.73. Inventory: soft ≤35 ≥20; hard ≤100.
 
-Creative overlay: `{"day_flatten": true, "day_flatten_max_net": 8, "min_daily_reward_pool": 110.0}`
+Creative overlay: `{"day_flatten": true, "day_flatten_max_net": 8, "min_daily_reward_pool": 110.0, "overnight_quiet": true, "overnight_mode": "reduce_only", "overnight_end_hour": 3}`
 
-Artifact: `results/promotion_creative_df_max8_pool110.json`
+Artifact: `results/promotion_creative_wave4_ovn_e3.json`
