@@ -22,3 +22,6 @@ results/paper/paper.pid
 results/paper/status.json
 results/paper/fills.csv
 results/paper/equity.csv
+
+results/paper/session_snapshot.json
+results/paper/STARTED.json

@@ -24,6 +24,7 @@ from paper.live_feed import (  # noqa: E402
     discover_reward_markets,
     fetch_market_snapshot,
     load_markets_live,
+    markets_from_condition_ids,
     save_markets_live,
 )
 from paper.paper_engine import CHAMPION_LABEL, PaperEngine  # noqa: E402
@@ -32,11 +33,40 @@ from paper.paper_engine import CHAMPION_LABEL, PaperEngine  # noqa: E402
 LIVEISH_STRATEGY_CFG = {
     "near_mid_size_mult": 0.5,
     "near_mid_dist": 0.02,
-    "portfolio_inv_cap": 400.0,
+    "portfolio_inv_cap": 800.0,
     "cancel_move": 0.02,
 }
 
 STOP = False
+SNAPSHOT_PATH = ROOT / "results" / "paper" / "session_snapshot.json"
+
+
+def write_session_snapshot(eng, status: dict) -> None:
+    """Persist resume anchors so a restart keeps cash/rewards/cycle/held markets."""
+    try:
+        inv_ids = [
+            mid
+            for mid, iv in eng.port.inventory.items()
+            if abs(iv.yes) > 1e-9 or abs(iv.no) > 1e-9
+        ]
+        snap = {
+            "cash": float(status.get("cash", eng.port.cash)),
+            "equity": float(status.get("equity", 0)),
+            "net_pnl": float(status.get("net_pnl", 0)),
+            "reward_pnl_est": float(status.get("reward_pnl_est", eng.reward_pnl_est)),
+            "n_fills": int(status.get("n_fills", eng.n_fills)),
+            "cycle": int(status.get("cycle", eng.cycle)),
+            "capital0": float(eng.capital0),
+            "iso_time": status.get("iso_time"),
+            "inventory_market_ids": sorted(inv_ids),
+            "portfolio_inv_cap": float(eng.cfg.get("portfolio_inv_cap") or 0),
+            "last_mids": {k: float(v) for k, v in list(eng.last_mids.items())[:500]},
+        }
+        SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        SNAPSHOT_PATH.write_text(json.dumps(snap, indent=2))
+    except Exception as e:
+        print(f"[paper] snapshot warn: {e!r}", flush=True)
+
 
 
 def _handle_sig(_signum, _frame) -> None:
@@ -45,9 +75,56 @@ def _handle_sig(_signum, _frame) -> None:
     print("[paper] SIGTERM/SIGINT — graceful stop requested", flush=True)
 
 
+def _held_condition_ids() -> list[str]:
+    snap = ROOT / "results" / "paper" / "session_snapshot.json"
+    ids: list[str] = []
+    if snap.exists():
+        try:
+            ids = list(json.loads(snap.read_text()).get("inventory_market_ids") or [])
+        except Exception:
+            ids = []
+    fills = ROOT / "results" / "paper" / "fills.csv"
+    if fills.exists():
+        import csv
+        last: dict[str, tuple[float, float]] = {}
+        with open(fills, newline="") as f:
+            for row in csv.DictReader(f):
+                last[row["market_id"]] = (
+                    float(row.get("inv_yes_after") or 0),
+                    float(row.get("inv_no_after") or 0),
+                )
+        for mid, (y, n) in last.items():
+            if abs(y) > 1e-9 or abs(n) > 1e-9:
+                ids.append(mid)
+    # unique preserve order
+    seen = set()
+    out = []
+    for i in ids:
+        if i not in seen:
+            seen.add(i)
+            out.append(i)
+    return out
+
+
+def merge_held_inventory_markets(markets: list[dict]) -> list[dict]:
+    """Keep quoting/marking markets we still hold even if they dropped off reward discovery."""
+    by_id = {m["market_id"]: m for m in markets}
+    missing = [cid for cid in _held_condition_ids() if cid not in by_id]
+    if not missing:
+        return markets
+    held = markets_from_condition_ids(missing)
+    print(f"[paper] merged {len(held)}/{len(missing)} held-inventory markets into book", flush=True)
+    for h in held:
+        by_id[h["market_id"]] = h
+    out = list(by_id.values())
+    out.sort(key=lambda x: (-float(x.get("daily_reward_pool") or 0), x["market_id"]))
+    return out
+
+
 def refresh_markets(path: Path, min_pool: float) -> list[dict]:
     print(f"[paper] discovering reward markets (pool>={min_pool}) ...", flush=True)
     markets = discover_reward_markets(min_pool=min_pool, skip_ended=True)
+    markets = merge_held_inventory_markets(markets)
     save_markets_live(markets, path)
     print(f"[paper] wrote {path} n_markets={len(markets)}", flush=True)
     return markets
@@ -105,6 +182,17 @@ def main() -> None:
     ap.add_argument("--min-pool", type=float, default=110.0)
     ap.add_argument("--rediscover-sec", type=float, default=3600.0)
     ap.add_argument("--max-markets", type=int, default=0, help="0 = all discovered")
+    ap.add_argument(
+        "--resume",
+        action="store_true",
+        help="Rebuild portfolio from fills.csv / status.json (keep session)",
+    )
+    ap.add_argument(
+        "--portfolio-inv-cap",
+        type=float,
+        default=None,
+        help="Override portfolio_inv_cap (default from LIVEISH_STRATEGY_CFG)",
+    )
     args = ap.parse_args()
 
     signal.signal(signal.SIGTERM, _handle_sig)
@@ -117,6 +205,10 @@ def main() -> None:
     from strategy import Strategy
 
     strat_cfg = dict(LIVEISH_STRATEGY_CFG)
+    eng_cfg = {}
+    if args.portfolio_inv_cap is not None:
+        strat_cfg["portfolio_inv_cap"] = float(args.portfolio_inv_cap)
+        eng_cfg["portfolio_inv_cap"] = float(args.portfolio_inv_cap)
     strategy = Strategy(strat_cfg)
 
     markets = refresh_markets(args.markets_path, args.min_pool)
@@ -131,15 +223,35 @@ def main() -> None:
         strategy,
         capital0=args.capital,
         poll_sec=args.poll_sec,
+        config=eng_cfg or None,
         fills_csv=args.fills_csv,
         equity_csv=args.equity_csv,
         champion=CHAMPION_LABEL,
     )
 
+    if args.resume:
+        started_at = None
+        started_path = ROOT / "results" / "paper" / "STARTED.json"
+        if started_path.exists():
+            try:
+                st0 = json.loads(started_path.read_text())
+                raw = st0.get("start_time")
+                if raw:
+                    started_at = datetime.fromisoformat(raw.replace("Z", "+00:00")).timestamp()
+            except Exception as e:
+                print(f"[paper] STARTED.json parse warn: {e!r}", flush=True)
+        info = eng.resume_from_session(
+            fills_csv=args.fills_csv,
+            status_path=args.status_path,
+            started_at=started_at,
+        )
+        print(f"[paper] RESUME {info}", flush=True)
+
+    cap_now = float(eng.cfg.get("portfolio_inv_cap") or strat_cfg.get("portfolio_inv_cap") or 0)
     print(
         f"[paper] START pid={os.getpid()} capital={args.capital} "
         f"poll={args.poll_sec}s n_markets={len(markets)} champion={CHAMPION_LABEL} "
-        f"SIMULATE_ONLY=1",
+        f"portfolio_inv_cap={cap_now} resume={bool(args.resume)} SIMULATE_ONLY=1",
         flush=True,
     )
 
@@ -156,6 +268,7 @@ def main() -> None:
             snaps = poll_snapshots(markets, max_m)
             status = eng.process_cycle(snaps)
             eng.write_status(args.status_path, status)
+            write_session_snapshot(eng, status)
             print(
                 f"[paper] cycle={status['cycle']} equity={status['equity']:.2f} "
                 f"quoted={status['n_markets_quoted']}/{status['n_markets_book_ok']} "
@@ -184,7 +297,7 @@ def main() -> None:
         while not STOP and time.time() < end:
             time.sleep(min(0.5, end - time.time()))
 
-    # final status
+    # final status (keep resume fields so a watchdog restart can recover)
     final = {
         "ts": int(time.time()),
         "iso_time": datetime.now(timezone.utc).isoformat(),
@@ -193,11 +306,15 @@ def main() -> None:
         "paper": True,
         "real_orders": False,
         "n_fills": eng.n_fills,
+        "cycle": eng.cycle,
         "equity": round(eng.port.mark_to_market(eng.last_mids), 4),
         "cash": round(eng.port.cash, 4),
+        "reward_pnl_est": round(eng.reward_pnl_est, 4),
+        "net_pnl": round(eng.port.mark_to_market(eng.last_mids) - eng.capital0, 4),
         "uptime_sec": round(time.time() - eng.started_at, 1),
     }
     eng.write_status(args.status_path, final)
+    write_session_snapshot(eng, final)
     print(f"[paper] stopped. final equity={final['equity']}", flush=True)
     try:
         args.pid_file.unlink(missing_ok=True)

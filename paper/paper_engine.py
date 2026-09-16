@@ -21,7 +21,7 @@ PAPER_ENGINE_CFG = {
     "quote_latency_rows": 1,
     "max_fill_frac": 0.40,
     "adverse_mid_cross_strength": 2.0,  # light heuristic (no future path)
-    "portfolio_inv_cap": 400.0,
+    "portfolio_inv_cap": 800.0,
     "competition_q_mult": 25.0,
     "competition_q_floor": 500.0,
     "min_daily_payout": 1.0,
@@ -79,6 +79,119 @@ class PaperEngine:
 
     def set_markets(self, markets: list[dict[str, Any]]) -> None:
         self.markets = {m["market_id"]: m for m in markets}
+
+    def resume_from_session(
+        self,
+        *,
+        fills_csv: Path | None = None,
+        status_path: Path | None = None,
+        started_at: float | None = None,
+    ) -> dict[str, Any]:
+        """Rebuild cash/inventory from fills.csv so a restart keeps the session."""
+        from sim.fills import Fill
+
+        path = Path(fills_csv or self.fills_csv or "")
+        info: dict[str, Any] = {"resumed": False, "n_fills": 0, "cash": self.port.cash}
+        if not path or not path.exists():
+            return info
+
+        # Replay without re-appending CSV rows
+        saved_fills = self.fills_csv
+        self.fills_csv = None
+        n = 0
+        last_cycle = 0
+        with open(path, newline="") as f:
+            for row in csv.DictReader(f):
+                side = (row.get("side") or "").strip()
+                if side not in ("buy_yes", "sell_yes"):
+                    # tolerate ACTION-style
+                    act = (row.get("action") or "").upper()
+                    if act == "BUY_YES":
+                        side = "buy_yes"
+                    elif act == "SELL_YES":
+                        side = "sell_yes"
+                    else:
+                        continue
+                fill = Fill(
+                    side=side,
+                    price=float(row["price"]),
+                    size=float(row["size"]),
+                    fee=0.0,
+                    rebate=0.0,
+                )
+                mid_at = float(row.get("mid_at_fill") or row["price"])
+                ts_at = int(float(row.get("ts") or 0))
+                self.cycle = int(float(row.get("cycle") or self.cycle or 0))
+                self._apply_fill(row["market_id"], fill, mid_at, ts_at)
+                n += 1
+                last_cycle = max(last_cycle, self.cycle)
+        self.fills_csv = saved_fills
+        if saved_fills and Path(saved_fills).exists():
+            self._fills_header_written = True
+        if self.equity_csv and Path(self.equity_csv).exists():
+            self._equity_header_written = True
+
+        snap_path = Path("results/paper/session_snapshot.json")
+        st: dict[str, Any] = {}
+        if snap_path.exists():
+            try:
+                st = json.loads(snap_path.read_text())
+            except Exception:
+                st = {}
+        if (not st) and status_path and Path(status_path).exists():
+            try:
+                cand = json.loads(Path(status_path).read_text())
+                # Ignore incomplete stop stubs (no reward / wiped equity)
+                if cand.get("reward_pnl_est") is not None or cand.get("n_fills"):
+                    st = cand
+            except Exception:
+                pass
+        if st:
+            if st.get("reward_pnl_est") is not None:
+                self.reward_pnl_est = float(st["reward_pnl_est"])
+                # Seed flushed rewards so equity math / status do not wipe the estimate
+                if float(st["reward_pnl_est"]) > 0 and self.port.rewards_earned <= 0:
+                    self.port.rewards_earned = float(st["reward_pnl_est"])
+            if st.get("cycle") is not None:
+                last_cycle = max(last_cycle, int(st["cycle"]))
+            if st.get("cash") is not None:
+                self.port.cash = float(st["cash"])
+        self.cycle = last_cycle
+        if started_at is not None:
+            self.started_at = float(started_at)
+        # n_fills already counted in _apply_fill
+        # Seed last_mids so orphaned holdings keep a mark after rediscovery gaps
+        if path.exists():
+            with open(path, newline="") as f:
+                for row in csv.DictReader(f):
+                    try:
+                        self.last_mids[row["market_id"]] = float(row["mid_at_fill"])
+                    except Exception:
+                        continue
+        if isinstance(st, dict) and st.get("last_mids"):
+            for k, v in dict(st["last_mids"]).items():
+                try:
+                    self.last_mids[str(k)] = float(v)
+                except Exception:
+                    continue
+        info = {
+            "resumed": True,
+            "n_fills": self.n_fills,
+            "cash": round(self.port.cash, 4),
+            "cycle": self.cycle,
+            "reward_pnl_est": round(self.reward_pnl_est, 4),
+            "n_inv_markets": sum(
+                1
+                for iv in self.port.inventory.values()
+                if abs(iv.yes) > 1e-9 or abs(iv.no) > 1e-9
+            ),
+            "portfolio_abs_inv": round(
+                sum(abs(iv.yes - iv.no) for iv in self.port.inventory.values()), 2
+            ),
+            "n_last_mids": len(self.last_mids),
+        }
+        return info
+
 
     def _competition_q(self, meta: dict) -> float:
         if meta.get("competition_q") is not None:

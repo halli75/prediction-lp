@@ -112,14 +112,16 @@ def enrich_gamma(condition_ids: list[str], chunk: int = 20) -> dict[str, dict]:
     for i in range(0, len(condition_ids), chunk):
         part = condition_ids[i : i + chunk]
         # Gamma accepts comma-separated condition_ids
+        raw = []
         try:
             raw = _get_json(
                 f"{GAMMA}/markets",
                 params={"condition_ids": ",".join(part), "limit": len(part)},
             )
         except Exception:
-            # fallback one-by-one
             raw = []
+        # Gamma often returns [] for comma-joined ids — fall back one-by-one
+        if not raw:
             for cid in part:
                 try:
                     one = _get_json(f"{GAMMA}/markets", params={"condition_ids": cid})
@@ -242,6 +244,50 @@ def bbo_from_book(book: dict) -> tuple[float | None, float | None, float | None]
     if best_bid is not None and best_ask is not None and best_ask >= best_bid:
         mid = 0.5 * (best_bid + best_ask)
     return best_bid, best_ask, mid
+
+
+def markets_from_condition_ids(condition_ids: list[str]) -> list[dict[str, Any]]:
+    """Build paper market rows for held condition ids (even if below reward pool cut)."""
+    out: list[dict[str, Any]] = []
+    ids = [str(c) for c in condition_ids if c]
+    if not ids:
+        return out
+    gamma = enrich_gamma(ids)
+    for cid in ids:
+        g = gamma.get(cid) or {}
+        tokens = g.get("clobTokenIds") or g.get("clob_token_ids") or []
+        if isinstance(tokens, str):
+            try:
+                tokens = json.loads(tokens)
+            except Exception:
+                tokens = []
+        yes = str(tokens[0]) if len(tokens) > 0 else ""
+        no = str(tokens[1]) if len(tokens) > 1 else ""
+        if not yes:
+            continue
+        min_size = 50.0
+        max_spread = 3.5
+        out.append(
+            {
+                "market_id": cid,
+                "condition_id": cid,
+                "yes_token": yes,
+                "no_token": no,
+                "daily_reward_pool": 0.0,
+                "rewards_min_size": min_size,
+                "rewards_max_spread": max_spread,
+                "active": bool(g.get("active", True)),
+                "closed": bool(g.get("closed", False)),
+                "accepting_orders": bool(g.get("acceptingOrders", True)),
+                "question": g.get("question") or cid[:16],
+                "end_date": g.get("endDate") or g.get("endDateIso"),
+                "slug_key": (g.get("slug") or cid[:20])[:40],
+                "volume_num": float(g.get("volumeNum") or g.get("volume") or 0 or 0),
+                "competition_q": max(800.0, min_size * 30.0),
+                "held_inventory": True,
+            }
+        )
+    return out
 
 
 def fetch_market_snapshot(yes_token: str) -> dict[str, Any]:

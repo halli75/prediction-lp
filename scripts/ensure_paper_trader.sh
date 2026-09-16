@@ -14,7 +14,7 @@ if [[ "$alive" -eq 1 ]]; then
   echo "ALIVE pid=$(cat "$PID_FILE")"
   exit 0
 fi
-nohup .venv/bin/python -u paper/run_paper.py --capital 10000 --poll-sec 15 \
+nohup .venv/bin/python -u paper/run_paper.py --capital 10000 --poll-sec 15 --resume --portfolio-inv-cap 800 \
   --status-path results/paper/status.json \
   --fills-csv results/paper/fills.csv \
   --equity-csv results/paper/equity.csv \
