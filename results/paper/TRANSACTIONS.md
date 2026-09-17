@@ -1,10 +1,10 @@
 # Paper trade transactions
 
-_Auto-generated from `results/paper/fills.csv`. Last rebuilt: **2026-09-17 11:59 EDT**._
+_Auto-generated from `results/paper/fills.csv`. Last rebuilt: **2026-09-17 12:04 EDT**._
 
 ## Snapshot
 
-- Total fills: **1575**
+- Total fills: **1577**
 - Days with fills: **4**
 
 ## Daily PnL (ET)
@@ -18,7 +18,7 @@ _Auto-generated from `results/paper/fills.csv`. Last rebuilt: **2026-09-17 11:59
 
 ## Fills by day (ET)
 
-### 2026-09-17 — 566 fills · ~$4,584.58 notional
+### 2026-09-17 — 568 fills · ~$4,588.13 notional
 
 | Time (ET) | Side | Action | Size | Price | Notional | Market | Cash after |
 |---|---|---|---:|---:|---:|---|---:|
@@ -588,6 +588,8 @@ _Auto-generated from `results/paper/fills.csv`. Last rebuilt: **2026-09-17 11:59
 | 11:21:21 | buy_yes | BUY_YES | 11.4641 | 0.21 | 2.4075 | `WTI Crude Oil (WTI) Up or Down on September 17?` | 6344.43 |
 | 11:35:45 | buy_yes | BUY_YES | 11.4641 | 0.39 | 4.471 | `Will the lowest temperature in Seoul (Incheon) b` | 6339.96 |
 | 11:36:15 | buy_yes | BUY_YES | 11.051 | 0.34 | 3.7573 | `Will the lowest temperature in Seoul (Incheon) b` | 6336.20 |
+| 12:01:00 | buy_yes | BUY_YES | 11.9805 | 0.16 | 1.9169 | `WTI Crude Oil (WTI) Up or Down on September 17?` | 6334.29 |
+| 12:03:30 | buy_yes | BUY_YES | 11.6706 | 0.14 | 1.6339 | `WTI Crude Oil (WTI) Up or Down on September 17?` | 6332.65 |
 
 ### 2026-09-16 — 604 fills · ~$8,108.23 notional
 
